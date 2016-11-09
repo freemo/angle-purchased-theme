@@ -1,0 +1,18 @@
+h3 Nestable
+  small Drag &amp; drop hierarchical list with mouse and touch compatibility
+
+.container-fluid(ng-controller="NestableController as nest")
+  .row
+    .col-md-6
+      div(ng-nestable='', ng-model='nest.items')
+        div
+          // this element is the template for each menu item
+          // the $item is available on scope and is the reference to the menu item object
+          | {{$item.text}}
+
+    .col-md-6
+      .show-handlers(ng-nestable='', ng-model='nest.items2')
+        div
+          // this element is the template for each menu item
+          // the $item is available on scope and is the reference to the menu item object
+          | {{$item.text}}

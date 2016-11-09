@@ -1,0 +1,34 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+autopublish@1.0.7
+less@2.7.5
+iron:router
+fortawesome:fontawesome
+tap:i18n
+jquery@1.11.9
+twbs:bootstrap@3.3.5
+momentjs:moment
+russ:weather-icons
+mizzao:jquery-ui
+meteor-base@1.0.4
+mobile-experience@1.0.4
+mongo@1.1.12
+blaze-html-templates@1.0.4
+session@1.1.6
+tracker@1.1.0
+logging@1.1.15
+reload@1.1.10
+random@1.0.10
+ejson@1.0.12
+spacebars@1.0.12
+check@1.2.3
+okgrow:router-autoscroll
+dbarrett:dropzonejs
+standard-minifier-css@1.2.0
+standard-minifier-js@1.2.0
+shell-server
+zimme:active-route

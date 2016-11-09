@@ -1,0 +1,142 @@
+<h3>Form xEditable
+   <small>Edit in place for AngularJS</small>
+</h3>
+<div class="row" ng-controller="FormxEditableController as form">
+   <div class="col-md-6">
+      <div class="panel panel-default">
+         <div class="panel-heading">HTML5 Inputs</div>
+         <div class="panel-body">
+            <div class="form-horizontal">
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Email:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-email="form.user.email">{{ form.user.email || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Tel:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-tel="form.user.tel" e-pattern="\d{3}-\d{2}-\d{2}" e-title="xxx-xx-xx">{{ form.user.tel || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Number:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-number="form.user.number" e-min="18">{{ form.user.number || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Range:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-range="form.user.range" e-step="5">{{ form.user.range || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Url:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-url="form.user.url">{{ form.user.url || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Search:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-search="form.user.search">{{ form.user.search || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Color:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-color="form.user.color">{{ form.user.color || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Date:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-date="form.user.date">{{ form.user.date || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Time:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-time="form.user.time">{{ form.user.time || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Datetime:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-datetime="form.user.datetime">{{ form.user.datetime || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Month:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-month="form.user.month">{{ form.user.month || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Week:</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-week="form.user.week">{{ form.user.week || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-6">
+      <div class="panel panel-default">
+         <div class="panel-heading">Controls</div>
+         <div class="panel-body">
+            <div class="form-horizontal">
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Text</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-text="form.user.name">{{ form.user.name || &apos;empty&apos; }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Local Select</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-select="form.user2.status" e-ng-options="s.value as s.text for s in form.statuses">{{ form.showStatus() }}</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Remote Select</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-select="form.user3.text" ng-init="form.loadGroups()" e-ng-options="g.text as g.text for g in form.groups">{{ form.user3.text || &apos;not set&apos; }}  </a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Textarea</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-textarea="form.user.desc" e-rows="3" e-cols="30">{{ form.user.desc || 'no description' }}    </a>
+                     </p>
+                  </div>
+               </div>
+               <div class="form-group m0">
+                  <label class="col-sm-4 control-label">Typeahead</label>
+                  <div class="col-sm-8">
+                     <p class="form-control-static"><a href="#" editable-text="form.user4.state" e-typeahead="state for state in form.states | filter:$viewValue | limitTo:8">{{ form.user4.state || &apos;empty&apos; }}  </a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

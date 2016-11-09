@@ -1,0 +1,61 @@
+@{
+    ViewBag.Title = "Google Maps";
+}
+<h3>Google Maps
+   <small>Easy usage directly from data attribute</small>
+</h3>
+<div class="row">
+   <div class="col-md-6">
+      <div class="panel panel-default">
+         <div class="panel-heading">Classic Map</div>
+         <div class="panel-body">
+            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" class="gmap"></div>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-6">
+      <div class="panel panel-default">
+         <div class="panel-heading">Custom zoom</div>
+         <div class="panel-body">
+            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" data-zoom="19" class="gmap"></div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-md-6">
+      <div class="panel panel-default">
+         <div class="panel-heading">Different Map Type</div>
+         <div class="panel-body">
+            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" data-maptype="SATELLITE" class="gmap"></div>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-6">
+      <div class="panel panel-default">
+         <div class="panel-heading">Multiple Addresses</div>
+         <div class="panel-body">
+            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867; 376 N TUSTIN ST, ORANGE, CA 92867" data-title="Location 1; Location 2" class="gmap"></div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-md-12">
+      <div class="panel panel-default">
+         <div class="panel-heading">Styled Maps</div>
+         <div class="panel-body">
+            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" data-maptype="ROADMAP" data-styled="data-styled" class="gmap"></div>
+         </div>
+      </div>
+   </div>
+</div>
+
+@section Styles {
+
+}
+@section Scripts {
+    <!-- Include this script for any page that uses Google Maps.-->
+    @Scripts.Render("//maps.google.com/maps/api/js?sensor=false")
+    @Scripts.Render("~/bundles/gmap")
+}

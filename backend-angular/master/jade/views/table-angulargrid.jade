@@ -1,0 +1,19 @@
+h3 Tables
+  small An Advanced Datagrid for AngularJS
+
+.container-fluid(ng-controller="AngularGridController as table")
+  
+  // Basic Example
+  h4.page-header.mt0 Basic Example
+  .ag-angle(ag-grid='table.gridOptions', style="width: 100%; height: 400px;")
+
+  // Filter Example
+  h4.page-header Filter Example
+  .row
+    .col-lg-4.col-md-6
+      input.mb.form-control(placeholder='Filter...', type='text', ng-model='table.gridOptions1.quickFilterText')
+  .ag-angle(ag-grid='table.gridOptions1', style="width: 100%; height: 400px;")
+
+  // Pinning Example
+  h4.page-header Pinning Example
+  .ag-angle(ag-grid='table.gridOptions2', style="width: 100%; height: 400px;")

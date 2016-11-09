@@ -1,0 +1,39 @@
+<h3>Morris.js</h3>
+<div class="container-fluid" ng-controller="ChartMorrisController as chart">
+   <div class="row">
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Line</div>
+            <div class="panel-body">
+               <div morris-line="" morris-data="chart.chartdata" morris-options="chart.lineOptions"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Area</div>
+            <div class="panel-body">
+               <div morris-area="" morris-data="chart.chartdata" morris-options="chart.areaOptions"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Bar</div>
+            <div class="panel-body">
+               <div morris-bar="" morris-data="chart.chartdata" morris-options="chart.barOptions"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Donut</div>
+            <div class="panel-body">
+               <div morris-donut="" morris-data="chart.donutdata" morris-options="chart.donutOptions"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

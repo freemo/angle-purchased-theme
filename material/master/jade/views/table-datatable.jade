@@ -1,0 +1,94 @@
+h3 Data Tables
+  small Tables, one step forward.
+
+// Zero Configuration
+.panel.panel-default
+  .panel-heading Data Tables | 
+    small Zero Configuration
+  .panel-body
+    table.row-border.hover(datatable='')
+      thead
+        tr
+          th Card Id
+          th First name
+          th Last name
+          th Age
+      tbody
+        tr
+          td 123123123
+          td Hannah 
+          td Burns
+          td 26
+        tr
+          td 33333344444
+          td Addison 
+          td Payne
+          td 32
+        tr
+          td 9998888999
+          td Kylie 
+          td Hudson
+          td 100
+
+// ngRepeat + ngResource
+.panel.panel-default
+  .panel-heading Datatables | 
+    small ngRepeat + ngResource
+  .panel-body
+    div(ng-controller='DataTableController as table1')
+      table.row-border.hover(datatable='ng')
+        thead
+          tr
+            th Person ID
+            th First Name
+            th Last Name
+        tbody
+          tr(ng-repeat='person in table1.persons')
+            td {{ person.id }}
+            td {{ person.firstName }}
+            td {{ person.lastName }}
+
+// Chaning data
+.panel.panel-default
+  .panel-heading Datatables | 
+    small Chaning data
+  .panel-body
+    div(ng-controller='DataTableController as table2')
+      form.form-inline(ng-submit='table2.addPerson()')
+        table.row-border.hover(datatable='ng', dt-options='table2.dtOptions', dt-column-defs='table2.dtColumnDefs')
+          thead
+            tr
+              th
+                .form-group
+                  label
+                    input.form-control(type='number', name='id', ng-model='table2.person2Add.id', value='')
+              th
+                .form-group
+                  label
+                    input.form-control(type='text', name='firstName', ng-model='table2.person2Add.firstName', value='')
+              th
+                .form-group
+                  label
+                    input.form-control(type='text', name='lastName', ng-model='table2.person2Add.lastName', value='')
+              th
+                .form-group
+                  button.btn.btn-labeled.btn-success(type='submit')
+                    span.btn-label
+                      em.fa.fa-plus
+                    | Add
+            tr
+              th Hero ID
+              th First Name
+              th Last Name
+              th
+          tbody
+            tr(ng-repeat='hero in table2.heroes')
+              td {{ hero.id }}
+              td {{ hero.firstName }}
+              td {{ hero.lastName }}
+              td
+                button.btn.btn-sm.btn-warning(type='button', ng-click='table2.modifyPerson($index)')
+                  em.fa.fa-edit
+                button.btn.btn-sm.btn-danger(type='button', ng-click='table2.removePerson($index)')
+                  em.fa.fa-trash-o
+

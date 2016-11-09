@@ -1,0 +1,401 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'bug-tracker.html'
+
+block content
+    h3 Bug tracker
+
+    .row
+        .col-md-4
+            // Aside panel
+            .panel.b
+                .panel-body.bb
+                    p Overvall progress
+                    .table-grid.table-grid-align-middle.mv
+                        .col
+                            .progress.progress-xs.m0: .progress-bar.progress-bar-info(style='width:48%') 48%
+                        .hidden-xs.col.wd-xxs.text-right: .text-bold.text-muted 48%
+                .panel-body
+                    p Metrics
+                    .row.text-center
+                        .col-xs-3.col-md-6.col-lg-3
+                            .inline.mv
+                                .sparkline(data-sparkline="", values="20,80", data-type='pie', data-height="50", data-slice-colors='["#edf1f2", "#23b7e5"]')
+                            p.mt-lg Issues
+                        .col-xs-3.col-md-6.col-lg-3
+                            .inline.mv
+                                .sparkline(data-sparkline="", values="60,40", data-type='pie', data-height="50", data-slice-colors='["#edf1f2", "#27c24c"]')
+                            p.mt-lg Bugs
+                        .col-xs-3.col-md-6.col-lg-3
+                            .inline.mv
+                                .sparkline(data-sparkline="", values="20,80", data-type='pie', data-height="50", data-slice-colors='["#edf1f2", "#ff902b"]')
+                            p.mt-lg Hours
+                        .col-xs-3.col-md-6.col-lg-3
+                            .inline.mv
+                                .sparkline(data-sparkline="", values="30,70", data-type='pie', data-height="50", data-slice-colors='["#edf1f2", "#f05050"]')
+                            p.mt-lg Assigned
+                table.table.bb: tbody
+                    tr
+                        td: strong Assigned Hours
+                        td 68 hs
+                    tr
+                        td: strong Time Consumed
+                        td 32 hs
+                    tr
+                        td: strong Issues
+                        td 19
+                    tr
+                        td: strong Bugs
+                        td 16
+                    tr
+                        td: strong Health
+                        td: em.fa.fa-smile-o.fa-lg.text-warning
+                    tr
+                        td: strong Commits
+                        td 140
+                    tr
+                        td: strong Recently closed
+                        td
+                            .list-group(data-height="120", data-scrollable="")
+                                table.table.table-bordered.bg-transparent: tbody
+                                    tr
+                                        td: a(href="").text-muted BI:54678
+                                    tr
+                                        td: a(href="").text-muted BI:55778
+                                    tr
+                                        td: a(href="").text-muted BI:56878
+                                    tr
+                                        td: a(href="").text-muted BI:57978
+                                    tr
+                                        td: a(href="").text-muted BI:1107
+                    tr
+                        td: strong Last closed on
+                        td 12/01/2016
+            // end Aside panel
+
+        .col-md-8
+
+            .mb-lg.clearfix
+                .pull-left
+                    button.btn.btn-sm.btn-info(type='button') New ticket
+                    button.btn.btn-sm.btn-default(type='button')
+                        em.fa.fa-user-plus
+                    button.btn.btn-sm.btn-default(type='button')
+                        em.fa.fa-pencil
+                    button.btn.btn-sm.btn-default(type='button')
+                        em.fa.fa-mail-forward
+                    button.btn.btn-sm.btn-default(type='button')
+                        em.fa.fa-print
+                .pull-right
+                    p.mb0.mt-sm 19 bugs / 16 issues
+
+            .panel.b
+                .panel-body
+                    .table-responsive
+                        table.table#datatable1
+                            thead
+                                tr
+                                    th Type
+                                    th #ID
+                                    th Description
+                                    th Created
+                                    th Priority
+                                    th Asigned
+                                    th Status
+                            tbody
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:54678
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Sylvia Daniels
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:55778
+                                    td.text-nowrap: small Aliquam felis nibh, ultrices non elementum
+                                    td 01/05/2016
+                                    td: .circle.circle-lg.circle-gray(data-toggle="tooltip" data-title="low")
+                                    td: a(href="") Sherry Carroll
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:56878
+                                    td.text-nowrap: small Aliquam condimentum enim a risus cursus blandit.
+                                    td 05/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Mitchell Jones
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:57978
+                                    td.text-nowrap: small Sed at libero augue, in euismod tellus.
+                                    td 01/11/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Tracey Parker
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:1107
+                                    td.text-nowrap: small Praesent lacinia ultricies neque.
+                                    td 01/01/2015
+                                    td: .circle.circle-lg.circle-danger(data-toggle="tooltip" data-title="high")
+                                    td: a(href="") Warren Gray
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:1117
+                                    td.text-nowrap: small Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    td 11/05/2013
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Jackson Ramos
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:10127
+                                    td.text-nowrap: small Pellentesque habitant morbi tristique
+                                    td 05/02/2014
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Ernest Berry
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:54678
+                                    td.text-nowrap: small Integer venenatis ultrices vulputate.
+                                    td 01/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Sylvia Daniels
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:55778
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/05/2016
+                                    td: .circle.circle-lg.circle-gray(data-toggle="tooltip" data-title="low")
+                                    td: a(href="") Sherry Carroll
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:56878
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Mitchell Jones
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:57978
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/11/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Tracey Parker
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:1107
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2015
+                                    td: .circle.circle-lg.circle-danger(data-toggle="tooltip" data-title="high")
+                                    td: a(href="") Warren Gray
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:1117
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 11/05/2013
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Jackson Ramos
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:10127
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/02/2014
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Ernest Berry
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:54678
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Sylvia Daniels
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:55778
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/05/2016
+                                    td: .circle.circle-lg.circle-gray(data-toggle="tooltip" data-title="low")
+                                    td: a(href="") Sherry Carroll
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:56878
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Mitchell Jones
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:57978
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/11/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Tracey Parker
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:1107
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2015
+                                    td: .circle.circle-lg.circle-danger(data-toggle="tooltip" data-title="high")
+                                    td: a(href="") Warren Gray
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:1117
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 11/05/2013
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Jackson Ramos
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:10127
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/02/2014
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Ernest Berry
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:54678
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Sylvia Daniels
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:55778
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/05/2016
+                                    td: .circle.circle-lg.circle-gray(data-toggle="tooltip" data-title="low")
+                                    td: a(href="") Sherry Carroll
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:56878
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Mitchell Jones
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:57978
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/11/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Tracey Parker
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:1107
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2015
+                                    td: .circle.circle-lg.circle-danger(data-toggle="tooltip" data-title="high")
+                                    td: a(href="") Warren Gray
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:1117
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 11/05/2013
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Jackson Ramos
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:10127
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/02/2014
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Ernest Berry
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:54678
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Sylvia Daniels
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:55778
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/05/2016
+                                    td: .circle.circle-lg.circle-gray(data-toggle="tooltip" data-title="low")
+                                    td: a(href="") Sherry Carroll
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:56878
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/01/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Mitchell Jones
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:57978
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/11/2016
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Tracey Parker
+                                    td: .inline.wd-xxs.label.label-warning pending
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:1107
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 01/01/2015
+                                    td: .circle.circle-lg.circle-danger(data-toggle="tooltip" data-title="high")
+                                    td: a(href="") Warren Gray
+                                    td: .inline.wd-xxs.label.label-danger closed
+                                tr
+                                    td: .badge.bg-gray-lighter bug
+                                    td BI:1117
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 11/05/2013
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Jackson Ramos
+                                    td: .inline.wd-xxs.label.label-success open
+                                tr
+                                    td: .badge.bg-gray-lighter issue
+                                    td BI:10127
+                                    td.text-nowrap: small Maecenas mollis egestas convallis.
+                                    td 05/02/2014
+                                    td: .circle.circle-lg.circle-warning(data-toggle="tooltip" data-title="normal")
+                                    td: a(href="") Ernest Berry
+                                    td: .inline.wd-xxs.label.label-danger closed
+
+block vendor_css
+  // DATATABLES
+  link(rel='stylesheet', href='../vendor/datatables-colvis/css/dataTables.colVis.css')
+  link(rel='stylesheet', href='../vendor/datatables/media/css/dataTables.bootstrap.css')
+  link(rel='stylesheet', href='../vendor/dataTables.fontAwesome/index.css')
+
+block vendor_js
+  // SPARKLINE
+  script(src='../vendor/sparkline/index.js')
+  // DATATABLES
+  script(src='../vendor/datatables/media/js/jquery.dataTables.min.js')
+  script(src='../vendor/datatables-colvis/js/dataTables.colVis.js')
+  script(src='../vendor/datatables/media/js/dataTables.bootstrap.js')
+  script(src='js/demo/demo-datatable.js')

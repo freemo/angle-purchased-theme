@@ -1,0 +1,187 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'social-board.html'
+
+block content
+    .panel.b.text-white
+        .panel-body.bg-cover.clearfix(style="background-image: url(img/profile-bg.jpg)")
+            .media.mt0
+                .media-left
+                    a(href='#')
+                        img.media-object.img-thumbnail.img-circle.thumb96(src='img/user/06.jpg', alt="Image")
+                .media-body.media-middle
+                    .clearfix
+                        .pull-left
+                            h4.media-heading.m0 Claire Beck
+                            p Team lead
+                            button.btn.btn-info.btn-xs(type="button") "Following"
+                        .pull-right
+                            .inline.text-center.mr
+                                .h3.m0: strong 1.4k
+                                small followers
+                            .inline.text-center.mr
+                                .h3.m0: strong 350
+                                small pictures
+    .row-masonry.row-masonry-lg-2
+        .col-masonry
+            .panel.b.m0
+                .panel-heading
+                    .pull-right
+                        .btn-group.dropdown
+                            button.btn.btn-link(data-toggle="dropdown"): em.fa.fa-ellipsis-v.fa-lg.text-muted
+                            ul.dropdown-menu.dropdown-menu-right(role='menu')
+                                li: a(href='#')
+                                    span Hide this
+                                li: a(href='#')
+                                    span Share
+                                li: a(href='#')
+                                    span Block user
+                    .media.mt0
+                        .media-left: a(href='#'): img.media-object.img-thumbnail.img-circle.thumb32(src='img/user/03.jpg', alt="Image")
+                        .media-body.media-middle
+                            h5.media-heading.m0.text-bold Raymond Clark
+                            small.text-muted yesterday
+                .panel-body
+                    .row
+                        .col-lg-4.text-center.mb-lg
+                            a(href="#"): img.img-responsive.img-thumbnail(src='img/bg8.jpg', alt="Image")
+                        .col-lg-8
+                            h4.media-heading Lorem Ipsum
+                            p Fusce at enim eget nibh convallis elementum. Duis a neque odio, at varius elit. Suspendisse ullamcorper eros eget augue ultrices feugiat. Phasellus dictum nisi eu ipsum fermentum rhoncus. Mauris eu lacus massa, vel condimentum lectus..
+                .panel-body
+                    form(method='post', action='').mt
+                        textarea.form-control.no-resize(placeholder='Comment...', rows="1")
+        .col-masonry
+            .panel.b.m0
+                .panel-heading
+                    .pull-right
+                        a(href="#").text-muted
+                            em.fa.fa-thumbs-o-up.fa-fw
+                            span (32)
+                    .media.mt0
+                        .media-left: a(href='#'): img.media-object.img-thumbnail.img-circle.thumb32(src='img/user/08.jpg', alt="Image")
+                        .media-body.media-middle
+                            h5.media-heading.m0.text-bold Kelly Vargas
+                            small.text-muted 3 days
+                .panel-body
+                    p Curabitur dignissim dapibus nisl sed iaculis.
+                    p: a(href="#"): img.img-responsive.img-thumbnail(src='img/bg10.jpg', alt="Image")
+                    p
+                        em.fa.fa-comment-o.fa-fw
+                        span (9)
+                    .media
+                        small.pull-right.text-muted 12m ago
+                        .media-left
+                            img.media-object.img-circle.thumb32(src='img/user/05.jpg', alt='Image')
+                        .media-body
+                            span.media-heading
+                                p.m0: a(href="#"): strong Aiden Curtis
+                                p.m0.text-muted Hey looks great!
+                    .media
+                        small.pull-right.text-muted 30m ago
+                        .media-left
+                            img.media-object.img-circle.thumb32(src='img/user/08.jpg', alt='Image')
+                        .media-body
+                            span.media-heading
+                                p.m0: a(href="#"): strong William Stevens
+                                p.m0.text-muted Excellento shot!
+                    .media
+                        small.pull-right.text-muted 30m ago
+                        .media-left
+                            img.media-object.img-circle.thumb32(src='img/user/04.jpg', alt='Image')
+                        .media-body
+                            span.media-heading
+                                p.m0: a(href="#"): strong James Payne
+                                p.m0.text-muted Nice shot!
+                .panel-body.bg-gray-lighter
+                    a(href="#").link-unstyled Load (6) more comments
+                .panel-body
+                    form(method='post', action='').mt
+                        textarea.form-control.no-resize(placeholder='Comment...', rows="1")
+        .col-masonry
+            .panel.b.m0
+                .panel-body
+                    form.mb(method='post', action='').mt
+                        textarea.form-control(rows="4", placeholder="Post a new comment..")
+                    .clearfix
+                        .pull-left
+                            ul.nav.nav-pills
+                                li: a(href='#'): em.fa.fa-location-arrow
+                                li: a(href='#'): em.fa.fa-photo
+                                li: a(href='#'): em.fa.fa-video-camera
+                        .pull-right
+                            button(type="button").btn.btn-success Post
+
+        .col-masonry
+            .panel.b.m0
+                .panel-heading
+                    .pull-right
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="member")
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="member")
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="member")
+                    .media.mt0
+                        .media-left: a(href='#'): img.media-object.img-thumbnail.img-circle.thumb32(src='img/user/04.jpg', alt="Image")
+                        .media-body.media-middle
+                            h5.media-heading.m0.text-bold Travis Horton
+                            small.text-muted 3 minutes
+                .panel-body
+                    blockquote
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu odio vitae augue elementum molestie sed quis turpis.
+                        footer
+                            | Someone famous in 
+                            cite(title='Source Title') Source Title
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+        .col-masonry
+            .panel.b.m0
+                .panel-heading
+                    .media
+                        .media-left: a(href='#'): img.media-object.img-thumbnail.img-circle.thumb32(src='img/user/08.jpg', alt="Image")
+                        .media-body.media-middle
+                            h5.media-heading.m0.text-bold Kelly Vargas
+                            small.text-muted 3 days
+                .panel-body
+                    p: a(href="#"): img.img-responsive.img-thumbnail(src='img/bg3.jpg', alt="Image")
+                    p Curabitur dignissim dapibus nisl sed iaculis.
+        .col-masonry
+            .panel.b.m0
+                .panel-heading
+                    .pull-right
+                        .btn-group.dropdown
+                            button.btn.btn-link(data-toggle="dropdown"): em.fa.fa-ellipsis-v.fa-lg.text-muted
+                            ul.dropdown-menu.dropdown-menu-right(role='menu')
+                                li: a(href='#')
+                                    span Hide this
+                                li: a(href='#')
+                                    span Share
+                                li: a(href='#')
+                                    span Block user
+                    .media.mt0
+                        .media-left: a(href='#'): img.media-object.img-thumbnail.img-circle.thumb32(src='img/user/03.jpg', alt="Image")
+                        .media-body.media-middle
+                            h5.media-heading.m0.text-bold Elmer Thomas
+                            small.text-muted 3 minutes
+                .panel-body
+                    p I'm the big picture guy! xD
+                .panel-body
+                        a.inline(href="#"): img.img-circle.thumb48(src="img/user/03.jpg", alt="member")
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="member")
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="member")
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="member")
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/08.jpg", alt="member")
+                        a.inline(href="#"): img.img-circle.thumb24(src="img/user/09.jpg", alt="member")
+                .panel-body
+                    form.mb(method='post', action='').mt
+                        textarea.form-control.no-resize(placeholder='Comment...', rows="1")
+                    .clearfix
+                        .pull-left
+                            ul.nav.nav-pills
+                                li: a(href='#'): em.fa.fa-location-arrow
+                                li: a(href='#'): em.fa.fa-photo
+                                li: a(href='#'): em.fa.fa-video-camera
+                        .pull-right
+                            button(type="button").btn.btn-success.btn-sm Post
+
+    .text-center.mv-lg
+        button(type="button").btn.btn-default.btn-oval.btn-lg Load more..

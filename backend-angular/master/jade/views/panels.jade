@@ -1,0 +1,254 @@
+h3 Panels
+  small Panels can contain almost any kind of element inside
+
+h4.page-header.mt0 Panel Collapse
+
+.container-fluid(ng-controller="PanelsCtrl as panel")
+  // START row
+  .row
+    .col-lg-4
+      // START panel
+      #panelDemo1.panel.panel-default
+        .panel-heading(ng-class="{'panel-heading-collapsed':panelDemo1}")
+          | Collapsible Panel
+          paneltool(tool-collapse)
+        .panel-wrapper(uib-collapse="panelDemo1")
+          .panel-body
+            p Panel can be collapsed clicking on the chevron up/down icon on the top right corner
+          .panel-footer
+            | Panel Footer
+      // END panel
+    .col-lg-4
+      // START panel
+      #panelDemo3.panel.panel-default
+        .panel-heading(ng-class="{'panel-heading-collapsed':panelDemo3}")
+          | Initially collapsed Panel with Dismiss
+          paneltool(tool-collapse, tool-dismiss, ng-init="panelDemo3=true")
+        // .panel-wrapper is the element to be collapsed
+        .panel-wrapper(uib-collapse="panelDemo3")
+          .panel-body
+            p Initially collapsed panel uses 
+              code paneltool(tool-collapse, tool-dismiss, ng-init="panelDemo3=true")
+          .panel-footer
+            | Panel Footer
+      // END panel
+    .col-lg-4
+      // START panel
+      #panelDemo2.panel.panel-default
+        .panel-heading
+          | Dismissable Panel
+          paneltool(tool-dismiss)
+        .panel-body
+          p Panel can be dismissed by clicking on the cross icon icon on the top right corner
+      // END panel
+  // END row
+
+  h4.page-header Panel Refresh
+
+  // START row
+  .row
+    .col-lg-4
+      // START panel
+      .panel.panel-default#panelDemoRefresh1
+        .panel-heading
+          | Standard Spinner
+          paneltool(tool-refresh="standard")
+        .panel-body
+          p Click on the refresh icon to see how it triggers a refresh-event while it shows a spinner
+      // END panel
+    .col-lg-4
+      // START panel
+      .panel.panel-default#panelDemoRefresh2
+        .panel-heading
+          | Custom Spinner
+          paneltool(tool-refresh="traditional")
+        .panel-body
+          p Click on the refresh icon to see how it triggers a refresh-event while it shows a spinner
+      // END panel
+    .col-lg-4
+      // START panel
+      .panel.panel-default#panelDemoRefresh3
+        .panel-heading
+          | Another Spinner
+          paneltool(tool-refresh="line back-and-forth grow")
+        .panel-body
+          p See the list of allowed spinner at the Spinners page. A real use example is at the chart page.
+      // END panel
+  // END row
+
+  h4.page-header Auto Generated panels
+
+  // START row
+  .row
+    .col-lg-4(ng-repeat="pan in panels")
+      // START panel
+      .panel.panel-default(id="{{pan.id}}")
+        .panel-heading
+          | {{pan.title}}
+          paneltool(tool-refresh="standard", tool-collapse, tool-dismiss)
+        .panel-wrapper(uib-collapse="{{pan.id}}")
+          .panel-body
+            p {{pan.body}}
+      // END panel
+
+
+
+h4.page-header Panel Styles
+// START row
+.row
+  .col-lg-4
+    // START panel
+    #panelDemo7.panel.panel-default
+      .panel-heading
+        | Default Panel
+      .panel-body
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+      .panel-footer
+        | Panel Footer
+    // END panel
+  .col-lg-4
+    // START panel
+    #panelDemo8.panel.panel-primary
+      .panel-heading
+        | Primary Panel
+      .panel-body
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+      .panel-footer
+        | Panel Footer
+    // END panel
+  .col-lg-4
+    // START panel
+    #panelDemo9.panel.panel-success
+      .panel-heading
+        | Success Panel
+      .panel-body
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+      .panel-footer
+        | Panel Footer
+    // END panel
+// END row
+// START row
+.row
+  .col-lg-4
+    // START panel
+    #panelDemo10.panel.panel-info
+      .panel-heading
+        | Info Panel
+      .panel-body
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+      .panel-footer
+        | Panel Footer
+    // END panel
+  .col-lg-4
+    // START panel
+    #panelDemo11.panel.panel-warning
+      .panel-heading
+        | Warning Panel
+      .panel-body
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+      .panel-footer
+        | Panel Footer
+    // END panel
+  .col-lg-4
+    // START panel
+    #panelDemo12.panel.panel-danger
+      .panel-heading
+        | Danger Panel
+      .panel-body
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+      .panel-footer
+        | Panel Footer
+    // END panel
+// END row
+// START row
+.row
+  .col-lg-12
+    // START panel
+    #panelDemo13.panel.panel-default
+      .panel-heading
+        | Collapsible Accordion Panel Group
+      .panel-body
+        .checkbox.c-checkbox
+          label
+            input(type='checkbox', ng-model='oneAtATime')
+            span.fa.fa-check
+            | Open only one at a time
+
+        uib-accordion(close-others='oneAtATime')
+          div(uib-accordion-group, is-open='status.isFirstOpen', is-disabled='status.isFirstDisabled')
+            uib-accordion-heading Accordion Heading #1
+            p In vitae porttitor eros. Vivamus et urna magna. Mauris a velit id neque dignissim congue. Phasellus ut neque sem, ac vestibulum tellus. Integer eu diam neque, quis euismod turpis. 
+          div(uib-accordion-group)
+            uib-accordion-heading Accordion Heading #2
+            p In vitae porttitor eros. Vivamus et urna magna. Sed euismod massa quis diam viverra eu consectetur elit imperdiet. Aenean rhoncus, est vel vestibulum tristique, ante lectus elementum augue, eu dictum turpis dui ut ipsum. 
+          div(uib-accordion-group)
+            uib-accordion-heading Accordion Heading #3
+            p In vitae porttitor eros. Vivamus et urna magna. In consequat massa eget dui ultrices sit amet auctor libero molestie. Vestibulum nec viverra libero. 
+
+    // END panel
+// END row
+// START row
+.row
+  .col-lg-6
+    // START panel
+    #panelDemo14.panel.panel-default
+      .panel-heading
+        | Basic Tabs
+      .panel-body
+        uib-tabset
+          uib-tab(heading='Home') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nul qui officia deserunt mollit anim id est laborum.
+          uib-tab(heading='Profile') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat , sunt in culpa qui officia deserunt mollit anim id est laborum.
+          uib-tab(heading='Messages') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+          uib-tab(heading='Settings') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+    // END panel
+  .col-lg-6
+    // START panel
+    #panelDemo15.panel.panel-default
+      .panel-heading
+        | Pill Tabs
+      .panel-body
+        uib-tabset(type="pills")
+          uib-tab(heading='Home') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nul qui officia deserunt mollit anim id est laborum.
+          uib-tab(heading='Profile') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat , sunt in culpa qui officia deserunt mollit anim id est laborum.
+          uib-tab(heading='Messages') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+          uib-tab(heading='Settings') Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+    // END panel
+// END row
+
+// START row
+.row
+  .col-lg-4
+    .well
+      h4 Normal Well
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+  .col-lg-4
+    .well.well-lg
+      h4 Large Well
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+
+  .col-lg-4
+    .well.well-sm
+      h4 Small Well
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+// END row
+// START row
+.row
+  .col-lg-12
+    .jumbotron
+      h1 Jumbotron
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing.
+      p
+        a.btn.btn-primary.btn-lg(role='button') Learn more
+// END row

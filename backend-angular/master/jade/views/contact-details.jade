@@ -1,0 +1,109 @@
+.row
+    .col-md-4
+        .panel.panel-default
+            .panel-body.text-center
+                .pv-lg
+                    img.center-block.img-responsive.img-circle.img-thumbnail.thumb96(src="app/img/user/02.jpg", alt="Contact")
+                h3.m0.text-bold Audrey Hunt
+                .mv-lg
+                    p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+                .text-center
+                    a(href="").btn.btn-primary Send message
+
+        .panel.panel-default.hidden-xs.hidden-sm
+            .panel-heading
+                .panel-title.text-center Recent contacts
+            .panel-body
+                .media
+                    .media-left.media-middle
+                        a(href='#')
+                            img.media-object.img-circle.img-thumbnail.thumb48(src='app/img/user/04.jpg', alt='Contact')
+                    .media-body.pt-sm
+                        .text-bold Floyd Ortiz
+                            .text-sm.text-muted 12m ago
+                .media
+                    .media-left.media-middle
+                        a(href='#')
+                            img.media-object.img-circle.img-thumbnail.thumb48(src='app/img/user/05.jpg', alt='Contact')
+                    .media-body.pt-sm
+                        .text-bold Luis Vasquez
+                            .text-sm.text-muted 2h ago
+                .media
+                    .media-left.media-middle
+                        a(href='#')
+                            img.media-object.img-circle.img-thumbnail.thumb48(src='app/img/user/06.jpg', alt='Contact')
+                    .media-body.pt-sm
+                        .text-bold Duane Mckinney
+                            .text-sm.text-muted yesterday
+                .media
+                    .media-left.media-middle
+                        a(href='#')
+                            img.media-object.img-circle.img-thumbnail.thumb48(src='app/img/user/07.jpg', alt='Contact')
+                    .media-body.pt-sm
+                        .text-bold Connie Lambert
+                            .text-sm.text-muted 2 weeks ago
+
+
+    .col-md-8
+        .panel.panel-default
+            .panel-body
+                .pull-right
+                    .btn-group(uib-dropdown='dropdown')
+                        button.btn.btn-link(uib-dropdown-toggle=""): em.fa.fa-ellipsis-v.fa-lg.text-muted
+                        ul.dropdown-menu.dropdown-menu-right.animated.fadeInLeft(role='menu')
+                            li: a(href='')
+                                span Send by message
+                            li: a(href='')
+                                span Share contact
+                            li: a(href='')
+                                span Block contact
+                            li: a(href='')
+                                span.text-warning Delete contact
+                .h4.text-center Contact Information
+                .row.pv-lg
+                    .col-lg-2
+                    .col-lg-8
+                        form.form-horizontal
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact1') Name
+                                .col-sm-10
+                                    input#inputContact1.form-control(type='text', placeholder='', value="Audrey Hunt")
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact2') Email
+                                .col-sm-10
+                                    input#inputContact2.form-control(type='email', value='mail@example.com')
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact3') Phone
+                                .col-sm-10
+                                    input#inputContact3.form-control(type='text', value='(123) 465 789')
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact4') Mobile
+                                .col-sm-10
+                                    input#inputContact4.form-control(type='text', value='(12) 123 987 465')
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact5') Website
+                                .col-sm-10
+                                    input#inputContact5.form-control(type='text', value='http://some.wesbite.com')
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact6') Address
+                                .col-sm-10
+                                    textarea#inputContact6.form-control(row="4") Some nice Street, 1234
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact7') Social
+                                .col-sm-10
+                                    input#inputContact7.form-control(type='text', value='@Social')
+                            .form-group
+                                label.col-sm-2.control-label(for='inputContact8') Company
+                                .col-sm-10
+                                    input#inputContact8.form-control(type='text', placeholder='No Company')
+                            .form-group
+                                .col-sm-offset-2.col-sm-10
+                                  .checkbox
+                                    label
+                                      input(type='checkbox')
+                                      |  Favorite contact?
+                            .form-group
+                                .col-sm-offset-2.col-sm-10
+                                    button.btn.btn-info(type='submit') Update
+                        .text-right
+                            a(href="").text-muted Delete this contact?

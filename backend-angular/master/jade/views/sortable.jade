@@ -1,0 +1,10 @@
+h3 UI Sortable
+  small jQuery UI Sortable for AngularJS
+
+.container-fluid(ng-controller="SortableController")
+    .list-group(ui-sortable='sortableOptions', ng-model='data1')
+        .list-group-item(ng-repeat='itm in data1')
+            em.fa.fa-reorder.fa-fw.text-muted.mr-lg
+            | {{itm.name}}
+
+    button.btn.btn-info(ng-click="add()") Add another

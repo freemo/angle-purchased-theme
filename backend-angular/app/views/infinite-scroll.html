@@ -1,0 +1,17 @@
+<h3>Infinite Scroll</h3>
+<div ng-controller="InfiniteScrollController as inf">
+   <h4 class="page-header">UI Scroll</h4>
+   <div class="row" ui-scroll-viewport="" style="height:230px; overflow-y: auto">
+      <div class="col-xs-3" ui-scroll="item in datasource">
+         <div class="alert alert-info">{{item}}</div>
+      </div>
+   </div>
+   <h4 class="page-header">Infinte Scroll</h4>
+   <div class="row" infinite-scroll="inf.loadMore()" infinite-scroll-distance="3">
+      <div class="col-sm-2 col-xs-3 mb" ng-repeat="image in inf.images">
+         <div class="alert alert-purple text-center">
+            <h2 class="mv-lg">{{image}}</h2>
+         </div>
+      </div>
+   </div>
+</div>

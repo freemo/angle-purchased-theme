@@ -1,0 +1,46 @@
+<h3>MailBox</h3>
+<div class="table-grid table-grid-desktop" ng-controller="MailboxController as mailbox">
+   <div class="col col-md">
+      <div class="pr">
+         <div class="clearfix mb" ng-hide="$state.is('app.mailbox.compose')">
+            <button class="btn btn-sm btn-default mb-toggle-button pull-right" type="button" ng-click="mailbox.mailboxMenuCollapsed = !mailbox.mailboxMenuCollapsed" ng-init="mailbox.mailboxMenuCollapsed = true">
+               <em class="fa fa-bars fa-fw fa-lg"></em>
+            </button>
+            <a class="btn btn-purple btn-sm mb-compose-button" ui-sref="app.mailbox.compose">
+               <em class="fa fa-pencil"></em>
+               <span>Compose</span>
+            </a>
+         </div>
+         <!-- START mailbox list-->
+         <div class="mb-boxes" uib-collapse="mailbox.mailboxMenuCollapsed">
+            <div class="panel panel-default">
+               <div class="panel-body">
+                  <ul class="nav nav-pills nav-stacked">
+                     <li class="p">
+                        <small class="text-muted">MAILBOXES</small>
+                     </li>
+                     <li ui-sref-active="active" ng-repeat="fold in mailbox.folders">
+                        <a ui-sref="app.mailbox.folder({folder: fold.folder})">
+                           <span class="label label-green pull-right" ng-if="fold.alert">{{fold.alert}}</span>
+                           <em class="fa fa-fw fa-lg" ng-class="fold.icon"></em>
+                           <span>{{fold.name}}</span>
+                        </a>
+                     </li>
+                     <li class="p">
+                        <small class="text-muted">Labels</small>
+                     </li>
+                     <li class="p-h" ng-repeat="labl in mailbox.labels">
+                        <a class="pv-sm" href="#">
+                           <span class="circle" ng-class="'circle-' + labl.color"></span>
+                           <span>{{labl.name}}</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!-- END mailbox list-->
+      </div>
+   </div>
+   <div class="col" ui-view=""></div>
+</div>

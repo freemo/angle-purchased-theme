@@ -1,0 +1,31 @@
+h3 Chartist
+  small SIMPLE RESPONSIVE CHARTS
+.container-fluid(ng-controller='ChartistController as chart')
+  .row
+    .col-md-4
+      .panel.panel-default
+        .panel-heading Bar bipolar
+        .panel-body
+          .ct-chart(chartist="", chartist-data='chart.barBipolarData', chartist-chart-type='Bar', chartist-chart-options="chart.barBipolarOptions")
+    .col-md-4
+      .panel.panel-default
+        .panel-heading Bar Horizontal
+        .panel-body
+          .ct-chart(chartist="", chartist-data='chart.barHorizontalData', chartist-chart-type='Bar', chartist-chart-options="chart.barHorizontalOptions")
+    .col-md-4
+      .panel.panel-default
+        .panel-heading Line
+        .panel-body
+          .ct-chart(chartist="", chartist-data='chart.lineData', chartist-chart-type='Line', chartist-chart-options="chart.lineOptions")
+
+  .row
+    .col-md-6  
+      .panel.panel-default
+        .panel-heading Smil Animations
+        .panel-body
+          .ct-chart(chartist="", chartist-chart-type='Line', chartist-data='chart.smilData', chartist-chart-options="chart.smilOptions", chartist-events="chart.smilEvents")
+    .col-md-6  
+      .panel.panel-default
+        .panel-heading SVG Path Animations
+        .panel-body
+          .ct-chart(chartist="", chartist-chart-type='Line', chartist-data='chart.pathData', chartist-chart-options="chart.pathOptions", chartist-events="chart.pathEvents")

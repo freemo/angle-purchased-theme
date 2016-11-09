@@ -1,0 +1,13 @@
+.photo
+  div(data-ng-click='card.showIndex = !card.showIndex')
+    .photo-index(data-ng-if='card.showIndex')
+      p The $index of the card is
+      p.balloon-wrapper
+        span.balloon {{card.$index}}
+    .photo-wrapper
+      img.img-responsive(src='', data-ng-src='{{card.src}}', data-imageloaded='', data-loadedclass='photoloaded')
+      .photo-loader
+        .sk-spinner.sk-spinner-rotating-plane
+    .photo-description
+      h3 {{card.name}}
+      p Nice photo, eh.

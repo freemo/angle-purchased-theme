@@ -1,0 +1,45 @@
+<h3>Todo List
+   <button class="pull-right btn btn-danger" ng-click="todo.clearAll()">Clear All Items</button>
+   <small>Keeping track of tasks</small>
+</h3>
+<div class="table-grid todo">
+   <div class="col col-lg">
+      <div class="pr-lg">
+         <form class="mb-xl" ng-submit="todo.addTodo(todo)">
+            <div class="form-group">
+               <input class="form-control" ng-trim="true" type="text" ng-model="todo.todo.title" placeholder="Task title.." required="required" />
+            </div>
+            <div class="form-group">
+               <textarea class="form-control" ng-trim="true" ng-model="todo.todo.description" placeholder="Type a description.." rows="8"></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">{{todo.editingTodo ? 'Edit Todo' : 'Add Todo'}}</button>
+         </form>
+      </div>
+   </div>
+   <div class="col todo-item-list">
+      <div class="lead text-muted text-center" ng-show="!todo.items.length">No tasks...</div>
+      <uib-accordion close-others="true">
+         <div class="todo-item" uib-accordion-group="uib-accordion-group" ng-repeat="item in todo.items" is-disabled="item.complete">
+            <uib-accordion-heading ng-class="{'todo-complete': item.complete}">
+               <span class="close" ng-click="todo.removeTodo($index, $event)">×</span>
+               <div class="inline checkbox c-checkbox">
+                  <label ng-click="$event.stopPropagation()">
+                     <input type="checkbox" ng-model="item.complete" id="{{'todo-item-'+$index}}" ng-disabled="todo.editingTodo" />
+                     <span class="fa fa-check"></span>
+                  </label>
+               </div>
+               <span class="todo-title" ng-bind="item.todo.title">Task title</span>
+               <span class="todo-edit fa fa-pencil" ng-click="todo.editTodo($index, $event)"></span>
+            </uib-accordion-heading>
+            <p>
+               <span ng-bind="item.todo.description"></span>
+               <span class="text-muted" ng-if="item.todo.description === ''">No item description</span>
+            </p>
+         </div>
+      </uib-accordion>
+      <p class="text-right" ng-if="todo.items.length &gt; 0">
+         <span>{{ totalCompleted() }} Completed</span>-
+         <span>{{ totalPending() }} Pending</span>
+      </p>
+   </div>
+</div>

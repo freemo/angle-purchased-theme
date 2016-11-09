@@ -1,0 +1,63 @@
+<h3>Google Maps
+   <small>This directive allows you to add Google Maps Javascript API elements.</small>
+</h3>
+<div class="container-fluid" ng-controller="GMapController as gmap">
+   <div class="row">
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Classic Map</div>
+            <div class="panel-body">
+               <div class="gmap" ui-map="gmap.myMap1" ui-options="gmap.mapOptions1"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Custom zoom</div>
+            <div class="panel-body">
+               <div class="gmap" ui-map="gmap.myMap2" ui-options="gmap.mapOptions2"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Different Map Type</div>
+            <div class="panel-body">
+               <div class="gmap" ui-map="gmap.myMap3" ui-options="gmap.mapOptions3"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Multiple Markers</div>
+            <div class="panel-body">
+               <div class="gmap" ui-map="gmap.myMap4" ui-options="gmap.mapOptions4"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-12">
+         <div class="panel panel-default">
+            <div class="panel-heading">Styled Maps</div>
+            <div class="panel-body">
+               <div class="gmap" ui-map="gmap.myMap5" ui-options="gmap.mapOptions5"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="text-center">
+      <h4>Open map in a modal</h4>
+      <!-- Modal Controller-->
+      <div ng-controller="ModalGmapController as gmapmodal">
+         <!-- Button trigger modal -->
+         <button class="btn btn-primary" ng-click="gmapmodal.open()">Launch Modal</button>
+         <!-- Modal inline template-->
+         <script type="text/ng-template" id="/myModalContent.html">
+            <div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">×</button><h4 class="modal-title" id="myMapModalLabel">Google Map Modal</h4></div><div class="modal-body"><div class="gmap" ui-map="myMapModal" ui-options="mapOptionsModal"></div></div><div class="modal-footer"><button class="btn btn-primary" ng-click="ok()">OK</button></div>
+         </script>
+      </div>
+   </div>
+</div>

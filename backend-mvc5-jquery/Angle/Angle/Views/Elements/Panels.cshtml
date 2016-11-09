@@ -1,0 +1,333 @@
+@{
+    ViewBag.Title = "Panels";
+}
+<h3>
+    Panels
+    <small>Panels can contain almost any kind of element inside</small>
+</h3>
+<div class="container-fluid">
+    <!-- START row-->
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- START panel-->
+            <div id="panelDemo1" class="panel panel-default">
+                <div class="panel-heading">
+                    Collapsible Panel
+                    <a href="#" data-tool="panel-collapse" data-toggle="tooltip" title="Collapse Panel" class="pull-right">
+                        <em class="fa fa-minus"></em>
+                    </a>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+                        <p>Panel can be collapsed clicking on the chevron up/down icon on the top right corner</p>
+                    </div>
+                    <div class="panel-footer">Panel Footer</div>
+                </div>
+            </div>
+            <!-- END panel-->
+        </div>
+        <div class="col-lg-4">
+            <!-- START panel-->
+            <div id="panelDemo3" class="panel panel-default panel-demo">
+                <div class="panel-heading panel-heading-collapsed">
+                    Initially collapsed Panel
+                    <a href="#" data-tool="panel-dismiss" data-toggle="tooltip" title="Close Panel" class="pull-right">
+                        <em class="fa fa-times"></em>
+                    </a>
+                    <a href="#" data-tool="panel-collapse" data-toggle="tooltip" title="Collapse Panel" class="pull-right">
+                        <em class="fa fa-plus"></em>
+                    </a>
+                </div>
+                <!-- .panel-wrapper is the element to be collapsed-->
+                <div class="panel-wrapper collapse">
+                    <div class="panel-body">
+                        <p>Initially collapsed panel</p>
+                    </div>
+                    <div class="panel-footer">Panel Footer</div>
+                </div>
+            </div>
+            <!-- END panel-->
+        </div>
+        <div class="col-lg-4">
+            <!-- START panel-->
+            <div id="panelDemo2" class="panel panel-default panel-demo">
+                <div class="panel-heading">
+                    Dismissable Panel
+                    <a href="#" data-tool="panel-dismiss" data-toggle="tooltip" title="Close Panel" class="pull-right">
+                        <em class="fa fa-times"></em>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <p>Panel can be dismissed by clicking on the cross icon icon on the top right corner</p>
+                </div>
+            </div>
+            <!-- END panel-->
+        </div>
+    </div>
+    <!-- END row-->
+    <h4 class="page-header">Panel Refresh</h4>
+    <!-- START row-->
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- START panel-->
+            <div id="panelDemoRefresh1" class="panel panel-default">
+                <div class="panel-heading">
+                    Standard Spinner
+                    <a href="#" data-tool="panel-refresh" data-toggle="tooltip" title="Refresh Panel" data-spinner="standard" class="pull-right">
+                        <em class="fa fa-refresh"></em>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <p>Click on the refresh icon to see how it triggers a refresh-event while it shows a spinner</p>
+                </div>
+            </div>
+            <!-- END panel-->
+        </div>
+        <div class="col-lg-4">
+            <!-- START panel-->
+            <div id="panelDemoRefresh2" class="panel panel-default">
+                <div class="panel-heading">
+                    Custom Spinner
+                    <a href="#" data-tool="panel-refresh" data-toggle="tooltip" title="Refresh Panel" data-spinner="traditional" class="pull-right">
+                        <em class="fa fa-refresh"></em>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <p>Click on the refresh icon to see how it triggers a refresh-event while it shows a spinner</p>
+                </div>
+            </div>
+            <!-- END panel-->
+        </div>
+        <div class="col-lg-4">
+            <!-- START panel-->
+            <div id="panelDemoRefresh3" class="panel panel-default">
+                <div class="panel-heading">
+                    Another Spinner
+                    <a href="#" data-tool="panel-refresh" data-toggle="tooltip" title="Refresh Panel" data-spinner="line back-and-forth grow" class="pull-right">
+                        <em class="fa fa-refresh"></em>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <p>See the list of allowed spinner at the Spinners page. A real use example is at the chart page.</p>
+                </div>
+            </div>
+            <!-- END panel-->
+        </div>
+    </div>
+    <!-- END row-->
+
+</div>
+<h4 class="page-header">Panel Styles</h4>
+<!-- START row-->
+<div class="row">
+    <div class="col-lg-4">
+        <!-- START panel-->
+        <div id="panelDemo7" class="panel panel-default">
+            <div class="panel-heading">Default Panel</div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+            </div>
+            <div class="panel-footer">Panel Footer</div>
+        </div>
+        <!-- END panel-->
+    </div>
+    <div class="col-lg-4">
+        <!-- START panel-->
+        <div id="panelDemo8" class="panel panel-primary">
+            <div class="panel-heading">Primary Panel</div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+            </div>
+            <div class="panel-footer">Panel Footer</div>
+        </div>
+        <!-- END panel-->
+    </div>
+    <div class="col-lg-4">
+        <!-- START panel-->
+        <div id="panelDemo9" class="panel panel-success">
+            <div class="panel-heading">Success Panel</div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+            </div>
+            <div class="panel-footer">Panel Footer</div>
+        </div>
+        <!-- END panel-->
+    </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+    <div class="col-lg-4">
+        <!-- START panel-->
+        <div id="panelDemo10" class="panel panel-info">
+            <div class="panel-heading">Info Panel</div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+            </div>
+            <div class="panel-footer">Panel Footer</div>
+        </div>
+        <!-- END panel-->
+    </div>
+    <div class="col-lg-4">
+        <!-- START panel-->
+        <div id="panelDemo11" class="panel panel-warning">
+            <div class="panel-heading">Warning Panel</div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+            </div>
+            <div class="panel-footer">Panel Footer</div>
+        </div>
+        <!-- END panel-->
+    </div>
+    <div class="col-lg-4">
+        <!-- START panel-->
+        <div id="panelDemo12" class="panel panel-danger">
+            <div class="panel-heading">Danger Panel</div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+            </div>
+            <div class="panel-footer">Panel Footer</div>
+        </div>
+        <!-- END panel-->
+    </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+    <div class="col-lg-12">
+        <!-- START panel-->
+        <div id="panelDemo13" class="panel panel-default">
+            <div class="panel-heading">Collapsible Accordion Panel Group</div>
+            <div class="panel-body">
+                <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group">
+                    <div class="panel panel-default">
+                        <div id="headingOne" role="tab" class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">          Collapsible Group Item #1        </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div id="headingTwo" role="tab" class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">          Collapsible Group Item #2        </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div id="headingThree" role="tab" class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">          Collapsible Group Item #3        </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END panel-->
+    </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+    <div class="col-lg-12">
+        <!-- START panel-->
+        <div id="panelDemo14" class="panel panel-default">
+            <div class="panel-heading">Basic Tabs</div>
+            <div class="panel-body">
+                <div role="tabpanel">
+                    <!-- Nav tabs-->
+                    <ul role="tablist" class="nav nav-tabs">
+                        <li role="presentation" class="active">
+                            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes-->
+                    <div class="tab-content">
+                        <div id="home" role="tabpanel" class="tab-pane active">Suspendisse velit erat, vulputate sit amet feugiat a, lobortis nec felis.</div>
+                        <div id="profile" role="tabpanel" class="tab-pane">Integer lobortis commodo auctor.</div>
+                        <div id="messages" role="tabpanel" class="tab-pane">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div id="settings" role="tabpanel" class="tab-pane">Sed commodo tellus ut mi tristique pharetra.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END panel-->
+    </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="well">
+            <h4>Normal Well</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="well well-lg">
+            <h4>Large Well</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="well well-sm">
+            <h4>Small Well</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+        </div>
+    </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="jumbotron">
+            <h1>Jumbotron</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing.
+            </p>
+            <p>
+                <a role="button" class="btn btn-primary btn-lg">Learn more</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- END row-->
+
+@section Styles {
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/demoPanels")
+}

@@ -1,0 +1,581 @@
+<template name="sidebar">
+    <aside class="aside">
+        <!-- START Sidebar (left)-->
+        <div class="aside-inner">
+           <nav class="sidebar" data-sidebar-anyclick-close="">
+              <!-- START sidebar nav-->
+              <ul class="nav">
+                 <!-- START user info-->
+                 <li class="has-user-block">
+                    <div id="user-block" class="collapse in">
+                       <div class="item user-block">
+                          <!-- User picture-->
+                          <div class="user-block-picture">
+                             <div class="user-block-status">
+                                <img src='img/user/02.jpg' alt="Avatar" width="60" height="60" class="img-thumbnail img-circle" />
+                                <div class="circle circle-success circle-lg"></div>
+                             </div>
+                          </div>
+                          <!-- Name and Job-->
+                          <div class="user-block-info">
+                             <span class="user-block-name">Hello, Mike</span>
+                             <span class="user-block-role">Designer</span>
+                          </div>
+                       </div>
+                    </div>
+                 </li>
+                 <!-- END user info-->
+                 <!-- Iterates over all sidebar items-->
+                 <li class="nav-heading">
+                    <span>Main Navigation</span>
+                 </li>
+                 <li class="{{isActiveRoute regex='dashboard|dashboardv2|dashboardv3'}}">
+                    <a href="#dashboard" title="Dashboard" data-toggle="collapse">
+                       <div class="label label-info pull-right">3</div>
+                       <em class="icon-speedometer"></em>
+                       <span>{{_ "sidebar.nav.DASHBOARD" }}</span>
+                    </a>
+                    <ul id="dashboard" class="nav sidebar-subnav collapse {{isActiveRoute regex='dashboard|dashboardv2|dashboardv3' className='in'}}">
+                       <li class="sidebar-subnav-header">Dashboard</li>
+                       <li class="{{isActiveRoute regex='dashboardv1'}}">
+                          <a href="{{pathFor 'dashboardv1'}}" title="Dashboard v1">
+                             <span>Dashboard v1</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='dashboardv2'}}">
+                          <a href="{{pathFor 'dashboardv2'}}" title="Dashboard v2">
+                             <span>Dashboard v2</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='dashboardv3'}}">
+                          <a href="{{pathFor 'dashboardv3'}}" title="Dashboard v3">
+                             <span>Dashboard v3</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='widgets'}}">
+                    <a href="{{pathFor 'widgets'}}" title="Widgets">
+                       <div class="label label-success pull-right">30</div>
+                       <em class="icon-grid"></em>
+                       <span>{{_ "sidebar.nav.WIDGETS" }}</span>
+                    </a>
+                 </li>
+                 <!-- Layouts -->
+                 <li>
+                    <a href="#layout" title="Layouts" data-toggle="collapse">
+                       <em class="icon-layers"></em>
+                       <span>Layouts</span>
+                    </a>
+                    <ul id="layout" class="nav sidebar-subnav collapse">
+                       <li class="sidebar-subnav-header">Layouts</li>
+                       <li>
+                          <a href="{{pathFor 'dashboardh'}}" title="Dashboard Horizontal">
+                             <span>Horizontal</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <!-- /Layouts -->
+                 <li class="nav-heading">
+                    <span>Components</span>
+                 </li>
+                 <li class="{{isActiveRoute regex='buttons|notifications|sweetalert|tour|carousel|spinners|animations|dropdown-animations|nestable|sortable|panels|portlets|^grid|grid-masonry|typo|icons-font|icons-weather|colors'}}">
+                    <a href="#elements" title="Elements" data-toggle="collapse">
+                       <em class="icon-chemistry"></em>
+                       <span>{{_ "sidebar.nav.element.ELEMENTS" }}</span>
+                    </a>
+                    <ul id="elements" class="nav sidebar-subnav collapse {{isActiveRoute regex='buttons|notifications|sweetalert|tour|carousel|spinners|animations|dropdown-animations|nestable|sortable|panels|portlets|^grid|grid-masonry|typo|icons-font|icons-weather|colors' className='in'}}">
+                       <li class="sidebar-subnav-header">Elements</li>
+                       <li class="{{isActiveRoute regex='buttons'}}">
+                          <a href="{{pathFor 'buttons'}}" title="Buttons">
+                             <span>{{_ "sidebar.nav.element.BUTTON" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='notifications'}}">
+                          <a href="{{pathFor 'notifications'}}" title="Notifications">
+                             <span>{{_ "sidebar.nav.element.NOTIFICATION" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='sweetalert'}}">
+                          <a href="{{pathFor 'sweetalert'}}" title="Sweet Alert">
+                             <span>Sweet Alert</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='tour'}}">
+                          <a href="{{pathFor 'tour'}}" title="Tour">
+                             <span>Tour</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='carousel'}}">
+                          <a href="{{pathFor 'carousel'}}" title="Carousel">
+                             <span>Carousel</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='spinners'}}">
+                          <a href="{{pathFor 'spinners'}}" title="Spinners">
+                             <span>{{_ "sidebar.nav.element.SPINNER" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='animations'}}">
+                          <a href="{{pathFor 'animations'}}" title="Animations">
+                             <span>{{_ "sidebar.nav.element.ANIMATION" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='dropdown-animations'}}">
+                          <a href="{{pathFor 'dropdown-animations'}}" title="Dropdown">
+                             <span>{{_ "sidebar.nav.element.DROPDOWN" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='nestable'}}">
+                          <a href="{{pathFor 'nestable'}}" title="Nestable">
+                             <span>Nestable</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='sortable'}}">
+                          <a href="{{pathFor 'sortable'}}" title="Sortable">
+                             <span>Sortable</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='panels'}}">
+                          <a href="{{pathFor 'panels'}}" title="Panels">
+                             <span>{{_ "sidebar.nav.element.PANEL" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='portlets'}}">
+                          <a href="{{pathFor 'portlets'}}" title="Portlets">
+                             <span>{{_ "sidebar.nav.element.PORTLET" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute name='grid'}}">
+                          <a href="{{pathFor 'grid'}}" title="Grid">
+                             <span>{{_ "sidebar.nav.element.GRID" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='grid-masonry'}}">
+                          <a href="{{pathFor 'grid-masonry'}}" title="Grid Masonry">
+                             <span>{{_ "sidebar.nav.element.GRID_MASONRY" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='typo'}}">
+                          <a href="{{pathFor 'typo'}}" title="Typography">
+                             <span>{{_ "sidebar.nav.element.TYPO" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='icons-font'}}">
+                          <a href="{{pathFor 'icons-font'}}" title="Font Icons">
+                             <div class="label label-success pull-right">+400</div>
+                             <span>{{_ "sidebar.nav.element.FONT_ICON" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='icons-weather'}}">
+                          <a href="{{pathFor 'icons-weather'}}" title="Weather Icons">
+                             <div class="label label-success pull-right">+100</div>
+                             <span>{{_ "sidebar.nav.element.WEATHER_ICON" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='colors'}}">
+                          <a href="{{pathFor 'colors'}}" title="Colors">
+                             <span>{{_ "sidebar.nav.element.COLOR" }}</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='form-standard|form-extended|form-validation|form-wizard|form-upload|form-xeditable|form-imagecrop'}}">
+                    <a href="#forms" title="Forms" data-toggle="collapse">
+                       <em class="icon-note"></em>
+                       <span>{{_ "sidebar.nav.form.FORM" }}</span>
+                    </a>
+                    <ul id="forms" class="nav sidebar-subnav collapse {{isActiveRoute regex='form-standard|form-extended|form-validation|form-wizard|form-upload|form-xeditable|form-imagecrop' className='in'}}">
+                       <li class="sidebar-subnav-header">Forms</li>
+                       <li class="{{isActiveRoute regex='form-standard'}}">
+                          <a href="{{pathFor 'form-standard'}}" title="Standard">
+                             <span>{{_ "sidebar.nav.form.STANDARD" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='form-extended'}}">
+                          <a href="{{pathFor 'form-extended'}}" title="Extended">
+                             <span>{{_ "sidebar.nav.form.EXTENDED" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='form-validation'}}">
+                          <a href="{{pathFor 'form-validation'}}" title="Validation">
+                             <span>{{_ "sidebar.nav.form.VALIDATION" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='form-upload'}}">
+                          <a href="{{pathFor 'form-upload'}}" title="Upload">
+                             <span>Upload</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='form-wizard'}}">
+                          <a href="{{pathFor 'form-wizard'}}" title="Wizard">
+                             <span>Wizard</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='form-xeditable'}}">
+                          <a href="{{pathFor 'form-xeditable'}}" title="xEditable">
+                             <span>xEditable</span>
+                          </a>
+                       </li>
+                        <li class="{{isActiveRoute regex='form-imagecrop'}}">
+                           <a href="{{pathFor 'form-imagecrop'}}" title="Cropper">
+                              <span>Cropper</span>
+                           </a>
+                        </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='chart-flot|chart-radial|chart-chartjs|chart-rickshaw|chart-morris|chart-chartist'}}">
+                    <a href="#charts" title="Charts" data-toggle="collapse">
+                       <em class="icon-graph"></em>
+                       <span>{{_ "sidebar.nav.chart.CHART" }}</span>
+                    </a>
+                    <ul id="charts" class="nav sidebar-subnav collapse {{isActiveRoute regex='chart-flot|chart-radial|chart-chartjs|chart-rickshaw|chart-morris|chart-chartist' className='in'}}">
+                       <li class="sidebar-subnav-header">Charts</li>
+                       <li class="{{isActiveRoute regex='chart-flot'}}">
+                          <a href="{{pathFor 'chart-flot'}}" title="Flot">
+                             <span>{{_ "sidebar.nav.chart.FLOT" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='chart-radial'}}">
+                          <a href="{{pathFor 'chart-radial'}}" title="Radial">
+                             <span>{{_ "sidebar.nav.chart.RADIAL" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='chart-chartjs'}}">
+                          <a href="{{pathFor 'chart-chartjs'}}" title="ChartJS">
+                             <span>ChartJS</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='chart-rickshaw'}}">
+                          <a href="{{pathFor 'chart-rickshaw'}}" title="Rickshaw">
+                             <span>Rickshaw</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='chart-morris'}}">
+                          <a href="{{pathFor 'chart-morris'}}" title="Morris">
+                             <span>Morris</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='chart-chartist'}}">
+                          <a href="{{pathFor 'chart-chartist'}}" title="Chartist">
+                             <span>Chartist</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='table-standard|table-extended|table-datatable|table-jqgrid'}}">
+                    <a href="#tables" title="Tables" data-toggle="collapse">
+                       <em class="icon-grid"></em>
+                       <span>{{_ "sidebar.nav.table.TABLE" }}</span>
+                    </a>
+                    <ul id="tables" class="nav sidebar-subnav collapse {{isActiveRoute regex='table-standard|table-extended|table-datatable|table-jqgrid' className='in'}}">
+                       <li class="sidebar-subnav-header">Tables</li>
+                       <li class="{{isActiveRoute regex='table-standard'}}">
+                          <a href="{{pathFor 'table-standard'}}" title="Standard">
+                             <span>{{_ "sidebar.nav.table.STANDARD" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='table-extended'}}">
+                          <a href="{{pathFor 'table-extended'}}" title="Extended">
+                             <span>{{_ "sidebar.nav.table.EXTENDED" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='table-datatable'}}">
+                          <a href="{{pathFor 'table-datatable'}}" title="DataTables">
+                             <span>{{_ "sidebar.nav.table.DATATABLE" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='table-jqgrid'}}">
+                          <a href="{{pathFor 'table-jqgrid'}}" title="jqGrid">
+                             <span>jqGrid</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='maps-google|maps-vector'}}">
+                    <a href="#maps" title="Maps" data-toggle="collapse">
+                       <em class="icon-map"></em>
+                       <span>{{_ "sidebar.nav.map.MAP" }}</span>
+                    </a>
+                    <ul id="maps" class="nav sidebar-subnav collapse {{isActiveRoute regex='maps-google|maps-vector' className='in'}}">
+                       <li class="sidebar-subnav-header">Maps</li>
+                       <li class="{{isActiveRoute regex='maps-google'}}">
+                          <a href="{{pathFor 'maps-google'}}" title="Google Maps">
+                             <span>{{_ "sidebar.nav.map.GOOGLE" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='maps-vector'}}">
+                          <a href="{{pathFor 'maps-vector'}}" title="Vector Maps">
+                             <span>{{_ "sidebar.nav.map.VECTOR" }}</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="nav-heading">
+                    <span>More</span>
+                 </li>
+                 <li class="{{isActiveRoute regex='login|register|recover|lock|blank|notfound'}}">
+                    <a href="#pages" title="Pages" data-toggle="collapse">
+                       <em class="icon-doc"></em>
+                       <span>{{_ "sidebar.nav.pages.PAGES" }}</span>
+                    </a>
+                    <ul id="pages" class="nav sidebar-subnav collapse {{isActiveRoute regex='login|register|recover|lock|blank|notfound' className='in'}}">
+                       <li class="sidebar-subnav-header">Pages</li>
+                       <li class="{{isActiveRoute regex='login'}}">
+                          <a href="{{pathFor 'login'}}" title="Login">
+                             <span>{{_ "sidebar.nav.pages.LOGIN" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='register'}}">
+                          <a href="{{pathFor 'register'}}" title="Sign up">
+                             <span>{{_ "sidebar.nav.pages.REGISTER" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='recover'}}">
+                          <a href="{{pathFor 'recover'}}" title="Recover Password">
+                             <span>{{_ "sidebar.nav.pages.RECOVER" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='lock'}}">
+                          <a href="{{pathFor 'lock'}}" title="Lock">
+                             <span>{{_ "sidebar.nav.pages.LOCK" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='blank'}}">
+                          <a href="{{pathFor 'blank'}}" title="Starter Template">
+                             <span>{{_ "sidebar.nav.pages.STARTER" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='notfound'}}">
+                          <a href="{{pathFor 'notfound'}}" title="notfound">
+                             <span>404</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='internalerror'}}">
+                          <a href="{{pathFor 'internalerror'}}" title="internalerror">
+                             <span>500</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='maintenance'}}">
+                          <a href="{{pathFor 'maintenance'}}" title="maintenance">
+                             <span>Maintenance</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='mailbox|timeline|calendar|invoice|search|todo|profile'}}">
+                    <a href="#extras" title="Extras" data-toggle="collapse">
+                       <em class="icon-cup"></em>
+                       <span>{{_ "sidebar.nav.extra.EXTRA" }}</span>
+                    </a>
+                    <ul id="extras" class="nav sidebar-subnav collapse {{isActiveRoute regex='mailbox|timeline|calendar|invoice|search|todo|profile|contacts|contact-details|projects|project-details|team-viewer|social-board|vote-links|bug-tracker|faq|help-center|followers|settings|plans|file-manager' className='in'}}">
+                       <li class="sidebar-subnav-header">Extras</li>
+                       <li class="{{isActiveRoute regex='contacts'}}">
+                           <a href="{{pathFor 'contacts'}}" title="'contacts'">
+                               <span>Contacts</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='contact-details'}}">
+                           <a href="{{pathFor 'contact-details'}}" title="'contact-details'">
+                               <span>Contact details</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='projects'}}">
+                           <a href="{{pathFor 'projects'}}" title="'projects'">
+                               <span>Projects</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='project-details'}}">
+                           <a href="{{pathFor 'project-details'}}" title="'project-details'">
+                               <span>Project details</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='team-viewer'}}">
+                           <a href="{{pathFor 'team-viewer'}}" title="'team-viewer'">
+                               <span>Team viewer</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='social-board'}}">
+                           <a href="{{pathFor 'social-board'}}" title="'social-board'">
+                               <span>Social board</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='vote-links'}}">
+                           <a href="{{pathFor 'vote-links'}}" title="'vote-links'">
+                               <span>Vote links</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='bug-tracker'}}">
+                           <a href="{{pathFor 'bug-tracker'}}" title="'bug-tracker'">
+                               <span>Bugtracker</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='faq'}}">
+                           <a href="{{pathFor 'faq'}}" title="'faq'">
+                               <span>Faq</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='help-center'}}">
+                           <a href="{{pathFor 'help-center'}}" title="'help-center'">
+                               <span>Help center</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='followers'}}">
+                           <a href="{{pathFor 'followers'}}" title="'followers'">
+                               <span>Followers</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='settings'}}">
+                           <a href="{{pathFor 'settings'}}" title="'settings'">
+                               <span>Settings</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='plans'}}">
+                           <a href="{{pathFor 'plans'}}" title="'plans'">
+                               <span>Plans</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='file-manager'}}">
+                           <a href="{{pathFor 'file-manager'}}" title="'file-manager'">
+                               <span>File manager</span>
+                           </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='mailbox'}}">
+                          <a href="{{pathFor 'mailbox'}}" title="Mailbox">
+                             <span>{{_ "sidebar.nav.extra.MAILBOX" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='timeline'}}">
+                          <a href="{{pathFor 'timeline'}}" title="Timeline">
+                             <span>{{_ "sidebar.nav.extra.TIMELINE" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='calendar'}}">
+                          <a href="{{pathFor 'calendar'}}" title="Calendar">
+                             <span>{{_ "sidebar.nav.extra.CALENDAR" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='invoice'}}">
+                          <a href="{{pathFor 'invoice'}}" title="Invoice">
+                             <span>{{_ "sidebar.nav.extra.INVOICE" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='search'}}">
+                          <a href="{{pathFor 'search'}}" title="Search">
+                             <span>{{_ "sidebar.nav.extra.SEARCH" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='todo'}}">
+                          <a href="{{pathFor 'todo'}}" title="Todo List">
+                             <span>{{_ "sidebar.nav.extra.TODO" }}</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='profile'}}">
+                          <a href="{{pathFor 'profile'}}" title="Profile">
+                             <span>{{_ "sidebar.nav.extra.PROFILE" }}</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='blog-list|blog-post|blog-articles|blog-article-view'}}">
+                    <a href="#blog" title="Blog" data-toggle="collapse">
+                       <em class="icon-notebook"></em>
+                       <span>Blog</span>
+                    </a>
+                    <ul id="blog" class="nav sidebar-subnav collapse {{isActiveRoute regex='blog-list|blog-post|blog-articles|blog-article-view' className='in'}}">
+                       <li class="sidebar-subnav-header">Blog</li>
+                       <li class="{{isActiveRoute regex='blog-list'}}">
+                          <a href="{{pathFor 'blog-list'}}" title="List">
+                             <span>List</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='blog-post'}}">
+                          <a href="{{pathFor 'blog-post'}}" title="Post">
+                             <span>Post</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='blog-articles'}}">
+                          <a href="{{pathFor 'blog-articles'}}" title="Articles">
+                             <span>Articles</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='blog-article-view'}}">
+                          <a href="{{pathFor 'blog-article-view'}}" title="Article View">
+                             <span>Article View</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='ecommerce-orders|ecommerce-order-view|ecommerce-products|ecommerce-product-view|ecommerce-checkout'}}">
+                    <a href="#ecommerce" title="eCommerce" data-toggle="collapse">
+                       <em class="icon-basket-loaded"></em>
+                       <span>eCommerce</span>
+                    </a>
+                    <ul id="ecommerce" class="nav sidebar-subnav collapse {{isActiveRoute regex='ecommerce-orders|ecommerce-order-view|ecommerce-products|ecommerce-product-view' className='in'}}">
+                       <li class="sidebar-subnav-header">eCommerce</li>
+                       <li class="{{isActiveRoute regex='ecommerce-orders'}}">
+                          <a href="{{pathFor 'ecommerce-orders'}}" title="Orders">
+                             <div class="label label-info pull-right">10</div>
+                             <span>Orders</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='ecommerce-order-view'}}">
+                          <a href="{{pathFor 'ecommerce-order-view'}}" title="Order View">
+                             <span>Order View</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='ecommerce-products'}}">
+                          <a href="{{pathFor 'ecommerce-products'}}" title="Products">
+                             <span>Products</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='ecommerce-product-view'}}">
+                          <a href="{{pathFor 'ecommerce-product-view'}}" title="Product View">
+                             <span>Product View</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='ecommerce-checkout'}}">
+                          <a href="{{pathFor 'ecommerce-checkout'}}" title="Checkout">
+                             <span>Checkout</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='forum-categories|forum-topics|forum-discussion'}}">
+                    <a href="#forum" title="Forum" data-toggle="collapse">
+                       <em class="icon-speech"></em>
+                       <span>Forum</span>
+                    </a>
+                    <ul id="forum" class="nav sidebar-subnav collapse {{isActiveRoute regex='forum-categories|forum-topics|forum-discussion' className='in'}}">
+                       <li class="sidebar-subnav-header">Forum</li>
+                       <li class="{{isActiveRoute regex='forum-categories'}}">
+                          <a href="{{pathFor 'forum-categories'}}" title="Categories">
+                             <span>Categories</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='forum-topics'}}">
+                          <a href="{{pathFor 'forum-topics'}}" title="Topics">
+                             <span>Topics</span>
+                          </a>
+                       </li>
+                       <li class="{{isActiveRoute regex='forum-discussion'}}">
+                          <a href="{{pathFor 'forum-discussion'}}" title="Discussion">
+                             <span>Discussion</span>
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+                 <li class="{{isActiveRoute regex='documentation'}}">
+                    <a href="{{pathFor 'documentation'}}" title="Documentation">
+                       <em class="icon-graduation"></em>
+                       <span>{{_ "sidebar.nav.DOCUMENTATION" }}</span>
+                    </a>
+                 </li>
+              </ul>
+              <!-- END sidebar nav-->
+           </nav>
+        </div>
+        <!-- END Sidebar (left)-->
+    </aside>
+</template>

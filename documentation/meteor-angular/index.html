@@ -1,0 +1,800 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + MeteorJS + AngularJS</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-09-21T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a>
+				<ul>
+					<li><a href="#structure_structure_nbsp">Structure&nbsp;</a>
+					<li><a href="#structure__nbsp">&nbsp;</a>
+				</ul>
+			</li>
+			<li><a href="#layout" title="Layout">Layout</a>
+				<ul>
+					<li><a href="#layout_layout_and_routes">Layout and Routes</a>
+					<li><a href="#layout_index_markup">Index markup</a>
+					<li><a href="#layout_common_templates_and_views">Common templates and views</a>
+				</ul>
+			</li>
+			<li><a href="#modules" title="Modules">Modules</a>
+				<ul>
+					<li><a href="#modules_application_entry_point">Application Entry point</a>
+					<li><a href="#modules_imports">Imports</a>
+					<li><a href="#modules_modules">Modules</a>
+				</ul>
+			</li>
+			<li><a href="#themes" title="Themes">Themes</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + MeteorJS + AngularJS</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 04/21/2015</li>
+	<li>latest update: 09/21/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	General usage reference for <strong>Meteor </strong>can be found here&nbsp;<a href="https://docs.meteor.com/">https://docs.meteor.com/</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<p>
+	<strong>Download MeteorJS</strong></p>
+<div>
+	Start downloading METEOR framework for your platform at&nbsp;<a href="https://www.meteor.com/install">https://www.meteor.com/install</a></div>
+<p>
+	<strong>Start the application</strong></p>
+<div>
+	Run the following commands in the meteor project root folder</div>
+<pre class="prettyprint lang-plain linenums">
+&gt; meteor npm install
+&gt; meteor</pre>
+<div>
+	<p>
+		<strong>Open your browser</strong></p>
+	<p>
+		If eveything goes fine, your application should be ready at&nbsp;<a href="http://localhost:3000/">http://localhost:3000/</a></p>
+	<p>
+		&nbsp;</p>
+	<p>
+		<strong>General tips</strong></p>
+</div>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<h4 id="structure_structure_nbsp">Structure&nbsp;</h4>
+<div>
+	&nbsp;</div>
+<div>
+	We have used the following structure:</div>
+<div>
+	Since MeteorJs&nbsp;doesn&#39;t have a strict folder structure, feel free to adapt it to your needs.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-css linenums">
++---client
+|   +---index.html
+|   +---main.js
+|   +---views
+|       +---pages
+|       +---partials
++---imports
+|   +---scripts
+|   |   +---custom
+|   |   +---modules
+|   |       +---bootstrapui
+|   |       +---charts
+|   |       +---colors
+|   |       +---core
+|   |       +---dashboard
+|   |       +---elements
+|   |       +---extras
+|   |       +---flatdoc
+|   |       +---forms
+|   |       +---icons
+|   |       +---lazyload
+|   |       +---loadingbar
+|   |       +---locale
+|   |       +---mailbox
+|   |       +---maps
+|   |       +---navsearch
+|   |       +---notify
+|   |       +---pages
+|   |       +---panels
+|   |       +---preloader
+|   |       +---routes
+|   |       +---settings
+|   |       +---sidebar
+|   |       +---tables
+|   |       +---translate
+|   |       +---utils
+|   +---styles
+|       +---app
+|       +---bootstrap
+|       +---themes
++---node_modules
++---private
+|   +---i18n
++---public
+|   +---api
+|   +---documentation
+|   +---img
+|   +---themes
+|   +---vendor
++---server
++---package.json</pre>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>client</strong>: contains the modules loaded into the client side of the application. This folder is loaded by Meteor automatically.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp; -&nbsp;<strong>views</strong>: contains the HTML views used in the application</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>imports</strong>: this folder contains imported files from other parts of the application</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp; -&nbsp;<strong>styles</strong>: styles used in the template</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp; -&nbsp;<strong>scripts</strong>: scripts used in the template</div>
+<div>
+	&nbsp;</div>
+<div>
+	<b>node_modules</b>: contains the vendor files loaded when the application start. (Not lazy loaded)</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>private</strong>: this folder is only accesible from the server.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>puiblic</strong>: accesible from the client side. It can contain the the main assets like images, fonts, etc</div>
+<div>
+	&nbsp;</div>
+<div>
+	<div>
+		&nbsp; -&nbsp;<strong>themes</strong>: Contains all predefined themes</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp; -&nbsp;<strong>api</strong>: This is folder contains static json files used to simulated response data from an api system.</div>
+	<div>
+		&nbsp;</div>
+</div>
+<div>
+	&nbsp; -&nbsp;<strong>vendor</strong>: This is folder is special because here is where we place vendor assets that are loaded using the ocLazyLoad module</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>server</strong>: contains the script that runs only in the server.</div>
+<div>
+	&nbsp;</div>
+<h4 id="structure__nbsp">&nbsp;</h4>
+</section>
+<section id="layout">
+	<div class="page-header"><h3>Layout</h3><hr class="notop"></div>
+<h4 id="layout_layout_and_routes">Layout and Routes</h4>
+<div>
+	&nbsp;</div>
+<div>
+	Layout and Routes are managed by <strong>AngularJS </strong>at the client side using the UI Router module.</div>
+<div>
+	The&nbsp;<strong>index.html</strong>&nbsp;file only contains the necessary markup to start an AngularJS application</div>
+<div>
+	&nbsp;</div>
+<h4 id="layout_index_markup">Index markup</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;head&gt;
+   &lt;base href=&quot;/&quot;&gt;
+   &lt;meta charset=&quot;utf-8&quot;&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+   &lt;meta name=&quot;description&quot; content=&quot;{{app.description}}&quot;&gt;
+   &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, angular, bootstrap, dashboard, admin&quot;&gt;
+   &lt;title data-ng-bind=&quot;::pageTitle()&quot;&gt;Angle - Angular Bootstrap Admin Template&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body data-ng-class=&quot;{ &#39;layout-fixed&#39; : app.layout.isFixed,
+                        &#39;aside-collapsed&#39; : app.layout.isCollapsed,
+                        &#39;aside-collapsed-text&#39; : app.layout.isCollapsedText,
+                        &#39;layout-boxed&#39; : app.layout.isBoxed,
+                        &#39;layout-fs&#39;: app.useFullLayout,
+                        &#39;hidden-footer&#39;: app.hiddenFooter,
+                        &#39;layout-h&#39;: app.layout.horizontal,
+                        &#39;aside-float&#39;: app.layout.isFloat,
+                        &#39;offsidebar-open&#39;: app.offsidebarOpen,
+                        &#39;aside-toggled&#39;: app.asideToggled}&quot;&gt;
+
+  &lt;div data-preloader&gt;&lt;/div&gt;
+  &lt;div data-ui-view=&quot;&quot; data-autoscroll=&quot;false&quot; class=&quot;wrapper&quot;&gt;&lt;/div&gt;
+
+&lt;/body&gt;</pre>
+<div>
+	<h4 id="layout_common_templates_and_views">Common templates and views</h4>
+	<div>
+		The main layout uses common templates like topnavbar, sidebar, offsidebar and footer.</div>
+	<div>
+		All common templates can be found under <strong>/client/views/partials</strong></div>
+	<div>
+		All views can be found under <strong>/client/views</strong> folder.</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="modules">
+	<div class="page-header"><h3>Modules</h3><hr class="notop"></div>
+<h4 id="modules_application_entry_point">Application Entry point</h4>
+<p>
+	The <strong>main.js</strong> files contains the entry potin of the application. This files will require the necessary vendor assets to start the angular application and then the template code</p>
+<pre class="prettyprint lang-js linenums">
+// ============================
+// Dependencies
+// ============================
+
+import &quot;jquery&quot;;
+import &quot;angular&quot;;
+import &quot;angular-ui-bootstrap&quot;;
+import &quot;angular-meteor&quot;;
+import &quot;angular-animate&quot;;
+import &quot;angular-cookies&quot;;
+import &quot;angular-dynamic-locale&quot;;
+import &quot;angular-loading-bar&quot;;
+import &quot;angular-resource&quot;;
+import &quot;angular-route&quot;;
+import &quot;angular-sanitize&quot;;
+import &quot;angular-touch&quot;;
+import &quot;angular-translate&quot;;
+import &quot;angular-translate-loader-static-files&quot;;
+import &quot;angular-translate-loader-url&quot;;
+import &quot;angular-translate-storage-cookie&quot;;
+import &quot;angular-translate-storage-local&quot;;
+import &quot;angular-ui-event&quot;;
+import &quot;angular-ui-indeterminate&quot;;
+import &quot;angular-ui-mask&quot;;
+import &quot;angular-ui-scroll&quot;;
+import &quot;angular-ui-scrollpoint&quot;;
+import &quot;angular-ui-uploader&quot;;
+import &quot;angular-ui-validate&quot;;
+import &quot;angular-ui-router&quot;;
+import &quot;jquery.browser&quot;;
+import &quot;ngstorage&quot;;
+import &quot;oclazyload&quot;;
+
+// ============================
+// Application
+// ============================
+
+import &#39;../imports/styles/bootstrap.less&#39;;
+import &#39;../imports/styles/app.less&#39;;
+import &#39;../imports/scripts/app.js&#39;;</pre>
+<div>
+	<h4 id="modules_imports">Imports</h4>
+	<p>
+		The main file to import scripts modules is <strong>/imports/scripts/app.js. </strong><br>
+		This file import al modules in order into the application, if a scripts is not present in this file it will be not available to the application.</p>
+	<pre class="prettyprint lang-js linenums">
+// bootstrapui
+import &quot;./modules/bootstrapui/bootstrapui.module.js&quot;;
+import &quot;./modules/bootstrapui/alerts.controller.js&quot;;
+import &quot;./modules/bootstrapui/bootstrapui.config.js&quot;;
+import &quot;./modules/bootstrapui/buttons.controller.js&quot;;
+import &quot;./modules/bootstrapui/carousel.controller.js&quot;;
+import &quot;./modules/bootstrapui/datepicker.controller.js&quot;;
+import &quot;./modules/bootstrapui/modals.controller.js&quot;;
+import &quot;./modules/bootstrapui/pagination.controller.js&quot;;
+import &quot;./modules/bootstrapui/popover.controller.js&quot;;
+import &quot;./modules/bootstrapui/progress.controller.js&quot;;
+import &quot;./modules/bootstrapui/rating.controller.js&quot;;
+import &quot;./modules/bootstrapui/timepicker.controller.js&quot;;
+import &quot;./modules/bootstrapui/tooltip.controller.js&quot;;
+import &quot;./modules/bootstrapui/typeahead.controller.js&quot;;
+// charts
+import &quot;./modules/charts/charts.module.js&quot;;
+import &quot;./modules/charts/chartist.controller.js&quot;;
+import &quot;./modules/charts/chartjs.controller.js&quot;;
+import &quot;./modules/charts/chartjs.directive.js&quot;;
+import &quot;./modules/charts/classyloader.directive.js&quot;;
+import &quot;./modules/charts/flot-data.service.js&quot;;
+import &quot;./modules/charts/flot.controller.js&quot;;
+import &quot;./modules/charts/flot.directive.js&quot;;
+import &quot;./modules/charts/morris.controller.js&quot;;
+import &quot;./modules/charts/morris.directive.js&quot;;
+import &quot;./modules/charts/piecharts.controller.js&quot;;
+import &quot;./modules/charts/rickshaw.controller.js&quot;;
+import &quot;./modules/charts/sparklines.directive.js&quot;;
+// colors
+import &quot;./modules/colors/colors.module.js&quot;;
+import &quot;./modules/colors/colors.contant.js&quot;;
+import &quot;./modules/colors/colors.service.js&quot;;
+// core
+import &quot;./modules/core/core.module.js&quot;;
+import &quot;./modules/core/core.config.js&quot;;
+import &quot;./modules/core/core.constants.js&quot;;
+import &quot;./modules/core/core.run.js&quot;;
+// dashboard
+import &quot;./modules/dashboard/dashboard.module.js&quot;;
+import &quot;./modules/dashboard/dashboard.controller.js&quot;;
+import &quot;./modules/dashboard/dashboard.v2.controller.js&quot;;
+import &quot;./modules/dashboard/dashboard.v3.controller.js&quot;;
+// elements
+import &quot;./modules/elements/elements.module.js&quot;;
+import &quot;./modules/elements/carousel.controller.js&quot;;
+import &quot;./modules/elements/dialog.controller.js&quot;;
+import &quot;./modules/elements/infinite-scroll.controller.js&quot;;
+import &quot;./modules/elements/masonry-deck.controller.js&quot;;
+import &quot;./modules/elements/navtree.controller.js&quot;;
+import &quot;./modules/elements/nestable.controller.js&quot;;
+import &quot;./modules/elements/scroll.directive.js&quot;;
+import &quot;./modules/elements/sortable.controller.js&quot;;
+import &quot;./modules/elements/sweetalert.controller.js&quot;;
+import &quot;./modules/elements/toaster.controller.js&quot;;
+import &quot;./modules/elements/tour.controller.js&quot;;
+// extras
+import &quot;./modules/extras/extras.module.js&quot;;
+import &quot;./modules/extras/article.controller.js&quot;;
+import &quot;./modules/extras/calendar.controller.js&quot;;
+import &quot;./modules/extras/code-editor-loadtree.service.js&quot;;
+import &quot;./modules/extras/code-editor.controller.js&quot;;
+import &quot;./modules/extras/todo.controller.js&quot;;
+import &quot;./modules/extras/word-cloud.controller.js&quot;;
+// flatdoc
+import &quot;./modules/flatdoc/flatdoc.module.js&quot;;
+import &quot;./modules/flatdoc/flatdoc.directive.js&quot;;
+// forms
+import &quot;./modules/forms/forms.module.js&quot;;
+import &quot;./modules/forms/color-picker.controller.js&quot;;
+import &quot;./modules/forms/filestyle.directive.js&quot;;
+import &quot;./modules/forms/form-imgcrop.controller.js&quot;;
+import &quot;./modules/forms/form-validation.controller.js&quot;;
+import &quot;./modules/forms/form-wizard.directive.js&quot;;
+import &quot;./modules/forms/form-xeditable.controller.js&quot;;
+import &quot;./modules/forms/forms.controller.js&quot;;
+import &quot;./modules/forms/masked.directive.js&quot;;
+import &quot;./modules/forms/props.filter.js&quot;;
+import &quot;./modules/forms/tags-input.directive.js&quot;;
+import &quot;./modules/forms/uiselect.controller.js&quot;;
+import &quot;./modules/forms/upload.controller.js&quot;;
+// icons
+import &quot;./modules/icons/icons.module.js&quot;;
+import &quot;./modules/icons/icons-skycons.directive.js&quot;;
+// lazyload
+import &quot;./modules/lazyload/lazyload.module.js&quot;;
+import &quot;./modules/lazyload/lazyload.config.js&quot;;
+import &quot;./modules/lazyload/lazyload.constants.js&quot;;
+// loadingbar
+import &quot;./modules/loadingbar/loadingbar.module.js&quot;;
+import &quot;./modules/loadingbar/loadingbar.config.js&quot;;
+import &quot;./modules/loadingbar/loadingbar.run.js&quot;;
+// locale
+import &quot;./modules/locale/locale.module.js&quot;;
+import &quot;./modules/locale/locale.config.js&quot;;
+import &quot;./modules/locale/locale.controller.js&quot;;
+// mailbox
+import &quot;./modules/mailbox/mailbox.module.js&quot;;
+import &quot;./modules/mailbox/mailbox.controller.js&quot;;
+import &quot;./modules/mailbox/mailfolder.controller.js&quot;;
+import &quot;./modules/mailbox/mails.service.js&quot;;
+import &quot;./modules/mailbox/mailview.controller.js&quot;;
+// maps
+import &quot;./modules/maps/maps.module.js&quot;;
+import &quot;./modules/maps/maps-google-modal.controller.js&quot;;
+import &quot;./modules/maps/maps-google.controller.js&quot;;
+import &quot;./modules/maps/vector-map.directive.js&quot;;
+import &quot;./modules/maps/vector-map.service.js&quot;;
+import &quot;./modules/maps/vector-maps.controller.js&quot;;
+// navsearch
+import &quot;./modules/navsearch/navsearch.module.js&quot;;
+import &quot;./modules/navsearch/navsearch.directive.js&quot;;
+import &quot;./modules/navsearch/navsearch.service.js&quot;;
+// notify
+import &quot;./modules/notify/notify.module.js&quot;;
+import &quot;./modules/notify/notify.controller.js&quot;;
+import &quot;./modules/notify/notify.directive.js&quot;;
+import &quot;./modules/notify/notify.service.js&quot;;
+// pages
+import &quot;./modules/pages/pages.module.js&quot;;
+import &quot;./modules/pages/access-login.controller.js&quot;;
+import &quot;./modules/pages/access-register.controller.js&quot;;
+// panels
+import &quot;./modules/panels/panels.module.js&quot;;
+import &quot;./modules/panels/panel-collapse.directive.js&quot;;
+import &quot;./modules/panels/panel-dismiss.directive.js&quot;;
+import &quot;./modules/panels/panel-refresh.directive.js&quot;;
+import &quot;./modules/panels/panel-tools.directive.js&quot;;
+import &quot;./modules/panels/panels.controller.js&quot;;
+import &quot;./modules/panels/portlet.controller.js&quot;;
+// preloader
+import &quot;./modules/preloader/preloader.module.js&quot;;
+import &quot;./modules/preloader/preloader.directive.js&quot;;
+// routes
+import &quot;./modules/routes/routes.module.js&quot;;
+import &quot;./modules/routes/route-helpers.provider.js&quot;;
+import &quot;./modules/routes/routes.config.js&quot;;
+// settings
+import &quot;./modules/settings/settings.module.js&quot;;
+import &quot;./modules/settings/settings.run.js&quot;;
+// sidebar
+import &quot;./modules/sidebar/sidebar.module.js&quot;;
+import &quot;./modules/sidebar/sidebar.controller.js&quot;;
+import &quot;./modules/sidebar/sidebar.directive.js&quot;;
+import &quot;./modules/sidebar/sidebar.service.js&quot;;
+import &quot;./modules/sidebar/sidebar.userblock.controller.js&quot;;
+// tables
+import &quot;./modules/tables/tables.module.js&quot;;
+import &quot;./modules/tables/angular-grid.controller.js&quot;;
+import &quot;./modules/tables/datatable.controller.js&quot;;
+import &quot;./modules/tables/ngtable-data.service.js&quot;;
+import &quot;./modules/tables/ngtable.controller.js&quot;;
+import &quot;./modules/tables/table-xeditable.controller.js&quot;;
+import &quot;./modules/tables/uigrid.controller.js&quot;;
+// translate
+import &quot;./modules/translate/translate.module.js&quot;;
+import &quot;./modules/translate/translate.config.js&quot;;
+import &quot;./modules/translate/translate.run.js&quot;;
+// utils
+import &quot;./modules/utils/utils.module.js&quot;;
+import &quot;./modules/utils/animate-enabled.directive.js&quot;;
+import &quot;./modules/utils/browser.service.js&quot;;
+import &quot;./modules/utils/clear-storage.directive.js&quot;;
+import &quot;./modules/utils/fullscreen.directive.js&quot;;
+import &quot;./modules/utils/load-css.directive.js&quot;;
+import &quot;./modules/utils/now.directive.js&quot;;
+import &quot;./modules/utils/table-checkall.directive.js&quot;;
+import &quot;./modules/utils/trigger-resize.directive.js&quot;;
+import &quot;./modules/utils/utils.service.js&quot;;
+
+// custom
+import &quot;./custom/custom.module.js&quot;;
+import &quot;./custom/custom.controller.js&quot;;
+
+// App module
+import &quot;./modules/app.module.js&quot;;</pre>
+</div>
+<div>
+	<div>
+		<h4 id="modules_modules">Modules</h4>
+	</div>
+	<div>
+		The application is started using the angular bootstrap method in the file<strong> app.module.js.</strong></div>
+	<div>
+		This files contains also the main module declaration</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<pre class="prettyprint lang-js linenums">
+(function() {
+    &#39;use strict&#39;;
+
+    angular
+        .module(&#39;angle&#39;, [
+            &#39;app.core&#39;,
+            &#39;app.routes&#39;,
+            &#39;app.sidebar&#39;,
+            &#39;app.navsearch&#39;,
+            &#39;app.preloader&#39;,
+            &#39;app.loadingbar&#39;,
+            &#39;app.translate&#39;,
+            &#39;app.settings&#39;,
+            &#39;app.dashboard&#39;,
+            &#39;app.icons&#39;,
+            &#39;app.flatdoc&#39;,
+            &#39;app.notify&#39;,
+            &#39;app.bootstrapui&#39;,
+            &#39;app.elements&#39;,
+            &#39;app.panels&#39;,
+            &#39;app.charts&#39;,
+            &#39;app.forms&#39;,
+            &#39;app.locale&#39;,
+            &#39;app.maps&#39;,
+            &#39;app.pages&#39;,
+            &#39;app.tables&#39;,
+            &#39;app.extras&#39;,
+            &#39;app.mailbox&#39;,
+            &#39;app.utils&#39;
+        ]);
+
+    if (Meteor.isCordova)
+      angular.element(document).on(&quot;deviceready&quot;, onReady);
+    else
+      angular.element(document).ready(onReady);
+
+    function onReady() {
+      angular.bootstrap(document, [&#39;angle&#39;]);
+    }
+
+})();</pre>
+	</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		As you can see, we use&nbsp;<span style="line-height: 19px;"><strong>angular.bootstrap </strong>to manually start the application due to Meteor doesn&#39;t allow to define custom attributes for the HTML tag.</span></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Packages</div>
+</div>
+<div>
+	<p>
+		This application use the following METEOR packages from Atmosphere</p>
+	<div>
+		<div>
+			<div>
+				autopublish@1.0.7</div>
+			<div>
+				insecure@1.0.7</div>
+			<div>
+				http@1.2.9</div>
+			<div>
+				cfs:http-methods</div>
+			<div>
+				meteor-base@1.0.4</div>
+			<div>
+				mobile-experience@1.0.4</div>
+			<div>
+				mongo@1.1.12</div>
+			<div>
+				session@1.1.6</div>
+			<div>
+				jquery@1.11.9</div>
+			<div>
+				tracker@1.1.0</div>
+			<div>
+				logging@1.1.15</div>
+			<div>
+				reload@1.1.10</div>
+			<div>
+				random@1.0.10</div>
+			<div>
+				ejson@1.0.12</div>
+			<div>
+				spacebars@1.0.12</div>
+			<div>
+				check@1.2.3</div>
+			<div>
+				less@2.7.5</div>
+			<div>
+				standard-minifier-css</div>
+			<div>
+				standard-minifier-js</div>
+			<div>
+				shell-server</div>
+			<div>
+				es5-shim</div>
+			<div>
+				angular-templates</div>
+			<div>
+				pbastowski:angular-babel</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				To learn or find more Meteor packages you can visit&nbsp;<a href="https://atmospherejs.com/">AtmosphereJS</a></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				And the following from NPM</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<div>
+					&quot;angular&quot;: &quot;^1.5.8&quot;,</div>
+				<div>
+					&quot;angular-animate&quot;: &quot;^1.5.8&quot;,</div>
+				<div>
+					&quot;angular-cookies&quot;: &quot;^1.5.8&quot;,</div>
+				<div>
+					&quot;angular-dynamic-locale&quot;: &quot;^0.1.32&quot;,</div>
+				<div>
+					&quot;angular-loading-bar&quot;: &quot;^0.9.0&quot;,</div>
+				<div>
+					&quot;angular-meteor&quot;: &quot;^1.3.11&quot;,</div>
+				<div>
+					&quot;angular-resource&quot;: &quot;^1.5.8&quot;,</div>
+				<div>
+					&quot;angular-route&quot;: &quot;^1.5.8&quot;,</div>
+				<div>
+					&quot;angular-sanitize&quot;: &quot;^1.5.8&quot;,</div>
+				<div>
+					&quot;angular-touch&quot;: &quot;^1.5.8&quot;,</div>
+				<div>
+					&quot;angular-translate&quot;: &quot;^2.12.0&quot;,</div>
+				<div>
+					&quot;angular-translate-loader-static-files&quot;: &quot;^2.12.0&quot;,</div>
+				<div>
+					&quot;angular-translate-loader-url&quot;: &quot;^2.12.0&quot;,</div>
+				<div>
+					&quot;angular-translate-storage-cookie&quot;: &quot;^2.12.0&quot;,</div>
+				<div>
+					&quot;angular-translate-storage-local&quot;: &quot;^2.12.0&quot;,</div>
+				<div>
+					&quot;angular-ui-bootstrap&quot;: &quot;^2.1.3&quot;,</div>
+				<div>
+					&quot;angular-ui-event&quot;: &quot;^1.0.0&quot;,</div>
+				<div>
+					&quot;angular-ui-indeterminate&quot;: &quot;^1.0.0&quot;,</div>
+				<div>
+					&quot;angular-ui-mask&quot;: &quot;^1.8.7&quot;,</div>
+				<div>
+					&quot;angular-ui-router&quot;: &quot;^1.0.0-beta.2&quot;,</div>
+				<div>
+					&quot;angular-ui-scroll&quot;: &quot;^1.5.1&quot;,</div>
+				<div>
+					&quot;angular-ui-scrollpoint&quot;: &quot;^2.1.1&quot;,</div>
+				<div>
+					&quot;angular-ui-uploader&quot;: &quot;^1.1.3&quot;,</div>
+				<div>
+					&quot;angular-ui-validate&quot;: &quot;^1.2.2&quot;,</div>
+				<div>
+					&quot;jquery&quot;: &quot;2.2.4&quot;,</div>
+				<div>
+					&quot;jquery.browser&quot;: &quot;^0.1.0&quot;,</div>
+				<div>
+					&quot;ngstorage&quot;: &quot;^0.3.11&quot;,</div>
+				<div>
+					&quot;oclazyload&quot;: &quot;^1.0.9&quot;</div>
+			</div>
+			<div>
+				&nbsp;</div>
+		</div>
+	</div>
+	<div>
+		<strong>Angular Meteor</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		This is a package that combines the transformative power of Angular and the easy to manage Meteor framework.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		You can find more information about features provide at&nbsp;<a href="http://angularjs.meteor.com/">its website</a></div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="themes">
+	<div class="page-header"><h3>Themes</h3><hr class="notop"></div>
+<p>
+	By editing the file <strong>/imports/</strong><strong>styles</strong><strong>/bootstrap/variables.import.less</strong> you have access to all main variables used to build the styles, changes its values to change a color.</p>
+<p>
+	<strong>Themes selector</strong></p>
+<p>
+	The themes selector used in the right sidebar (offsidebar) uses the directives <strong>load-css</strong>. This directive receives a path to a css stylesheet to be injected into the head section of the page.&nbsp;</p>
+<p>
+	In the demo, we link to the files under the <strong>/public/themes</strong> folder which contains the predefined theme colors. Then from html we used the following attribute to create an element that when is clicked injects the css in the given path</p>
+<pre class="prettyprint lang-html linenums">
+&lt;input type=&quot;radio&quot; name=&quot;setting-theme&quot; <strong>load-css=&quot;/themes/theme-b.css&quot;</strong> /&gt;</pre>
+<p>
+	The example shows an input but any clickable element can be used instead</p>
+<p>
+	&nbsp;</p>
+</section>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,643 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + ReactJS</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-06-22T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a>
+				<ul>
+					<li><a href="#getting_started_tips">Tips</a>
+					<li><a href="#getting_started_starting_the_app">Starting the app</a>
+				</ul>
+			</li>
+			<li><a href="#structure" title="Structure">Structure</a>
+				<ul>
+					<li><a href="#structure_main_folders_explanation">Main folders explanation</a>
+					<li><a href="#structure_custom_code">Custom code</a>
+				</ul>
+			</li>
+			<li><a href="#build" title="Build">Build</a>
+				<ul>
+					<li><a href="#build_main_gulp_tasks">Main Gulp tasks</a>
+					<li><a href="#build_webpack_and_react_hot_loader">Webpack and React Hot Loader</a>
+				</ul>
+			</li>
+			<li><a href="#usage" title="Usage">Usage</a>
+				<ul>
+					<li><a href="#usage_layout">Layout</a>
+					<li><a href="#usage_jsx">JSX</a>
+					<li><a href="#usage_routes">Routes</a>
+					<li><a href="#usage_bootstrap_components">Bootstrap components</a>
+					<li><a href="#usage_writing_components">Writing components</a>
+					<li><a href="#usage_sass">SASS</a>
+					<li><a href="#usage_vendor">Vendor</a>
+					<li><a href="#usage_vendor_updates">Vendor Updates</a>
+				</ul>
+			</li>
+			<li><a href="#themes" title="Themes">Themes</a>
+				<ul>
+					<li><a href="#themes_from_sass_files">From SASS files</a>
+					<li><a href="#themes_default_theme">Default Theme</a>
+				</ul>
+			</li>
+			<li><a href="#seed_project" title="Seed Project">Seed Project</a></li>
+			<li><a href="#credits" title="Credits">Credits</a>
+				<ul>
+					<li><a href="#credits_a_href"http_vendor_creditshtml"vendor_assets_a">Vendor Assets</a>
+				</ul>
+			</li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + ReactJS</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/05/2015</li>
+	<li>latest update: 06/22/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="getting_started_starting_the_app">Starting the app</h4>
+	<div>
+		Since this is ReactJS based application you need a server (Apache, IIS, xampp, etc) to serve the html files and perform http request to load all views.</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		<strong>Important! </strong>Opening the index.html with a double click (i.e. using file:// protocol) will show you only a blank page because there&rsquo;s no server that response to the requests made for each view in order to display the app interface.</div>
+</div>
+<p>
+	<strong>Integrated server (BrowserSync)</strong></p>
+<p>
+	See section Build to install node and bower dependecies and then run gulp task to automatically serve the app</p>
+<p>
+	<strong>Alternative server setup (requires nodejs)</strong></p>
+<div>
+	This is simple solution for a basic server setup using <strong>nodejs</strong> that might help you. If don&#39;t have installed nodejs take a look at the <strong>Build </strong>section to learn about it</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Install the http-server &nbsp;(-g installs globally)
+		<ul>
+			<li>
+				<strong>&nbsp; npm install http-server -g</strong>&nbsp;&nbsp;</li>
+		</ul>
+	</li>
+	<li>
+		Once it is installed move to the <strong>dist/</strong> folder of the theme (where index.html is located) and run
+		<ul>
+			<li>
+				<strong>&nbsp; http-server . -a 127.0.0.1 -p 8080</strong></li>
+		</ul>
+	</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	If everything goes fine you can now access to the app at <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	Before starting to customize the template, here are the project files organization structure:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-plain linenums">
++---dist
++---master
+|   +---img
+|   +---jsx
+|   |   +---components
+|   |   |   +---Blog
+|   |   |   +---Charts
+|   |   |   +---Common
+|   |   |   +---Dashboard
+|   |   |   +---Ecommerce
+|   |   |   +---Elements
+|   |   |   +---Extras
+|   |   |   +---Forms
+|   |   |   +---Forum
+|   |   |   +---Layout
+|   |   |   +---Maps
+|   |   |   +---Pages
+|   |   |   +---Tables
+|   |   |   +---Widgets
+|   |   +---App.jsx
+|   |
+|   +---sass
+|   |   +---app
+|   |   +---bootstrap
+|   |   +---themes
+|   +---server
+|   |    +---i18n
+|   +---index.html
+|
++---bower_components
++---node_modules</pre>
+<div>
+	&nbsp;</div>
+<h4 id="structure_main_folders_explanation">Main folders explanation</h4>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>dist/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the compiled files. This files are ready to deploy on your server.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>master/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the source files. You will find the following folders inside</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>sass</strong>/ This folder contains the SCSS files for the core styles and bootstrap styles.</div>
+<div>
+	<strong>jsx</strong>/ Here you will find JSX files for React components. All this files are concatenated into the file <strong>app.bundle.js</strong>.</div>
+<div>
+	<strong>img</strong>/ Images used in the copy (only copied to dist folder)</div>
+<div>
+	<strong>server</strong>/ Contains json files used to emulate server calls</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="structure_custom_code">Custom code</h4>
+	<div>
+		<strong>JSX</strong>: Add a new component folder to create new ReactJS components&nbsp;and import them into the file <strong>App.jsx</strong>, then follow the code examples to associate components to routes.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>SASS</strong>: create a custom folder inside the sass folder and <strong>@import</strong> your files from <strong>app.scss</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		The premise is, the less you change the downloaded code, the easier will be to apply any updates. Try always to keep your own code the most separated as possible from the package code to easily apply new updates when necessary.</div>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="build">
+	<div class="page-header"><h3>Build</h3><hr class="notop"></div>
+<div>
+	<strong>Node</strong>.js is a platform built on Chrome&rsquo;s JavaScript runtime for easily building fast, scalable network applications.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Gulp </strong>is a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for JSX and SASS files</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Bower </strong>is a dependency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you&rsquo;re looking for. Bower keeps track of these packages in a manifest file, bower.json.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The package includes under the master/ folder the file gulpfile.js, package.json and bower.json to install the required components to compile the source files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Installing tools</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	The following steps are intended to be an orientation guide, if you are not experienced with this you will need to learn more about it from Google :)</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		To install node and npm, go to http://nodejs.org/</li>
+	<li>
+		Run npm install -g bower to install bower to manage dependencies</li>
+	<li>
+		Download and install GIT for your platform http://git-scm.com/downloads</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Once you have all tools installed</strong></div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Open a terminal, in the root folder, run the command <strong>npm install</strong>. This command will install gulp and all project dependencies.</li>
+	<li>
+		Then, to install vendor dependencies, run <strong>bower install</strong></li>
+	<li>
+		Finally run <strong>gulp</strong> to start the task manager (see below for more information)</li>
+</ul>
+<div>
+	If everything goes fine, you should see the messages in the terminal telling you that most the task are done ok. The task will watch for files to compile them automatically all files when change.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="build_main_gulp_tasks">Main Gulp tasks</h4>
+	<div>
+		&nbsp;</div>
+	<div>
+		This command will run the default task without minify assets</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp</pre>
+	<div>
+		This taks will start the app with a server in your favourite browser</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp serve</pre>
+	<div>
+		This taks will start the app with a server in your favourite browser in production mode</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp serve --prod</pre>
+	<div>
+		This taks will generate the asset minified (without watch)</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp build --prod</pre>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_webpack_and_react_hot_loader">Webpack and React Hot Loader</h4>
+	<p>
+		Internally, the application is built using <a href="https://webpack.github.io/">WebPack </a>which is a tool that analyze the code and builds a script ready for web browsers.</p>
+	<p>
+		The configuration of webpack is included in files <strong>webpack.config.dev.js</strong> and&nbsp;<strong>webpack.config.prod.js</strong>&nbsp;for each environment respectively.</p>
+	<p>
+		For development stage, gulp will enable a webpack plugin called react-hot-loader which allows to reload components easily without waiting to recompile the entire app.</p>
+	<p>
+		&nbsp;</p>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="usage">
+	<div class="page-header"><h3>Usage</h3><hr class="notop"></div>
+<h4 id="usage_layout">Layout</h4>
+<div>
+	Layout can be changed via the following classed applied to the body tag</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.layout-fixed</strong>: Makes navbars become fixed while the user can scroll only content</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.layout-boxed</strong>: Limits the width of the main wrapper element</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-collapsed</strong>: Condenses the sidebar showing only icons</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-collapsed-text</strong>: Condenses the sidebar showing icons and Text</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-toggle</strong>: used internally for mobiles to hide the sidebar off screen</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.offsidebar-open</strong>: used internally to display the offsidebar component (formally the right sidebar)</div>
+<div>
+	&nbsp;</div>
+<div>
+	<div>
+		<h4 id="usage_jsx">JSX</h4>
+		<div>
+			The Javascript (JSX components) are bundled into one single file&nbsp;<strong>app.bundle.js</strong>&nbsp;that contains all react components declared under the master/jsx folder</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The application start using the file&nbsp;App.jsx. This import all components and declare all routes associating components to each route.</div>
+		<div>
+			&nbsp;</div>
+		<h4 id="usage_routes">Routes</h4>
+		<div>
+			&nbsp;</div>
+		<div>
+			To declare route we use <a href="https://github.com/reactjs/react-router">react-router </a>which is basically a routing library based on React components</div>
+		<div>
+			You can note that according to the layout you are using is necessary to wrap each route with a Base* layout component. Example</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<pre class="prettyprint lang-html linenums">
+ReactDOM.render(
+    &lt;Router history={browserHistory}&gt;
+        &lt;Route path=&quot;/&quot; component={Base}&gt;
+
+            {/* Default route*/}
+            &lt;IndexRoute component={DashboardV1} /&gt;
+
+            ...
+
+        &lt;/Route&gt;
+
+        {/*Horizontal Layout*/}
+        &lt;Route path=&quot;/&quot; component={BaseHorizontal}&gt;
+            ...
+        &lt;/Route&gt;
+
+        {/*Pages*/}
+        &lt;Route path=&quot;/&quot; component={BasePage}&gt;
+            ...
+        &lt;/Route&gt;
+
+        {/* Not found handler */}
+        &lt;Route path=&quot;*&quot; component={NotFound}/&gt;
+
+    &lt;/Router&gt;,
+    document.getElementById(&#39;app&#39;)
+);</pre>
+		</div>
+		<div>
+			&nbsp;</div>
+		<h4 id="usage_bootstrap_components">Bootstrap components</h4>
+		<div>
+			&nbsp;</div>
+		<div>
+			To make the application the most ReactJS-friendly we have included <a href="https://react-bootstrap.github.io/">react-bootstrap </a>which is basically the popular framework rebuilt for React</div>
+		<h4 id="usage_writing_components">Writing components</h4>
+		<div>
+			&nbsp;</div>
+		<div>
+			Each component is declared using the following basic code using ES6</div>
+		<div>
+			<pre class="prettyprint lang-js linenums">
+import React from &#39;react&#39;;
+import ContentWrapper from &#39;../Layout/ContentWrapper&#39;;
+
+class MyComponent extends React.Component {
+
+    render() {
+        return (
+            &lt;ContentWrapper&gt;
+                ...
+            &lt;/ContentWrapper&gt;
+            );
+    }
+
+}
+
+export default MyComponent;</pre>
+			<div>
+				&nbsp;</div>
+			<div>
+				ContentWrapper is a component that must be used to wrap each view in the app.</div>
+			<div>
+				&nbsp;</div>
+		</div>
+		<div>
+			Then from the App.jsx you can import components with</div>
+		<pre class="prettyprint lang-js linenums">
+import MyComponent from &#39;./path/to/MyComponent&#39;;</pre>
+		<div>
+			&nbsp;</div>
+		<div>
+			To keep the Javascript that controls the behavior of plugins separated from the associated component we use the following convention to name files (optional)</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>MyComponent.run.js</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			As you can see, we are just adding the &quot;run&quot; word and the extension is JS</div>
+		<div>
+			Inside you can declare a function to be exported</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<pre class="prettyprint lang-js linenums">
+export default function() {
+    // code..
+}</pre>
+			<div>
+				&nbsp;</div>
+		</div>
+		<div>
+			Then from the component JSX you can import this file</div>
+		<div>
+			&nbsp;</div>
+		<pre class="prettyprint lang-js linenums">
+import MyComponenttRun from &#39;./MyComponentt.run&#39;;</pre>
+		<div>
+			&nbsp;</div>
+		<div>
+			And using the&nbsp;componentDidMount() call the imported function</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<pre class="prettyprint lang-js linenums">
+componentDidMount() {
+   MyComponenttRun();
+}</pre>
+			<div>
+				&nbsp;</div>
+		</div>
+		<h4 id="usage_sass">SASS</h4>
+		<div>
+			SASS files are used to compile the main application styles into the file<strong>&nbsp;app.css&nbsp;</strong>and the&nbsp;<u>custom Bootstrap</u>&nbsp;styles into&nbsp;<strong>bootstrap.css</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Also the&nbsp;<strong>app-rtl.css</strong>&nbsp;and&nbsp;<strong>bootstra-rtl.css</strong>&nbsp;are automatically generated with the same styles but inverted for RTL layout.&nbsp;</div>
+		<div>
+			<div>
+				<h4 id="usage_vendor">Vendor</h4>
+			</div>
+			<div>
+				<strong>vendor.bundle.js</strong>: contains the vendor &nbsp;scripts used in the application</div>
+			<div>
+				<strong>vendor.bundle.css</strong>: contains the vendor styles used in the application</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				To edit the assets included in vendor bundles file, edit the paths in file <strong>vendor.json </strong>located under the root folder</div>
+		</div>
+		<h4 id="usage_vendor_updates">Vendor Updates</h4>
+		<div>
+			To update vendor files via bower you can edit the&nbsp;<strong>bower.json</strong>&nbsp;file by adding the last version you want to download.</div>
+	</div>
+	<div>
+		&nbsp;</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="themes">
+	<div class="page-header"><h3>Themes</h3><hr class="notop"></div>
+<p>
+	To change the color scheme:</p>
+<h4 id="themes_from_sass_files">From SASS files</h4>
+<div>
+	&nbsp;</div>
+<div>
+	Edit the SASS files in folder master/sass/app and the file <strong>master/sass/bootstrap/variables.scss</strong> to use the color you want.</div>
+<div>
+	Like Bootstrap, most of the colors are based on $brand-* variables.</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can also edit the files in master/sass/themes folder to create your own set of color schemes. This files must be included after the app.css in order to override the default color set.</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	Changing the theme colors from SASS files helps you to avoid bloating your css by not double declaring your color rules.</div>
+<div>
+	&nbsp;</div>
+<h4 id="themes_default_theme">Default Theme</h4>
+<div>
+	&nbsp;</div>
+<div>
+	To set a default theem just include in file index.html the theme stylesheet of your choice right after the the main stylesheet (app.css)</div>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed Project</h3><hr class="notop"></div>
+<div>
+	This project is an application skeleton. You can use it to quickly bootstrap your ReactJS webapp projects and dev environment for these projects.&nbsp;</div>
+<div>
+	The seed app doesn&#39;t do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<div>
+		This project is provided in order to start with the template using a different approach. Usually, templates will come with all features working and you need to remove them one by one in the way you don&#39;t need them.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		With the seed project you can start adding custom features and others from the full project to make grow your app.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Since the files and structure is the same for the full and seed projects, you can save time using comparison tools that allows to apply changes from full features project into the seed project</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<h4 id="credits_a_href"http_vendor_creditshtml"vendor_assets_a"><a href="http://vendor-credits.html">Vendor Assets</a></h4>
+</section>
+
+	</div>
+</body>
+</html>

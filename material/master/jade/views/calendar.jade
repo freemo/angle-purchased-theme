@@ -1,0 +1,23 @@
+h3 Full Calendar
+  small Drag and Drop events and tasks
+
+// START row
+.calendar-app(ng-controller="CalendarController")
+    .row
+        .col-lg-3.col-md-4
+            // START panel
+            .panel.panel-default
+                .panel-heading Angular UI Calendar
+                .panel-body
+                    p UI.calendar is a complete AngularJS directive for the Arshaw FullCalendar.
+                    p FullCalendar is a drag-n-drop jQuery plugin for displaying events on a full-sized calendar.
+                    p: strong A JavaScript event calendar. Customizable and open source.
+                .panel-body(ng-if="alertMessage")
+                    p Messages:
+                    .box-placeholder {{alertMessage}}
+        .col-lg-9.col-md-8
+            .panel.panel-default
+                .panel-heading Calendar
+                .panel-body
+                    // START calendar
+                    div(ui-calendar="uiConfig.calendar" class="calendar" ng-model="eventSources")

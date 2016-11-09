@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "TableJQGrid";
+}
+
+<h3>
+    jqGrid
+    <small>Grid plugin</small>
+</h3>
+<!-- JSON-->
+<div class="jqgrid-responsive mb-lg">
+    <table id="jqGridJSON"></table>
+    <div id="jqGridJSONPager"></div>
+</div>
+<!-- NESTED-->
+<div class="jqgrid-responsive mb-lg">
+    <table id="jqGridTree"></table>
+    <div id="jqGridTreePager"></div>
+</div>
+
+@section Styles {
+    <environment names="Development">
+        <link href="~/lib/jqgrid/css/ui.jqgrid.css" rel="stylesheet" />
+        <link href="~/lib/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    </environment>
+    <environment names="Staging,Production">
+        <link href="~/lib/jqgrid/css/ui.jqgrid.css" rel="stylesheet" />
+        <link href="~/lib/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    </environment>
+}
+
+@section Scripts {
+
+    <environment names="Development">
+        <script src="~/lib/jqgrid/js/jquery.jqGrid.js"></script>
+        <script src="~/lib/jqgrid/js/i18n/grid.locale-en.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/jqgrid/js/jquery.jqGrid.js"></script>
+        <script src="~/lib/jqgrid/js/i18n/grid.locale-en.js"></script>
+    </environment>
+
+}

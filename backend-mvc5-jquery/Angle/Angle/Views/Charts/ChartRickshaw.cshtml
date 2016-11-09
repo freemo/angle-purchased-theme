@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "ChartRickshaw";
+}
+
+<h3>Rickshaw</h3>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">Rickshaw graph</div>
+        <div class="panel-body">
+            <div id="rickshaw1"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Stacked Area</div>
+                <div class="panel-body">
+                    <div id="rickshaw2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Line</div>
+                <div class="panel-body">
+                    <div id="rickshaw3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Stacked Bars</div>
+                <div class="panel-body">
+                    <div id="rickshaw4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/bundles/RickshawCss")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/Rickshaw")
+}

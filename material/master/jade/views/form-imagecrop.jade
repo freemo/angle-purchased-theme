@@ -1,0 +1,26 @@
+h3 Image Crop
+  small Simple Image Crop directive for AngularJS
+
+.container-fluid(ng-controller='ImageCropController as imgcrop')
+  .row
+    .col-md-3
+      .panel
+        .panel-heading 
+          a.pull-right(href="#", ng-click="imgcrop.reset()"): small.fa.fa-refresh.text-muted
+          | Select an image file 
+        .panel-body
+          .form-group
+            input#fileInput.form-control(filestyle="", type='file', data-class-button='btn btn-default', data-class-input="form-control", data-button-text="")
+          p.pv Crop type:
+          .btn-group.btn-group-justified.mb
+            label.btn.btn-default(ng-model='imgcrop.imgcropType', uib-btn-radio="'square'") Square
+            label.btn.btn-default(ng-model='imgcrop.imgcropType', uib-btn-radio="'circle'") Circle
+          br
+          .imgcrop-preview(data-text="Cropped Image")
+            img(ng-src='{{imgcrop.myCroppedImage}}')
+    .col-md-9
+      .panel
+        .panel-body
+          .imgcrop-area
+            img-crop(image='imgcrop.myImage', result-image='imgcrop.myCroppedImage', area-type="{{imgcrop.imgcropType}}")
+

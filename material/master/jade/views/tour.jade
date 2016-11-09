@@ -1,0 +1,37 @@
+h3 Tour
+  small The easiest way to show people how to use your website. 
+
+
+.container-fluid(ng-controller='TourCtrl', tour="",  backdrop="true")
+  button.btn.btn-primary.mb-lg(ng-click='tour.restart(true)') Start Tour!
+  .row
+    .col-lg-6
+      .panel(tour-step='', order='1', title='Step 1', content='This is the fisrt step', placement='right')
+        .panel-heading About
+        .panel-body
+          p This is a simple Angular wrapper around Bootstrap Tour. Simply add the "tour" directive anywhere, and add the "tour-step" directive to any element within "tour" that needs a tip.
+            | All options are available by adding the corresponding attributes to the directive element.
+            | There is also a "skip" option that if evaluates to true, will skip over the step.
+            | This repository was scaffolded with generator-microjs.
+      
+    .col-lg-6
+      .panel(tour-step='', order='2', title='Step 2', content='This is the second step', placement='left')
+        .panel-heading Configuration
+        .panel-body
+          p The TourConfigProvider allows you to set a couple options:
+            | prefixOptions {boolean, default: false} if set to true will require directive options to be prefixed to avoid conflicts
+            | prefix {string, default: 'bsTour'} the prefix to use if prefixOptions is set to true
+            | Use TourConfigProvider.set(&lt;option&gt;, &lt;value&gt;) in your app's config block to change the settings
+            | You can use either tour and tourStep or bsTour and bsTourStep as directive names without changing config.    
+  .row
+    .col-lg-12
+      .panel(tour-step='', order='3', title='Last Step', content='This is the last step', placement='top')
+        .panel-heading Example
+        .panel-body
+          pre
+            | &lt;div tour placement="top" on-end="onTourEnd(tour)" after-get-state="afterGetStateFunction" template-url="tour_template.html"&gt;
+            |   &lt;div id="mainMenu" tour-step title="Main Menu" content="{{mainMenuDescription}}" order="0" skip="pageName !== 'home'"&gt;
+            |       ...
+            |   &lt;/div&gt;
+            |   ...
+            | &lt;/div&gt;

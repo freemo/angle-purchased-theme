@@ -1,0 +1,110 @@
+@{
+    ViewBag.Title = "Todo List";
+}
+<div class="content-heading">Todo List
+   <button class="pull-right btn btn-danger">Clear All Items</button>
+   <small>Keeping track of tasks</small>
+</div>
+<div class="table-grid todo">
+   <div class="col col-lg">
+      <div class="pr-lg">
+         <form class="mb-xl">
+            <div class="form-group">
+               <input type="text" placeholder="Task title.." required="required" class="form-control" />
+            </div>
+            <div class="form-group">
+               <textarea placeholder="Type a description.." rows="8" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Todo</button>
+         </form>
+      </div>
+   </div>
+   <div class="col todo-item-list">
+      <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group">
+         <div class="todo-item panel panel-default todo-complete">
+            <div class="panel-heading">
+               <h4 class="panel-title">
+                  <span role="button" data-toggle="collapse-disabled" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="clickable">
+                     <span class="close">&times;</span>
+                     <span class="inline checkbox c-checkbox">
+                        <label>
+                           <input id="todo-item-0" type="checkbox" />
+                           <span class="fa fa-check"></span>
+                        </label>
+                     </span>
+                     <span class="todo-title">Meeting with Mark at 7am.</span>
+                     <span class="todo-edit fa fa-pencil"></span>
+                  </span>
+               </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+               <div class="panel-body">
+                  <p>
+                     <span>Pellentesque convallis mauris eu elit imperdiet quis eleifend quam aliquet.</span>
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="todo-item panel panel-default">
+            <div class="panel-heading">
+               <h4 class="panel-title">
+                  <span role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="clickable collapsed">
+                     <span class="close">&times;</span>
+                     <span class="inline checkbox c-checkbox">
+                        <label>
+                           <input id="todo-item-1" type="checkbox" />
+                           <span class="fa fa-check"></span>
+                        </label>
+                     </span>
+                     <span class="todo-title">Call Sonya. Talk about the new project.</span>
+                     <span class="todo-edit fa fa-pencil"></span>
+                  </span>
+               </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+               <div class="panel-body">
+                  <p>
+                     <span class="text-muted">No item description</span>
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="todo-item panel panel-default">
+            <div class="panel-heading">
+               <h4 class="panel-title">
+                  <span role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="clickable collapsed">
+                     <span class="close">&times;</span>
+                     <span class="inline checkbox c-checkbox">
+                        <label>
+                           <input id="todo-item-2" type="checkbox" />
+                           <span class="fa fa-check"></span>
+                        </label>
+                     </span>
+                     <span class="todo-title">Find a new place for vacations</span>
+                     <span class="todo-edit fa fa-pencil"></span>
+                  </span>
+               </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+               <div class="panel-body">
+                  <p>
+                     <span class="text-muted">No item description</span>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="text-right">
+         <span>1 Completed</span>-
+         <span>2 Pending</span>
+      </p>
+      <!-- end ngIf: items.length > 0-->
+   </div>
+</div>
+
+@section Styles {
+
+}
+@section Scripts {
+
+}

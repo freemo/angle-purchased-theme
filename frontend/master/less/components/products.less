@@ -1,0 +1,30 @@
+
+.products {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: @gray-lighter;
+    text-align: center;
+    .product-thumb {
+        display: inline-block;
+        margin-bottom: 30px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        background: #fff;
+        border-radius: 2px;
+        overflow: hidden;
+        padding: 8px;
+        > a {
+            display: block;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .product-caption {
+            margin: 0;
+            padding: 16px 4px;
+            font-weight: bold;
+            text-align: left;
+            > small {
+                display: block;
+                color: @text-muted;
+            }
+        }
+    }
+}

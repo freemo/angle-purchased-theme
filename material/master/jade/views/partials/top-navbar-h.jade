@@ -1,0 +1,107 @@
+// START Top Navbar
+nav.navbar.topnavbar(role='navigation')
+    // START navbar header
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#/') 
+        .brand-logo 
+          img.img-responsive(src="app/img/logo.png", alt="App Logo")
+        .brand-logo-collapsed 
+          img.img-responsive(src="app/img/logo-single.png", alt="App Logo")
+
+    // END navbar header
+
+    // START Nav wrapper
+    .collapse.navbar-collapse(uib-collapse="navCollapsed")
+      // Navbar Menu 
+      ul.nav.navbar-nav(ng-controller="SidebarController")
+        li(ng-repeat='item in menuItems | limitTo: 3 ', ng-class="{'dropdown': item.submenu}", uib-dropdown="!!item.submenu")
+          a(ng-if="!item.heading && !item.submenu", ng-href="{{$state.href(item.sref)}}", title="{{item.text}}")
+            span {{(item.translate | translate) || item.text}}
+          a(uib-dropdown-toggle="", ng-if="item.submenu")
+            span {{(item.translate | translate) || item.text}}
+          // START Dropdown menu
+          ul.dropdown-menu(class="animated fadeInUp")
+            li(ng-repeat="subitem in item.submenu")
+              a(ng-href="{{$state.href(subitem.sref)}}", title="{{subitem.text}}")
+                span {{(subitem.translate | translate) || subitem.text}}
+      // End Navbar Menu
+
+      // START Right Navbar
+      ul.nav.navbar-nav.navbar-right
+        // START lock screen
+        li
+          a(ui-sref="page.lock", title="Lock screen")
+            em.icon-lock
+        // END lock screen
+        // Search icon
+        li
+          a(href='', search-open)
+            em.icon-magnifier
+        // Fullscreen (only desktops)
+        li.visible-lg
+          a(href='', toggle-fullscreen)
+            em.fa.fa-expand
+        // START Alert menu
+        li.dropdown.dropdown-list(uib-dropdown="")
+          a(uib-dropdown-toggle="")
+            em.icon-bell
+            .label.label-danger 11
+          // START Dropdown menu
+          ul.dropdown-menu(class="animated flipInX")
+            li
+              // START list group
+              .list-group
+                // list item
+                a.list-group-item(href='')
+                  .media-box
+                    .pull-left
+                      em.fa.fa-twitter.fa-2x.text-info
+                    .media-box-body.clearfix
+                        p.m0 New followers
+                        p.m0.text-muted: small 1 new follower
+                // list item
+                a.list-group-item(href='')
+                  .media-box
+                    .pull-left
+                      em.fa.fa-envelope.fa-2x.text-warning
+                    .media-box-body.clearfix
+                        p.m0 New e-mails
+                        p.m0.text-muted: small You have 10 new emails
+                // list item
+                a.list-group-item(href='')
+                  .media-box
+                    .pull-left
+                      em.fa.fa-tasks.fa-2x.text-success
+                    .media-box-body.clearfix
+                        p.m0 Pending Tasks
+                        p.m0.text-muted: small 11 pending task
+
+                // last list item 
+                a.list-group-item(href='')
+                  small(translate="topbar.notification.MORE") More notifications
+                  span.label.label-danger.pull-right 14
+              // END list group
+          // END Dropdown menu
+        // END Alert menu
+        // START Contacts button
+        li
+          a(href='', ng-click="app.offsidebarOpen = !app.offsidebarOpen")
+            em.icon-notebook
+        // END Contacts menu
+      // END Right Navbar
+    // END Nav wrapper
+    
+    // START Search form
+    form.navbar-form(role='search', action="search.html")
+      .form-group.has-feedback
+        input.form-control(type='text', placeholder="{{ 'topbar.search.PLACEHOLDER' | translate }}")
+        .fa.fa-times.form-control-feedback(search-dismiss)
+      button.hidden.btn.btn-default(type='submit') Submit
+    // END Search form
+
+// END Top Navbar

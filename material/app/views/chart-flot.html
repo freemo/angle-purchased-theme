@@ -1,0 +1,135 @@
+<h3>
+   <div class="pull-right text-center">
+      <div sparkline="" data-bar-color="#cfdbe2" data-height="20" data-bar-width="3" data-bar-spacing="2" values="1,0,4,9,5,7,8,9,5,7,8,4,7"></div>
+   </div>Flot charts</h3>
+<div class="container-fluid" ng-controller="FlotChartController as chart">
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-6">
+         <div class="panel panel-default" id="panelChart1">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss" tool-refresh="traditional"></paneltool>
+               <div class="panel-title">Area</div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart1">
+               <div class="panel-body">
+                  <flot dataset="chart.areaData" options="chart.areaOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-6">
+         <div class="panel panel-default" id="panelChart9">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss" tool-refresh="traditional"></paneltool>
+               <div class="panel-title">Area Spline</div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart9">
+               <div class="panel-body">
+                  <flot dataset="chart.splineData" options="chart.splineOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-6">
+         <div class="panel panel-default" id="panelChart2">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+               <div class="panel-title">Bar</div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart2">
+               <div class="panel-body">
+                  <flot dataset="chart.barData" options="chart.barOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-6">
+         <div class="panel panel-default" id="panelChart3">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+               <div class="panel-title">Bar - Stacked</div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart3">
+               <div class="panel-body">
+                  <div class="indicator show">
+                     <span class="spinner"></span>
+                  </div>
+                  <flot dataset="chart.barStackeData" options="chart.barStackedOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-12">
+         <div class="panel panel-default" id="panelChart4">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+               <div class="panel-title">Real Time</div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart4">
+               <div class="panel-body">
+                  <flot dataset="chart.realTimeData" options="chart.realTimeOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-12">
+         <div class="panel panel-default" id="panelChart4">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+               <div class="panel-title">Line</div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart4">
+               <div class="panel-body">
+                  <flot dataset="chart.lineData" options="chart.lineOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-md-6">
+         <div class="panel panel-default" id="panelChart5">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+               <div class="panel-title">Pie</div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart5">
+               <div class="panel-body">
+                  <flot dataset="chart.pieData" options="chart.pieOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="panel panel-default" id="panelChart6">
+            <div class="panel-heading">
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+               <div class="panel-title">Donut
+                  <small>(loaded from json)</small>
+               </div>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelChart6">
+               <div class="panel-body">
+                  <flot dataset="chart.donutData" options="chart.donutOptions" height="300px"></flot>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+</div>

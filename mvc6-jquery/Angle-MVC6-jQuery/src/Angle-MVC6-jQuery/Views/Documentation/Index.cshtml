@@ -1,0 +1,20 @@
+@{
+    ViewBag.Title = "Documentation";
+}
+<div class="flatdoc-wrapper">
+   <div class="flatdoc">
+      <div class="flatdoc-menu"></div>
+      <div class="flatdoc-content"></div>
+   </div>
+</div>
+
+@section Scripts {
+
+    <environment names="Development">
+        <script src="~/lib/flatdoc/flatdoc.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/flatdoc/flatdoc.js"></script>
+    </environment>
+
+}

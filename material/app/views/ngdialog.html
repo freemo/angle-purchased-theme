@@ -1,0 +1,148 @@
+<h3>ngDialog
+   <small>Native Angular.js solution</small>
+</h3>
+<div class="container-fluid" ng-controller="DialogMainCtrl">
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open via service</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="open()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open via directive</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-dialog="firstDialogId" ng-dialog-controller="InsideCtrl" ng-dialog-data="{{jsonData}}" ng-dialog-class="ngdialog-theme-default" ng-dialog-show-close="false">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Default theme</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openDefault()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Inline controller</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openInlineController()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open with external template for modal</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openTemplate()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open with external template for modal (disabled cache)</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openTemplateNoCache()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open and use return value to close later</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openTimed()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open and use promise to know when closed</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openNotify()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open confirm modal</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openConfirm()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open default modal with pre-close callback inlined</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openDefaultWithPreCloseCallbackInlined()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open via directive with pre-close callback</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-dialog="firstDialogId" ng-dialog-controller="InsideCtrl" ng-dialog-data="{{jsonData}}" ng-dialog-class="ngdialog-theme-default" ng-dialog-scope="this" ng-dialog-pre-close-callback="directivePreCloseCallback"
+            ng-dialog-show-close="false">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open confirm modal with pre-close callback on scope</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openConfirmWithPreCloseCallbackOnScope()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open confirm modal with pre-close inlined with nested confirm.</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openConfirmWithPreCloseCallbackInlinedWithNestedConfirm()">Open</a>
+         </p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-9 col-lg-6">
+         <p class="mt-sm">Open without overlay</p>
+      </div>
+      <div class="col-xs-3 col-lg-6">
+         <p><a class="btn btn-default" href="" ng-click="openWithoutOverlay()">Open</a>
+         </p>
+      </div>
+   </div>
+   <!-- Templates -->
+   <script type="text/ng-template" id="firstDialogId">
+      <div><h3 class="mt0">ngDialog template</h3><p ng-show="theme">Test content for<code>{{theme}}</code></p><p ng-show="ngDialogData.foo">Data passed through:<code>{{ngDialogData.foo}}</code></p><p ng-show="dialogModel.message">Scope passed through:<code>{{dialogModel.message}}</code></p><button class="btn btn-default mr" type="button" ng-dialog="secondDialogId" ng-dialog-class="ngdialog-theme-default" ng-dialog-controller="SecondModalCtrl" ng-dialog-close-previous="ng-dialog-close-previous">Close and open</button><button class="btn btn-primary" type="button" ng-click="openSecond()">Open next</button></div>
+   </script>
+   <script type="text/ng-template" id="dialogWithNestedConfirmDialogId">
+      <div class="ngdialog-message"><h3 class="mt0">ngDialog template</h3><p>Dialog containing work in which a user has to perform a task (e.g. editing data).</p><p>'Save' would save the task's actions, while 'Cancel' would cause the task's actions to be lost.</p><p>...other controls here...</p><button class="btn btn-default mr" type="button" ng-click="closeThisDialog('Cancel')">Cancel</button><button class="btn btn-primary" type="button" ng-click="confirm('Save')">Save</button></div>
+   </script>
+   <script type="text/ng-template" id="withInlineController">
+      <div class="ngdialog-message"><h3 class="mt0">ngDialog template</h3><p ng-show="theme">Test content for<code>{{theme}}</code></p><p ng-show="exampleExternalData">Example data from external service:<code>{{exampleExternalData}}</code></p><button class="btn btn-primary" type="button" ng-click="closeThisDialog()">Close</button></div>
+   </script>
+   <script type="text/ng-template" id="secondDialogId">
+      <p class="lead m0"><a href="" ng-click="closeSecond()">Close all by click here!</a></p>
+   </script>
+   <script type="text/ng-template" id="modalDialogId">
+      <div class="ngdialog-message"><h3>ngDialog modal example</h3><p>The<code>.openConfirm()</code>function returns a promise that is resolved when confirmed and rejected when otherwise closed. Modal dialogs by default do not close when clicked outside the dialog or when hitting escape. This can ofcourse be overridden when opening the dialog.</p><p>Confirm can take a value. Enter one here for example and see the console output:<input ng-model="confirmValue"/></p><button class="btn btn-primary mr" type="button" ng-click="confirm(confirmValue)">Confirm</button><button class="btn btn-default" type="button" ng-click="closeThisDialog('button')">Cancel</button></div>
+   </script>
+</div>

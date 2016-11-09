@@ -1,0 +1,411 @@
+h3 Form Wizards
+  small Native AngularJS form wizard
+// START panel
+.panel.panel-default
+  .panel-heading  Form Wizard Horizontal (no validation)
+  .panel-body
+    form(form-wizard="", steps="4", novalidate="", ng-submit="alertSubmit()")
+      .form-wizard.wizard-horizontal
+        // START wizard steps indicator
+        ol.row
+          li.col-md-3(ng-class="{'active':wizard.active(1)}", ng-click="wizard.go(1)")
+            h4 Login
+            small.text-muted Duis volutpat nunc at ligula tincidunt non aliquam.
+          li.col-md-3(ng-class="{'active':wizard.active(2)}", ng-click="wizard.go(2)")
+            h4 Personal
+            small.text-muted Nulla pharetra imperdiet sapien ac faucibus.
+          li.col-md-3(ng-class="{'active':wizard.active(3)}", ng-click="wizard.go(3)")
+            h4 Contact
+            small.text-muted Sed elementum lorem dolor, id fermentum metus.
+          li.col-md-3(ng-class="{'active':wizard.active(4)}", ng-click="wizard.go(4)")
+            h4 Done!
+            small.text-muted Nullam sit amet magna vestibulum libero.
+        // END wizard steps indicator
+
+        // START Wizard Step inputs
+        div(ng-show="wizard.active(1)")
+          fieldset
+            legend Login
+            // START row
+            .row
+              .col-md-4
+                .form-group
+                  label Username
+                  .controls
+                    input.form-control(type='text', name='username', placeholder='Your nick here')
+              .col-md-4
+                .form-group
+                  label Password
+                  .controls
+                    input.form-control(type='password', name='password', placeholder='Your password')
+              .col-md-4
+                .form-group
+                  label Retype Password
+                  .controls
+                    input.form-control(type='password', name='password2', placeholder='Confirmed password')
+            // END row
+          ul.pager
+            li.next
+              a(href='', ng-click="wizard.go(2)")
+                | Next
+                span &rarr;
+        // END Wizard Step inputs
+        // START Wizard Step inputs
+        div(ng-show="wizard.active(2)")
+          fieldset
+            legend Personal
+            // START row
+            .row
+              .col-md-6
+                .form-group
+                  label First Name
+                  input.form-control(type='text', name='first-name', placeholder='John')
+              .col-md-6
+                .form-group
+                  label Last Name
+                  input.form-control(type='text', name='last-name', placeholder='Snow')
+            // END row
+          ul.pager
+            li.previous
+              a(href='', ng-click="wizard.go(1)")
+                span &larr; Previous
+            li.next
+              a(href='', ng-click="wizard.go(3)")
+                | Next
+                span &rarr;
+        // END Wizard Step inputs
+        // START Wizard Step inputs
+        div(ng-show="wizard.active(3)")
+          fieldset
+            legend Contact
+            // START row
+            .row
+              .col-md-6
+                .form-group
+                  label Email
+                  input.form-control(type='text', name='email', placeholder='john@snow.com')
+              .col-md-6
+                .form-group
+                  label Phone
+                  input.form-control(type='text', name='phone', placeholder='11-2345-6789')
+            // END row
+          ul.pager
+            li.previous
+              a(href='', ng-click="wizard.go(2)")
+                span &larr; Previous
+            li.next
+              a(href='', ng-click="wizard.go(4)")
+                | Next
+                span &rarr;
+        // END Wizard Step inputs
+        // START Wizard Step inputs
+        div(ng-show="wizard.active(4)")
+          .jumbotron
+            h1 Done!
+            p In vulputate mattis ipsum vitae vehicula. Praesent at arcu non arcu convallis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            p
+              input.btn.btn-info.btn-lg(type='submit', value="You can Proceed Now")
+          ul.pager
+            li.previous
+              a(href='', ng-click="wizard.go(3)")
+                span &larr; Previous
+        // END Wizard Step inputs
+// END panel
+
+// START row
+.row
+  .col-lg-6
+    // START panel
+    .panel.panel-default
+      .panel-heading  Form Wizard Vertical (no validation)
+      .panel-body
+        form(form-wizard="", action='/', method='POST', steps="4")
+          .form-wizard.wizard-vertical
+            // START wizard steps indicator
+            ol
+              li(ng-class="{'active':wizard.active(1)}", ng-click="wizard.go(1)")
+                h4.mb0 Login
+              li(ng-class="{'active':wizard.active(2)}", ng-click="wizard.go(2)")
+                h4.mb0 Personal
+              li(ng-class="{'active':wizard.active(3)}", ng-click="wizard.go(3)")
+                h4.mb0 Contact
+              li(ng-class="{'active':wizard.active(4)}", ng-click="wizard.go(4)")
+                h4.mb0 Done!
+            // END wizard steps indicator
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(1)")
+              fieldset
+                .form-group
+                  label Username
+                  .controls
+                    input.form-control(type='text', name='username', placeholder='Your nick here')
+                .form-group
+                  label Password
+                  .controls
+                    input.form-control(type='password', name='password', placeholder='Your password')
+                .form-group
+                  label Retype Password
+                  .controls
+                    input.form-control(type='password', name='password2', placeholder='Confirmed password')
+              ul.pager
+                li.next
+                  a(href='', ng-click="wizard.go(2)")
+                    | Next
+                    span &rarr;
+            // END Wizard Step inputs
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(2)")
+              fieldset
+                .form-group
+                  label First Name
+                  input.form-control(type='text', name='first-name', placeholder='John')
+                .form-group
+                  label Last Name
+                  input.form-control(type='text', name='last-name', placeholder='Snow')
+              ul.pager
+                li.previous
+                  a(href='', ng-click="wizard.go(1)")
+                    span &larr; Previous
+                li.next
+                  a(href='', ng-click="wizard.go(3)")
+                    | Next
+                    span &rarr;
+
+            // END Wizard Step inputs
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(3)")
+              fieldset
+                .form-group
+                  label Email
+                  input.form-control(type='text', name='email', placeholder='john@snow.com')
+                .form-group
+                  label Phone
+                  input.form-control(type='text', name='phone', placeholder='11-2345-6789')
+              ul.pager
+                li.previous
+                  a(href='', ng-click="wizard.go(2)")
+                    span &larr; Previous
+                li.next
+                  a(href='', ng-click="wizard.go(4)")
+                    | Next
+                    span &rarr;
+            // END Wizard Step inputs
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(4)")
+              .jumbotron.m0
+                h3.mt0 Done!
+                p In vulputate mattis ipsum vitae vehicula.
+                p.m0
+                  button.btn.btn-info(type='button') You can Proceed Now
+              ul.pager
+                li.previous
+                  a(href='', ng-click="wizard.go(3)")
+                    span &larr; Previous
+            // END Wizard Step inputs
+    // END panel
+
+  .col-lg-6
+    // START panel
+    .panel.panel-default
+      .panel-heading  Form Wizard No indicator (no validation)
+      .panel-body
+        form(form-wizard="",action='/', method='POST', steps="4")
+          .form-wizard
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(1)")
+              legend 1. Login
+              fieldset
+                .form-group
+                  label Username
+                  .controls
+                    input.form-control(type='text', name='username', placeholder='Your nick here')
+                .form-group
+                  label Password
+                  .controls
+                    input.form-control(type='password', name='password', placeholder='Your password')
+                .form-group
+                  label Retype Password
+                  .controls
+                    input.form-control(type='password', name='password2', placeholder='Confirmed password')
+              ul.pager
+                li.next
+                  a(href='', ng-click="wizard.go(2)")
+                    | Next
+                    span &rarr;
+            // END Wizard Step inputs
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(2)")
+              legend 2. Personal
+              fieldset
+                .form-group
+                  label First Name
+                  input.form-control(type='text', name='first-name', placeholder='John')
+                .form-group
+                  label Last Name
+                  input.form-control(type='text', name='last-name', placeholder='Snow')
+              ul.pager
+                li.previous
+                  a(href='', ng-click="wizard.go(1)")
+                    span &larr; Previous
+                li.next
+                  a(href='', ng-click="wizard.go(3)")
+                    | Next
+                    span &rarr;
+
+            // END Wizard Step inputs
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(3)")
+              legend 3. Contact
+              fieldset
+                .form-group
+                  label Email
+                  input.form-control(type='text', name='email', placeholder='john@snow.com')
+                .form-group
+                  label Phone
+                  input.form-control(type='text', name='phone', placeholder='11-2345-6789')
+              ul.pager
+                li.previous
+                  a(href='', ng-click="wizard.go(2)")
+                    span &larr; Previous
+                li.next
+                  a(href='', ng-click="wizard.go(4)")
+                    | Next
+                    span &rarr;
+            // END Wizard Step inputs
+            // START Wizard Step inputs
+            div(ng-show="wizard.active(4)")
+              legend 4. Last Step
+              .jumbotron
+                h3.mt0 Done!
+                p In vulputate mattis ipsum vitae vehicula.
+                p.m0
+                  button.btn.btn-info(type='button') You can Proceed Now
+              ul.pager
+                li.previous
+                  a(href='', ng-click="wizard.go(3)")
+                    span &larr; Previous
+            // END Wizard Step inputs
+    // END panel
+// END row
+
+// START panel
+.panel.panel-default
+  .panel-heading  Form Wizard Horizontal (with validation)
+  .panel-body
+    form(action='/', form-wizard="", steps="4", validate-steps="true", name="wizardValidation")
+      .form-wizard.wizard-horizontal
+        // START wizard steps indicator
+        ol.row
+          li.col-md-3(ng-class="{'active':wizard.active(1)}", ng-click="wizard.go(1)")
+            h4 Login
+            small.text-muted Duis volutpat nunc at ligula tincidunt non aliquam.
+          li.col-md-3(ng-class="{'active':wizard.active(2)}", ng-click="wizard.go(2)")
+            h4 Personal
+            small.text-muted Nulla pharetra imperdiet sapien ac faucibus.
+          li.col-md-3(ng-class="{'active':wizard.active(3)}", ng-click="wizard.go(3)")
+            h4 Contact
+            small.text-muted Sed elementum lorem dolor, id fermentum metus.
+          li.col-md-3(ng-class="{'active':wizard.active(4)}", ng-click="wizard.go(4)")
+            h4 Done!
+            small.text-muted Nullam sit amet magna vestibulum libero.
+        // END wizard steps indicator
+
+        // START Wizard Step inputs
+        div#step1(ng-show="wizard.active(1)")
+          // Wizard with validation require inner forms to group step inputs to be validated
+          fieldset(ng-form="formStep1")
+            legend Login
+            // START row
+            .row
+              .col-md-4
+                .form-group
+                  label Username
+                  .controls
+                    input.form-control(type='text', name='username', ng-model="username", placeholder='Your nick here', required)
+                    span.text-danger(ng-show="formStep1.$submitted && formStep1.username.$invalid") This field is invalid
+              .col-md-4
+                .form-group
+                  label Password
+                  .controls
+                    input.form-control(type='password', name='password', ng-model="password", placeholder='Your password', required)
+                    span.text-danger(ng-show="formStep1.$submitted && formStep1.password.$invalid") This field is invalid
+              .col-md-4
+                .form-group
+                  label Retype Password
+                  .controls
+                    input.form-control(type='password', name='password2', ng-model="password2", placeholder='Confirmed password', required)
+                    span.text-danger(ng-show="formStep1.$submitted && formStep1.password2.$invalid") This field is invalid
+            // END row
+          ul.pager
+            li.next
+              a(href='', ng-click="wizard.go(2)")
+                | Next
+                span &rarr;
+        // END Wizard Step inputs
+        // START Wizard Step inputs
+        div#step2(ng-show="wizard.active(2)")
+          // Wizard with validation require inner forms to group step inputs to be validated
+          fieldset(ng-form="formStep2")
+            legend Personal
+            // START row
+            .row
+              .col-md-6
+                .form-group
+                  label First Name
+                  input.form-control(type='text', name='firstName', ng-model="firstName", placeholder='John', required)
+                  span.text-danger(ng-show="formStep2.$submitted && formStep2.firstName.$invalid") This field is invalid
+              .col-md-6
+                .form-group
+                  label Last Name
+                  input.form-control(type='text', name='lastName', ng-model="lastName", placeholder='Snow', required)
+                  span.text-danger(ng-show="formStep2.$submitted && formStep2.lastName.$invalid") This field is invalid
+            // END row
+          ul.pager
+            li.previous
+              a(href='', ng-click="wizard.go(1)")
+                span &larr; Previous
+            li.next
+              a(href='', ng-click="wizard.go(3)")
+                | Next
+                span &rarr;
+        // END Wizard Step inputs
+        // START Wizard Step inputs
+        div#step3(ng-show="wizard.active(3)")
+          // Wizard with validation require inner forms to group step inputs to be validated
+          fieldset(ng-form="formStep3")
+            legend Contact
+            // START row
+            .row
+              .col-md-6
+                .form-group
+                  label Email
+                  input.form-control(type='email', name='email', ng-model="email", placeholder='john@snow.com', required)
+                  span.text-danger(ng-show="formStep3.$submitted && formStep3.email.$invalid") This field is invalid
+              .col-md-6
+                .form-group
+                  label Phone
+                  input.form-control(type='text', name='phone', ng-model="phone", placeholder='11-2345-6789', required)
+                  span.text-danger(ng-show="formStep3.$submitted && formStep3.phone.$invalid") This field is invalid
+            // END row
+          ul.pager
+            li.previous
+              a(href='', ng-click="wizard.go(2)")
+                span &larr; Previous
+            li.next
+              a(href='', ng-click="wizard.go(4)")
+                | Next
+                span &rarr;
+        // END Wizard Step inputs
+        // START Wizard Step inputs
+        div#step4(ng-show="wizard.active(4)")
+          .jumbotron
+            h1 Done!
+            p In vulputate mattis ipsum vitae vehicula. Praesent at arcu non arcu convallis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            p
+              button.btn.btn-info.btn-lg(type='button', ng-click="submitWizard()") You can Submit Now
+          ul.pager
+            li.previous
+              a(href='', ng-click="wizard.go(3)")
+                span &larr; Previous
+        // END Wizard Step inputs
+// END panel

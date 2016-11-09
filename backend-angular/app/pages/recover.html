@@ -1,0 +1,33 @@
+<div class="block-center mt-xl wd-xl">
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+         <a href="#">
+            <img class="block-center img-rounded" src="app/img/logo.png" alt="Image" />
+         </a>
+      </div>
+      <div class="panel-body">
+         <p class="text-center pv">PASSWORD RESET</p>
+         <form class="form-validate" role="form" name="recoverForm" novalidate="">
+            <p class="text-center">Fill with your mail to receive instructions on how to reset your password.</p>
+            <div class="form-group has-feedback">
+               <label class="text-muted">Email address</label>
+               <input class="form-control" type="email" name="email" placeholder="Enter email" autocomplete="off" ng-model="recover.email" required="" />
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+               <span class="text-danger" ng-show="recoverForm.email.$dirty &amp;&amp; recoverForm.email.$error.required">This field is required</span>
+               <span class="text-danger" ng-show="recoverForm.email.$dirty &amp;&amp; recoverForm.email.$error.email">This field must be a valid email address</span>
+            </div>
+            <button class="btn btn-danger btn-block" type="submit">Reset</button>
+         </form>
+      </div>
+   </div>
+   <!-- END panel-->
+   <div class="p-lg text-center">
+      <span>&copy;</span>
+      <span ng-bind="app.year"></span>
+      <span>-</span>
+      <span ng-bind="app.name"></span>
+      <br/>
+      <span ng-bind="app.description"></span>
+   </div>
+</div>

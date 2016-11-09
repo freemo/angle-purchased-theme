@@ -1,0 +1,37 @@
+<!-- START Mails-->
+<div class="panel panel-default">
+   <div class="panel-body">
+      <form role="form-horizontal" method="post">
+         <div class="input-group form-group">
+            <span class="input-group-addon text-sm">To:</span>
+            <input class="form-control" type="text" />
+         </div>
+         <div class="input-group form-group" ng-show="mailbox.mail.cc">
+            <span class="input-group-addon text-sm">CC:</span>
+            <input class="form-control" type="text" />
+         </div>
+         <div class="input-group form-group" ng-show="mailbox.mail.bcc">
+            <span class="input-group-addon text-sm">BCC:</span>
+            <input class="form-control" type="text" />
+         </div>
+         <div class="input-group form-group">
+            <span class="input-group-addon text-sm">Subject:</span>
+            <input class="form-control" type="text" />
+         </div>
+         <div class="mb-editor">
+            <!-- START action buttons-->
+            <div class="btn-group btn-group-sm mb pull-right">
+               <button class="btn btn-default btn-sm" type="button" ng-class="{'active':mailbox.mail.cc}" ng-click="mailbox.mail.cc = !mailbox.mail.cc" href="#">CC</button>
+               <button class="btn btn-default btn-sm" type="button" ng-class="{'active':mailbox.mail.bcc}" ng-click="mailbox.mail.bcc = !mailbox.mail.bcc" href="#">BCC</button>
+            </div>
+            <!-- END action buttons  -->
+            <script type="text/ng-template" id="ng-wig/views/ng-wig.html">
+               <div class="ng-wig"><div class="btn-group btn-group-sm"><button class="btn btn-sm btn-default" type="button" title="Header" ng-click="execCommand('formatblock', '&lt;h1&gt;')"><em class="fa fa-header"></em></button><button class="btn btn-sm btn-default" type="button" title="Paragraph" ng-click="execCommand('formatblock', '&lt;p&gt;')"><em class="fa fa-paragraph"></em></button><button class="btn btn-sm btn-default" type="button" title="Unordered List" ng-click="execCommand('insertunorderedlist')"><em class="fa fa-list-ul"></em></button><button class="btn btn-sm btn-default" type="button" title="Ordered List" ng-click="execCommand('insertorderedlist')"><em class="fa fa-list-ol"></em></button><button class="btn btn-sm btn-default" type="button" title="Bold" ng-click="execCommand('bold')"><em class="fa fa-bold"></em></button><button class="btn btn-sm btn-default" type="button" title="Italic" ng-click="execCommand('italic')"><em class="fa fa-italic"></em></button><button class="btn btn-sm btn-default" type="button" title="link" ng-click="execCommand('createlink')"><em class="fa fa-link"></em></button><button class="btn btn-sm btn-default" type="button" title="Edit Html" ng-class="{ 'nw-button--active': editMode }" ng-click="toggleEditMode()"><em class="fa fa-pencil"></em></button></div><div class="nw-editor"><textarea class="nw-editor__src" ng-show="editMode" ng-model="content"> </textarea><iframe class="nw-editor__res" scrolling="{{ autoexpand ? 'no' : 'yes' }}" frameBorder="0" ng-hide="editMode" ng-model="content" ng-wig-editable=""></iframe></div></div>
+            </script>
+            <textarea ng-wig="content"></textarea>
+            <br/>
+            <button class="btn btn-primary btn-sm mb" type="button">Send</button>
+         </div>
+      </form>
+   </div>
+</div>

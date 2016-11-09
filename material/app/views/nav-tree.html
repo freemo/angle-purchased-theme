@@ -1,0 +1,31 @@
+<h3>Nav-Tree
+   <small>An AngularJS directive that creates a Tree based on a Bootstrap "nav" list.</small>
+</h3>
+<div class="container-fluid" ng-controller="AbnTestController as tree">
+   <div class="alert alert-info">{{ tree.output }}</div>
+   <div class="row">
+      <div class="col-lg-3 col-sm-6 col-lg-push-3 col-sm-push-6">
+         <div class="well wd-wide">
+            <span ng-if="tree.doing_async">...loading...</span>
+            <abn-tree tree-data="tree.my_data" tree-control="tree.my_tree" on-select="tree.my_tree_handler(branch)" expand-level="2" initial-selection="Granny Smith"></abn-tree>
+         </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-lg-pull-3 col-sm-pull-6">
+         <button class="btn btn-block btn-default btn-sm" ng-click="tree.try_changing_the_tree_data()">Toggle Tree Data</button>
+         <button class="btn btn-block btn-default btn-sm" ng-click="tree.try_async_load()">Tree Data Asynchronously (Json)</button>
+         <hr/>
+         <h5>Tree Control API:</h5>
+         <br/>
+         <div class="btn-group btn-group-justified mb"><a class="btn btn-default btn-sm mb" ng-click="tree.my_tree.select_first_branch()">First Branch</a><a class="btn btn-default btn-sm" ng-click="tree.try_adding_a_branch()">Add Branch</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a class="btn btn-default btn-sm" ng-click="tree.my_tree.select_next_sibling()">Next Sibling</a><a class="btn btn-default btn-sm" ng-click="tree.my_tree.select_prev_sibling()">Prev Sibling</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a class="btn btn-default btn-sm" ng-click="tree.my_tree.select_next_branch()">Next Branch</a><a class="btn btn-default btn-sm" ng-click="tree.my_tree.select_prev_branch()">Prev Branch</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a class="btn btn-default btn-sm" ng-click="tree.my_tree.expand_branch()">Expand</a><a class="btn btn-default btn-sm mb" ng-click="tree.my_tree.select_parent_branch()">Parent</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a class="btn btn-default btn-sm" ng-click="tree.my_tree.expand_all()">Expand All</a><a class="btn btn-default btn-sm" ng-click="tree.my_tree.collapse_all()">Collapse All</a>
+         </div>
+      </div>
+   </div>
+</div>

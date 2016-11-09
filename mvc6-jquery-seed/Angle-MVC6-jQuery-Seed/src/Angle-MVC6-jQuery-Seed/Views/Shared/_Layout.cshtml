@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App + jQuery">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>@ViewData["Title"] - Bootstrap Admin Template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Place styles for plugins -->
+    @if (IsSectionDefined("Styles"))
+        {@RenderSection("Styles", required: false)}
+
+    <environment names="Development">
+        <!-- =============== VENDOR STYLES ===============-->
+        <link href="~/lib/fontawesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+        <link href="~/lib/animate.css/animate.css" rel="stylesheet" />
+        <link href="~/lib/whirl/dist/whirl.css" rel="stylesheet" />
+        <!-- =============== BOOTSTRAP STYLES ===============-->
+        <link href="~/css/bootstrap.css" rel="stylesheet" />
+        <!-- =============== APP STYLES ===============-->
+        <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+    <environment names="Staging,Production">
+        <!-- =============== VENDOR STYLES ===============-->
+        <link href="~/lib/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/lib/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+        <link href="~/lib/animate.css/animate.min.css" rel="stylesheet" />
+        <link href="~/lib/whirl/dist/whirl.css" rel="stylesheet" />
+        <!-- =============== BOOTSTRAP STYLES ===============-->
+        <link href="~/css/bootstrap.css" rel="stylesheet" />
+        <!-- =============== APP STYLES ===============-->
+        <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- top navbar-->
+        <header class="topnavbar-wrapper">
+            @Html.Partial("_TopNavbar")
+        </header>
+        <!-- sidebar-->
+        <aside class="aside">
+            @Html.Partial("_Sidebar")
+        </aside>
+        <!-- offsidebar-->
+        <aside class="offsidebar hide">
+            @Html.Partial("_Offsidebar")
+        </aside>
+        <!-- Main section-->
+        <section>
+            <!-- Page content-->
+            <div class="content-wrapper">
+                @RenderBody()
+            </div>
+        </section>
+        <!-- Page footer-->
+        <footer>
+            @Html.Partial("_Footer")
+        </footer>
+    </div>
+
+    @if (IsSectionDefined("BodyArea")) {
+        @RenderSection("BodyArea", required: false)
+    }
+
+    <environment names="Development">
+
+        <!-- =============== VENDOR SCRIPTS ===============-->
+
+        <script src="~/lib/modernizr/modernizr.custom.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/jQuery-Storage-API/jquery.storageapi.js"></script>
+        <script src="~/lib/jquery.easing/js/jquery.easing.js"></script>
+        <script src="~/lib/animo.js/animo.js"></script>
+        <script src="~/lib/jquery-localize-i18n/dist/jquery.localize.js"></script>
+
+        <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+        @RenderSection("scripts", required: false)
+
+        <!-- =============== APP SCRIPTS ===============-->
+
+        <!-- App init -->
+        <script src="~/master/js/app.init.js"></script>
+        <!-- Modules -->
+        <script src="~/master/js/modules/bootstrap-start.js"></script>
+        <script src="~/master/js/modules/clear-storage.js"></script>
+        <script src="~/master/js/modules/constants.js"></script>
+        <script src="~/master/js/modules/localize.js"></script>
+        <script src="~/master/js/modules/navbar-search.js"></script>
+        <script src="~/master/js/modules/sidebar.js"></script>
+        <script src="~/master/js/modules/toggle-state.js"></script>
+        <script src="~/master/js/modules/utils.js"></script>
+        <!-- Custom -->
+        <script src="~/master/js/custom/custom.js"></script>
+
+    </environment>
+
+    <environment names="Staging,Production">
+
+        <!-- =============== VENDOR SCRIPTS ===============-->
+
+        <script src="~/lib/modernizr/modernizr.custom.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/lib/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+        <script src="~/lib/jquery.easing/js/jquery.easing.min.js"></script>
+        <script src="~/lib/animo.js/animo.js"></script>
+        <script src="~/lib/jquery-localize-i18n/dist/jquery.localize.min.js"></script>
+
+        <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+        @RenderSection("scripts", required: false)
+
+        <!-- =============== APP SCRIPTS ===============-->
+
+        <script src="~/js/app.js"></script>
+
+    </environment>
+    
+
+
+</body>
+</html>

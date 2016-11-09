@@ -1,0 +1,246 @@
+@{
+    ViewBag.Title = "Notifications";
+}
+<h3>
+    <!-- Breadcrumb right aligned-->
+    <ol class="breadcrumb pull-right">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Elements</a>
+        </li>
+        <li class="active">Notifications</li>
+    </ol>Notifications
+    <!-- Small text for title-->
+    <span class="text-sm hidden-xs">A complete set of notification posibilities</span>
+    <!-- Breadcrumb below title-->
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Elements</a>
+        </li>
+        <li class="active">Notifications</li>
+    </ol>
+</h3>
+<!-- Breadcrumb next to view title-->
+<ol class="breadcrumb">
+    <li>
+        <a href="#">Home</a>
+    </li>
+    <li>
+        <a href="#">Elements</a>
+    </li>
+    <li class="active">Notifications</li>
+</ol>
+<ol class="breadcrumb">
+    <li>
+        <a href="#">Home</a>
+    </li>
+    <li>
+        <a href="#">Elements</a>
+    </li>
+    <li class="active">Notifications</li>
+</ol>
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-6">
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Notify Alerts</div>
+         <div class="panel-body">
+            <p>Create toggleable notifications that fade out automatically.</p>
+            <p>
+               <button type="button" data-notify="" data-message="Message .." class="btn btn-default">Message</button>
+            </p>
+            <p>You can use HTML inside your notification message</p>
+            <p>
+               <button type="button" data-notify="" data-message="&lt;em class='fa fa-check'&gt;&lt;/em&gt; Message with icon.." class="btn btn-default">Message with Icon</button>
+            </p>
+         </div>
+      </div>
+      <!-- END panel-->
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Alert Styles</div>
+         <div class="panel-body">
+            <div role="alert" class="alert alert-success">
+               <strong>Well done!</strong>You successfully read this important alert message.</div>
+            <div role="alert" class="alert alert-info">
+               <strong>Heads up!</strong>This alert needs your attention, but it&apos;s not super important.</div>
+            <div role="alert" class="alert alert-warning">
+               <strong>Warning!</strong>Better check yourself, you&apos;re not looking too good.</div>
+            <div role="alert" class="alert alert-danger">
+               <strong>Oh snap!</strong>Change a few things up and try submitting again.</div>
+            <div role="alert" class="alert alert-warning alert-dismissible fade in">
+               <button type="button" data-dismiss="alert" aria-label="Close" class="close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+               <strong>Holy guacamole!</strong>Best check yo self, you&apos;re not looking too good.</div>
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+   <div class="col-lg-6">
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Notify with Status</div>
+         <div class="panel-body">
+            <p>Uses builtin alert status to apply notifications</p>
+            <p>
+               <button type="button" data-notify="" data-message="Message with status.." data-options="{&quot;status&quot;:&quot;danger&quot;}" class="btn btn-danger">Danger</button>
+               <button type="button" data-notify="" data-message="Message with status.." data-options="{&quot;status&quot;:&quot;info&quot;}" class="btn btn-info">Info</button>
+               <button type="button" data-notify="" data-message="Message with status.." data-options="{&quot;status&quot;:&quot;warning&quot;}" class="btn btn-warning">Warning</button>
+               <button type="button" data-notify="" data-message="Message with status.." data-options="{&quot;status&quot;:&quot;success&quot;}" class="btn btn-success">Success</button>
+            </p>
+            <p>Show in different positions</p>
+            <p>
+               <button type="button" data-notify="" data-message="Message in position.." data-options="{&quot;pos&quot;:&quot;bottom-center&quot;}" class="btn btn-default">Bottom Cener</button>
+               <button type="button" data-notify="" data-message="Message in position.." data-options="{&quot;pos&quot;:&quot;top-left&quot;}" class="btn btn-default">Top Left</button>
+               <button type="button" data-notify="" data-message="Message in position.." data-options="{&quot;pos&quot;:&quot;top-right&quot;}" class="btn btn-default">Top Right</button>
+               <button type="button" data-notify="" data-message="Message in position.." data-options="{&quot;status&quot;:&quot;success&quot;, &quot;pos&quot;:&quot;bottom-right&quot;}" class="btn btn-default">Succes at Bottom Right</button>
+            </p>
+         </div>
+      </div>
+      <!-- END panel-->
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Modals</div>
+         <div class="panel-body">
+            <!-- Button trigger modal-->
+            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg">Default modal</button>
+            <button type="button" data-toggle="modal" data-target="#myModalLarge" class="btn btn-primary btn-lg">Large modal</button>
+            <button type="button" data-toggle="modal" data-target="#myModalSmall" class="btn btn-primary btn-lg">Small modal</button>
+
+         </div>
+      </div>
+      <!-- END panel-->
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Popovers</div>
+         <div class="panel-body">
+            <button type="button" title="Popover title" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." class="btn btn-default">Popover on left</button>
+            <button type="button" title="Popover title" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." class="btn btn-default">Popover on top</button>
+            <button type="button" title="Popover title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamussagittis lacus vel augue laoreet rutrum faucibus." class="btn btn-default">Popover on bottom</button>
+            <button type="button" title="Popover title" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." class="btn btn-default">Popover on right</button>
+         </div>
+      </div>
+      <!-- END panel-->
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Tooltips</div>
+         <div class="panel-body">
+            <button type="button" data-toggle="tooltip" data-placement="left" title="Tooltip on left" class="btn btn-default">Tooltip on left</button>
+            <button type="button" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="btn btn-default">Tooltip on top</button>
+            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" class="btn btn-default">Tooltip on bottom</button>
+            <button type="button" data-toggle="tooltip" data-placement="right" title="Tooltip on right" class="btn btn-default">Tooltip on right</button>
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+</div>
+<!-- END row-->
+<!-- START panel-->
+<div class="panel panel-default">
+   <div class="panel-heading">Progress Bar
+      <div class="btn-group pull-right"></div>
+   </div>
+   <div class="panel-body">
+      <div class="progress">
+         <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%" class="progress-bar progress-bar-success">
+            <span class="sr-only">40% Complete (success)</span>
+         </div>
+      </div>
+      <div class="progress">
+         <div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%" class="progress-bar progress-bar-info">
+            <span class="sr-only">20% Complete</span>
+         </div>
+      </div>
+      <div class="progress progress-sm">
+         <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%" class="progress-bar progress-bar-warning">
+            <span class="sr-only">60% Complete (warning)</span>
+         </div>
+      </div>
+      <div class="progress progress-xs">
+         <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%" class="progress-bar progress-bar-danger">
+            <span class="sr-only">80% Complete (danger)</span>
+         </div>
+      </div>
+      <div class="progress">
+         <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%" class="progress-bar progress-bar-purple progress-bar-striped">
+            <span class="sr-only">40% Complete (success)</span>
+         </div>
+      </div>
+      <div class="progress">
+         <div style="width: 35%" class="progress-bar progress-bar-yellow">
+            <span class="sr-only">35% Complete (success)</span>
+         </div>
+         <div style="width: 20%" class="progress-bar progress-bar-warning progress-bar-striped">
+            <span class="sr-only">20% Complete (warning)</span>
+         </div>
+         <div style="width: 10%" class="progress-bar progress-bar-danger">
+            <span class="sr-only">10% Complete (danger)</span>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- END panel-->
+
+@section BodyArea {
+    <!-- Modal-->
+    <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 id="myModalLabel" class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Large-->
+    <div id="myModalLarge" tabindex="-1" role="dialog" aria-labelledby="myModalLabelLarge" aria-hidden="true" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 id="myModalLabelLarge" class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Small-->
+    <div id="myModalSmall" tabindex="-1" role="dialog" aria-labelledby="myModalLabelSmall" aria-hidden="true" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 id="myModalLabelSmall" class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

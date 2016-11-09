@@ -1,0 +1,18 @@
+{
+  "data": [{
+    "label": "css",
+    "children": [{
+      "label": "style.css",
+      "path": "source/css/style.css"
+    }]
+  }, {
+    "label": "js",
+    "children": [{
+      "label": "script.js",
+      "path": "source/js/script.js"
+    }]
+  }, {
+    "label": "index.html",
+    "path": "source/index.html"
+  }]
+}

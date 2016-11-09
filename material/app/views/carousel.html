@@ -1,0 +1,102 @@
+<h3>Angular Carousel</h3>
+<div class="container-fluid" ng-controller="AngularCarouselController as caro">
+   <div>
+      <h3>Buffered ngRepeat demo</h3>
+      <div class="carousel-demo">
+         <div class="text-left">index :</div>
+         <input class="form-control input-sm wd-sm mb" type="number" ng-model="caro.carouselIndex" />
+         <ul class="list-unstyled carousel1" rn-carousel="" rn-carousel-controls="" rn-carousel-index="caro.carouselIndex" rn-carousel-buffered="">
+            <li ng-repeat="slide in caro.slides track by slide.id" ng-class="'id-' + slide.id">
+               <div class="bgimage" ng-style="{'background-image': 'url(' + slide.img + ')'}"># {{ slide.id }}</div>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div>
+      <h3>buffered ngRepeat with auto-slide(pause on hover) and builtin indicators</h3>
+      <div class="carousel-demo">
+         <div class="text-left">index:</div>
+         <input class="form-control input-sm wd-sm mb" type="number" ng-model="caro.carouselIndex2" />
+         <ul class="list-unstyled carousel2" rn-carousel="" rn-carousel-index="caro.carouselIndex2" rn-carousel-auto-slide="" rn-carousel-pause-on-hover="" rn-carousel-buffered="">
+            <li ng-repeat="slide in caro.slides2 track by slide.id" ng-class="'id-' + slide.id">
+               <div class="bgimage" ng-style="{'background-image': 'url(' + slide.img + ')'}"># {{ slide.id }}</div>
+            </li>
+         </ul>
+         <div rn-carousel-indicators="" ng-if="caro.slides2.length &gt; 1" slides="caro.slides2" rn-carousel-index="caro.carouselIndex2"></div>
+      </div>
+   </div>
+   <br/>
+   <div>
+      <h3>buffered ngRepeat and custom indicators</h3>
+      <div class="carousel-demo">
+         <ul class="list-unstyled carousel2" rn-carousel="" rn-carousel-index="caro.carouselIndex22" rn-carousel-auto-slide="" rn-carousel-buffered="">
+            <li ng-repeat="slide in caro.slides2 track by slide.id" ng-class="'id-' + slide.id">
+               <div class="bgimage" ng-style="{'background-image': 'url(' + slide.img + ')'}"># {{ slide.id }}</div>
+            </li>
+         </ul>
+         <div class="rn-carousel-indicator custom-indicator">
+            <span ng-repeat="slide in caro.slides2" ng-class="{active: $index==$parent.caro.carouselIndex22}" ng-click="$parent.caro.carouselIndex22 = $index">&starf;</span>
+         </div>
+      </div>
+   </div>
+   <br/>
+   <div>
+      <h3>buffered ngRepeat with custom transition</h3>
+      <div class="carousel-demo carousel-demo-3d">
+         <ul class="list-unstyled carousel3" rn-carousel="" rn-carousel-index="caro.carouselIndex3" rn-carousel-transition="hexagon" rn-carousel-buffered="">
+            <li ng-repeat="slide in caro.slides3 track by slide.id">
+               <div class="bgimage" ng-style="{'background-image': 'url(' + slide.img + ')'}"># {{ slide.id }}</div>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <br/>
+   <div>
+      <h3>Custom templates without ng-repeat and auto-slide</h3>
+      <div class="carousel-demo">
+         <ul class="list-unstyled carousel5" rn-carousel="" rn-carousel-index="3" rn-carousel-auto-slide="3">
+            <li class="bg-info">Slide 1</li>
+            <li class="bg-purple">Slide 2</li>
+            <li class="bg-primary">Slide 3</li>
+            <li class="bg-danger">Slide 4</li>
+            <li class="bg-warning">Slide 5</li>
+            <li class="bg-yellow">Slide 6</li>
+            <li class="bg-success">Slide 7</li>
+            <li class="bg-green">Slide 8</li>
+            <li class="bg-pink">Slide 9</li>
+         </ul>
+      </div>
+   </div>
+   <br/>
+   <div>
+      <h3>Lockable carousel</h3>
+      <div class="carousel-demo">
+         <div class="checkbox c-checkbox">
+            <label>
+               <input type="checkbox" ng-model="isLocked" />
+               <span class="fa fa-check"></span>Lock the carousel</label>
+         </div>
+         <ul class="list-unstyled carousel5" rn-carousel="" rn-carousel-locked="isLocked">
+            <li ng-repeat="slide in caro.slides3 track by slide.id">
+               <div class="bgimage" ng-style="{'background-image': 'url(' + slide.img + ')'}"># {{ slide.id }}</div>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <br/>
+   <div>
+      <h3>Add/Remove items in the collection</h3>
+      <div class="carousel-demo">
+         <div class="mb">
+            <button class="btn btn-default" ng-click="caro.addSlide('head')">Add at beginning</button>
+            <button class="btn btn-default" ng-click="caro.addSlide('tail')">Add at end</button>
+         </div>
+         <ul class="list-unstyled carousel5" rn-carousel="" rn-carousel-index="caro.carouselIndex6" rn-carousel-deep-watch="" rn-carousel-buffered="">
+            <li ng-repeat="slide in caro.slides6 track by slide.id">
+               <div class="bgimage" ng-style="{'background-image': 'url(' + slide.img + ')'}"># {{ slide.id }}</div>
+            </li>
+         </ul>
+         <div rn-carousel-indicators="" ng-if="caro.slides6.length &gt; 1" slides="caro.slides6" rn-carousel-index="caro.carouselIndex6"></div>
+      </div>
+   </div>
+</div>

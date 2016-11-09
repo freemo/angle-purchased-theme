@@ -1,0 +1,37 @@
+/* BUTTON THEME */
+.btn-theme {
+  background-color: #7266ba;
+  color: #fff;
+}
+.btn-theme:hover,
+.btn-theme:focus,
+.btn-theme:active {
+  background-color: #5a4daa;
+  color: #fff;
+}
+/* FEATURES  */
+.features-list .feature .feature-icon {
+  color: #7266ba;
+}
+/* CONTACTS */
+.list-icons li a:hover,
+.list-icons li a:focus {
+  color: #7266ba;
+}
+/* PLANS  */
+.plan {
+  background-color: #edf1f2;
+}
+.plan .plan-header {
+  background-color: #7266ba;
+}
+.plan .plan-features > li > em {
+  color: #7266ba;
+}
+.plan .plan-feature-disable {
+  color: #f05050 !important;
+}
+/* SITE TEXT */
+.featured-list > li {
+  color: #7266ba;
+}

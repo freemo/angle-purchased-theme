@@ -1,0 +1,299 @@
+h3 Form Extended
+  small New elements to extend the classic functions
+// START panel
+.panel.panel-default
+    .panel-heading  Form elements
+    .panel-body
+      form.form-horizontal(method='get', ng-controller="FormDemoCtrl as form")
+
+        fieldset
+          legend New Components
+          .form-group
+            label.col-sm-2.control-label
+              | Slider
+              br
+              small Classic, range and vertical
+              br
+            .col-sm-10
+              .row
+                .col-xs-6
+                  slider.bs-slider.slider-vertical.mr(ng-model='form.slider1', min='5', max='35', step='1', orientation='vertical')
+                  slider.bs-slider.slider-vertical.mr(ng-model='form.slider2', min='5', max='35', step='1', orientation='vertical')
+                  slider.bs-slider.slider-vertical.mr(ng-model='form.slider3', min='5', max='35', step='1', orientation='vertical')
+                  slider.bs-slider.slider-vertical.mr(ng-model='form.slider4', min='5', max='35', step='1', orientation='vertical')
+                  slider.bs-slider.slider-vertical.mr(ng-model='form.slider5', min='5', max='35', step='1', orientation='vertical')
+                  slider.bs-slider.slider-vertical.mr(ng-model='form.slider6', min='5', max='35', step='1', orientation='vertical')
+                  br
+                  br
+                  slider.bs-slider.slider-horizontal(ng-model='form.slider7', min='5', max='20', step='1', orientation='horizontal')
+                  br
+                  br
+                  slider.bs-slider(ng-model='form.slider8', min="'10'", max="'1000'", value="[350,750]", range="true")
+                .col-xs-6
+                  p Value 1: {{form.slider1}}
+                  p Value 2: {{form.slider2}}
+                  p Value 3: {{form.slider3}}
+                  p Value 4: {{form.slider4}}
+                  p Value 5: {{form.slider5}}
+                  p Value 6: {{form.slider6}}
+                  p Value 7: {{form.slider7}}
+                  p Value 8: {{form.slider8}}
+
+
+        fieldset
+          .form-group
+            label.col-sm-2.control-label Switch Small
+            .col-sm-10
+              label.switch.switch-sm
+                input(type='checkbox', checked="checked")
+                span
+          .form-group
+            label.col-sm-2.control-label Switch
+            .col-sm-10
+              label.switch
+                input(type='checkbox', checked="checked")
+                span
+          .form-group
+            label.col-sm-2.control-label Switch Large
+            .col-sm-10
+              label.switch.switch-lg
+                input(type='checkbox', checked="checked")
+                span
+          .form-group
+            label.col-sm-2.control-label Switch Radio
+            .col-sm-10
+              label.switch.switch-lg
+                input(type='radio', checked="checked", name="radioSwitch")
+                span
+              label.switch.switch-lg
+                input(type='radio', name="radioSwitch")
+                span
+        fieldset
+          .form-group.mb(ng-controller="ColorPickerController as cpicker")
+            label.col-sm-2.control-label Color pickers
+            .col-sm-8
+                .row
+                    .col-sm-6
+                        .panel
+                          .panel-heading hex: {{ cpicker.hexPicker.color }}
+                          .panel-body
+                            p
+                              button.btn.btn-primary(ng-click='cpicker.resetColor()') Update Model
+                            input.form-control(colorpicker='', ng-model='cpicker.hexPicker.color', type='text')
+                    .col-sm-6
+                        .panel
+                          .panel-heading rgb: {{ cpicker.rgbPicker.color }}
+                          .panel-body
+                            p
+                              button.btn.btn-primary(ng-click='cpicker.resetRBGColor()') Update Model
+                            input.form-control(colorpicker='rgb', ng-model='cpicker.rgbPicker.color', type='text')
+                    .col-sm-6
+                        .panel
+                          .panel-heading rgba: {{ cpicker.rgbaPicker.color }}
+                          .panel-body
+                            p
+                              button.btn.btn-primary(ng-click='cpicker.resetRBGAColor()') Update Model
+                            input.form-control(colorpicker='rgba', colorpicker-position='right', ng-model='cpicker.rgbaPicker.color', type='text')
+                    .col-sm-6
+                        .panel
+                          .panel-heading Non input element model value: {{ cpicker.nonInput.color }}
+                          .panel-body
+                            p
+                              button.btn.btn-primary(ng-click='cpicker.resetNonInputColor()') Update Model
+                            button.btn.btn-success(colorpicker='', type='button', colorpicker-position='top', ng-model='cpicker.nonInput.color') Change color
+        fieldset
+          .form-group.mb
+            label.col-sm-2.control-label Chosen w/Input groups
+            .col-sm-4
+              .input-group.mb
+                span.input-group-addon @
+                // this uses fixed width to avoid expand outside the group container
+                select.chosen-select.input-md(chosen='', ng-model='inputg1', width="'300px'")
+                  option(value='')
+                  option(value="1") Nulla facilisi. Quisque in sapien et neque sodales facilisis. Proin a porta turpis.
+                  option(value="2") New York Giants
+                  option(value="3") Philadelphia Eagles
+                  option(value="4") Washington Redskins
+          .form-group.mb
+            label.col-sm-2.control-label Chosen Ajax
+            .col-sm-10
+              select.chosen-select.input-md(chosen='', ng-model='state', ng-options='s for s in form.states', width="'100%'")
+                option(value='')
+
+          .form-group.mb
+            label.col-sm-2.control-label Chosen Groups
+            .col-sm-10
+              select.chosen-select.input-md(chosen="", ng-model="team", width="'100%'")
+                option(value='')
+                optgroup(label='NFC EAST')
+                  option Dallas Cowboys
+                  option New York Giants
+                  option Philadelphia Eagles
+                  option Washington Redskins
+                optgroup(label='NFC NORTH')
+                  option Chicago Bears
+                  option Detroit Lions
+                  option Green Bay Packers
+                  option Minnesota Vikings
+                optgroup(label='NFC SOUTH')
+                  option Atlanta Falcons
+                  option Carolina Panthers
+                  option New Orleans Saints
+                  option Tampa Bay Buccaneers
+                optgroup(label='NFC WEST')
+                  option Arizona Cardinals
+                  option St. Louis Rams
+                  option San Francisco 49ers
+                  option Seattle Seahawks
+                optgroup(label='AFC EAST')
+                  option Buffalo Bills
+                  option Miami Dolphins
+                  option New England Patriots
+                  option New York Jets
+                optgroup(label='AFC NORTH')
+                  option Baltimore Ravens
+                  option Cincinnati Bengals
+                  option Cleveland Browns
+                  option Pittsburgh Steelers
+                optgroup(label='AFC SOUTH')
+                  option Houston Texans
+                  option Indianapolis Colts
+                  option Jacksonville Jaguars
+                  option Tennessee Titans
+                optgroup(label='AFC WEST')
+                  option Denver Broncos
+                  option Kansas City Chiefs
+                  option Oakland Raiders
+                  option San Diego Chargers
+
+          .form-group
+            label.col-sm-2.control-label Chosen Multiple
+            .col-sm-10
+              select.chosen-select.form-control(chosen="", multiple, ng-model="team2")
+                option(value='')
+                    option Dallas Cowboys
+                    option New York Giants
+                    option Philadelphia Eagles
+                    option Washington Redskins
+                    option Chicago Bears
+                    option Detroit Lions
+                    option Green Bay Packers
+                    option Minnesota Vikings
+                    option Atlanta Falcons
+                    option Carolina Panthers
+                    option New Orleans Saints
+                    option Tampa Bay Buccaneers
+                    option Arizona Cardinals
+                    option St. Louis Rams
+                    option San Francisco 49ers
+                    option Seattle Seahawks
+                    option Buffalo Bills
+                    option Miami Dolphins
+                    option New England Patriots
+                    option New York Jets
+                    option Baltimore Ravens
+                    option Cincinnati Bengals
+                    option Cleveland Browns
+                    option Pittsburgh Steelers
+                    option Houston Texans
+                    option Indianapolis Colts
+                    option Jacksonville Jaguars
+                    option Tennessee Titans
+                    option Denver Broncos
+                    option Kansas City Chiefs
+                    option Oakland Raiders
+                    option San Diego Chargers
+        fieldset
+          .form-group
+            label.col-sm-2.control-label Masked input
+            .col-sm-10
+              .row
+                .col-sm-6
+                  input.form-control(type='text', masked="", data-inputmask="'mask': '999-99-999-9999-9'", placeholder="ISBN")
+                  span.help-block data-inputmask="'mask': '999-99-999-9999-9"'
+                .col-sm-6
+                  input.form-control(type='text', masked="", data-inputmask="'mask': '99/99/9999'", placeholder="Date")
+                  span.help-block data-inputmask="'mask': '99/99/9999"'
+                .col-sm-6
+                  input.form-control(type='text', masked="", data-inputmask="'mask': '(999) 999-9999'", placeholder="Phone number")
+                  span.help-block data-inputmask="'mask': '(999) 999-9999"'
+                .col-sm-6
+                  input.form-control(type='text', masked="", data-inputmask="'mask': 'aaaa-9999-aa99-9999'", placeholder="Custom Key")
+                  span.help-block data-inputmask="'mask': 'aaaa-9999-aa99-9999"'
+                .col-sm-6
+                  input.form-control(type='text', masked="", data-inputmask="'mask': '$ 999.999.999,99'", placeholder="Currency Dolar")
+                  span.help-block data-inputmask="'mask': '$ 999.999.999,99"'
+                .col-sm-6
+                  input.form-control(type='text', masked="", data-inputmask="'mask': '€ 999.999.999,99'", placeholder="Currency Euro")
+                  span.help-block data-inputmask="'mask': '€ 999.999.999,99"'
+
+        fieldset
+          .form-group
+            label.col-sm-2.control-label Tags input
+              .text-sm.text-muted Type and press Enter
+            .col-sm-10
+              input.form-control(type='text', tagsinput, ng-value="form.cities.join(',')", ng-model="form.cities")
+              span.help-block Values:
+                code {{form.cities}}
+
+        fieldset
+          .form-group
+            label.col-sm-2.control-label File input
+            .col-sm-10
+              input.form-control(filestyle="", type='file', data-classbutton='btn btn-default', data-classinput="form-control inline")
+        fieldset
+          .form-group
+            label.col-sm-2.control-label Block Note Editor
+            .col-sm-10
+              .panel
+                .panel-body
+                  textarea.form-control.note-editor(rows="10")
+              p With margin
+              .panel
+                .panel-body
+                  textarea.form-control.note-editor.note-editor-margin(rows="10")
+        fieldset
+          .form-group
+            label.col-sm-2.control-label Angular Simple wysiwyg
+            .col-sm-10
+              script(type='text/ng-template', id="ng-wig/views/ng-wig.html")
+                .ng-wig
+                  .btn-group.btn-group-sm.wd-wide
+                    button.btn.btn-sm.btn-default(type='button', title='Header', ng-click="execCommand('formatblock', '<h1>')")
+                      em.fa.fa-header
+                    button.btn.btn-sm.btn-default(type='button', title='Paragraph', ng-click="execCommand('formatblock', '<p>')")
+                      em.fa.fa-paragraph
+                    button.btn.btn-sm.btn-default(type='button', title='Unordered List', ng-click="execCommand('insertunorderedlist')")
+                      em.fa.fa-list-ul
+                    button.btn.btn-sm.btn-default(type='button', title='Ordered List', ng-click="execCommand('insertorderedlist')")
+                      em.fa.fa-list-ol
+                    button.btn.btn-sm.btn-default(type='button', title='Bold', ng-click="execCommand('bold')")
+                      em.fa.fa-bold
+                    button.btn.btn-sm.btn-default(type='button', title='Italic', ng-click="execCommand('italic')")
+                      em.fa.fa-italic
+                    button.btn.btn-sm.btn-default(type='button', title='link', ng-click="execCommand('createlink')")
+                      em.fa.fa-link
+                    button.pull-right.btn.btn-sm.btn-default(type='button', title="Edit Html" ng-class="{ 'nw-button--active': editMode }", ng-click='toggleEditMode()')
+                      em.fa.fa-pencil
+                  .nw-editor
+                    textarea.nw-editor__src(ng-show="editMode", ng-model="content")
+                    iframe.nw-editor__res(scrolling="{{ autoexpand ? 'no' : 'yes' }}", frameBorder="0", ng-hide="editMode", ng-model="content", ng-wig-editable='')
+              textarea(ng-wig="form.wysiwygContent")
+        fieldset
+          .form-group
+            label.col-sm-2.control-label Summernote Editor
+            .col-sm-10
+                summernote.summernote(height="280")
+                    span This is initial text.
+                h4.mb-lg
+                    strong Airmode
+                    small To reveal toolbar, select a text where you want to shape up
+                .well
+                    summernote.summernote(airmode='')
+                        span Integer ligula mauris, iaculis pellentesque consequat non, semper sit amet velit.
+        fieldset
+          .form-group
+            .col-sm-4.col-sm-offset-2
+              button.btn.btn-default(type='submit') Cancel
+              button.btn.btn-primary(type='submit') Save changes
+// END panel

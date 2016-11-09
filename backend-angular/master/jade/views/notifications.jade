@@ -1,0 +1,305 @@
+h3
+  // Breadcrumb right aligned
+  ul.breadcrumb.pull-right
+    li
+      a(ui-sref='app.dashboard') Dashboard
+    li(ng-repeat='state in $state.$current.path', ng-switch='$last', ng-if="!state.abstract", ng-class='{active: $last}')
+      a(ng-switch-when='false', href='#{{state.url.format($stateParams)}}') {{state.title}}
+      span(ng-switch-when='true') {{state.title}}
+  | Notifications
+  // Small text for title
+  span.text-sm.hidden-xs A complete set of notification posibilities
+  // Breadcrumb below title
+  ul.breadcrumb
+    li
+      a(ui-sref='app.dashboard') Dashboard
+    li(ng-repeat='state in $state.$current.path', ng-switch='$last', ng-if="!state.abstract", ng-class='{active: $last}')
+      a(ng-switch-when='false', href='#{{state.url.format($stateParams)}}') {{state.title}}
+      span(ng-switch-when='true') {{state.title}}
+
+// Breadcrumb next to view title
+ul.breadcrumb
+  li
+    a(ui-sref='app.dashboard') Dashboard
+  li(ng-repeat='state in $state.$current.path', ng-switch='$last', ng-if="!state.abstract", ng-class='{active: $last}')
+    a(ng-switch-when='false', href='#{{state.url.format($stateParams)}}') {{state.title}}
+    span(ng-switch-when='true') {{state.title}}
+
+// Standard Bootstrap Breadcrumb
+ul.breadcrumb
+  li
+    a(ui-sref='app.dashboard') Dashboard
+  li(ng-repeat='state in $state.$current.path', ng-switch='$last', ng-if="!state.abstract", ng-class='{active: $last}')
+    a(ng-switch-when='false', href='#{{state.url.format($stateParams)}}') {{state.title}}
+    span(ng-switch-when='true') {{state.title}}
+
+.panel.panel-default
+  .panel-heading Toaster notifications for Angular
+  .panel-body(ng-controller='ToasterDemoCtrl as toast')
+
+    toaster-container(toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}")
+    .row
+      .col-sm-6
+        .form-group
+          label Title
+          input.form-control(type='text', placeholder='Enter a title...', ng-model='toast.toaster.title')
+        .form-group
+          label Message
+          textarea.form-control(placeholder='Enter a message', rows='5', ng-model='toast.toaster.text')
+      .col-sm-6
+        .row
+          .col-md-6
+            // icon-classes: .toast-error,.toast-info,.toast-wait,.toast-success,.toast-warning
+            label Toast Type
+            .radio.c-radio
+              label
+                input(type='radio', name='toasts', ng-model='toast.toaster.type', value='success')
+                span.fa.fa-circle
+                | Success
+            .radio.c-radio
+              label
+                input(type='radio', name='toasts', ng-model='toast.toaster.type', value='info')
+                span.fa.fa-circle
+                | Info
+            .radio.c-radio
+              label
+                input(type='radio', name='toasts', ng-model='toast.toaster.type', value='wait')
+                span.fa.fa-circle
+                | Wait
+            .radio.c-radio
+              label
+                input(type='radio', name='toasts', ng-model='toast.toaster.type', value='warning')
+                span.fa.fa-circle
+                | Warning
+            .radio.c-radio
+              label
+                input(type='radio', name='toasts', ng-model='toast.toaster.type', value='error')
+                span.fa.fa-circle
+                | Error
+    button.btn.btn-info(ng-click='toast.pop()') Show a Toaster
+
+// START row
+.row(ng-controller="NotifyDemoCtrl as noti")
+  .col-lg-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        | Notify Alerts
+      .panel-body
+        p Create toggleable notifications that fade out automatically.
+        .input-group
+          input.form-control(type='text', ng-model="noti.msg", ng-init="noti.msg = 'Message ..'")
+          span.input-group-btn
+            button.btn.btn-default(type='button', notify="", data-message="noti.msg") Notify!!
+
+        p You can use HTML inside your notification message          
+        p
+          button.btn.btn-default(type="button", notify="", data-message="noti.msgHtml") Message with Icon
+    // END panel
+  .col-lg-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        | Notify with Status and Position
+      .panel-body
+        p
+          select.form-control(ng-model="noti.notifyOpts.status")
+            option(value="info") Info
+            option(value="danger") Danger
+            option(value="warning") Warning
+            option(value="success") Success
+        p
+          select.form-control(ng-model="noti.notifyOpts.pos")
+            option(value="bottom-center") Bottom Cener
+            option(value="top-left") Top Left
+            option(value="top-right") Top Right
+            option(value="bottom-right") Bottom Right
+        p
+          button.btn.btn-default(type="button", notify="", data-message="noti.notifyMsg", data-options="noti.notifyOpts") Notify!!
+    // END panel
+
+.row
+  .col-lg-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        | Alert Styles
+      .panel-body
+        .alert.alert-success
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          a.alert-link(href='#') Alert Link
+        .alert.alert-info
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          a.alert-link(href='#') Alert Link
+        div(ng-controller='AlertDemoCtrl as alrt')
+          div(uib-alert, ng-repeat='alert in alrt.alerts', ng-class="'alert-' + (alert.type || 'warning')", close='alrt.closeAlert($index)') {{alert.msg}}
+          button.btn.btn-info(ng-click='alrt.addAlert()') Add Alert
+    // END panel
+
+    // START panel
+    .panel.panel-default(ng-controller='ProgressDemoCtrl as prog')
+      .panel-heading Progress Bar
+        .btn-group.pull-right
+          button.btn.btn-xs.btn-primary(type='button', ng-click='prog.randomStacked()') Stacked
+          button.btn.btn-xs.btn-primary(type='button', ng-click='prog.random()') Randomize
+      .panel-body
+        h4 Static
+        .row
+          .col-sm-4
+            uib-progressbar(value='55')
+          .col-sm-4
+            uib-progressbar.progress-striped(value='22', type='warning') 22%
+          .col-sm-4
+            uib-progressbar.progress-striped.active(max='200', value='166', type='danger')
+              i 166 / 200
+
+        h4 Dynamic
+        uib-progressbar(max='prog.max', value='prog.dynamic')
+          span.text-nowrap {{prog.dynamic}} / {{prog.max}}
+        small
+          em No animation
+        uib-progressbar(animate='false', value='prog.dynamic', type='success')
+          b {{dynamic}}%
+        small
+          em Object (changes type based on value)
+        uib-progressbar.progress-striped.active(value='prog.dynamic', type='{{prog.type}}')
+          | {{type}}
+          i(ng-show='prog.showWarning') !!! Watch out !!!
+
+        h4 Stacked
+        uib-progress
+          uib-bar(ng-repeat='bar in prog.stacked track by $index', value='bar.value', type='{{bar.type}}')
+            span(ng-hide='ng-hide', bar.value='bar.value')
+    // END panel
+    // START panel
+    .panel.panel-default
+      .panel-heading Tooltips
+      .panel-body
+        div(ng-controller='TooltipDemoCtrl as ttip')
+          .form-group
+            label Dynamic Tooltip Text
+            input.form-control(type='text', ng-model='ttip.dynamicTooltipText')
+          .form-group
+            label Dynamic Tooltip Popup Text
+            input.form-control(type='text', ng-model='ttip.dynamicTooltip')
+          p
+            | Pellentesque 
+            a(href='#', uib-tooltip='{{ttip.dynamicTooltip}}') {{ttip.dynamicTooltipText}}
+            | , 
+            | sit amet venenatis urna cursus eget nunc scelerisque viverra mauris, in 
+            | aliquam. Tincidunt lobortis feugiat vivamus at 
+            a(href='#', uib-tooltip-placement='left', uib-tooltip='On the Left!') left 
+            | eget 
+            | arcu dictum varius duis at consectetur lorem. Vitae elementum curabitur 
+            a(href='#', uib-tooltip-placement='right', uib-tooltip='On the Right!') right 
+            | nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas 
+            a(href='#', uib-tooltip-placement='bottom', uib-tooltip='On the Bottom!') bottom 
+            | pharetra convallis posuere morbi leo urna, 
+            a(href='#', uib-tooltip-animation='false', uib-tooltip='I don\'t fade. :-(') fading 
+            | at elementum eu, facilisis sed odio morbi quis commodo odio. In cursus 
+            a(href='#', uib-tooltip-popup-delay='1000', uib-tooltip='appears with delay') delayed
+            | turpis massa tincidunt dui ut. 
+          p
+            | I can even contain HTML. 
+            a(href='#', uib-tooltip-html='ttip.htmlTooltip') Check me out!
+          form(role='form')
+            .form-group
+              label Or use custom triggers, like focus: 
+              input.form-control(type='text', value='Click me!', uib-tooltip='See? Now click away...', uib-tooltip-trigger='focus', uib-tooltip-placement='top')
+    // END panel
+
+  .col-lg-6
+
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        | Modals
+      .panel-body
+
+        // Modal Controller
+        div(ng-controller='ModalController as mod')
+          // Modal inline template
+          script(type='text/ng-template', id='/myModalContent.html')
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+              h4#myModalLabel.modal-title Modal title
+            .modal-body
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .modal-footer
+              button.btn.btn-primary(ng-click='ok()') OK
+              button.btn.btn-warning(ng-click='cancel()') Cancel
+
+          p Launch Demo Modal
+          // Button trigger modal 
+          button.btn.btn-primary(ng-click='mod.open()') Open me!
+          button.btn.btn-primary(ng-click='mod.open(\'lg\')') Large modal
+          button.btn.btn-primary(ng-click='mod.open(\'sm\')') Small modal
+          
+          div#modal-state
+    // END panel
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        | Popovers
+      .panel-body
+        div(ng-controller='PopoverDemoCtrl as popo')
+            h4 Dynamic
+            .form-group
+              label Popup Text:
+              input.form-control(type='text', ng-model='popo.dynamicPopover')
+            .form-group
+              label Popup Title:
+              input.form-control(type='text', ng-model='popo.dynamicPopoverTitle')
+            button.btn.btn-warning(uib-popover='{{popo.dynamicPopover}}', popover-title='{{popo.dynamicPopoverTitle}}') Dynamic Popover
+
+            h4 Positional
+            button.btn.btn-default(popover-placement='top', uib-popover='On the Top!') Top
+            button.btn.btn-default(popover-placement='left', uib-popover='On the Left!') Left
+            button.btn.btn-default(popover-placement='right', uib-popover='On the Right!') Right
+            button.btn.btn-default(popover-placement='bottom', uib-popover='On the Bottom!') Bottom
+
+            h4 Triggers
+            p
+              button.btn.btn-success(uib-popover='I appeared on mouse enter!', popover-trigger='mouseenter') Mouseenter
+            input.form-control(type='text', value='Click me!', uib-popover='I appeared on focus! Click away and I\'ll vanish...', popover-trigger='focus')
+
+            h4 Other
+            button.btn.btn-default(popover-animation='true', uib-popover='I fade in and out!') fading
+            button.btn.btn-default(uib-popover='I have a title!', popover-title='The title.') title
+    // END panel
+    // START panel
+    .panel.panel-default
+      .panel-heading Ratings
+      .panel-body
+        div(ng-controller='RatingDemoCtrl as rate')
+          h4 Default
+          uib-rating(ng-model='rate.rate', max='rate.max', readonly='rate.isReadonly', on-hover='rate.hoveringOver(value)', on-leave='overStar = null', state-on="'fa fa-star text-yellow'", state-off="'fa fa-star-o'")
+          span(class="label", ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}", ng-show="overStar && !rate.isReadonly")
+            | {{percent}}%
+          .well.mt
+            b Rate: 
+            b {{rate.rate}}
+            |  - Readonly is: 
+            i {{rate.isReadonly}}
+            |  - Hovering over: 
+            b {{overStar || "none"}}
+          
+          button.btn.btn-sm.btn-danger(ng-click='rate = 0', ng-disabled='rate.isReadonly') Clear
+          button.btn.btn-sm.btn-default(ng-click='rate.isReadonly = ! rate.isReadonly') Toggle Readonly
+          
+          hr
+          h4 Custom icons
+          .mb(ng-init='x = 5')
+            uib-rating(ng-model='x', max='15', state-on="'fa fa-tree text-success'", state-off="'fa fa-tree'")
+            b
+              | (
+              i Trees:
+              | {{x}})
+          .mb(ng-init='y = 2')
+            uib-rating(ng-model='y', rating-states='rate.ratingStates')
+            b
+              | (
+              i Things:
+              | {{y}})
+    // END panel
+// END row

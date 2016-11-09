@@ -1,0 +1,501 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + MVC5 + AngularJS</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-06-22T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#layout" title="Layout">Layout</a></li>
+			<li><a href="#usage" title="Usage">Usage</a></li>
+			<li><a href="#seed_project" title="Seed Project">Seed Project</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + MVC5 + AngularJS</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/14/2015</li>
+	<li>latest update: 06/22/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	It assumes a minimum knowledge of Visual Studio 2013 and Asp.net technology.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="getting_started_starting_the_app">Starting the app</h4>
+	<div>
+		To run this version you need to have installed Visual Studio 2013. After that, open the file backend-mvc/Angle/Angle.sln. Once VS has been started, press F5 and it should build the project and open your default browser with the theme.</div>
+</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	Before starting to customize the template, here are the project files organization structure:</div>
+<div>
+	<p>
+		Since this section describes the basic about this version, you will find relevant information by reading the AngularJS documentation to understand the most important parts of the theme.</p>
+	<p>
+		This project is organized using the following structure</p>
+	<pre class="prettyprint lang-plain linenums">
++--Angle
+    +--App_Data
+    +--App_Start
+    +--bin
+    +--Content
+    |   +--app
+    +--Controllers
+    +--fonts
+    +--i18n
+    +--Images
+    +--Models
+    +--obj
+    +--Properties
+    +--Scripts
+    |   +--app
+    |       +--modules
+    +--Server
+    +--Sidebar
+    +--Vendor
+    +--Views
+        +--App
+        +--Shared
+        |   +--Partials
+        +--SingleView
+        +---App
+        +---Blog
+        +---Charts
+        +---Dashboard
+        +---Documentation
+        +---Ecommerce
+        +---Elements
+        +---Extras
+        +---Forms
+        +---Forum
+        +---Maps
+        +---Pages
+        +---Partials
+        +---Shared
+        +---SingleView
+        +---Tables
+        +---Widgets</pre>
+	<div>
+		&nbsp;</div>
+</div>
+<p>
+	Main folders</p>
+<p>
+	<strong>Content/app</strong></p>
+<p>
+	This folder contains the&nbsp;<strong>css&nbsp;</strong>files used for the theme. It contains the basic to display the layout and a few features.&nbsp;</p>
+<p>
+	<strong>i18n</strong></p>
+<p>
+	This folder contains the translation JSON files that uses the translate module to load string replacement for each language configured.</p>
+<p>
+	<strong>Images</strong></p>
+<p>
+	Contains images used in the theme.&nbsp;</p>
+<p>
+	<strong>Scripts/app</strong></p>
+<p>
+	Contains the modules&nbsp;<strong>Javascript</strong>&nbsp;used in the theme (controllers, directive, routes, etc).<br>
+	All this files are included in the app using a script bundle.</p>
+<p>
+	<strong>Sidebar</strong></p>
+<p>
+	This folder contians the&nbsp;<strong>sidebar-menu.json</strong>. You will use this file to configure the sidebar menu items according to the states in the route configuration.</p>
+<p>
+	<strong>Vendor</strong></p>
+<p>
+	We place here all vendor assets downdloaded manually. Some of them could be downloaded via NuGet but not all the package required are present in such system. &nbsp;All this files are included in the app using bundles.<br>
+	If you want to automate this folder, we suggest to use bower.</p>
+<p>
+	<strong>Views</strong></p>
+<p>
+	Contains the views like any other MVC5 projects. But we mention this because some views needs the&nbsp;Layout = null; specified in order to retrieve only its content when AngularJS requires them.<br>
+	&nbsp;</p>
+<div class="alert alert-info">
+	Unlike the original AngularJS project, when using&nbsp;<strong>ng-include</strong>&nbsp;you request&nbsp;<strong>actions</strong>&nbsp;with their respective Views and Controller instead of single html files.</div>
+</section>
+<section id="layout">
+	<div class="page-header"><h3>Layout</h3><hr class="notop"></div>
+<p>
+	The main layout loads the necessary bundles to start the application and define a standard HTML document.</p>
+<h4 id="layout_angle_views_shared_layoutcshtml">Angle/Views/Shared/_Layout.cshtml</h4>
+<p>
+	This is the main layout</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; data-ng-app=&quot;angle&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;{{app.description}}&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, angular, bootstrap, dashboard, admin&quot;&gt;
+    &lt;title data-ng-bind=&quot;pageTitle()&quot;&gt;Angle - Angular Bootstrap Admin Template&lt;/title&gt;
+
+    @Styles.Render(&quot;~/bundles/bootstrapStyles&quot;)
+    @Styles.Render(&quot;~/bundles/appStyles&quot;)
+
+    &lt;!-- Themes--&gt;
+    &lt;link rel=&quot;stylesheet&quot; ng-href=&quot;{{app.layout.theme}}&quot; data-ng-if=&quot;app.layout.theme&quot;&gt;
+
+&lt;/head&gt;
+
+&lt;body data-ng-class=&quot;{ &#39;layout-fixed&#39; : app.layout.isFixed, 
+                       &#39;aside-collapsed&#39; : app.layout.isCollapsed, 
+                       &#39;aside-collapsed-text&#39; : app.layout.isCollapsedText, 
+                       &#39;layout-boxed&#39; : app.layout.isBoxed,
+                       &#39;layout-fs&#39;: app.useFullLayout, 
+                       &#39;hidden-footer&#39;: app.hiddenFooter, 
+                       &#39;layout-h&#39;: app.layout.horizontal, 
+                       &#39;aside-float&#39;: app.layout.isFloat, 
+                       &#39;offsidebar-open&#39;: app.offsidebarOpen, 
+                       &#39;aside-toggled&#39;: app.asideToggled }&quot;&gt;
+
+    &lt;!-- Preloader --&gt;
+    &lt;div data-preloader&gt;&lt;/div&gt;
+    &lt;!-- App Content --&gt;
+    &lt;div data-ui-view=&quot;main&quot; data-autoscroll=&quot;false&quot; class=&quot;wrapper&quot;&gt;@RenderBody()&lt;/div&gt;
+
+    @Scripts.Render(&quot;~/bundles/baseScripts&quot;)
+    @Scripts.Render(&quot;~/bundles/appScripts&quot;)
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	The @RenderBody() function will place the following markup from Views/App/Index.cshtml</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;!-- top navbar--&gt;
+&lt;header ng-include=&quot;&#39;/Partials/TopNavbar&#39;&quot; class=&quot;topnavbar-wrapper&quot;&gt;&lt;/header&gt;
+&lt;!-- sidebar--&gt;
+&lt;aside ng-include=&quot;&#39;/Partials/Sidebar&#39;&quot; ng-controller=&quot;SidebarController&quot; class=&quot;aside&quot;&gt;&lt;/aside&gt;
+&lt;!-- offsidebar--&gt;
+&lt;aside ng-include=&quot;&#39;/Partials/Offsidebar&#39;&quot; class=&quot;offsidebar hide&quot;&gt;&lt;/aside&gt;
+&lt;!-- Main section--&gt;
+&lt;section ui-view=&quot;content&quot;&gt;
+    &lt;!-- Page content--&gt;
+&lt;/section&gt;
+&lt;!-- Page footer--&gt;
+&lt;footer ng-include=&quot;&#39;/Partials/Footer&#39;&quot;&gt;&lt;/footer&gt;</pre>
+</div>
+<div>
+	&nbsp;</div>
+<h4 id="layout_angle_views_pages_pagecshtml">Angle/Views/Pages/Page.cshtml</h4>
+<p>
+	This is the page layout used for pages like Login, Register, etc. This block of HTML is included by angular in the main layout when a page view is requested.</p>
+<pre class="prettyprint lang-html linenums">
+@{
+    Layout = null;
+}
+&lt;div ui-view=&quot;&quot; autoscroll=&quot;false&quot; class=&quot;ng-zoomBackDown ng-fluid&quot;&gt;&lt;/div&gt;</pre>
+<p>
+	&nbsp;</p>
+<h4 id="layout_router">Router</h4>
+<p>
+	As you can note, the layout uses named ui-views in order to attach each view for the application.</p>
+<p>
+	The following code shows how are configured the important route states (from uiRouter) for the app views and the page views respectively</p>
+<p>
+	<strong>App route state</strong></p>
+<div>
+	<pre class="prettyprint lang-js linenums">
+$stateProvider
+    .state(&#39;app&#39;, {
+        abstract: true,
+        resolve: helper.resolveFor(...),
+        views: {
+            &#39;content&#39;: {
+                template: &#39;&lt;div data-ui-view=&quot;&quot; autoscroll=&quot;false&quot; ng-class=&quot;app.viewAnimation&quot; class=&quot;content-wrapper&quot;&gt;&lt;/div&gt;&#39;,
+                controller: [&#39;$rootScope&#39;, function($rootScope) {
+                    ...
+                }]
+            }
+        }
+    })</pre>
+</div>
+<p>
+	<strong>Pages route state</strong></p>
+<div>
+	<pre class="prettyprint lang-js linenums">
+$stateProvider
+    .state(&#39;page&#39;, {
+        url: &#39;/page&#39;,
+        abstract: true,
+        views: {
+            &#39;main&#39;: {
+                templateUrl: helper.basepath(&#39;Pages/Page&#39;),
+                controller: [&#39;$rootScope&#39;, function($rootScope) {
+                    $rootScope.app.layout.isBoxed = false;
+                }]
+            }
+        },
+        resolve: helper.resolveFor(&#39;modernizr&#39;, &#39;icons&#39;)
+    })</pre>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="usage">
+	<div class="page-header"><h3>Usage</h3><hr class="notop"></div>
+<p>	<strong>Adding new features (example)</strong></p>
+<p>	This example shows how to add Toastr notifications to the seed project.<br>
+	Once you have opened the project in your Visual Studio 2013 follow this steps:</p>
+<p>	<strong>1</strong>- Add a new controller&nbsp;</p>
+<p>	&nbsp;1.a-&nbsp;In the Solution explorer, right click on folder Controllers and select Add -&gt; Controller. Name it <strong>NotificationsController</strong></p>
+<p>	<strong>2</strong>- Now we will add a new view that will contains the markup for Toaster.&nbsp;</p>
+<p>	&nbsp;2.a - Step 1.a must have created a folder<strong> Views/Notifications </strong>(if not, add it manually)</p>
+<p>	&nbsp;2.b - Right click on the new folder and select Add -&gt; View and name it <strong>Index</strong></p>
+<p>	&nbsp;2.c - Paste the following markup into the new file (short example from file notifications.html in angularjs project)</p>
+<pre class="prettyprint lang-html linenums">
+@{
+    Layout = null;
+}
+&lt;h3&gt;Notifications&lt;/h3&gt;
+&lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;Toaster notifications for Angular&lt;/div&gt;
+    &lt;div ng-controller=&quot;ToasterDemoCtrl&quot; class=&quot;panel-body&quot;&gt;
+        &lt;toaster-container toaster-options=&quot;{&#39;position-class&#39;: &#39;toast-top-right&#39;, &#39;close-button&#39;:true}&quot;&gt;&lt;/toaster-container&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-sm-6&quot;&gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label&gt;Title&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;Enter a title...&quot; ng-model=&quot;toaster.title&quot; class=&quot;form-control&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label&gt;Message&lt;/label&gt;
+                    &lt;textarea placeholder=&quot;Enter a message&quot; rows=&quot;5&quot; ng-model=&quot;toaster.text&quot; class=&quot;form-control&quot;&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-sm-6&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-md-6&quot;&gt;
+                        &lt;p&gt;Toast Type&lt;/p&gt;
+                        &lt;div&gt;
+                           &lt;input type=&quot;radio&quot; name=&quot;toasts&quot; ng-model=&quot;toaster.type&quot; value=&quot;success&quot; /&gt;
+                           Success
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                           &lt;input type=&quot;radio&quot; name=&quot;toasts&quot; ng-model=&quot;toaster.type&quot; value=&quot;info&quot; /&gt;
+                           Info
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                           &lt;input type=&quot;radio&quot; name=&quot;toasts&quot; ng-model=&quot;toaster.type&quot; value=&quot;wait&quot; /&gt;
+                           Wait
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                           &lt;input type=&quot;radio&quot; name=&quot;toasts&quot; ng-model=&quot;toaster.type&quot; value=&quot;warning&quot; /&gt;
+                           Warning
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                           &lt;input type=&quot;radio&quot; name=&quot;toasts&quot; ng-model=&quot;toaster.type&quot; value=&quot;error&quot; /&gt;
+                           Error
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button ng-click=&quot;pop()&quot; class=&quot;btn btn-info&quot;&gt;Show a Toaster&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>	<strong>3</strong>- Now we will add the new Sidebar entry</p>
+<p>	&nbsp;3.a - In the Solution explorer, click on file <strong>Sidebar/sidebar-menu.json</strong> and add the following at the end</p>
+<pre class="prettyprint lang-js linenums">
+  {
+    &quot;text&quot;: &quot;Notifications&quot;,
+    &quot;sref&quot;: &quot;app.notifications&quot;,
+    &quot;icon&quot;: &quot;fa fa-file-o&quot;
+  }</pre>
+<p>	<strong>4</strong>- We wiil add a route for the new view</p>
+<p>	&nbsp;4.a - In the Solution explorer, edit the file <strong>Scripts/app/modules/routes/routes.config.js</strong> and add the following route state</p>
+<div>
+	<pre class="prettyprint lang-js linenums">
+    .state(&#39;app.notifications&#39;, {
+        url: &#39;/Notifications&#39;,
+        title: &#39;Notifications&#39;,
+        templateUrl: helper.basepath(&#39;Notifications&#39;),
+        resolve: helper.resolveFor(&#39;toaster&#39;)
+    })</pre>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>5</strong>- Now we have to add the Toaster assets and the AngularJS controller</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp; 5.a Copy folder <strong>/backend-angular/vendor/angularjs-toaster </strong>and paste into your project <strong>Vendor </strong>folder</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp; 5.b Copy the file <strong>&nbsp;/backend-angular/master/js/modules/controllers/demo-toaster.js </strong>and paste into your project <strong>Scripts/app/modules/controllers</strong>&nbsp;folder</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp; 5.c In solution explorer, edit file <strong>Scripts/app/modules/lazyload/lazyload.constants.js</strong> and uncomment the line</div>
+	<pre class="prettyprint lang-js linenums">
+  { name: &#39;toaster&#39;, files: [&#39;/Vendor/angularjs-toaster/toaster.js&#39;,&#39;/Vendor/angularjs-toaster/toaster.css&#39;] }</pre>
+</div>
+<p>	&nbsp;&nbsp;</p>
+<p>	<strong>6</strong>- Done. Now you can run your solution and the new view with Toaster notifications should be ready.</p>
+<p>	&nbsp;</p>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed Project</h3><hr class="notop"></div>
+<div>
+	This project is an application skeleton. You can use it to quickly bootstrap your MVC5 webapp projects and dev environment for these projects.&nbsp;</div>
+<div>
+	The seed app doesn&#39;t do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The angular seed project includes the following features</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Modernizr</div>
+<div>
+	- Icons (FontAwesome and SimpleLine)</div>
+<div>
+	- Translation</div>
+<div>
+	- RTL mode</div>
+<div>
+	- Top navbar search form</div>
+<div>
+	- Themes</div>
+<div>
+	- Two views with its own sidebar entries (one single item and a menu)</div>
+<div>
+	- Empty offsidebar (left sidebar)</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>

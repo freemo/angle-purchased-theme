@@ -1,0 +1,100 @@
+h3 uiSelect
+  .pull-right
+    button.btn.btn-default.btn-xs(ng-click='uisel.enable()') Enable
+    button.btn.btn-default.btn-xs(ng-click='uisel.disable()') Disable
+    button.btn.btn-default.btn-xs(ng-click='uisel.clear()') Clear
+  small AngularJS-native version of Select2 and Selectize.
+
+.container-fluid
+  .form-horizontal
+    .form-group
+      .col-md-3.col-sm-4
+        p.m0 Address 
+      .col-md-4.col-sm-8
+        ui-select(ng-model='uisel.address.selected', theme='bootstrap', ng-disabled='uisel.disabled', reset-search-input='false')
+          ui-select-match(placeholder='Enter an address...') {{$select.selected.formatted_address}}
+          ui-select-choices(repeat='address in uisel.addresses | filter: $select.search track by $index', refresh='uisel.refreshAddresses($select.search)', refresh-delay='0')
+            div(ng-bind-html='address.formatted_address | highlight: $select.search')
+      .col-md-5.col-xs-12
+        .text-sm.text-muted.mt-sm Selected: {{uisel.address.selected.formatted_address}}
+
+    .form-group
+      .col-md-3.col-sm-4
+        p.m0 Persons
+      .col-md-4.col-sm-8
+        ui-select(ng-model='uisel.person.selected', theme='bootstrap', ng-disabled='uisel.disabled')
+          ui-select-match(placeholder='Select or search a name/age...') {{$select.selected.name}}
+          ui-select-choices(repeat='person in uisel.people | propsFilter: {name: $select.search, age: $select.search}')
+            div(ng-bind-html='person.name | highlight: $select.search')
+            small
+              | email: {{person.email}}        age: 
+              span(ng-bind-html="''+person.age | highlight: $select.search")
+      .col-md-5.col-xs-12
+        .text-sm.text-muted.mt-sm Selected: {{uisel.person.selected}}
+
+    .form-group
+      .col-md-3.col-sm-4
+        p.m0 Countries
+      .col-md-4.col-sm-8
+        ui-select.text-left(ng-model='uisel.country.selected', theme='bootstrap', ng-disabled='uisel.disabled')
+          ui-select-match(placeholder='Select or search a country in the list...') {{$select.selected.name}}
+          ui-select-choices(repeat='country in uisel.countries | filter: $select.search')
+            span(ng-bind-html='country.name | highlight: $select.search')
+            small(ng-bind-html='country.code | highlight: $select.search')
+      .col-md-5.col-xs-12
+        .text-sm.text-muted.mt-sm Selected: {{uisel.country.selected}}
+
+
+    .form-group
+      .col-md-3.col-sm-4
+        p.m0 Array of strings
+      .col-md-4.col-sm-8
+        ui-select(multiple='', ng-model='uisel.multipleDemo.colors', theme='bootstrap', ng-disabled='uisel.disabled')
+          ui-select-match(placeholder='Select colors...') {{$item}}
+          ui-select-choices(repeat='color in uisel.availableColors | filter:$select.search') {{color}}    
+      .col-md-5.col-xs-12
+        .text-sm.text-muted.mt-sm Selected: {{uisel.multipleDemo.colors}}
+
+    .form-group
+      .col-md-3.col-sm-4
+        p.m0 Array of objects
+      .col-md-4.col-sm-8
+        ui-select(multiple='', ng-model='uisel.multipleDemo.selectedPeople', theme='bootstrap', ng-disabled='uisel.disabled')
+          ui-select-match(placeholder='Select uisel.person...') {{$item.name}} &lt;{{$item.email}}&gt;
+          ui-select-choices(repeat='person in uisel.people | propsFilter: {name: $select.search, age: $select.search}')
+            div(ng-bind-html='person.name | highlight: $select.search')
+            small
+              | email: {{person.email}}        age: 
+              span(ng-bind-html="''+person.age | highlight: $select.search")
+      .col-md-5
+        .text-sm.text-muted.mt-sm Selected: {{uisel.multipleDemo.selectedPeople}}
+
+
+    .form-group
+      .col-md-3.col-sm-4
+        p.m0 Array of objects with single property binding
+      .col-md-4.col-sm-8
+        ui-select(multiple='', ng-model='uisel.multipleDemo.selectedPeopleSimple', theme='bootstrap', ng-disabled='uisel.disabled')
+          ui-select-match(placeholder='Select uisel.person...') {{$item.name}} &lt;{{$item.email}}&gt;
+          ui-select-choices(repeat='person.email as person in uisel.people | propsFilter: {name: $select.search, age: $select.search}')
+            div(ng-bind-html='person.name | highlight: $select.search')
+            small
+              | email: {{person.email}}        age: 
+              span(ng-bind-html="''+person.age | highlight: $select.search")
+      .col-md-5.col-xs-12
+        .text-sm.text-muted.mt-sm Selected: {{uisel.multipleDemo.selectedPeopleSimple}}
+
+    .form-group
+      .col-md-3.col-sm-4
+        p.m0 Array of objects (with groupBy)
+      .col-md-4.col-sm-8
+        ui-select(multiple='', ng-model='uisel.multipleDemo.selectedPeopleWithGroupBy', theme='bootstrap', ng-disabled='uisel.disabled')
+          ui-select-match(placeholder='Select uisel.person...') {{$item.name}} &lt;{{$item.email}}&gt;
+          ui-select-choices(group-by='uisel.someGroupFn', repeat='person in uisel.people | propsFilter: {name: $select.search, age: $select.search}')
+            div(ng-bind-html='person.name | highlight: $select.search')
+            small
+              | email: {{person.email}}        age: 
+              span(ng-bind-html="''+person.age | highlight: $select.search")
+      .col-md-5.col-xs-12
+        .text-sm.text-muted.mt-sm Selected: {{uisel.multipleDemo.selectedPeopleWithGroupBy}}
+

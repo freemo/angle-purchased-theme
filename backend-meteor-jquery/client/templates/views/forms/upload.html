@@ -1,0 +1,23 @@
+<template name="formUpload">
+
+    <h3>Dropzone File Upload</h3>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel ">
+                <div class="panel-heading">
+                    <h5>Drag &amp; Drop area for uploads</h5>
+                </div>
+                <div class="panel-body">
+
+                    <!-- More info on dropzone: https://github.com/devonbarrett/meteor-dropzone/ -->
+                    {{> dropzone url='http://somewebsite.com/upload' id='dropzoneDiv' class="b0"}}
+
+                    <p class="mt"><small>* Click on area to open upload dialog</small></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

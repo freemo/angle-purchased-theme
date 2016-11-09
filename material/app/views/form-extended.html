@@ -1,0 +1,377 @@
+<h3>Form Extended
+   <small>New elements to extend the classic functions</small>
+</h3>
+<!-- START panel-->
+<div class="panel panel-default">
+   <div class="panel-heading">Form elements</div>
+   <div class="panel-body">
+      <form class="form-horizontal" method="get" ng-controller="FormDemoCtrl as form">
+         <fieldset>
+            <legend>New Components</legend>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Slider
+                  <br/>
+                  <small>Classic, range and vertical</small>
+                  <br/>
+               </label>
+               <div class="col-sm-10">
+                  <div class="row">
+                     <div class="col-xs-6">
+                        <slider class="bs-slider slider-vertical mr" ng-model="form.slider1" min="5" max="35" step="1" orientation="vertical"></slider>
+                        <slider class="bs-slider slider-vertical mr" ng-model="form.slider2" min="5" max="35" step="1" orientation="vertical"></slider>
+                        <slider class="bs-slider slider-vertical mr" ng-model="form.slider3" min="5" max="35" step="1" orientation="vertical"></slider>
+                        <slider class="bs-slider slider-vertical mr" ng-model="form.slider4" min="5" max="35" step="1" orientation="vertical"></slider>
+                        <slider class="bs-slider slider-vertical mr" ng-model="form.slider5" min="5" max="35" step="1" orientation="vertical"></slider>
+                        <slider class="bs-slider slider-vertical mr" ng-model="form.slider6" min="5" max="35" step="1" orientation="vertical"></slider>
+                        <br/>
+                        <br/>
+                        <slider class="bs-slider slider-horizontal" ng-model="form.slider7" min="5" max="20" step="1" orientation="horizontal"></slider>
+                        <br/>
+                        <br/>
+                        <slider class="bs-slider" ng-model="form.slider8" min="'10'" max="'1000'" value="[350,750]" range="true"></slider>
+                     </div>
+                     <div class="col-xs-6">
+                        <p>Value 1: {{form.slider1}}</p>
+                        <p>Value 2: {{form.slider2}}</p>
+                        <p>Value 3: {{form.slider3}}</p>
+                        <p>Value 4: {{form.slider4}}</p>
+                        <p>Value 5: {{form.slider5}}</p>
+                        <p>Value 6: {{form.slider6}}</p>
+                        <p>Value 7: {{form.slider7}}</p>
+                        <p>Value 8: {{form.slider8}}</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Switch Small</label>
+               <div class="col-sm-10">
+                  <label class="switch switch-sm">
+                     <input type="checkbox" checked="checked" />
+                     <span></span>
+                  </label>
+               </div>
+            </div>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Switch</label>
+               <div class="col-sm-10">
+                  <label class="switch">
+                     <input type="checkbox" checked="checked" />
+                     <span></span>
+                  </label>
+               </div>
+            </div>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Switch Large</label>
+               <div class="col-sm-10">
+                  <label class="switch switch-lg">
+                     <input type="checkbox" checked="checked" />
+                     <span></span>
+                  </label>
+               </div>
+            </div>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Switch Radio</label>
+               <div class="col-sm-10">
+                  <label class="switch switch-lg">
+                     <input type="radio" checked="checked" name="radioSwitch" />
+                     <span></span>
+                  </label>
+                  <label class="switch switch-lg">
+                     <input type="radio" name="radioSwitch" />
+                     <span></span>
+                  </label>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group mb" ng-controller="ColorPickerController as cpicker">
+               <label class="col-sm-2 control-label">Color pickers</label>
+               <div class="col-sm-8">
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="panel">
+                           <div class="panel-heading">hex: {{ cpicker.hexPicker.color }}</div>
+                           <div class="panel-body">
+                              <p>
+                                 <button class="btn btn-primary" ng-click="cpicker.resetColor()">Update Model</button>
+                              </p>
+                              <input class="form-control" colorpicker="" ng-model="cpicker.hexPicker.color" type="text" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="panel">
+                           <div class="panel-heading">rgb: {{ cpicker.rgbPicker.color }}</div>
+                           <div class="panel-body">
+                              <p>
+                                 <button class="btn btn-primary" ng-click="cpicker.resetRBGColor()">Update Model</button>
+                              </p>
+                              <input class="form-control" colorpicker="rgb" ng-model="cpicker.rgbPicker.color" type="text" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="panel">
+                           <div class="panel-heading">rgba: {{ cpicker.rgbaPicker.color }}</div>
+                           <div class="panel-body">
+                              <p>
+                                 <button class="btn btn-primary" ng-click="cpicker.resetRBGAColor()">Update Model</button>
+                              </p>
+                              <input class="form-control" colorpicker="rgba" colorpicker-position="right" ng-model="cpicker.rgbaPicker.color" type="text" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="panel">
+                           <div class="panel-heading">Non input element model value: {{ cpicker.nonInput.color }}</div>
+                           <div class="panel-body">
+                              <p>
+                                 <button class="btn btn-primary" ng-click="cpicker.resetNonInputColor()">Update Model</button>
+                              </p>
+                              <button class="btn btn-success" colorpicker="" type="button" colorpicker-position="top" ng-model="cpicker.nonInput.color">Change color</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group mb">
+               <label class="col-sm-2 control-label">Chosen w/Input groups</label>
+               <div class="col-sm-4">
+                  <div class="input-group mb">
+                     <span class="input-group-addon">@</span>
+                     <!-- this uses fixed width to avoid expand outside the group container-->
+                     <select class="chosen-select input-md" chosen="" ng-model="inputg1" width="'300px'">
+                        <option value=""></option>
+                        <option value="1">Nulla facilisi. Quisque in sapien et neque sodales facilisis. Proin a porta turpis.</option>
+                        <option value="2">New York Giants</option>
+                        <option value="3">Philadelphia Eagles</option>
+                        <option value="4">Washington Redskins</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group mb">
+               <label class="col-sm-2 control-label">Chosen Ajax</label>
+               <div class="col-sm-10">
+                  <select class="chosen-select input-md" chosen="" ng-model="state" ng-options="s for s in form.states" width="'100%'">
+                     <option value=""></option>
+                  </select>
+               </div>
+            </div>
+            <div class="form-group mb">
+               <label class="col-sm-2 control-label">Chosen Groups</label>
+               <div class="col-sm-10">
+                  <select class="chosen-select input-md" chosen="" ng-model="team" width="'100%'">
+                     <option value=""></option>
+                     <optgroup label="NFC EAST">
+                        <option>Dallas Cowboys</option>
+                        <option>New York Giants</option>
+                        <option>Philadelphia Eagles</option>
+                        <option>Washington Redskins</option>
+                     </optgroup>
+                     <optgroup label="NFC NORTH">
+                        <option>Chicago Bears</option>
+                        <option>Detroit Lions</option>
+                        <option>Green Bay Packers</option>
+                        <option>Minnesota Vikings</option>
+                     </optgroup>
+                     <optgroup label="NFC SOUTH">
+                        <option>Atlanta Falcons</option>
+                        <option>Carolina Panthers</option>
+                        <option>New Orleans Saints</option>
+                        <option>Tampa Bay Buccaneers</option>
+                     </optgroup>
+                     <optgroup label="NFC WEST">
+                        <option>Arizona Cardinals</option>
+                        <option>St. Louis Rams</option>
+                        <option>San Francisco 49ers</option>
+                        <option>Seattle Seahawks</option>
+                     </optgroup>
+                     <optgroup label="AFC EAST">
+                        <option>Buffalo Bills</option>
+                        <option>Miami Dolphins</option>
+                        <option>New England Patriots</option>
+                        <option>New York Jets</option>
+                     </optgroup>
+                     <optgroup label="AFC NORTH">
+                        <option>Baltimore Ravens</option>
+                        <option>Cincinnati Bengals</option>
+                        <option>Cleveland Browns</option>
+                        <option>Pittsburgh Steelers</option>
+                     </optgroup>
+                     <optgroup label="AFC SOUTH">
+                        <option>Houston Texans</option>
+                        <option>Indianapolis Colts</option>
+                        <option>Jacksonville Jaguars</option>
+                        <option>Tennessee Titans</option>
+                     </optgroup>
+                     <optgroup label="AFC WEST">
+                        <option>Denver Broncos</option>
+                        <option>Kansas City Chiefs</option>
+                        <option>Oakland Raiders</option>
+                        <option>San Diego Chargers</option>
+                     </optgroup>
+                  </select>
+               </div>
+            </div>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Chosen Multiple</label>
+               <div class="col-sm-10">
+                  <select class="chosen-select form-control" chosen="" multiple="multiple" ng-model="team2">
+                     <option value="">
+                        <option>Dallas Cowboys</option>
+                        <option>New York Giants</option>
+                        <option>Philadelphia Eagles</option>
+                        <option>Washington Redskins</option>
+                        <option>Chicago Bears</option>
+                        <option>Detroit Lions</option>
+                        <option>Green Bay Packers</option>
+                        <option>Minnesota Vikings</option>
+                        <option>Atlanta Falcons</option>
+                        <option>Carolina Panthers</option>
+                        <option>New Orleans Saints</option>
+                        <option>Tampa Bay Buccaneers</option>
+                        <option>Arizona Cardinals</option>
+                        <option>St. Louis Rams</option>
+                        <option>San Francisco 49ers</option>
+                        <option>Seattle Seahawks</option>
+                        <option>Buffalo Bills</option>
+                        <option>Miami Dolphins</option>
+                        <option>New England Patriots</option>
+                        <option>New York Jets</option>
+                        <option>Baltimore Ravens</option>
+                        <option>Cincinnati Bengals</option>
+                        <option>Cleveland Browns</option>
+                        <option>Pittsburgh Steelers</option>
+                        <option>Houston Texans</option>
+                        <option>Indianapolis Colts</option>
+                        <option>Jacksonville Jaguars</option>
+                        <option>Tennessee Titans</option>
+                        <option>Denver Broncos</option>
+                        <option>Kansas City Chiefs</option>
+                        <option>Oakland Raiders</option>
+                        <option>San Diego Chargers</option>
+                     </option>
+                  </select>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Masked input</label>
+               <div class="col-sm-10">
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <input class="form-control" type="text" masked="" data-inputmask="'mask': '999-99-999-9999-9'" placeholder="ISBN" />
+                        <span class="help-block">data-inputmask="'mask': '999-99-999-9999-9"'</span>
+                     </div>
+                     <div class="col-sm-6">
+                        <input class="form-control" type="text" masked="" data-inputmask="'mask': '99/99/9999'" placeholder="Date" />
+                        <span class="help-block">data-inputmask="'mask': '99/99/9999"'</span>
+                     </div>
+                     <div class="col-sm-6">
+                        <input class="form-control" type="text" masked="" data-inputmask="'mask': '(999) 999-9999'" placeholder="Phone number" />
+                        <span class="help-block">data-inputmask="'mask': '(999) 999-9999"'</span>
+                     </div>
+                     <div class="col-sm-6">
+                        <input class="form-control" type="text" masked="" data-inputmask="'mask': 'aaaa-9999-aa99-9999'" placeholder="Custom Key" />
+                        <span class="help-block">data-inputmask="'mask': 'aaaa-9999-aa99-9999"'</span>
+                     </div>
+                     <div class="col-sm-6">
+                        <input class="form-control" type="text" masked="" data-inputmask="'mask': '$ 999.999.999,99'" placeholder="Currency Dolar" />
+                        <span class="help-block">data-inputmask="'mask': '$ 999.999.999,99"'</span>
+                     </div>
+                     <div class="col-sm-6">
+                        <input class="form-control" type="text" masked="" data-inputmask="'mask': '€ 999.999.999,99'" placeholder="Currency Euro" />
+                        <span class="help-block">data-inputmask="'mask': '€ 999.999.999,99"'</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Tags input
+                  <div class="text-sm text-muted">Type and press Enter</div>
+               </label>
+               <div class="col-sm-10">
+                  <input class="form-control" type="text" tagsinput="tagsinput" ng-value="form.cities.join(',')" ng-model="form.cities" />
+                  <span class="help-block">Values:<code>{{form.cities}}</code>
+                  </span>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">File input</label>
+               <div class="col-sm-10">
+                  <input class="form-control" filestyle="" type="file" data-classbutton="btn btn-default" data-classinput="form-control inline" />
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Block Note Editor</label>
+               <div class="col-sm-10">
+                  <div class="panel">
+                     <div class="panel-body">
+                        <textarea class="form-control note-editor" rows="10"></textarea>
+                     </div>
+                  </div>
+                  <p>With margin</p>
+                  <div class="panel">
+                     <div class="panel-body">
+                        <textarea class="form-control note-editor note-editor-margin" rows="10"></textarea>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Angular Simple wysiwyg</label>
+               <div class="col-sm-10">
+                  <script type="text/ng-template" id="ng-wig/views/ng-wig.html">
+                     <div class="ng-wig"><div class="btn-group btn-group-sm wd-wide"><button class="btn btn-sm btn-default" type="button" title="Header" ng-click="execCommand('formatblock', '&lt;h1&gt;')"><em class="fa fa-header"></em></button><button class="btn btn-sm btn-default" type="button" title="Paragraph" ng-click="execCommand('formatblock', '&lt;p&gt;')"><em class="fa fa-paragraph"></em></button><button class="btn btn-sm btn-default" type="button" title="Unordered List" ng-click="execCommand('insertunorderedlist')"><em class="fa fa-list-ul"></em></button><button class="btn btn-sm btn-default" type="button" title="Ordered List" ng-click="execCommand('insertorderedlist')"><em class="fa fa-list-ol"></em></button><button class="btn btn-sm btn-default" type="button" title="Bold" ng-click="execCommand('bold')"><em class="fa fa-bold"></em></button><button class="btn btn-sm btn-default" type="button" title="Italic" ng-click="execCommand('italic')"><em class="fa fa-italic"></em></button><button class="btn btn-sm btn-default" type="button" title="link" ng-click="execCommand('createlink')"><em class="fa fa-link"></em></button><button class="pull-right btn btn-sm btn-default" type="button" title="Edit Html" ng-class="{ 'nw-button--active': editMode }" ng-click="toggleEditMode()"><em class="fa fa-pencil"></em></button></div><div class="nw-editor"><textarea class="nw-editor__src" ng-show="editMode" ng-model="content"></textarea><iframe class="nw-editor__res" scrolling="{{ autoexpand ? 'no' : 'yes' }}" frameBorder="0" ng-hide="editMode" ng-model="content" ng-wig-editable=""></iframe></div></div>
+                  </script>
+                  <textarea ng-wig="form.wysiwygContent"></textarea>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Summernote Editor</label>
+               <div class="col-sm-10">
+                  <summernote class="summernote" height="280">
+                     <span>This is initial text.</span>
+                  </summernote>
+                  <h4 class="mb-lg">
+                     <strong>Airmode</strong>
+                     <small>To reveal toolbar, select a text where you want to shape up</small>
+                  </h4>
+                  <div class="well">
+                     <summernote class="summernote" airmode="">
+                        <span>Integer ligula mauris, iaculis pellentesque consequat non, semper sit amet velit.</span>
+                     </summernote>
+                  </div>
+               </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="form-group">
+               <div class="col-sm-4 col-sm-offset-2">
+                  <button class="btn btn-default" type="submit">Cancel</button>
+                  <button class="btn btn-primary" type="submit">Save changes</button>
+               </div>
+            </div>
+         </fieldset>
+      </form>
+   </div>
+</div>
+<!-- END panel-->

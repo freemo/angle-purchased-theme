@@ -1,0 +1,146 @@
+h3.text-center.text-thin(translate="offsidebar.setting.SETTINGS") Settings
+
+.p
+  h4.text-muted.text-thin(translate="offsidebar.setting.THEMES") Themes
+
+  .table-grid.mb
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-a.css')
+          span.icon-check
+          span.split
+            span.color.bg-info
+            span.color.bg-info-light
+          span.color.bg-white
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-b.css')
+          span.icon-check
+          span.split
+            span.color.bg-green
+            span.color.bg-green-light
+          span.color.bg-white
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-c.css')
+          span.icon-check
+          span.split
+            span.color.bg-purple
+            span.color.bg-purple-light
+          span.color.bg-white
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-d.css')
+          span.icon-check
+          span.split
+            span.color.bg-danger
+            span.color.bg-danger-light
+          span.color.bg-white
+  .table-grid.mb
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-e.css')
+          span.icon-check
+          span.split
+            span.color.bg-info-dark
+            span.color.bg-info
+          span.color.bg-gray-dark
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-f.css')
+          span.icon-check
+          span.split
+            span.color.bg-green-dark
+            span.color.bg-green
+          span.color.bg-gray-dark
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-g.css')
+          span.icon-check
+          span.split
+            span.color.bg-purple-dark
+            span.color.bg-purple
+          span.color.bg-gray-dark
+    .col.mb
+      .setting-color
+        label
+          input(type="radio", name="setting-theme", ng-model="app.layout.theme", value='app/css/theme-h.css')
+          span.icon-check
+          span.split
+            span.color.bg-danger-dark
+            span.color.bg-danger
+          span.color.bg-gray-dark
+
+.p
+  h4.text-muted.text-thin Layout
+
+  .clearfix
+    p.pull-left(translate="offsidebar.setting.layout.FIXED") Fixed
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.isFixed")
+        span
+  .clearfix
+    p.pull-left Boxed
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.isBoxed")
+        span
+  .clearfix
+    p.pull-left RTL
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.isRTL")
+        span
+.p(ng-if="!app.layout.horizontal")
+  h4.text-muted.text-thin Aside
+  .clearfix
+    p.pull-left(translate="offsidebar.setting.layout.COLLAPSED") Collapsed
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.isCollapsed", ng-disabled="app.layout.isCollapsedText")
+        span
+  .clearfix
+    p.pull-left Collapsed Text
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.isCollapsedText", ng-disabled="app.layout.isCollapsed")
+        span
+  .clearfix
+    p.pull-left Float
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.isFloat")
+        span
+  .clearfix
+    p.pull-left Hover
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.asideHover")
+        span
+  .clearfix
+    p.pull-left Show Scrollbar
+    .pull-right
+      label.switch
+        input(type='checkbox', ng-model="app.layout.asideScrollbar")
+        span
+
+.p
+  h4.text-muted.text-thin View Animation
+  select.form-control(ng-model="app.viewAnimation")
+    option(value="ng-fadeInUp", selected="selected") fadeInUp
+    option(value="ng-fadeInDown") fadeInDown
+    option(value="ng-fadeInRight") fadeInRight
+    option(value="ng-fadeInLeft") fadeInLeft
+    option(value="ng-fadeInUpBig") fadeInUpBig
+    option(value="ng-fadeInDownBig") fadeInDownBig
+    option(value="ng-fadeInRightBig") fadeInRightBig
+    option(value="ng-fadeInLeftBig") fadeInLeftBig
+    option(value="ng-fadeIn") fadeIn

@@ -1,0 +1,211 @@
+h3 Search
+  small Search and filter results
+
+.row
+  .col-lg-9
+    .form-group.mb-xl
+      input.form-control.mb(type='text', placeholder="Search products, people, apps, etc.")
+      .clearfix
+        button.pull-left.btn.btn-default(type="button") Search
+        .pull-right
+          label.checkbox-inline.c-checkbox
+            input#inlineCheckbox10(type='checkbox', value='option1')
+            span.fa.fa-check
+            |  Products
+          label.checkbox-inline.c-checkbox
+            input#inlineCheckbox20(type='checkbox', value='option2')
+            span.fa.fa-check
+            |  People
+          label.checkbox-inline.c-checkbox
+            input#inlineCheckbox30(type='checkbox', value='option3')
+            span.fa.fa-check
+            |  Apps
+
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        | Search Results
+        paneltool(tool-refresh="traditional")
+      // START table-responsive
+      .table-responsive
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th(check-all)
+                .checkbox.c-checkbox(data-toggle="tooltip",data-title="Check All")
+                  label
+                    input(type='checkbox')
+                    span.fa.fa-check
+              th Description
+          tbody
+            tr
+              td
+                .checkbox.c-checkbox
+                  label
+                    input(type='checkbox')
+                    span.fa.fa-check
+              td
+                .media-box
+                    a.pull-left(href='#')
+                      img.media-box-object.img-responsive.img-rounded.thumb64(src="app/img/dummy.png", alt="")
+                    .media-box-body
+                      .pull-right.btn.btn-info.btn-sm View
+                      h4.media-box-heading Product 1
+                      small.text-muted Category1, Category2 
+                      p Sed gravida auctor odio. Sed viverra rutrum hendrerit. Praesent dapibus justo dolor. Suspendisse rhoncus consectetur eros vehicula accumsan. 
+
+            tr
+              td
+                .checkbox.c-checkbox
+                  label
+                    input(type='checkbox')
+                    span.fa.fa-check
+              td
+                .media-box
+                    a.pull-left(href='#')
+                      img.media-box-object.img-responsive.img-rounded.thumb64(src="app/img/dummy.png", alt="")
+                    .media-box-body
+                      .pull-right.btn.btn-info.btn-sm View
+                      h4.media-box-heading Product 2
+                      small.text-muted Category1, Category2 
+                      p Sed gravida auctor odio. Sed viverra rutrum hendrerit. Praesent dapibus justo dolor. Suspendisse rhoncus consectetur eros vehicula accumsan. 
+            tr
+              td
+                .checkbox.c-checkbox
+                  label
+                    input(type='checkbox')
+                    span.fa.fa-check
+              td
+                .media-box
+                    a.pull-left(href='#')
+                      img.media-box-object.img-responsive.img-rounded.thumb64(src="app/img/dummy.png", alt="")
+                    .media-box-body
+                      .pull-right.btn.btn-info.btn-sm View
+                      h4.media-box-heading Product 3
+                      small.text-muted Category1, Category2 
+                      p Sed gravida auctor odio. Sed viverra rutrum hendrerit. Praesent dapibus justo dolor. Suspendisse rhoncus consectetur eros vehicula accumsan. 
+            tr
+              td
+                .checkbox.c-checkbox
+                  label
+                    input(type='checkbox')
+                    span.fa.fa-check
+              td
+                .media-box
+                    a.pull-left(href='#')
+                      img.media-box-object.img-responsive.img-rounded.thumb64(src="app/img/dummy.png", alt="")
+                    .media-box-body
+                      .pull-right.btn.btn-info.btn-sm View
+                      h4.media-box-heading Product 4
+                      small.text-muted Category1, Category2 
+                      p Sed gravida auctor odio. Sed viverra rutrum hendrerit. Praesent dapibus justo dolor. Suspendisse rhoncus consectetur eros vehicula accumsan. 
+            tr
+              td
+                .checkbox.c-checkbox
+                  label
+                    input(type='checkbox')
+                    span.fa.fa-check
+              td
+                .media-box
+                    a.pull-left(href='#')
+                      img.media-box-object.img-responsive.img-rounded.thumb64(src="app/img/dummy.png", alt="")
+                    .media-box-body
+                      .pull-right.btn.btn-info.btn-sm View
+                      h4.media-box-heading Product 5
+                      small.text-muted Category1, Category2 
+                      p Sed gravida auctor odio. Sed viverra rutrum hendrerit. Praesent dapibus justo dolor. Suspendisse rhoncus consectetur eros vehicula accumsan. 
+
+
+      // END table-responsive
+      .panel-footer
+        .row
+          .col-lg-2
+            button.btn.btn-sm.btn-default Clear
+          .col-lg-8
+          .col-lg-2.text-right
+            ul.pagination.pagination-sm
+              li.active: a(href='#') 1
+              li: a(href='#') 2
+              li: a(href='#') 3
+              li: a(href='#') »
+    // END panel
+
+  .col-lg-3
+    h3.m0.pb-lg Filters
+
+    .form-group.mb-xl
+      label.control-label.mb by Text
+      br
+      select.chosen-select.form-control(chosen="", ng-model="searchState")
+        optgroup(label='Alaskan/Hawaiian Time Zone')
+          option(value='AK') Alaska
+          option(value='HI') Hawaii
+        optgroup(label='Pacific Time Zone')
+          option(value='CA') California
+          option(value='NV') Nevada
+          option(value='OR') Oregon
+          option(value='WA') Washington
+        optgroup(label='Mountain Time Zone')
+          option(value='AZ') Arizona
+          option(value='CO') Colorado
+          option(value='ID') Idaho
+          option(value='MT') Montana
+          option(value='NE') Nebraska
+          option(value='NM') New Mexico
+          option(value='ND') North Dakota
+          option(value='UT') Utah
+          option(value='WY') Wyoming
+        optgroup(label='Central Time Zone')
+          option(value='AL') Alabama
+          option(value='AR') Arkansas
+          option(value='IL') Illinois
+          option(value='IA') Iowa
+          option(value='KS') Kansas
+          option(value='KY') Kentucky
+          option(value='LA') Louisiana
+          option(value='MN') Minnesota
+          option(value='MS') Mississippi
+          option(value='MO') Missouri
+          option(value='OK') Oklahoma
+          option(value='SD') South Dakota
+          option(value='TX') Texas
+          option(value='TN') Tennessee
+          option(value='WI') Wisconsin
+        optgroup(label='Eastern Time Zone')
+          option(value='CT') Connecticut
+          option(value='DE') Delaware
+          option(value='FL') Florida
+          option(value='GA') Georgia
+          option(value='IN') Indiana
+          option(value='ME') Maine
+          option(value='MD') Maryland
+          option(value='MA') Massachusetts
+          option(value='MI') Michigan
+          option(value='NH') New Hampshire
+          option(value='NJ') New Jersey
+          option(value='NY') New York
+          option(value='NC') North Carolina
+          option(value='OH') Ohio
+          option(value='PA') Pennsylvania
+          option(value='RI') Rhode Island
+          option(value='SC') South Carolina
+          option(value='VT') Vermont
+          option(value='VA') Virginia
+          option(value='WV') West Virginia
+
+    .form-group.mb-xl(ng-controller="DatepickerDemoCtrl as dp")
+      label.control-label.mb by Date
+      br
+      p.input-group
+        input.form-control(type='text', uib-datepicker-popup='{{dp.format}}', ng-model='dp.dt', is-open='dp.opened', max-date="'2017-06-22'", uib-datepicker-options='dp.dateOptions', date-disabled='dp.disabled(date, mode)', ng-required='true', close-text='Close')
+        span.input-group-btn
+          button.btn.btn-default(type='button', ng-click='dp.open($event)')
+            em.fa.fa-calendar
+
+    .form-group.mb-xl
+      label.control-label.mb by Range
+      br
+      input#sl2.slider.slider-lg.form-control(ui-slider="", type='text', value='', data-slider-min='10', data-slider-max='1000', data-slider-step='5', data-slider-value='[250,750]')
+
+    button.btn.btn-default.btn-lg Apply
+

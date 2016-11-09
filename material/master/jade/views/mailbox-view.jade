@@ -1,0 +1,84 @@
+// START action buttons
+.button-toolbar.clearfix.mb
+  .btn-group
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-mail-reply.text-gray-dark
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-mail-reply-all.text-gray-dark
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-mail-forward.text-gray-dark
+  .btn-group(dropdown='dropdown')
+    button.btn.btn-default.btn-sm(dropdown-toggle="")
+      span.dropdown-label(style='width: 70px;')
+        em.fa.fa-folder-open
+      span.caret
+    ul.dropdown-menu
+      li: a(href='#')
+          em.fa.fa-inbox.fa-fw
+          | Meetings
+          span.label.label-danger.pull-right 6
+      li: a(href='#')
+          em.fa.fa-file-text-o.fa-fw
+          | CSS
+          span.label.label-info.pull-right.inbox-notification 10
+      li: a(href='#')
+          em.fa.fa-envelope-o.fa-fw
+          | Pending
+      li: a(href='#')
+          em.fa.fa-certificate.fa-fw
+          | Angular
+  .btn-group(dropdown='dropdown')
+    button.btn.btn-default.btn-sm(dropdown-toggle="")
+      span.dropdown-label More
+      span.caret
+    ul.dropdown-menu
+      li: a(href='#') Mark as Read
+      li: a(href='#') Mark as Unread
+      li: a(href='#') Filter Messages like these
+      li: a(href='#') Mute
+
+  .btn-group.pull-right
+    button.btn.btn-sm.btn-default(type='button')
+      em.fa.fa-archive
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-exclamation.text-gray-dark
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-times.text-gray-dark
+
+// END action buttons
+
+.panel.panel-default(ng-controller="MailViewController as mailview")
+  .panel-body
+    table.table.mb-mails.mb-view
+      tbody
+        tr
+          td
+            .clearfix
+              .mb-mail-date {{mailview.mail.date}}
+              img.mb-mail-avatar(ng-src="{{mailview.mail.from.avatar}}", alt="Mail Avatar")
+              .pull-left
+                span From: 
+                span.mb-mail-from {{mailview.mail.from.name}} &lt;{{mailview.mail.from.email}}&gt;
+                p.mb-mail-to-list To: 
+                  a(href="#", title="mailto: {{to.email}}", ng-repeat="to in mailview.mail.to") {{to.name}}
+            .mb-mail-preview.mt-lg
+              h4 {{mailview.mail.subject}}
+              div(ng-bind-html="mailview.mail.content")
+            .mb-attachment
+              p(ng-if="mailview.mail.attach.length")
+                span
+                  em.fa.fa-paperclip.fa-fw
+                  | {{mailview.mail.attach.length}} attachments — 
+                a(href='#').mr.br.pr  Download all attachments
+                a(href='#') View all images
+              ul.list-inline
+                li(ng-repeat="att in mailview.mail.attach")
+                  a(href='{{att.url}}')
+                    img.thumb64.img-responsive.img-thumbnail(ng-src='{{att.url}}')
+                  p {{att.name}}
+            .media-box
+              a.pull-left(href='#')
+                img.media-box-object.img-rounded.thumb32(alt='', ng-src='{{user.picture}}')
+              .media-box-body
+                textarea.form-control(placeholder='Reply here...')
+

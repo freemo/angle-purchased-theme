@@ -1,0 +1,1240 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + AngularJS</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-06-22T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#build" title="Build">Build</a></li>
+			<li><a href="#testing" title="Testing">Testing</a></li>
+			<li><a href="#usage" title="Usage">Usage</a></li>
+			<li><a href="#themes" title="Themes">Themes</a></li>
+			<li><a href="#directives" title="Directives">Directives</a></li>
+			<li><a href="#seed_project" title="Seed Project">Seed Project</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + AngularJS</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/05/2015</li>
+	<li>latest update: 06/22/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="getting_started_starting_the_app">Starting the app</h4>
+	<div>
+		Since this is AngularJS based application you need a server (Apache, IIS, xampp, etc) to serve the html files and perform http request to load all views.</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		<strong>Important! </strong>Opening the index.html with a double click (i.e. using file:// protocol) will show you only a blank page because there&rsquo;s no server that response to the requests made for each view in order to display the app interface.</div>
+</div>
+<p>
+	<strong>Integrated server (BrowserSync)</strong></p>
+<p>
+	See section Build to install node and bower dependecies and then run gulp task to automatically serve the app</p>
+<p>
+	<strong>Alternative server setup (requires nodejs)</strong></p>
+<div>
+	This is simple solution for a basic server setup using <strong>nodejs</strong> that might help you. If don&#39;t have installed nodejs take a look at the <strong>Build </strong>section to learn about it</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Install the http-server &nbsp;(-g installs globally)
+		<ul>
+			<li>
+				<strong>&nbsp; npm install http-server -g</strong>&nbsp;&nbsp;</li>
+		</ul>
+	</li>
+	<li>
+		Once it is installed move to the root folder of the theme (where index.html is located) and run
+		<ul>
+			<li>
+				<strong>&nbsp; http-server . -a 127.0.0.1 -p 8080</strong></li>
+		</ul>
+	</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	If everything goes fine you can now access to the app at <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	Before starting to customize the template, here are the project files organization structure:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-plain linenums">
++-- app/
+|   +-- css/
+|   +-- documentation/
+|   +-- img/
+|   +-- js/
+|   +-- i18n/
+|   +-- pages/
+|   +-- vendor/
+|   +-- views/
++-- master/
+|   +-- jade/
+|   |   +-- pages/
+|   |   +-- views/
+|   +-- js/
+|   |   +-- modules/
+|   |   +-- custom/
+|   +-- less/
+|   |   +-- app/
+|   |   +-- bootstrap/
+|   |   +-- themes/
+|   +-- vendor.json
+|   +-- vendor.base.json  
+|   +-- gulpfile.js
+|   +-- package.json
+|   +-- bower.json
++-- server/
+|   +-- *.json
++-- vendor/
++-- index.html</pre>
+<p>
+	&nbsp;</p>
+<h4 id="structure_main_folders_explanation">Main folders explanation</h4>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>app/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the compiled files. This files are ready to deploy on your server.</div>
+<div>
+	&nbsp;</div>
+<div>
+	pages/ This folder contains the compiled html files for the single pages (out of the app).</div>
+<div>
+	views/ This folder contains the compiled html files for the views and partials used for the app.</div>
+<div>
+	i18n/ This folder contains the json files use for translation.</div>
+<div>
+	vendor/ This folder contains vendor files not managed via bower</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>master/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the source files. You will find the following folders inside</div>
+<div>
+	&nbsp;</div>
+<div>
+	jade/ This folder contains JADE files. This files need to be compiled into html files to be displayed by a browser</div>
+<div>
+	less/ This folder contains the LESS files for the core styles and bootstrap styles.</div>
+<div>
+	js/ Here you will find pure JS files. All this files are concatenated into the file app.js.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>vendor/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the vendor files used to include plugins and other components. This folder is handled via bower so optionally you can remove or upgrade the vendor components using such tool.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>server/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains server side files used for demonstration and guide for the flot chart and file upload components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	sidebar-menu.json This file is important and required because it contains the sidebar menu definition.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="structure_custom_code">Custom code</h4>
+	<div>
+		To add your own code you can follow this instructions:</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Working with css and js</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Create a file app/css/custom.css and add your own styles</div>
+	<div>
+		Create a file app/js/custom.js and add your own javascript</div>
+	<div>
+		Edit the file index.html and include custom.css after all other css files and custom.js after all other js files.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Working with source files</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		For JS, go to folder master/js/custom and start editing the file custom*.js. After compile the source again with gulp, your own code will included at th bottom of file app/js/app.js.</div>
+	<div>
+		For LESS, go to folder master/less and create a folder called custom and add your won less files. Then edit file app.less and @import all your stylesheets at the bottom (overrides all app default styles)</div>
+	<div>
+		A note on updating</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		The premise is, the less you change the downloaded code, the easier will be to apply any updates. Try always to keep your own code the most separated as possible from the package code to easily apply new updates when necessary.</div>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="build">
+	<div class="page-header"><h3>Build</h3><hr class="notop"></div>
+<div>
+	<strong>Important</strong>! You only need to follow this instructions in case you want to work with JADE, LESS and concatenate all JS modules.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Node</strong>.js is a platform built on Chrome&rsquo;s JavaScript runtime for easily building fast, scalable network applications.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Gulp </strong>is a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for JADE and LESS, and concatenates the JS files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Bower </strong>is a dependency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you&rsquo;re looking for. Bower keeps track of these packages in a manifest file, bower.json.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The package includes under the master/ folder the file gulpfile.js, package.json and bower.json to install the required components to compile the source files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Installing tools</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	The following steps are intended to be an orientation guide, if you are not experienced with this you will need to learn more about it from Google :)</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		To install node and npm, go to http://nodejs.org/</li>
+	<li>
+		Run npm install -g bower to install bower to manage dependencies</li>
+	<li>
+		Download and install GIT for your platform http://git-scm.com/downloads</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Once you have all tools installed</strong></div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Open a terminal, go the package master/ folder, then run the command npm install. This command will install gulp and all project dependencies.</li>
+	<li>
+		Then, to install vendor dependencies, run bower install</li>
+	<li>
+		Finally run gulp to start the task manager</li>
+</ul>
+<div>
+	If everything goes fine, you should see the messages in the terminal telling you that most the task are done ok. The task will watch for files to compile them automatically all files when change.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	You can also run <strong>npm start </strong>inside master folder to automatically install npm packages, bower dependencies and finally gulp, all with just one command.</div>
+<div>
+	<h4 id="build_main_gulp_tasks">Main Gulp tasks</h4>
+	<div>
+		&nbsp;</div>
+	<div>
+		This command will run the default task without minify assets</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp</pre>
+	<div>
+		This task will generate the assest wihout mininfy and with sourcemaps</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp sourcemaps</pre>
+	<div>
+		This taks will start the app with a server in your favourite browser</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp serve</pre>
+	<div>
+		This taks will start the app with a server in your favourite browser in production mode</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp serve-prod</pre>
+	<div>
+		This taks will generate the asset minified</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp build</pre>
+	<div>
+		You can also mix task build and sourcemaps to get minified version with sourcemaps</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp build sourcemaps</pre>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_angularjs_template_cache">AngularJS Template Cache</h4>
+	<p>
+		To enable this feature, run gulp with the following command</p>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp --usecache</pre>
+	<p>
+		<strong>Note:&nbsp;</strong>This flag is recommended to be combined with <u>build</u> task so you can generate the best optimized version for production enviroment.</p>
+	<h4 id="build_javascript">Javascript</h4>
+	<div>
+		The Javascript source is divided in two main files that controls the app</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>base.js:</strong> contains the scripts to start the application</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>app.js</strong>: contains the modules used in the application (controllers, directive, etc)</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Note:</strong> The edit the scripts included in base.js open the file vendor.base.json located under the master folder</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_js_modules">JS Modules</h4>
+	<div>
+		All Javascript modules are concatenated in the following order</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<pre class="prettyprint lang-js linenums">
+// main app modules
+&#39;master/js/app.module.js&#39;,
+// template modules
+&#39;master/js/modules/**/*.module.js&#39;,
+&#39;master/js/modules/**/*.js&#39;,
+// custom modules
+&#39;master/js/custom/**/*.module.js&#39;,
+&#39;master/js/custom/**/*.js&#39;</pre>
+	</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Modules organization</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<pre class="prettyprint lang-js linenums">
+angle --&gt; [
+    app.core --&gt; [
+        &#39;ngRoute&#39;,
+        &#39;ngAnimate&#39;,
+        &#39;ngStorage&#39;,
+        &#39;ngCookies&#39;,
+        &#39;pascalprecht.translate&#39;,
+        &#39;ui.bootstrap&#39;,
+        &#39;ui.router&#39;,
+        &#39;oc.lazyLoad&#39;,
+        &#39;cfp.loadingBar&#39;,
+        &#39;ngSanitize&#39;,
+        &#39;ngResource&#39;,
+        &#39;tmh.dynamicLocale&#39;,
+        &#39;ui.utils&#39;
+    ],
+    app.routes --&gt; [
+        &#39;app.lazyload&#39;
+    ],
+    app.sidebar,
+    app.navsearch,
+    app.preloader,
+    app.loadingbar,
+    app.translate,
+    app.settings,
+    app.dashboard,
+    app.icons,
+    app.flatdoc,
+    app.notify,
+    app.bootstrapui,
+    app.elements,
+    app.panels,
+    app.charts,
+    app.forms,
+    app.locale,
+    app.maps,
+    app.pages,
+    app.tables,
+    app.extras,
+    app.mailbox,
+    app.utils --&gt; [
+        &#39;app.colors&#39;
+    ]
+]</pre>
+	</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_less">LESS</h4>
+	<div>
+		The LESS files are used to compile the main application styles into the file<strong> app.css </strong>and the <u>custom Bootstrap</u> styles into <strong>bootstrap.css</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Also the <strong>app-rtl.css</strong> and <strong>bootstra-rtl.css</strong> are automatically generated with the same styles but inverted for RTL layout. To convert styles the node script <strong>css-flip</strong> is used.</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_sass">SASS</h4>
+	<div>
+		&nbsp;</div>
+	<div>
+		To build the styles using the SCSS files version you have to use the following command</div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-plain linenums">
+gulp <strong>--usesass</strong></pre>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_vendor">Vendor</h4>
+	<div>
+		Vendor script dependencies are managed by bower. Just run bower install in folder master/ and all dependencies will be installed.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		After installing all dependencies is necessary to install them in the locations the app expects them. To do that, run gulp task with the command gulp scripts:vendor in the master folder.</div>
+	<div>
+		This task will run automatically the tasks scripts:vendor:app and scripts:vendor:base</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Vendor folder</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		To avoid not necessary files that bower downloads there&rsquo;s a task scripts:vendor:app that will copy all files required by the app from the bower_components folder to the main /vendor folder.</div>
+	<div>
+		This files are listed in vendor.json file which contains the path of all necessary files required by the app components. Those files are usually required via the lazy load module and you can include fonts, svg, etc.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Vendor Base</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		The <strong>base.js</strong> file is generated with the task scripts:vendor:base. This task will read the list of files in the <strong>vendor.base.json</strong> file and will concat and compress all files and move them to create the mentioned file.</div>
+	<div>
+		All files in base.js are loaded when the app is required for first time and contains all vendor scripts necessary to start the app (jquery, angular, etc).</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		If you add paths to &quot;.css&quot; files into the vendor.base.json, a <strong>base.css</strong> file will be created for the same purpouse. You will need only to add a &lt;link&gt; manually to the index file in order to load it in your application.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Vendor Updates</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		To update vendor files via bower you can edit the <strong>bower.json</strong> file by adding the last version you want to download.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Note The folder app/vendor contains vendor files that currently aren&rsquo;t possible to be managed via bower</div>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="testing">
+	<div class="page-header"><h3>Testing</h3><hr class="notop"></div>
+<p>
+	The automated test environment has been built based on <a href="https://karma-runner.github.io/0.13/index.html">Karma</a>, <a href="http://jasmine.github.io/">Jasmine&nbsp;</a>and <a href="https://angular.github.io/protractor/#/">Protractor</a></p>
+<h4 id="testing_folder_structure">Folder structure</h4>
+<pre class="prettyprint lang-plain linenums">
++---master
+    |---tests
+    |   +---e2e
+    |       +---dashboard.e2e.js
+    |   +---unit
+    |       +---dashboard.spec.js
+    +--- karma.conf.js
+    +--- protractor.conf.js</pre>
+<div>
+	&nbsp;</div>
+<p>
+	<strong>tests/e2e</strong> folder stores end to end testings managed by Protractor</p>
+<p>
+	<strong>tests/unit </strong>folder stores unit testing manages with Karma and Jasmine</p>
+<p>
+	&nbsp;</p>
+<h4 id="testing_gulp_tasks">Gulp tasks</h4>
+<p>
+	Run only e2e tests</p>
+<pre class="prettyprint lang-plain linenums">
+$ gulp test:e2e</pre>
+<p>
+	Run only unit tests</p>
+<pre class="prettyprint lang-plain linenums">
+$ gulp test:unit</pre>
+<p>
+	Run e2e and unit testings</p>
+<pre class="prettyprint lang-plain linenums">
+$ gulp test</pre>
+<p>
+	&nbsp;</p>
+<div class="alert alert-info">
+	Before running <strong>e2e </strong>tests<strong>&nbsp;</strong>you need to start the builtin server with the command <strong>$ gulp serve</strong> and from another terminal run the test command.</div>
+<p>
+	&nbsp;</p>
+<h4 id="testing_tests_files">Tests files</h4>
+<p>
+	As you can see in the folder structure above, there are two different files used for each type of testing. You can change this pattern to your preferences, for example, dashboard.controller.spec.js which will correspond by convetion to the dashboard.controller.js</p>
+<p>
+	Ohter configuration can be edited in the <strong>gulpfile.js</strong> and files <strong>karma.conf.js</strong> and&nbsp;<strong>protractor.conf.js</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="usage">
+	<div class="page-header"><h3>Usage</h3><hr class="notop"></div>
+<h4 id="usage_layout">Layout</h4>
+<div>
+	Layout can be changed via the following classed applied to the body tag</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.layout-fixed</strong>: Makes navbars become fixed while the user can scroll only content</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.layout-boxed</strong>: Limits the width of the main wrapper element</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-collapsed</strong>: Condenses the sidebar showing only icons</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-collapsed-text</strong>: Condenses the sidebar showing icons and Text</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-toggle</strong>: used internally for mobiles to hide the sidebar off screen</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.offsidebar-open</strong>: used internally to display the offsidebar component (formally the right sidebar)</div>
+<div>
+	&nbsp;</div>
+<div>
+	The following markup representation is in fact divided into views but this code will give a good perspective of the final organization after the app is rendered:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;html&gt;
+  &lt;head&gt;
+    #metas and css
+  &lt;/head&gt;  
+  &lt;body&gt;
+    &lt;section class=&quot;wrapper&quot; data-ui-view&gt;
+
+        #start include from app.html
+          &lt;nav class=&quot;navbar topnavbar&quot;&gt;
+            #top navbar content
+          &lt;/nav&gt;
+
+          &lt;aside class=&quot;aside&quot;&gt;
+            #sidebar content (left)
+          &lt;/aside&gt;
+
+          &lt;aside class=&quot;offsidebar&quot;&gt;
+            #offsidebar content (right)
+          &lt;/aside&gt;
+
+         &lt;section&gt;
+
+            &lt;div class=&quot;content-wrapper&quot; data-ui-view&gt;
+              #page content
+            &lt;/div&gt;  
+
+          &lt;/section&gt;
+        #end include from app.html
+     &lt;/section&gt;
+     #scripts
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+<div>
+	&nbsp;</div>
+<h4 id="usage_preloader">Preloader</h4>
+<div>
+	&nbsp;</div>
+<div>
+	The site preloader is used adding the following markup to the index file right below the body tag (as child)</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;div data-preloader&gt;&lt;/div&gt;</pre>
+<div>
+	<strong>Background color&nbsp;</strong></div>
+<div>
+	Background color can be changed be editing class&nbsp;.preloader (app.css or preloader.less/scss)</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Image logo</strong></div>
+<div>
+	To generate the loading effect with text we use two images that are the same but one fully colored and the other with a little opacity.&nbsp;</div>
+<div>
+	Both images can be found and replaced in the following paths</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>/app/img/preloader/preloader.empty.png</strong></div>
+<div>
+	<strong>/app//img/preloader/preloader.full.png</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Note: </strong>If you change this images, try to respect the original size. Otherwise, you will need to change a bit of the css to make the expected size matches with the real one.</div>
+<h4 id="usage_lazy_load">Lazy Load</h4>
+<div>
+	This app requires only the necessary scripts according to the view that is loaded saving tons unnecessary request to the server.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The lazy load is handled by a custom core function based on the plugin ocLazyLoad</div>
+<div>
+	&nbsp;</div>
+<div>
+	To configure the lazy scripts, you need to edit the constants APP_REQUIRES (/masterjs/modules/lazyload/lazyload.constants.js)</div>
+<div>
+	Then edit the app configuration (/masterjs/modules/routes/routes.config.js) where you will find the routes configuration and add or edit the params using the special function resolveFor which handles the scripts request order for the current route.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="usage_adding_new_angularjs_dependencies">Adding new AngularJS dependencies</h4>
+</div>
+<div>
+	<div>
+		You can add a new AngularJS dependencies following two alternatives.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>1- </strong>If you want to inject a module in the app initialization (i.e. angular.module[] definition), which also means it will be available across all the application, you can:</div>
+	<div>
+		&nbsp; a. Append the module content to the file <strong>base.js</strong> or add it to the file<strong> /master/vendor.base.js</strong> to generate it using gulp</div>
+	<div>
+		&nbsp; b. Or, edit the<strong> index.html </strong>(or jade) and append the new assets before the <strong>app.js&nbsp;</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>2- </strong>If you want to use the new module only when it is required, you can use the lazy load system</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		a.&nbsp;<strong>Bower only</strong>: Download the new component via bower, add the main component files to the file <strong>vendor.json</strong> in order to copy them to the root vendor folder.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		b. Edit the file&nbsp;<strong>/masterjs/modules/lazyload/lazyload.constants.js</strong>&nbsp;and add the new module into the <strong>APP_REQUIRES</strong> constant, by using the &quot;modules&quot; option</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		For example:&nbsp;</div>
+	<pre class="prettyprint lang-js linenums">
+  modules: { name: &#39;moduleName&#39;, files : [&#39;path/file1&#39;, &#39;path/fileetc&#39;]) }</pre>
+	<div>
+		&nbsp;</div>
+	<div>
+		Make sure <u>moduleName</u> it is exactly the new module name as defined because ocLazyLoad will use it to inject dinamically into your app and make it available in your view controllers.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		c. After that, edit the routes config block (/masterjs/modules/routes/routes.config.js) and change or add to your new route setting the new depency in the resolve option</div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-js linenums">
+    .state(&#39;app.my-view &#39;, {
+        url: &#39;/my-view&#39;,
+        templateUrl: helper.basepath(&#39;my-view.html&#39;),
+        resolve: helper.resolveFor(&#39;moduleName&#39; )
+    })</pre>
+	<div>
+		&nbsp;</div>
+	<div>
+		Note that here we don&#39;t inject the new module in the angular.module definition.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>3- </strong>If everything goes fine, you can now use the new module in your view/controller</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<h4 id="usage_adding_new_javascript_non_angularjs_dependencies">Adding new JavaScript (non AngularJS) dependencies</h4>
+		<p>
+			Apply the same step as defined for the AngularJS modules but in ste <strong>2-b</strong>, use the <strong>&quot;scripts&quot;</strong>&nbsp;option instead.</p>
+		<p>
+			The &quot;scripts&quot; option is used to require js scripts without trying to inject a new modules into the app (necessary for JS and jQuery plugins)</p>
+		<p>
+			&nbsp;</p>
+	</div>
+</div>
+<h4 id="usage_rtl">RTL</h4>
+<div>
+	RTL support uses the a tool called css-flip which inverts most the css properties to change the page orientation.</div>
+<div>
+	It&rsquo;s also a property $rootScope.isRTL to detect when the site is in RTL mode.</div>
+<div>
+	&nbsp;</div>
+<h4 id="usage_routes">Routes</h4>
+<div>
+	This app uses for routing the AngularUI Router with nested states making more simple to manage the routing system and load resource in cascade.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>To add custom routes you need to </strong></div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Create the view for the route in folder app/views/myroute.html</li>
+	<li>
+		Add a new entry in the file server/sidebar-menu.json to create the menu entry (see format below)</li>
+	<li>
+		Add your route config in the App.confg part (file app.js or routes.config.js) using the following example code</li>
+</ul>
+<div class="alert alert-info">
+	<span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">Note that&nbsp;</span><strong style="color: rgb(58, 135, 173);">helper</strong><span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">&nbsp;corresponds to the&nbsp;</span><strong style="color: rgb(58, 135, 173);">RouteHelperProvider</strong><span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">&nbsp;introduced to share functions&nbsp;</span><strong style="color: rgb(58, 135, 173);">basepath&nbsp;</strong><span style="color: rgb(58, 135, 173); background-color: rgb(217, 237, 247);">and&nbsp;</span><strong style="color: rgb(58, 135, 173);">resolveFor</strong></div>
+<pre class="prettyprint lang-js linenums">
+.state(&#39;app.someroute&#39;, {
+  url: &#39;/some_url&#39;,
+  templateUrl: helper.basepath(&#39;someroute_view.html&#39;),
+  controller: &#39;someController&#39;,
+  resolve: angular.extend(
+    helper.resolveFor(), {
+    // YOUR RESOLVES GO HERE
+    }
+  )
+})</pre>
+<h4 id="usage_translation">Translation</h4>
+<div>
+	The translation system uses the AngularUI Translate module.</div>
+<div>
+	This modules simplifies the translation system by loading translate references from a JSON file and replacing the content where the reference has been used.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Examples</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;h3 ui-translate=&quot;reference.NAME&quot;&gt;Text that will be replaced&lt;/h3&gt;
+
+&lt;h3&gt;{{ &#39;reference.NAME&#39; | translate }}&lt;/h3&gt;
+
+&lt;a href=&quot;#&quot; title=&quot;{{ &#39;reference.NAME&#39; | translate }}&quot;&gt;Link&lt;/a&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	The JSON files with translation references are located in the folder app/i18n</div>
+<div>
+	&nbsp;</div>
+<h4 id="usage_dynamic_sidebar">Dynamic Sidebar</h4>
+<div>
+	The sidebar is created dynamically from a JSON file.</div>
+<div>
+	&nbsp;</div>
+<div>
+	JSON properties format:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+[
+  {
+    &quot;text&quot;:      &quot;Item text&quot;,          // replaced by translate reference
+    &quot;sref&quot;:      &quot;app.dashboard&quot;,      // the state name of the target route
+    &quot;icon&quot;:      &quot;icon-speedometer&quot;,   // the icon full classname
+    &quot;translate&quot;: &quot;sidebar.ITEM&quot;,       // the translation reference
+    &quot;heading&quot;:   &quot;true&quot;                // only when item is used as heading 
+  },
+  ...
+]</pre>
+<div>
+	&nbsp;</div>
+<div>
+	This is method is also useful if you pretend to generate a per user menu dynamically in the server.</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	You can also create an object and edit all properties to generate and update the sidebar directly from Javascript instead of load from the json file.</div>
+<h4 id="usage_markdown_docs">Markdown Docs</h4>
+<div>
+	This documentation is loaded from a Markdown source using Flatdoc plugin. The menu and the content is generated automatically from the .md file and styled directly from custom css.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Via the flatdoc directive you can use it like this</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;flatdoc src=&quot;path/to/readme.md&quot;&gt;&lt;/flatdoc&gt;</pre>
+<h4 id="usage__nbsp">&nbsp;</h4>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="themes">
+	<div class="page-header"><h3>Themes</h3><hr class="notop"></div>
+<p>
+	To change the color scheme you have 2 options:</p>
+<h4 id="themes_strongfrom_less_files_strong"><strong>From LESS files</strong></h4>
+<div>
+	&nbsp;</div>
+<div>
+	Edit the LESS files in folder master/less/app and the file master/less/bootstrap/variables.less to use the color you want.</div>
+<div>
+	Like Bootstrap, most of the colors are based on @brand-* variables.</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can also edit the files in master/less/theme folder to create your own set of color schemes. This files must be included after the app.css in order to override the default color set.</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	Changing the theme colors from LESS files helps you to avoid bloating your css by not double declaring your color rules.</div>
+<div>
+	&nbsp;</div>
+<h4 id="themes_strongfrom_css_files_strong"><strong>From CSS files</strong></h4>
+<div>
+	&nbsp;</div>
+<div>
+	This template support color schemes including a css file. You can find the color options in the folder app/css/ files are named theme-*.css</div>
+<div>
+	&nbsp;</div>
+<div>
+	If you want to change or add a new component color, just inspect the color using your favorite browser devtool and then replace the value in the file.</div>
+<div>
+	&nbsp;</div>
+<div>
+	This files are prepared to change the basic color scheme (both sidebars and top navbar) but if you want to make a more deep change I suggest you to check the LESS way which is more simple for multiple component changes.</div>
+<div>
+	&nbsp;</div>
+<h4 id="themes_strongdefault_theme_strong"><strong>Default Theme</strong></h4>
+<div>
+	&nbsp;</div>
+<div>
+	To set a default just include in file index.html the theme css file of your choice right after the the main stylesheet (app.css)</div>
+</section>
+<section id="directives">
+	<div class="page-header"><h3>Directives</h3><hr class="notop"></div>
+<div>
+	This item include all directives from <a href="http://angular-ui.github.io/bootstrap/">Angular BootstrapUI</a>. plus&nbsp;the following custom directives (see demo for examples)</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[animate-enabled]</strong></div>
+<div>
+	File: animate-enabled.js</div>
+<div>
+	Enable or disables ngAnimate for element with directive</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[classyloader]</strong></div>
+<div>
+	File: classy-loader.js</div>
+<div>
+	Enable use of classyLoader directly from data attributes</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[reset-key]</strong></div>
+<div>
+	File: clear-storage.js</div>
+<div>
+	Removes a key from the browser storage via element click</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[filestyle]</strong></div>
+<div>
+	File: filestyle.js</div>
+<div>
+	Initializes the fielstyle plugin</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[flatdoc]</strong></div>
+<div>
+	File: flatdoc.js</div>
+<div>
+	Creates the flatdoc markup and initializes the plugin</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[form-wizard]</strong></div>
+<div>
+	File: form-wizard.js</div>
+<div>
+	Handles form wizard plugin and validation</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[toggle-fullscreen]</strong></div>
+<div>
+	File: fullscreen.js</div>
+<div>
+	Toggle the fullscreen mode on/off</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[load-css]</strong></div>
+<div>
+	File: load-css.js</div>
+<div>
+	Request and load into the current page a css file</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[masked]</strong></div>
+<div>
+	File: masked.js</div>
+<div>
+	Initializes the masked inputs</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[search-open]</strong></div>
+<div>
+	File: navbar-search.js</div>
+<div>
+	Open the search in the top navbar. Use [search-dismiss__] in buttons at close it.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[notify]</strong></div>
+<div>
+	File: notify.js</div>
+<div>
+	Create a notifications that fade out automatically. Based on Notify addon from UIKit (http://getuikit.com/docs/addons_notify.html)</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[now]</strong></div>
+<div>
+	File: now.js</div>
+<div>
+	Provides a simple way to display the current time formatted</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[paneltool]</strong></div>
+<div>
+	Module panel-tools.js</div>
+<div>
+	Directive tools to control panels. Allows collapse, refresh and dismiss (remove) Saves panel state in browser storage.</div>
+<div>
+	Supports attributes [panel-dismiss] [panel-collapse] [panel-refresh]</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[scrollable]</strong></div>
+<div>
+	File: scroll.js</div>
+<div>
+	Make a content box scrollable</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[sidebar]</strong></div>
+<div>
+	File: sidebar.js</div>
+<div>
+	Wraps the sidebar and handles collapsed state</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[skycon]</strong></div>
+<div>
+	File: skycons.js</div>
+<div>
+	Include any animated weather icon from Skycons</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[sparkline]</strong></div>
+<div>
+	File: sparkline.js</div>
+<div>
+	SparkLines Mini Charts</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[check-all]</strong></div>
+<div>
+	File: table-checkall.js</div>
+<div>
+	Tables check all checkbox</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[tagsinput]</strong></div>
+<div>
+	File: tags-input.js</div>
+<div>
+	Initializes the tag inputs plugin</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[validate-form]</strong></div>
+<div>
+	File: validate-form.js</div>
+<div>
+	Initializes the validation plugin Parsley</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>[vector-map]</strong></div>
+<div>
+	File: vector-map.js.js</div>
+<div>
+	Initializes jQuery Vector Map plugin</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed Project</h3><hr class="notop"></div>
+<div>
+	This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.&nbsp;</div>
+<div>
+	The seed app doesn&#39;t do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The angular seed project includes the following features</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Modernizr</div>
+<div>
+	- Icons (FontAwesome and SimpleLine)</div>
+<div>
+	- Translation</div>
+<div>
+	- RTL mode</div>
+<div>
+	- View loading bar</div>
+<div>
+	- Top navbar search form</div>
+<div>
+	- Themes</div>
+<div>
+	- Two routes with its own sidebar entries (one single item and a menu)</div>
+<div>
+	- Empty offsidebar (left sidebar)</div>
+<div>
+	- Full base.js (like demo app)</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<h4 id="seed_project_stronginstalling_new_features_strong"><strong>Installing new features</strong></h4>
+<div>
+	&nbsp;</div>
+<div>
+	<div>
+		For example, assuming the installation of toaster notifications for Angularjs, as mentioned before we have two options:</div>
+	<div>
+		&nbsp;</div>
+	<h3>
+		To be used with lazy load system</h3>
+	<div>
+		&nbsp;</div>
+	<div>
+		1. Move to master folder and run <strong>bower install angularjs-toaster --save</strong></div>
+	<div>
+		2. Add to vendor.json the following paths (toaster main files)</div>
+	<div>
+		<strong>&nbsp; &quot;bower_components/angularjs-toaster/toaster.js&quot;,</strong></div>
+	<div>
+		<strong>&nbsp; &quot;bower_components/angularjs-toaster/toaster.css&quot;,</strong></div>
+	<div>
+		3. Add the paths to <strong>/masterjs/modules/lazyload/lazyload.constants.js</strong></div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-js linenums">
+    modules: [
+      {name: &#39;toaster&#39;, files: [&#39;vendor/angularjs-toaster/toaster.js&#39;,
+                        &#39;vendor/angularjs-toaster/toaster.css&#39;]},</pre>
+	<div>
+		&nbsp;</div>
+	<div>
+		4. Add a resolve for the routes the needs toaster notifications</div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-js linenums">
+  resolve: helper.resolveFor(&#39;toaster&#39;)</pre>
+	<div>
+		&nbsp;</div>
+	<div>
+		5. Run <strong>gulp</strong></div>
+	<div>
+		&nbsp;</div>
+	<h3>
+		To be used across the entire application</h3>
+	<div>
+		&nbsp;</div>
+	<div>
+		1. Move to master folder and run <strong>bower install angularjs-toaster --save</strong></div>
+	<div>
+		2. Add to &nbsp;vendor.base.json the paths for toaster main script</div>
+	<div>
+		<strong>&nbsp; &quot;bower_components/angularjs-toaster/toaster.js&quot;</strong></div>
+	<div>
+		3. Toaster main stylesheet must be included in file app.css or in a new Less file. Optionally you can copy the css manually and link such file from index.</div>
+	<div>
+		4. Run <strong>gulp</strong></div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<h4 id="credits_a_href"http_vendor_creditshtml"vendor_assets_a"><a href="http://vendor-credits.html">Vendor Assets</a></h4>
+</section>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+@{
+    ViewBag.Title = "Flot Charts";
+}
+<div class="content-heading">
+   <div class="pull-right text-center">
+      <div data-sparkline="" data-bar-color="#cfdbe2" data-height="20" data-bar-width="3" data-bar-spacing="2" data-values="1,0,4,9,5,7,8,9,5,7,8,4,7"></div>
+   </div>Flot charts</div>
+<div class="container-fluid">
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-6">
+         <div id="panelChart1" class="panel panel-default">
+            <div class="panel-heading">
+               <div class="panel-title">Area</div>
+            </div>
+            <div class="panel-body">
+               <div class="chart-area flot-chart"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-6">
+         <div id="panelChart9" class="panel panel-default">
+            <div class="panel-heading">
+               <div class="panel-title">Area Spline</div>
+            </div>
+            <div class="panel-body">
+               <div class="chart-spline flot-chart"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-6">
+         <div id="panelChart2" class="panel panel-default">
+            <div class="panel-heading">
+               <div class="panel-title">Bar</div>
+            </div>
+            <div class="panel-body">
+               <div class="chart-bar flot-chart"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-6">
+         <div id="panelChart3" class="panel panel-default">
+            <div class="panel-heading">
+               <div class="panel-title">Bar - Stacked</div>
+            </div>
+            <div class="panel-body">
+               <div class="indicator show">
+                  <span class="spinner"></span>
+               </div>
+               <div class="chart-bar-stacked flot-chart"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-12">
+         <div id="panelChart4" class="panel panel-default">
+            <div class="panel-heading">
+               <div class="panel-title">Line</div>
+            </div>
+            <div class="panel-body">
+               <div class="chart-line flot-chart"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-md-6">
+         <div id="panelChart5" class="panel panel-default">
+            <div class="panel-heading">
+               <div class="panel-title">Pie</div>
+            </div>
+            <div class="panel-body">
+               <div class="chart-pie flot-chart"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div id="panelChart6" class="panel panel-default">
+            <div class="panel-heading">
+               <div class="panel-title">Donut
+                  <small>(loaded from json)</small>
+               </div>
+            </div>
+            <div class="panel-body">
+               <div class="chart-donut flot-chart"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END row-->
+</div>
+
+@section Styles {
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/sparklines")
+    @Scripts.Render("~/bundles/flot")    
+    @Scripts.Render("~/bundles/demoFlot")
+}
+

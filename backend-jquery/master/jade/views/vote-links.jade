@@ -1,0 +1,180 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'vote-links.html'
+
+block content
+    h3 User links
+      small Vestibulum pretium aliquam scelerisque.
+
+    ul.nav.nav-pills.mv-lg
+        li.active: a.pv-sm(href='') Popular
+        li: a.pv-sm(href='') New
+        li: a.pv-sm(href='') Recent
+
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p 10
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted question
+                        a(href="#").align-middle.text-bold.link-unstyled [Lorem Ipsum] Phasellus ullamcorper rhoncus sagittis.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | 5 hours ago - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p 20
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted culture
+                        a(href="#").align-middle.text-bold.link-unstyled Donec volutpat tristique laoreet Pellentesque sed purus libero.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | yesterday - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p 27
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted peding
+                        a(href="#").align-middle.text-bold.link-unstyled Suspendisse ullamcorper eros eget augue ultrices feugiat.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | 3 days ago - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p 10
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted news
+                        a(href="#").align-middle.text-bold.link-unstyled Sed porta fermentum felis in molestie.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | last week - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p 5
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted education
+                        a(href="#").align-middle.text-bold.link-unstyled Aenean eu odio vitae augue elementum molestie sed quis turpis.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | 2 weeks ago - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p 10
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted programming
+                        a(href="#").align-middle.text-bold.link-unstyled Sed tempor lacinia tempus. Curabitur sit amet lacus id odio volutpat faucibus nec quis enim.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | 2 months ago - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p -1
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted tech
+                        a(href="#").align-middle.text-bold.link-unstyled Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi in leo odio.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | 2 months ago - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+    // Vote panel
+    .panel
+        .table-responsive
+            table.table: tbody: tr
+                td.b0.wd-xxs.text-center
+                    p: a(href="#"): em.fa.fa-angle-up.fa-lg
+                    p 300
+                    p.mb0: a(href="#"): em.fa.fa-angle-down.fa-lg
+                td.b0.wd-xs.hidden-xs
+                    a(href="#"): img.img-responsive.thumb64(src="img/dummy.png")
+                td.b0
+                    p.h4.mt0
+                        span.label.bg-gray-lighter.ph-lg.mr.text-sm.visible-lg-inline: span.text-muted question
+                        a(href="#").align-middle.text-bold.link-unstyled Quisque risus ante, laoreet a sagittis quis, dignissim luctus purus.
+                    small.text-muted
+                        | In ac turpis vitae ante pretium cursus. Suspendisse nisl arcu, venenatis elementum lacinia sed.
+                        br
+                        | 5 months ago - 
+                        a(href="#").text-bold harperray
+    // end Vote panel
+
+    ul.pagination.pagination-sm
+        li.active: a(href='#') 1
+        li: a(href='#') 2
+        li: a(href='#') 3
+        li: a(href='#') »

@@ -1,0 +1,18 @@
+@* 
+  Rename this files to Index.cshtml to enable the horizontal layout mode
+  Also, make sure to enable the horizontal flag in routes.config.js
+*@
+ 
+@{
+    ViewBag.Title = "AppHorizontal";
+}
+<!-- top navbar-->
+<header ng-include="'/Partials/TopNavbarH'" class="topnavbar-wrapper"></header>
+<!-- offsidebar-->
+<aside ng-include="'/Partials/Offsidebar'" class="offsidebar hide"></aside>
+<!-- Main section-->
+<section ui-view="content">
+    <!-- Page content-->
+</section>
+<!-- Page footer-->
+<footer ng-include="'/Partials/Footer'"></footer>

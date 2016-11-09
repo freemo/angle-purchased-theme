@@ -1,0 +1,486 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + MVC6 + jQuery</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-02-17T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#layout" title="Layout">Layout</a></li>
+			<li><a href="#seed_project" title="Seed Project">Seed Project</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + MVC6 + jQuery</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/14/2015</li>
+	<li>latest update: 02/17/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	It assumes a minimum knowledge of Visual Studio 2015 and Asp.net technology.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="getting_started_starting_the_app">Starting the app</h4>
+	<div>
+		To run this version you need to have installed <strong>Visual Studio 2015</strong> and <strong>ASP5</strong> from <a href="https://get.asp.net/">https://get.asp.net/</a></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		You will need also a <strong>nodejs</strong> enviroment, <strong>gulp</strong> and <strong>bower</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<div>
+			<strong>Node</strong>.js is a platform built on Chrome&rsquo;s JavaScript runtime for easily building fast, scalable network applications.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>Gulp</strong> is a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for JADE and LESS, and concatenates the JS files.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>Bower</strong> is a dependency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you&rsquo;re looking for. Bower keeps track of these packages in a manifest file, bower.json.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>Installing tools</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The following steps are intended to be an orientation guide, if you are not experienced with this you will need to learn more about it from Google :)</div>
+		<div>
+			&nbsp;</div>
+		<ul>
+			<li>
+				To install node and npm, go to http://nodejs.org/</li>
+			<li>
+				Run npm install -g bower to install bower to manage dependencies</li>
+			<li>
+				Download and install GIT for your platform http://git-scm.com/downloads</li>
+		</ul>
+		<div>
+			&nbsp;</div>
+		<div>
+			Once you have all tools installed</div>
+		<div>
+			&nbsp;</div>
+		<ul>
+			<li>
+				Open a terminal, go the folder&nbsp;<strong>mvc6-jquery\Angle-MVC6-jQuery\src\Angle-MVC6-jQuery</strong></li>
+			<li>
+				Run <strong>npm install</strong>. This command will install gulp and all project dependencies.</li>
+			<li>
+				Run <strong>bower install&nbsp;</strong>to install vendor dependencies</li>
+			<li>
+				Finally run <strong>gulp </strong>to build assets</li>
+		</ul>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+	</div>
+	<div>
+		After that, open the file <strong>mvc6-jquery\Angle-MVC6-jQuery\Angle-MVC6-jQuery.sln</strong>.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Once VS has been started, press F5 and it should build the project and open your default browser with the theme.</div>
+</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	We have binded the gulp task to the build process of VS so when you build your app, VS should run gulp default task to generated and put up to date all assets.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Issues</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	If you found problems while running gulp, please check that you are using the last node version in your system <a href="http://ryanhayes.net/synchronize-node-js-install-version-with-visual-studio-2015/">here</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	The structure of the project is basically the standard structured provided by VS2015</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+\---Angle-MVC6-jQuery
+    \---src
+        \---Angle-MVC6-jQuery
+            +---Controllers
+            +---Helpers
+            +---Migrations
+            +---Models
+            +---Properties
+            +---Services
+            +---ViewModels
+            +---Views
+            |   +---Account
+            |   +---Blog
+            |   +---Charts
+            |   +---Dashboard
+            |   +---Documentation
+            |   +---Ecommerce
+            |   +---Elements
+            |   +---Extras
+            |   +---Forms
+            |   +---Forum
+            |   +---Manage
+            |   +---Maps
+            |   +---Multilevels
+            |   +---Pages
+            |   +---Shared
+            |   +---Tables
+            |   \---Widgets
+            \---wwwroot
+                +---css
+                +---documentation
+                +---i18n
+                +---images
+                |   +---bootstrap-colorpicker
+                |   \---user
+                +---js
+                +---master
+                |   +---js
+                |   |   +---custom
+                |   |   \---modules
+                |   \---sass
+                |       +---app
+                |       +---bootstrap
+                |       \---themes
+                \---server</pre>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		Under <strong>wwwroot/master </strong>you will find the source Javascript files and SASS files to customize the app</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="layout">
+	<div class="page-header"><h3>Layout</h3><hr class="notop"></div>
+<p>
+	The theme uses two layouts. One for the app view and another for pages (externals to the app)</p>
+<h4 id="layout_srcangle_mvc6_jqueryviewsshared_layoutcshtml">src\Angle-MVC6-jQuery\Views\Shared\_Layout.cshtml</h4>
+<p>
+	This is the main layout</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Bootstrap Admin App + jQuery&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, jquery, bootstrap, dashboard, admin&quot;&gt;
+    &lt;title&gt;@ViewData[&quot;Title&quot;] - Bootstrap Admin Template&lt;/title&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+
+    &lt;!-- Place styles for plugins --&gt;
+    @if (IsSectionDefined(&quot;Styles&quot;))
+        {@RenderSection(&quot;Styles&quot;, required: false)}
+
+    &lt;environment names=&quot;Development&quot;&gt;
+        &lt;!-- =============== VENDOR STYLES ===============--&gt;
+        &lt;link href=&quot;~/lib/fontawesome/css/font-awesome.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;link href=&quot;~/lib/simple-line-icons/css/simple-line-icons.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;link href=&quot;~/lib/animate.css/animate.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;link href=&quot;~/lib/whirl/dist/whirl.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;!-- =============== BOOTSTRAP STYLES ===============--&gt;
+        &lt;link href=&quot;~/css/bootstrap.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;!-- =============== APP STYLES ===============--&gt;
+        &lt;link href=&quot;~/css/app.css&quot; rel=&quot;stylesheet&quot; asp-append-version=&quot;true&quot; /&gt;
+    &lt;/environment&gt;
+    &lt;environment names=&quot;Staging,Production&quot;&gt;
+        &lt;!-- =============== VENDOR STYLES ===============--&gt;
+        &lt;link href=&quot;~/lib/fontawesome/css/font-awesome.min.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;link href=&quot;~/lib/simple-line-icons/css/simple-line-icons.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;link href=&quot;~/lib/animate.css/animate.min.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;link href=&quot;~/lib/whirl/dist/whirl.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;!-- =============== BOOTSTRAP STYLES ===============--&gt;
+        &lt;link href=&quot;~/css/bootstrap.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;!-- =============== APP STYLES ===============--&gt;
+        &lt;link href=&quot;~/css/app.css&quot; rel=&quot;stylesheet&quot; asp-append-version=&quot;true&quot; /&gt;
+    &lt;/environment&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;!-- top navbar--&gt;
+        &lt;header class=&quot;topnavbar-wrapper&quot;&gt;
+            @Html.Partial(&quot;_TopNavbar&quot;)
+        &lt;/header&gt;
+        &lt;!-- sidebar--&gt;
+        &lt;aside class=&quot;aside&quot;&gt;
+            @Html.Partial(&quot;_Sidebar&quot;)
+        &lt;/aside&gt;
+        &lt;!-- offsidebar--&gt;
+        &lt;aside class=&quot;offsidebar hide&quot;&gt;
+            @Html.Partial(&quot;_Offsidebar&quot;)
+        &lt;/aside&gt;
+        &lt;!-- Main section--&gt;
+        &lt;section&gt;
+            &lt;!-- Page content--&gt;
+            &lt;div class=&quot;content-wrapper&quot;&gt;
+                @RenderBody()
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- Page footer--&gt;
+        &lt;footer&gt;
+            @Html.Partial(&quot;_Footer&quot;)
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+    @if (IsSectionDefined(&quot;BodyArea&quot;)) {
+        @RenderSection(&quot;BodyArea&quot;, required: false)
+    }
+
+    &lt;environment names=&quot;Development&quot;&gt;
+
+        &lt;!-- =============== VENDOR SCRIPTS ===============--&gt;
+
+        &lt;script src=&quot;~/lib/modernizr/modernizr.custom.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/matchMedia/matchMedia.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/bootstrap/dist/js/bootstrap.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jQuery-Storage-API/jquery.storageapi.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jquery.easing/js/jquery.easing.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/animo.js/animo.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/slimScroll/jquery.slimscroll.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/screenfull/dist/screenfull.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jquery-localize-i18n/dist/jquery.localize.js&quot;&gt;&lt;/script&gt;
+
+        &lt;!-- =============== PAGE VENDOR SCRIPTS ===============--&gt;
+        @RenderSection(&quot;scripts&quot;, required: false)
+
+        &lt;!-- =============== APP SCRIPTS ===============--&gt;
+
+        # APPLICATION SCRIPTS BY FILE
+
+    &lt;/environment&gt;
+
+    &lt;environment names=&quot;Staging,Production&quot;&gt;
+
+        &lt;!-- =============== VENDOR SCRIPTS ===============--&gt;
+        &lt;script src=&quot;~/lib/modernizr/modernizr.custom.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/matchMedia/matchMedia.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jQuery-Storage-API/jquery.storageapi.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jquery.easing/js/jquery.easing.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/animo.js/animo.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/slimScroll/jquery.slimscroll.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/screenfull/dist/screenfull.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;~/lib/jquery-localize-i18n/dist/jquery.localize.min.js&quot;&gt;&lt;/script&gt;
+
+        &lt;!-- =============== PAGE VENDOR SCRIPTS ===============--&gt;
+        @RenderSection(&quot;scripts&quot;, required: false)
+
+        &lt;!-- =============== APP SCRIPTS ===============--&gt;
+
+        &lt;script src=&quot;~/js/app.js&quot;&gt;&lt;/script&gt;
+
+    &lt;/environment&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>
+	This file app.js is generated by a concat task in the gulpfile.</p>
+<p>
+	Similarly, the file app.css is generating by compiling SASS stylesheets with gulp.</p>
+<h4 id="layout_environments">Environments</h4>
+<p>
+	As you can note, VS2015 incorpores a different technique to include asssets, there&#39;s no more bundles but instead you have to use &lt;environment&gt; tags to includes files for different enviroments</p>
+<p>
+	To change enviroments, please check this <a href="https://docs.asp.net/en/latest/fundamentals/environments.html">official post</a></p>
+<p>
+	The example above is resumed, but you can see that for development we have included each script file for the application and for the Staging/Production there only the app.js</p>
+<h4 id="layout_other_layouts">Other layouts</h4>
+<p>
+	The page layout. uses the&nbsp;@RenderBody() to include the page content within the main wrapper , you can see its content by editing the file:</p>
+<p>
+	<strong>src\Angle-MVC6-jQuery\Views\Shared\_LayoutPage.cshtml</strong></p>
+<p>
+	To enable this layout, you can check the file under the folder VIews/Pages. Basically, they redeclare the layout option with</p>
+<pre class="prettyprint lang-html linenums">
+@{
+    Layout = &quot;~/Views/Shared/_LayoutPage.cshtml&quot;;
+}</pre>
+<p>
+	<strong>Layout horizontal&nbsp;</strong></p>
+<p>
+	This layout&nbsp;is placed in file&nbsp;<strong>src\Angle-MVC6-jQuery\Views\Shared\_LayoutHorizontal.cshtml</strong> and can be used adding the following at the top of the view</p>
+<pre class="prettyprint lang-html linenums">
+@{
+    Layout = &quot;~/Views/Shared/_LayoutHorizontal.cshtml&quot;;
+}</pre>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed Project</h3><hr class="notop"></div>
+<div>
+	This project is an application skeleton. You can use it to quickly bootstrap your MVC6 webapp projects and dev environment for these projects.&nbsp;</div>
+<div>
+	The seed app doesn&#39;t do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The seed project includes the following features</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Modernizr</div>
+<div>
+	- Icons (FontAwesome and SimpleLine)</div>
+<div>
+	- Translation</div>
+<div>
+	- RTL mode</div>
+<div>
+	- Top navbar search form</div>
+<div>
+	- Empty offsidebar (left sidebar)</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>

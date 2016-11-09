@@ -1,0 +1,97 @@
+.container-md
+  .card
+    .card-heading
+      .card-title Material Forms
+    .card-body.bg-inverse
+      .row
+        .col-sm-4
+          .mda-form-group
+            input.mda-form-control.mda-form-light(ng-model='user.title', tabindex='0', aria-invalid='false')
+            label Title
+        .col-sm-4
+          .mda-form-group
+            input.mda-form-control.mda-form-light(ng-model='user.email', tabindex='0', aria-invalid='false')
+            label Email
+    .card-body
+      .row
+        .col-sm-12
+          .mda-form-group
+            input.mda-form-control(disabled='', ng-model='user.company', tabindex='0', aria-invalid='false')
+            label Company(disabled)
+        .col-sm-6
+          .mda-form-group.float-label
+            input.mda-form-control(ng-model='user.firstName', required='', tabindex='0', aria-required='true', aria-invalid='true')
+            label First Name
+        .col-sm-6
+          .mda-form-group.float-label
+            input.mda-form-control(ng-model='user.lastName', required='', tabindex='0', aria-required='true', aria-invalid='true')
+            label Last Name
+        .col-sm-12
+          .mda-form-group
+            input.mda-form-control(ng-model='user.address', tabindex='0', aria-invalid='false')
+            label Address
+        .col-sm-12
+          .mda-form-group
+            input.mda-form-control(ng-model='user.address2', tabindex='0', aria-invalid='false')
+            label Address 2
+      .row
+        .col-sm-4
+          .mda-form-group
+            input.mda-form-control(ng-model='user.city', tabindex='0', aria-invalid='false')
+            label City
+        .col-sm-4
+          .mda-form-group
+            input.mda-form-control(ng-model='user.state', tabindex='0', aria-invalid='false')
+            label State
+        .col-sm-4
+          .mda-form-group
+            input.mda-form-control(ng-model='user.postalCode', tabindex='0', aria-invalid='false')
+            label Postal Code
+      .row
+        .col-sm-12
+          .mda-form-group
+            textarea.mda-form-control(ng-model='user.biography', rows='4', aria-multiline='true', tabindex='0', aria-invalid='false')
+            label Biography
+            span.mda-form-msg.right Any message here
+      .row
+        .col-sm-12
+          .mda-form-group
+            select.mda-form-control(ng-model='user.select')
+              option(value="1") Option 1
+              option(value="2") Option 2
+              option(value="3") Option 3
+              option(value="4") Option 4
+              option(value="5") Option 5
+            label Select
+  .card
+    .card-heading.bg-primary
+      .pull-right
+        em.icon-layers.fa-2x
+      .card-title Material Forms
+    .card-toolbar.bg-primary Errors
+    .card-body
+      form.form-validate
+        .mda-form-group.float-label.mb
+          input.mda-form-control(ng-model='user.clientName', required='', tabindex='0', aria-required='true', aria-invalid='true')
+          label Client Name
+          span.mda-form-msg This input is required
+        
+        .mda-form-group
+          input.mda-form-control(ng-model='user.salary', tabindex='0', aria-invalid='true', ng-minlength="6")
+          label Salary
+          span.mda-form-msg Your salary must be at least 6 digits
+  
+  .card
+    .card-heading.bg-primary
+      .card-title Icons
+    .card-body
+      .mda-form-group.float-label.mb.mda-input-group
+        input.mda-form-control(type='text', ng-model="username")
+        label Username
+        span.mda-input-group-addon
+          em.icon-user-follow.fa-lg
+      .mda-form-group.mb.mda-input-group
+        input.mda-form-control(type='text', ng-model="phone")
+        label Phone
+        span.mda-input-group-addon
+          em.fa.fa-phone.text-primary.fa-lg

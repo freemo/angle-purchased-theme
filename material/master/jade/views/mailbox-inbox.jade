@@ -1,0 +1,46 @@
+// START action buttons
+.clearfix.mb
+  .btn-group.pull-left
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-mail-reply.text-gray-dark
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-mail-reply-all.text-gray-dark
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-mail-forward.text-gray-dark
+  .btn-group.pull-right
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-exclamation.text-gray-dark
+    button.btn.btn-default.btn-sm(type="button")
+      em.fa.fa-times.text-gray-dark
+// END action buttons
+
+.panel.panel-default(ng-controller="MailFolderController as mailfolder")
+  .panel-body
+    p.lead.text-center(ng-if="!(mailfolder.mails | filter:mailfolder.folder).length") No mails here
+    table.table.table-hover.mb-mails(ng-if="(mailfolder.mails | filter:mailfolder.folder).length")
+      //- thead
+      //-   tr
+      //-     th(check-all)
+      //-       .checkbox.c-checkbox(data-toggle="tooltip",data-title="Check All")
+      //-         label
+      //-           input(type='checkbox')
+      //-           span.fa.fa-check
+      //-     th 
+      //-     th 
+      tbody
+        tr(ng-repeat="mail in mailfolder.mails | filter:mailfolder.folder", ng-class="{'mb-mail-active': mail.unread}")
+          td
+            .checkbox.c-checkbox
+              label
+                input(type='checkbox')
+                span.fa.fa-check
+          td.text-center
+            em.fa.fa-lg(ng-class="mail.folder=='starred'?'fa-star text-warning':'fa-star-o text-muted'")
+          td(ui-sref="app.mailbox.view({mid: mail.id})")
+            img.mb-mail-avatar.pull-left(ng-src="{{mail.from.avatar}}", alt="Mail Avatar")
+            .mb-mail-date.pull-right {{mail.date}}
+            .mb-mail-meta
+              .pull-left
+                .mb-mail-subject {{mail.subject}}
+                .mb-mail-from {{mail.from.name}}
+              .mb-mail-preview(ng-bind-html="mail.content | limitTo:100")

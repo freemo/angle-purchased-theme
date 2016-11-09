@@ -1,0 +1,24 @@
+<h3>
+   <!-- START Language list-->
+   <div class="pull-right">
+      <div uib-dropdown="" is-open="language.listIsOpen" class="btn-group">
+         <button type="button" uib-dropdown-toggle="" class="btn btn-default">{{language.selected}}
+            <span class="caret"></span>
+         </button>
+         <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
+            <li ng-repeat="(localeId, langName) in language.available"><a ng-click="language.set(localeId, $event)">{{langName}}</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <!-- END Language list    -->
+   Single View
+   <small>{{ 'dashboard.WELCOME' | translate:{ appName: app.name } }} !</small>
+</h3>
+<div class="row">
+   <div class="col-xs-12 text-center">
+      <h2 class="text-thin">Single view content</h2>
+      <p>This project is an application skeleton. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.
+         <br/>The seed app doesn't do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</p>
+   </div>
+</div>

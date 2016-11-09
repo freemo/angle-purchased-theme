@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ChartMorris";
+}
+
+<h3>Morris JS</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Line</div>
+                <div class="panel-body">
+                    <div id="morris-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Area</div>
+                <div class="panel-body">
+                    <div id="morris-area"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Bar</div>
+                <div class="panel-body">
+                    <div id="morris-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Donut</div>
+                <div class="panel-body">
+                    <div id="morris-donut"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <environment names="Development">
+        <link href="~/lib/morris.js/morris.css" rel="stylesheet" />
+    </environment>
+    <environment names="Staging,Production">
+        <link href="~/lib/morris.js/morris.css" rel="stylesheet" />
+    </environment>
+}
+
+@section Scripts {
+
+    <environment names="Development">
+        <script src="~/lib/raphael/raphael.js"></script>
+        <script src="~/lib/morris.js/morris.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/raphael/raphael.js"></script>
+        <script src="~/lib/morris.js/morris.js"></script>
+    </environment>
+
+}

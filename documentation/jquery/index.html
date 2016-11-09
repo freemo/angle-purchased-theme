@@ -1,0 +1,658 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + jQuery</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-06-22T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#build" title="Build">Build</a></li>
+			<li><a href="#usage" title="Usage">Usage</a></li>
+			<li><a href="#themes" title="Themes">Themes</a></li>
+			<li><a href="#seed_project" title="Seed Project">Seed Project</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + jQuery</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/07/2015</li>
+	<li>latest update: 06/22/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	This version of the app does not require a server to run. Only translation feature requires a server due to the json file with translations</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	Before starting to customize the template, here are the project files organization structure:</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
++-- app/
+|   +-- css/
+|   +-- documentation/
+|   +-- img/
+|   +-- js/
+|   +-- i18n/
+|   +-- vendor/
+|   +-- *.html
++-- master/
+|   +-- jade/
+|   |   +-- pages/
+|   |   +-- views/
+|   +-- js/
+|   |   +-- modules/
+|   |   |   +-- demo/
+|   |   +-- custom/
+|   +-- less/
+|   |   +-- app/
+|   |   +-- bootstrap/
+|   |   +-- themes/
+|   +-- gulpfile.js
+|   +-- package.json
+|   +-- bower.json
+|   +-- vendor.json
+|   +-- sidebar.json
++-- server/
+|   +-- *.json
++-- vendor/</pre>
+</div>
+<h4 id="structure_main_folders_explanation">Main folders explanation</h4>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>app/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the compiled files. This files are ready to deploy on your server.</div>
+<div>
+	&nbsp;</div>
+<div>
+	app/ This folder contains the compiled html files for the views used for the app.</div>
+<div>
+	pages/ This folder contains the compiled html files for the single pages (out of the app).</div>
+<div>
+	i18n/ This folder contains the json files use for translation.</div>
+<div>
+	vendor/ This folder contains vendor files not managed via bower</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>master/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the source files. You will find the following folders inside</div>
+<div>
+	&nbsp;</div>
+<div>
+	jade/ This folder contains JADE files. This files need to be compiled into html files to be displayed by a browser</div>
+<div>
+	less/ This folder contains the LESS files for the core styles and bootstrap styles.</div>
+<div>
+	js/ Here you will find pure JS files. All this files are concatenated into the file app.js.</div>
+<div>
+	js/demo/ Contains js files used only to init plugins for demo</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>vendor/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains the vendor files used to include plugins and other components. This folder is handled via bower so optionally you can remove or upgrade the vendor components using such tool.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>server/ folder</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This folder contains server side files used for demonstration and guide for the flot chart and file upload components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="structure_custom_code">Custom code</h4>
+	<div>
+		To add your own code you can follow this instructions:</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Working with css and js</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Create a file app/css/custom.css and add your own styles</div>
+	<div>
+		Create a file app/js/custom.js and add your own javascript</div>
+	<div>
+		Edit the HTML files and include custom.css after all other css files and custom.js after all other js files.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Working with source files</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		For JS, go to folder master/js/custom and start editing the file custom.js. After compile the source again with gulp, your own code will included at th bottom of file app/js/app.js.</div>
+	<div>
+		For LESS, go to folder master/less and create a folder called custom and add your won less files. Then edit file app.less and @import all your stylesheets at the bottom (overrides all app default styles)</div>
+	<div>
+		A note on updating</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		The premise is, the less you change the downloaded code, the easier will be to apply any updates. Try always to keep your own code the most separated as possible from the package code to easily apply new updates when necessary.</div>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="build">
+	<div class="page-header"><h3>Build</h3><hr class="notop"></div>
+<div>
+	<strong>Important</strong>! You only need to follow this instructions in case you want to work with JADE, LESS and concatenate all JS modules.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Node</strong>.js is a platform built on Chrome&rsquo;s JavaScript runtime for easily building fast, scalable network applications.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Gulp </strong>is a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for JADE and LESS, and concatenates the JS files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Bower </strong>is a dependency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you&rsquo;re looking for. Bower keeps track of these packages in a manifest file, bower.json.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The package includes under the master/ folder the file gulpfile.js, package.json and bower.json to install the required components to compile the source files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Installing tools</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	The following steps are intended to be an orientation guide, if you are not experienced with this you will need to learn more about it from Google :)</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		To install node and npm, go to http://nodejs.org/</li>
+	<li>
+		Run npm install -g bower to install bower to manage dependencies</li>
+	<li>
+		Download and install GIT for your platform http://git-scm.com/downloads</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Once you have all tools installed</strong></div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Open a terminal, go the package master/ folder, then run the command npm install. This command will install gulp and all project dependencies.</li>
+	<li>
+		Then, to install vendor dependencies, run bower install</li>
+	<li>
+		Finally run gulp to start the task manager</li>
+</ul>
+<div>
+	If everything goes fine, you should see the messages in the terminal telling you that most the task are done ok. The task will watch for files to compile them automatically all files when change.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	You can also run <strong>npm start </strong>inside master folder to automatically install npm packages, bower dependencies and finally gulp, all with just one command.</div>
+<div>
+	<h4 id="build_main_gulp_tasks">Main Gulp tasks</h4>
+	<div>
+		&nbsp;</div>
+	<div>
+		This command will run the default task without minify assets</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp  </pre>
+	<div>
+		This task will generate the assest wihout mininfy and with sourcemaps</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp sourcemaps</pre>
+	<div>
+		<div>
+			This task will start the app with a server in your favourite browser (using BrowserSync)</div>
+		<pre class="prettyprint lang-plain linenums">
+$ gulp serve</pre>
+		<div>
+			This task will start the app with a server in your favourite browser (using BrowserSync)</div>
+		<pre class="prettyprint lang-plain linenums">
+$ gulp serve-prod</pre>
+		<div>
+			This taks will generate the asset minified</div>
+	</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp build</pre>
+	<div>
+		You can also mix task build and sourcemaps to get minified version with sourcemaps</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp build sourcemaps</pre>
+	<p>
+		&nbsp;</p>
+	<h4 id="build_sidebar">Sidebar</h4>
+	<p>
+		The file <strong>sidebar.json </strong>contains the sidebar menu items configuration for easy customization. Using JADE you need only to edit this file in order to change the sidebar items</p>
+	<h4 id="build_javascript">Javascript</h4>
+	<div>
+		The Javascript source is divided in two main files that controls the app</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		base.js: contains the scripts to start the application</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		app.js: contains the modules used in the application (controllers, directive, etc)</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Note The edit the scripts included in base.js open the file vendor.base.json located under the master folder</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		The app.js script build (concatenation) order is</div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-plain linenums">
+&#39;js/app.init.js&#39;
+&#39;js/modules/*.js&#39;
+</pre>
+	<p>
+		Files in folder<strong>&nbsp;&#39;js/modules/demo/*.js&#39; </strong>are copied directly to the app/js folder</p>
+	<h4 id="build_less">LESS</h4>
+	<div>
+		<div>
+			The LESS files are used to compile the main application styles into the file <strong>app.css</strong> and the<u> custom Bootstrap</u> styles into <strong>bootstrap.css</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Also the <strong>app-rtl.css </strong>and <strong>bootstrap-rtl.css</strong> are automatically generated with the same styles but inverted for RTL layout. To convert styles the node script <strong>css-flip</strong> is used.</div>
+	</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_sass">SASS</h4>
+	<div>
+		<div>
+			To build the styles using the SCSS files version you have to use the following command</div>
+		<div>
+			&nbsp;</div>
+		<pre class="prettyprint lang-plain linenums">
+gulp <strong>--usesass</strong></pre>
+	</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="build_vendor">Vendor</h4>
+	<div>
+		Vendor script dependencies are managed by bower. Just run bower install in folder master/ and all dependencies will be installed.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		After installing all dependencies is necessary to install them in the locations the app expects them. To do that, run gulp task with the command gulp <strong>scripts:vendor </strong>in the master folder.</div>
+	<div>
+		This task will run automatically the task&nbsp;<strong>scripts:vendor:app</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Vendor folder</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		To avoid not necessary files that bower downloads there&rsquo;s a task scripts:vendor:app that will copy all files required by the app from the bower_components folder to the main /vendor folder.</div>
+	<div>
+		This files are listed in <strong>vendor.json </strong>file which contains the path of all necessary files required by the app components. Those files are usually required via the lazy load module and you can include fonts, svg, etc.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Vendor Updates</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		To update vendor files via bower you can edit the bower.json file by adding the last version you want to download.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Note The folder app/vendor contains vendor files that currently aren&rsquo;t possible to be managed via bower</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="usage">
+	<div class="page-header"><h3>Usage</h3><hr class="notop"></div>
+<h4 id="usage_layout">Layout</h4>
+<div>
+	Layout can be changed via the following classed applied to the body tag</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.layout-fixed</strong>: Makes navbars become fixed while the user can scroll only content</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.layout-boxed</strong>: Limits the width of the main wrapper element</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-collapsed</strong>: Condenses the sidebar showing only icons</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-collapsed-text</strong>: Condenses the sidebar showing icons and Text</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.aside-toggle</strong>: used internally for mobiles to hide the sidebar off screen</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>.offsidebar-open</strong>: used internally to display the offsidebar component (formally the right sidebar)</div>
+<div>
+	&nbsp;</div>
+<div>
+	The following markup representation is in fact divided into views but this code will give a good perspective of the final organization after the app is rendered:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;html&gt;
+  &lt;head&gt;
+    #metas and css
+  &lt;/head&gt;  
+  &lt;body&gt;
+    &lt;section class=&quot;wrapper&quot;&gt;
+
+          &lt;nav class=&quot;navbar topnavbar&quot;&gt;
+            #top navbar content
+          &lt;/nav&gt;
+
+          &lt;aside class=&quot;aside&quot;&gt;
+            #sidebar content (left)
+          &lt;/aside&gt;
+
+          &lt;aside class=&quot;offsidebar&quot;&gt;
+            #offsidebar content (right)
+          &lt;/aside&gt;
+
+         &lt;section&gt;
+
+            &lt;div class=&quot;content-wrapper&quot;&gt;
+              #page content
+            &lt;/div&gt;  
+
+          &lt;/section&gt;
+     &lt;/section&gt;
+     #scripts
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+<div>
+	&nbsp;</div>
+<h4 id="usage_rtl">RTL</h4>
+<div>
+	RTL support uses the a tool called css-flip which inverts most the css properties to change the page orientation.</div>
+<div>
+	To use the rtl version just include the rtl version of the stylesheets in your html files</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap-rtl.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/app-rtl.css&quot;&gt;</pre>
+</div>
+<h4 id="usage_translation">Translation</h4>
+<div>
+	The translation system uses jQuery Localize</div>
+<div>
+	This modules simplifies the translation system by loading translate references from a JSON file and replacing the content where the reference has been used.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Examples</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;small data-localize=&quot;dashboard.WELCOME&quot;&gt;&lt;/small&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	The JSON files with translation references are located in the folder <strong>app/i18n</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	See also dashboard.html to find example on how to change the language manually</div>
+<h4 id="usage_markdown_docs">Markdown Docs</h4>
+<div>
+	This documentation is loaded from a Markdown source using Flatdoc plugin. The menu and the content is generated automatically from the .md file and styled directly from custom css.</div>
+<div>
+	&nbsp;</div>
+<div>
+	It uses the following markup</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;flatdoc-wrapper&quot;&gt;
+      &lt;div class=&quot;flatdoc&quot;&gt;
+         &lt;div class=&quot;flatdoc-menu&quot;&gt;&lt;/div&gt;
+         &lt;div class=&quot;flatdoc-content&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;</pre>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="themes">
+	<div class="page-header"><h3>Themes</h3><hr class="notop"></div>
+<p>	To change the color scheme you have 2 options:</p>
+<p>	From LESS files</p>
+<div>
+	&nbsp;</div>
+<div>
+	Edit the LESS files in folder master/less/app and the file master/less/bootstrap/variables.less to use the color you want.</div>
+<div>
+	Like Bootstrap, most of the colors are based on @brand-* variables.</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can also edit the files in master/less/theme folder to create your own set of color schemes. This files must be included after the app.css in order to override the default color set.</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	Changing the theme colors from LESS files helps you to avoid bloating your css by not double declaring your color rules.</div>
+<div>
+	&nbsp;</div>
+<h4 id="themes_from_css_files">From CSS files</h4>
+<div>
+	&nbsp;</div>
+<div>
+	This template support color schemes including a css file. You can find the color options in the folder app/css/ files are named theme-*.css</div>
+<div>
+	&nbsp;</div>
+<div>
+	If you want to change or add a new component color, just inspect the color using your favorite browser devtool and then replace the value in the file.</div>
+<div>
+	&nbsp;</div>
+<div>
+	This files are prepared to change the basic color scheme (both sidebars and top navbar) but if you want to make a more deep change I suggest you to check the LESS way which is more simple for multiple component changes.</div>
+<div>
+	&nbsp;</div>
+<h4 id="themes_default_theme">Default Theme</h4>
+<div>
+	&nbsp;</div>
+<div>
+	To set a default just include in your HTML files the theme css file of your choice right after the the main stylesheet (app.css)</div>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed Project</h3><hr class="notop"></div>
+<div>
+	This project is an application skeleton. You can use it to quickly bootstrap your jQuery webapp projects and dev environment for these projects.&nbsp;</div>
+<div>
+	The seed app doesn&#39;t do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The seed project includes the following features</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Modernizr</div>
+<div>
+	- Icons (FontAwesome and SimpleLine)</div>
+<div>
+	- Translation</div>
+<div>
+	- RTL mode</div>
+<div>
+	- Top navbar search form</div>
+<div>
+	- Themes</div>
+<div>
+	- Two pages</div>
+<div>
+	- Empty offsidebar (left sidebar)</div>
+<div>
+	- Minimum required vendor assets</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<h4 id="credits_a_href"http_vendor_creditshtml"vendor_assets_a"><a href="http://vendor-credits.html">Vendor Assets</a></h4>
+</section>
+
+	</div>
+</body>
+</html>

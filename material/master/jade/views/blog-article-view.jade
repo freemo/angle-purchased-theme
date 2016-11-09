@@ -1,0 +1,140 @@
+h3 New Article
+
+.container-fluid(ng-controller="ArticleController as art")
+
+  div(uib-alert, ng-repeat='alert in art.alerts', ng-class="'alert-' + (alert.type || 'warning')", close='art.closeAlert($index)') 
+    em.fa.fa-exclamation-circle.fa-lg.fa-fw
+    span(ng-bind-html="alert.msg")
+
+  .row
+    // Article Content
+    .col-lg-9
+      .panel.panel-default
+        .panel-body
+          form(action="")
+            input.mb-lg.form-control.input-lg(type="text", name="article-title", placeholder="Article title...")
+            // Wysiswyg editor
+            summernote.summernote(height="280")
+                span Rich text presentation here..
+            br
+            p Notes
+            textarea.mb-lg.form-control(cols="6")
+            .clearfix
+              .pull-left
+                button.btn.btn-default.m-r-10.m-t-10(type="button")
+                  em.fa.fa-edit.fa-fw
+                  | Draft
+                button.btn.btn-primary.m-t-10(type="button")
+                  em.fa.fa-check.fa-fw
+                  | Save
+              .pull-right
+                button.btn.btn-danger.m-r-10.m-t-10(type="button")
+                  em.fa.fa-trash.fa-fw
+                  | Remove
+      p.lead List of Comments
+      .panel
+        .table-responsive
+          table.table.table-hover
+            thead
+              tr
+                th
+                  strong Comment ID
+                th
+                  strong Date
+                th
+                  strong Username
+                th
+                  strong Comment excerpt
+                th.text-center
+                  strong Current status
+                th.text-right(style="width:130px")
+                  strong Actions
+            tbody
+              tr
+                td 123
+                td 10/05/2015
+                td: a(href="") Jack Jordan
+                td Sed quis eros libero, a euismod nisl....
+                td.text-center
+                  span.label.label-success Approved
+                td.text-right
+                  button(type="button").btn.btn-sm.btn-default
+                    em.fa.fa-pencil
+                  button(type="button").btn.btn-sm.btn-danger
+                    em.fa.fa-trash
+                  button(type="button").btn.btn-sm.btn-success
+                    em.fa.fa-check
+              tr
+                td 456
+                td 10/07/2015
+                td: a(href="") Hailey Mckinney
+                td Nulla facilisi. 
+                td.text-center
+                  span.label.label-success Approved
+                td.text-right
+                  button(type="button").btn.btn-sm.btn-default
+                    em.fa.fa-pencil
+                  button(type="button").btn.btn-sm.btn-danger
+                    em.fa.fa-trash
+                  button(type="button").btn.btn-sm.btn-success
+                    em.fa.fa-check
+              tr
+                td 789
+                td 11/05/2015
+                td: a(href="") Peyton Reyes
+                td Quisque enim nisi, semper non pulvinar et, aliquam id lorem...
+                td.text-center
+                  span.label.label-warning Pending
+                td.text-right
+                  button(type="button").btn.btn-sm.btn-default
+                    em.fa.fa-pencil
+                  button(type="button").btn.btn-sm.btn-danger
+                    em.fa.fa-trash
+                  button(type="button").btn.btn-sm.btn-success
+                    em.fa.fa-check
+              tr
+                td 999
+                td 10/06/2015
+                td: a(href="") Darryl Harper
+                td Nulla facilisi. 
+                td.text-center
+                  span.label.label-danger Rejected
+                td.text-right
+                  button(type="button").btn.btn-sm.btn-default
+                    em.fa.fa-pencil
+                  button(type="button", disabled="").btn.btn-sm.btn-danger
+                    em.fa.fa-trash
+                  button(type="button").btn.btn-sm.btn-success
+                    em.fa.fa-check
+    // Article sidebar
+    .col-lg-3
+      .panel.panel-default
+        .panel-body
+          p.lead Article Data
+          p Categories
+          ui-select.mb-lg(multiple='', ng-model='art.postDemo.categories', theme='bootstrap', ng-disabled='art.disabled')
+            ui-select-match(placeholder='Select category...') {{$item}}
+            ui-select-choices(repeat='color in art.availableCategories') {{color}}    
+          p Tags
+          ui-select.mb-lg(multiple='', ng-model='art.postDemo.tags', theme='bootstrap', ng-disabled='art.disabled')
+            ui-select-match(placeholder='Select tag...') {{$item}}
+            ui-select-choices(repeat='color in art.availableTags') {{color}}    
+          p Reviewers
+          ui-select.mb-lg(multiple='', ng-model='art.postDemo.selectedReviewers', theme='bootstrap', ng-disabled='art.disabled')
+            ui-select-match(placeholder='Select reviewer...') {{$item.name}} &lt;{{$item.email}}&gt;
+            ui-select-choices(repeat='person in art.reviewers | propsFilter: {name: $select.search, age: $select.search}')
+              div(ng-bind-html='person.name | highlight: $select.search')
+              small
+                | email: {{person.email}}        age: 
+                span(ng-bind-html="''+person.age | highlight: $select.search")
+          p.lead SEO Metadata
+          .form-group
+            p Title 
+            input.form-control(type='text', placeholder="Brief description..")
+          .form-group
+            p Description 
+            textarea.form-control(rows='5', placeholder='Max 255 characters...')
+          .form-group 
+            p Keywords
+            textarea.form-control(rows='5', placeholder='Max 1000 characters...')
+

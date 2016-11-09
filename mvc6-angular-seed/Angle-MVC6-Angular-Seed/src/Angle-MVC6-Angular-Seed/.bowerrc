@@ -1,0 +1,6 @@
+{
+  "directory": "wwwroot/lib",
+    "resolvers": [
+        "bower-npm-resolver"
+    ]
+}

@@ -1,0 +1,14 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * --- Angle Main Stylesheet
+ * 
+ *= require angle/app
+ *
+ * --- Assets paths redefinition 
+ * 
+ *= require fonts
+ *= require vendor.assets
+ *
+ */

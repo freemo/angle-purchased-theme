@@ -1,0 +1,20 @@
+<h3>Rickshaw</h3>
+<div class="container-fluid" ng-controller="ChartRickshawController as chart">
+   <div class="panel panel-default">
+      <div class="panel-heading">Rickshaw graph</div>
+      <div class="panel-body">
+         <rickshaw rickshaw-options="chart.options2" rickshaw-series="chart.series2"></rickshaw>
+      </div>
+   </div>
+   <div class="panel panel-default">
+      <div class="panel-heading">Rickshaw graph - Palettes</div>
+      <div class="panel-body">
+         <rickshaw rickshaw-options="chart.options0" rickshaw-features="chart.features0" rickshaw-series="chart.series0"></rickshaw>
+         <form class="form-inline mt-lg">
+            <select class="form-control" ng-model="chart.renderer0" ng-options="renderer.name for renderer in chart.renderers" ng-change="chart.rendererChanged(0)"></select>
+            <select class="form-control" ng-model="chart.palette0" ng-options="palette for palette in chart.palettes" ng-change="chart.paletteChanged(0)"></select>
+            <button class="btn btn-primary" ng-click="chart.changeSeriesData(0)">Change series data</button>
+         </form>
+      </div>
+   </div>
+</div>

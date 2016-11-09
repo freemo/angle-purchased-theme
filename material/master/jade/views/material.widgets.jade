@@ -1,0 +1,249 @@
+.well
+  .h3.mv 
+    // Breadcrumb right aligned
+    ul.breadcrumb.pull-right.text-sm.bg-transparent
+      li
+        a(ui-sref='app.dashboard') Dashboard
+      li(ng-repeat='state in $state.$current.path', ng-switch='$last', ng-if="!state.abstract", ng-class='{active: $last}')
+        a(ng-switch-when='false', href='#{{state.url.format($stateParams)}}') {{state.title}}
+        span(ng-switch-when='true') {{state.title}}
+    | Widgets
+
+.container-fluid(ng-controller="MaterialWidgetsController as widget")
+  .row
+    .col-lg-4
+      .card
+        .card-heading.bg-info.shadow-z1
+          .pull-right
+            h3.m0.text-lg 11:05
+          .card-title Paris
+          small Sunny day
+        .card-body
+          .clearfix
+            .pull-left
+              p Humidity 60%
+            .pull-right
+              h3.m0 23&deg;C
+          .text-center.pv-lg
+            em.wi.wi-day-sunny-overcast.fa-4x
+          .clearfix
+            .pull-left
+              p.m0 Max 23&deg;C
+              p Min 16&deg;C
+            .pull-right
+              h4.mt-lg.mb0 26 aug 2015
+    .col-lg-4
+      .card
+        .card-heading.bg-purple
+          .card-icon 
+            em.icon-calendar
+          .card-title June
+        .ui-datepicker.well.well-sm(uib-datepicker, ng-model='dp.dt', min-date='dp.minDate', show-weeks='true')
+    .col-lg-4
+      .card
+        .card-heading.bg-primary.shadow-z1
+          .pull-right
+            h3.m0.text-lg 47%
+          .card-title Workload
+          small Stable
+        .card-body
+          .clearfix
+            .pull-left
+              p Sessions 199
+            .pull-right
+              h3.m0 Sys 10%
+          .text-center.pv-lg
+            .text-lg 70
+              small %
+          .clearfix
+            .pull-left
+              p.m0 
+                em.icon-cloud-upload.mr
+                span 1.3 Gb
+              p.m0 
+                em.icon-cloud-download.mr
+                span 2.8 Gb
+            .pull-right
+              h4.mt-lg.mb0 26 aug 2015
+  .row
+    .col-lg-8
+      .card
+        .card-body
+          table.table.m0
+            thead
+              tr
+                th Members
+                th.col-sm-5 Project
+                th.col-sm-1 Progress
+                th.text-right Due date
+            tbody
+              tr
+                td 30
+                td Maquinarium
+                td.text-center
+                  span(sparkline='widget.sparkOptionPie', values="3,7")
+                td.text-right 01 Jun 2015
+              tr
+                td 502
+                td Material Design
+                td.text-center
+                  span(sparkline='widget.sparkOptionPie', values="2,8")
+                td.text-right 01 Aug 2015
+              tr
+                td 870
+                td ReactJS Migration
+                td.text-center
+                  span(sparkline='widget.sparkOptionPie', values="5,5")
+                td.text-right 20 Sep 2015
+              tr
+                td 10
+                td Internal Update
+                td.text-center
+                  span(sparkline='widget.sparkOptionPie', values="7,3")
+                td.text-right 01 Jun 2016
+    .col-lg-4
+      .card
+        ul.list-group
+          li.list-group-item
+            em.icon-game-controller.fa-fw.mr
+            span Projects
+            span.badge.badge-xs.bg-purple 15
+          li.list-group-item
+            em.icon-bubbles.fa-fw.mr
+            span Messages
+            span.badge.badge-xs.bg-info +10
+          li.list-group-item
+            em.icon-bell.fa-fw.mr
+            span Notifications
+            span.badge.badge-xs.bg-success 110
+          li.list-group-item
+            em.icon-cloud-upload.fa-fw.mr
+            span File Uploaded
+            span.badge.badge-xs.bg-primary 60
+          li.list-group-item
+            em.icon-graph.fa-fw.mr
+            span Bandwidth
+            span.badge.badge-xs.bg-danger 75%
+          li.list-group-item
+            em.icon-support.fa-fw.mr
+            span Opened Tickets
+            span.badge.badge-xs.bg-info 10
+          li.list-group-item
+            em.icon-check.fa-fw.mr
+            span Closed Tickets
+            span.badge.badge-xs.bg-danger 26
+
+  .row
+    .col-lg-4
+      .card.card-map(ng-controller="GMapController as gmap")
+        .card-heading.bg-pink.shadow-z1
+          .card-icon
+            em.icon-map
+          .card-title Close to me
+        .gmap(ui-map='gmap.myMap5', ui-options='gmap.mapOptions5')
+        .card-footer
+          input.form-control.shadow-z1(type="text", placeholder="Search places")
+    .col-lg-4
+      .card
+        .card-body.bg-info.shadow-z1
+          .row.text-center
+            .col-xs-6
+              h2.mt0.mb 7
+            .col-xs-6
+              a(href="").mb.text-white: em.fa.fa-envelope.fa-2x
+          .row.text-center
+            .col-xs-6
+              p.m0 New messages
+            .col-xs-6
+              p.m0 Inbox
+        .card-subheader Recent messages          
+        .mda-list
+          .mda-list-item
+            .mda-list-item-initial.bg-pink M
+            .mda-list-item-text.mda-2-line
+              h3 Min Li Chan
+              h4 Brunch this weekend?
+          .mda-list-item
+            .mda-list-item-initial.bg-purple A
+            .mda-list-item-text.mda-2-line
+              h3 Alan Vasquez
+              h4 Brunch this weekend?
+          .mda-list-item
+            .mda-list-item-initial.bg-info S
+            .mda-list-item-text.mda-2-line
+              h3 Shane Campbell
+              h4 Brunch this weekend?
+    .col-lg-4
+      .card
+        .card-body.bg-yellow-500.shadow-z1
+          .row.text-center
+            .col-xs-6
+              h2.mt0.mb 5
+            .col-xs-6
+              a(href="").mb.text-inherit: em.fa.fa-bell.fa-2x
+          .row.text-center
+            .col-xs-6
+              p.m0 New alerts
+            .col-xs-6
+              p.m0 View all
+        .card-subheader Recent messages
+        .card-body.pt0
+          .alert.alert-info Lorem ipsum dolor sit amet, consectetur adipisicing elit..
+          .alert.alert-success Lorem ipsum dolor sit amet, consectetur adipisicing elit... 
+          .alert.alert-danger.m0 Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+        .card-footer.text-right
+          a.btn.btn-link.text-success(href="") View all
+          a.btn.btn-link.text-warning(href="") Dicard all
+
+  .row
+    .col-lg-4
+      .card
+        .card-heading
+          .card-title Visits
+        .card-body
+          div(sparkline="widget.sparkOption1", values="1,3,4,7,5,9,4,4,7,5,9,6,4")
+        .card-body
+          .row.row-table.text-center
+            .col-xs-4
+              p.m0 Uniques
+              h3.m0 700
+            .col-xs-4
+              p.m0 Recurrents
+              h3.m0 1500
+            .col-xs-4
+              p.m0 Total
+              h3.m0 300
+    .col-lg-4
+      .card
+        .card-heading
+          .card-title Blog activity
+        .card-body
+          div(sparkline="widget.sparkOption1", data-line-color="{{colorByName('info')}}", data-fill-color="{{colorByName('info')}}",  values="3,1,2,4,2,6,3,1")
+        .card-body
+          .row.row-table.text-center
+            .col-xs-4
+              p.m0 Posts
+              h3.m0 70
+            .col-xs-4
+              p.m0 Published
+              h3.m0 30
+            .col-xs-4
+              p.m0 Pendings
+              h3.m0 40
+    .col-lg-4
+      .card
+        .card-heading.bg-info
+          .card-title Stats
+        .card-body.bg-info
+          div(sparkline="widget.sparkOption1", data-line-color="#fff", data-fill-color="#fff",  values="3,1,2,4,2,6,3,1")
+        .card-body.bg-info
+          .row.row-table.text-center
+            .col-xs-4
+              p.m0 Storage
+              h3.m0 66%
+            .col-xs-4
+              p.m0 Server
+              h3.m0 35%
+            .col-xs-4
+              p.m0 Bandwidth
+              h3.m0 40%

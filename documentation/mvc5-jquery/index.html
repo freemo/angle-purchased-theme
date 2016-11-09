@@ -1,0 +1,475 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + MVC5 + jQuery</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-11-13T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#layout" title="Layout">Layout</a></li>
+			<li><a href="#movies_app" title="Movies App">Movies App</a></li>
+			<li><a href="#seed_project" title="Seed Project">Seed Project</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2015<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + MVC5 + jQuery</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/14/2015</li>
+	<li>latest update: 11/13/2015</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	It assumes a minimum knowledge of Visual Studio 2013 and Asp.net technology.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>	<li>		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>		Explore the sources for ideas and sample code.</li>
+	<li>		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="getting_started_starting_the_app">Starting the app</h4>
+	<div>
+		To run this version you need to have installed Visual Studio 2013. After that, open the file backend-mvc/Angle/Angle.sln. Once VS has been started, press F5 and it should build the project and open your default browser with the theme.</div>
+</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	Before starting to customize the template, here are the project files organization structure:</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
++--Angle
+    +--Angle
+    |   +--App_Data
+    |   +--App_Start
+    |   +--bin
+    |   +--Content
+    |   |   +--app
+    |   |   |   +--css
+    |   |   +--documentation
+    |   |   +--i18n
+    |   |   +--Images
+    |   |   +--Json
+    |   +--Controllers
+    |   +--fonts
+    |   +--Helpers
+    |   +--Models
+    |   +--obj
+    |   +--Properties
+    |   +--Scripts
+    |   |   +--app
+    |   |       +--modules
+    |   |       +--demo
+    |   +--Vendor
+    |   +--Views
+    |       +--Charts
+    |       +--Dashboard
+    |       +--Documentation
+    |       +--Elements
+    |       +--Extras
+    |       +--Forms
+    |       +--Maps
+    |       +--Movies
+    |       +--Multilevels
+    |       +--Pages
+    |       +--Shared
+    |       +--Tables
+    |       +--Widgets
+    +--packages</pre>
+</div>
+<p>	&nbsp;</p>
+</section>
+<section id="layout">
+	<div class="page-header"><h3>Layout</h3><hr class="notop"></div>
+<p>
+	The theme uses two layouts. One for the app view and another for pages (externals to the app)</p>
+<h4 id="layout_angle_views_shared_layoutcshtml">Angle/Views/Shared/_Layout.cshtml</h4>
+<p>
+	This is the main layout</p>
+<p>
+	It&#39;s is organized like show the following image</p>
+<p>
+	<img alt="" src="layout-main.jpg"></p>
+<p>
+	Using this markup</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Bootstrap Admin App + jQuery&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, jquery, bootstrap, dashboard, admin&quot;&gt;
+    &lt;title&gt;Angle - Bootstrap Admin Template&lt;/title&gt;
+    &lt;!-- =============== VENDOR STYLES ===============--&gt;
+    @Styles.Render(&quot;~/bundles/fontawesome&quot;)
+    @Styles.Render(&quot;~/bundles/simpleLineIcons&quot;)
+    @Styles.Render(&quot;~/bundles/animatecss&quot;)
+    @Styles.Render(&quot;~/bundles/whirl&quot;)
+    &lt;!-- =============== PAGE VENDOR STYLES =============== --&gt;
+    @if (IsSectionDefined(&quot;Styles&quot;))
+        {@RenderSection(&quot;Styles&quot;, required: false)}
+    &lt;!-- =============== BOOTSTRAP STYLES ===============--&gt;
+    &lt;link href=&quot;@Styles.Url(&quot;~/Content/app/css/bootstrap.css&quot;)&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; id=&quot;bscss&quot; /&gt;
+    &lt;!-- =============== APP STYLES ===============--&gt;
+    &lt;link href=&quot;@Styles.Url(&quot;~/Content/app/css/app.css&quot;)&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; id=&quot;maincss&quot; /&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;!-- top navbar--&gt;
+        &lt;header class=&quot;topnavbar-wrapper&quot;&gt;
+            @Html.Partial(&quot;_TopNavbar&quot;)
+        &lt;/header&gt;
+        &lt;!-- sidebar--&gt;
+        &lt;aside class=&quot;aside&quot;&gt;
+            @Html.Partial(&quot;_Sidebar&quot;)
+        &lt;/aside&gt;
+        &lt;!-- offsidebar--&gt;
+        &lt;aside class=&quot;offsidebar&quot;&gt;
+            @Html.Partial(&quot;_Offsidebar&quot;)
+        &lt;/aside&gt;
+        &lt;!-- Main section--&gt;
+        &lt;section&gt;
+            &lt;!-- Page content--&gt;
+            &lt;div class=&quot;content-wrapper&quot;&gt;
+                @RenderBody()
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- Page footer--&gt;
+        &lt;footer&gt;
+            @Html.Partial(&quot;_Footer&quot;)
+        &lt;/footer&gt;
+    &lt;/div&gt;
+    @if (IsSectionDefined(&quot;BodyArea&quot;))
+        {@RenderSection(&quot;BodyArea&quot;, required: false)}
+    &lt;!-- =============== VENDOR SCRIPTS ===============--&gt;
+    @Scripts.Render(&quot;~/bundles/modernizr&quot;)
+    @Scripts.Render(&quot;~/bundles/jquery&quot;)
+    @Scripts.Render(&quot;~/bundles/bootstrap&quot;)
+    @Scripts.Render(&quot;~/bundles/storage&quot;)
+    @Scripts.Render(&quot;~/bundles/jquery.easing&quot;)
+    @Scripts.Render(&quot;~/bundles/animo&quot;)
+    @Scripts.Render(&quot;~/bundles/slimscroll&quot;)
+    @Scripts.Render(&quot;~/bundles/screenfull&quot;)
+    @Scripts.Render(&quot;~/bundles/localize&quot;)
+    @Scripts.Render(&quot;~/bundles/demoRTL&quot;)
+    &lt;!-- =============== PAGE VENDOR SCRIPTS ===============--&gt;
+    @RenderSection(&quot;scripts&quot;, required: false)
+    &lt;!-- =============== APP SCRIPTS ===============--&gt;
+    @Scripts.Render(&quot;~/bundles/Angle&quot;)
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h4 id="layout_angle_views_shared_layoutpagecshtml">Angle/Views/Shared/_LayoutPage.cshtml</h4>
+<p>
+	This is the page layout. It only uses the&nbsp;@RenderBody() to include the page content within the main wrapper like show the following markup</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+   &lt;meta charset=&quot;utf-8&quot;&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+   &lt;meta name=&quot;description&quot; content=&quot;Bootstrap Admin App + jQuery&quot;&gt;
+   &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, jquery, bootstrap, dashboard, admin&quot;&gt;
+   &lt;title&gt;Angle - Bootstrap Admin Template&lt;/title&gt;
+    &lt;!-- =============== VENDOR STYLES ===============--&gt;
+    @Styles.Render(&quot;~/bundles/fontawesome&quot;)
+    @Styles.Render(&quot;~/bundles/simpleLineIcons&quot;)
+    &lt;!-- =============== PAGE VENDOR STYLES =============== --&gt;
+    @if (IsSectionDefined(&quot;Styles&quot;))
+        {@RenderSection(&quot;Styles&quot;, required: false)}
+    &lt;!-- =============== APP STYLES ===============--&gt;
+    @Styles.Render(&quot;~/Content/css&quot;)
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;div class=&quot;wrapper&quot;&gt;
+       @RenderBody()
+   &lt;/div&gt;
+   &lt;div class=&quot;p-lg text-center&quot;&gt;
+      &lt;span&gt;&amp;copy;&lt;/span&gt;
+      &lt;span&gt;2015&lt;/span&gt;
+      &lt;span&gt;-&lt;/span&gt;
+      &lt;span&gt;Angle&lt;/span&gt;
+      &lt;br&gt;
+      &lt;span&gt;Bootstrap Admin Template&lt;/span&gt;
+   &lt;/div&gt;
+
+    &lt;!-- ============== VENDOR SCRIPTS ===============--&gt;
+    @Scripts.Render(&quot;~/bundles/modernizr&quot;)
+    @Scripts.Render(&quot;~/bundles/jquery&quot;)
+    @Scripts.Render(&quot;~/bundles/bootstrap&quot;)
+    @Scripts.Render(&quot;~/bundles/storage&quot;)
+    @Scripts.Render(&quot;~/bundles/parsley&quot;)
+    &lt;!-- =============== PAGE VENDOR SCRIPTS ===============--&gt;
+    @RenderSection(&quot;scripts&quot;, required: false)
+    &lt;!-- =============== APP SCRIPTS ===============--&gt;
+    @Scripts.Render(&quot;~/bundles/Angle&quot;)
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="movies_app">
+	<div class="page-header"><h3>Movies App</h3><hr class="notop"></div>
+<p>
+	The Movies app included only on MVC5 demo and seed project works with Entity Framework 6 on Visual Studio 2013 Using MVC, Entity Framework, and ASP.NET Scaffolding,</p>
+<div>
+	You can create a web application that provides an interface to an existing database table. This demo shows you how to automatically generate code that enables users to display, edit, create, and delete data that resides on the database. The generated code corresponds to the columns in the database table. This demo focuses on using ASP.NET Scaffolding to generate the controllers and views.</div>
+<div>
+	&nbsp;</div>
+<div>
+	We have followed an excellent tutorial by Jo&atilde;o Eduardo Sousa by&nbsp;adding a few changes to the auto-generated view in order to match the expected markup. &nbsp;We have also copied some steps from the original tutorial to give you a quick reference</div>
+<div>
+	&nbsp;</div>
+<div>
+	<a href="https://code.msdn.microsoft.com/MVC5-Demo-with-Entity-c6bc81df">Tutorial</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="movies_app_step1_nbspcreate_class_nbsp">STEP1 - &nbsp;Create class&nbsp;</h4>
+</div>
+<div>
+	<div>
+		Add a new class to the project (this class represents a table, and the properties the colums of that table)</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Give a name to that class (in my sample I call him MoviesModel)</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		On the class create the following code:</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<pre class="prettyprint lang-js linenums">
+public class Movie 
+{ 
+    public int ID { get; set; } 
+    public string Title { get; set; } 
+    public DateTime ReleaseDate { get; set; } 
+    public string Genre { get; set; } 
+    public decimal Price { get; set; } 
+} 
+
+public class MovieDBContext : DbContext 
+{ 
+    public DbSet&lt;Movie&gt; Movies { get; set; } 
+} </pre>
+	</div>
+	<div>
+		Put the class inside the Models folders, just to organize your code.</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		Note that the class propertie&nbsp;ID is used as primary key</div>
+	<h4 id="movies_app_step2_nbspcreate_controller_with_views_using_entity_framework">STEP2 - &nbsp;Create controller with views using Entity Framework</h4>
+	<div>
+		Add new Scaffolded to the project (new item existent on MVC5)</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<img alt="" src="MVC53.jpg"></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Choose option MVC5 Controller with views using Entity Framework</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<span style="color: rgb(0, 0, 0); font-family: 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333330154419px;"><img alt="" src="MVC54.jpg"></span></div>
+</div>
+<p>
+	&nbsp;</p>
+<div>
+	Click Add</div>
+<div>
+	&nbsp;</div>
+<div>
+	If you receive an error, it may be because you did not build the project in the previous section. If so, try building the project, and then add the scaffolded item again.</div>
+<div>
+	&nbsp;</div>
+<div>
+	After the code generation process is complete, you will see a new controller and views in your project.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="movies_app_step3_controller_and_views_generation">STEP3 - Controller and Views Generation</h4>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp; a. You will see now the Controller was automatically created with CRUD operations</div>
+	<div>
+		&nbsp; b. And the Views were also automatically created</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<img alt="" src="MVC55.jpg"></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<h4 id="movies_app_step4_run_the_application">STEP4 - Run the application</h4>
+		<p>
+			<img alt="" src="MVC56.jpg"></p>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed Project</h3><hr class="notop"></div>
+<div>
+	This project is an application skeleton. You can use it to quickly bootstrap your MVC5 webapp projects and dev environment for these projects.&nbsp;</div>
+<div>
+	The seed app doesn&#39;t do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The angular seed project includes the following features</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Modernizr</div>
+<div>
+	- Icons (FontAwesome and SimpleLine)</div>
+<div>
+	- Translation</div>
+<div>
+	- RTL mode</div>
+<div>
+	- Top navbar search form</div>
+<div>
+	- Themes</div>
+<div>
+	- Two views with its own sidebar entries (one single item and a menu)</div>
+<div>
+	- Empty offsidebar (left sidebar)</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,561 @@
+
+.container-md
+
+  .card(ng-controller='MDAutocompleteCtrl as ctrl')
+    .card-heading.bg-primary
+      .card-title Autocomplete
+    .card-body
+      form(ng-submit='$event.preventDefault()')
+        p
+          | Use 
+          code &lt;md-autocomplete&gt;
+          |  to search for matches from local or remote data sources.
+        md-autocomplete(ng-disabled='ctrl.isDisabled', md-no-cache='ctrl.noCache', md-selected-item='ctrl.selectedItem', md-search-text='ctrl.searchText', md-items='item in ctrl.querySearch(ctrl.searchText)', md-item-text='item.display', placeholder='What is your favorite US state?')
+          span(md-highlight-text='ctrl.searchText') {{item.display}}
+        br
+        md-checkbox(ng-model='ctrl.simulateQuery') Simulate query for results?
+        md-checkbox(ng-model='ctrl.noCache') Disable caching of queries?
+        md-checkbox(ng-model='ctrl.isDisabled') Disable the input?
+        p
+          | By default, 
+          code &lt;md-autocomplete&gt;
+          |  will cache results when performing a query.  After the initial call is performed, it will use the cached results to eliminate unnecessary server requests or lookup logic. This can be disabled above.
+
+  .card(ng-controller='BottomSheetExample')
+    .card-heading.bg-primary
+      .card-title Bottom Sheet
+    #bottomsheetcontainer: .card-body
+      h2.md-title Usage
+      p Bottom sheets can be displayed by clicking one of the buttons below.  Once shown, it can be dismissed by either swiping down or clicking in the shaded area.
+      h2.md-title Actions
+      p Use one of the following buttons to display a bottom sheet.
+      h4 Important
+      p This coponents needs some amount of content based on the translate property that adds an offset to the bottom sheet to place it properly. Once implemented on a project this component may need some extra CSS tweaking to the styles of the element
+        code md-bottom-sheet
+        | .
+      .bottom-sheet-demo.inset(layout='row', layout-sm='column', layout-align='center')
+        md-button.md-primary.md-raised(flex='50', ng-click='showListBottomSheet($event)') Show as List
+        md-button.md-primary.md-raised(flex='50', ng-click='showGridBottomSheet($event)') Show as Grid
+      div(ng-if='alert')
+        br
+        b.md-padding(layout='row', layout-align='center center')
+          | {{alert}}
+      script(type='text/ng-template', id='bottom-sheet-grid-template.html').
+        <md-bottom-sheet class="md-grid">
+        <md-list>
+        <md-list-item ng-repeat="item in items">
+        <md-button class="md-grid-item-content" ng-click="listItemClick($index)">
+        <md-icon md-svg-src="{{item.icon}}"></md-icon>
+        <div class="md-grid-text"> {{ item.name }} </div>
+        </md-button>
+        </md-list-item>
+        </md-list>
+        </md-bottom-sheet>
+      script(type='text/ng-template', id='bottom-sheet-list-template.html').
+        <md-bottom-sheet class="md-list md-has-header">
+        <md-subheader>Comment Actions</md-subheader>
+        <md-list>
+        <md-list-item ng-repeat="item in items">
+        <md-button class="md-list-item-content" ng-click="listItemClick($index)">
+        <md-icon md-svg-src="{{item.icon}}"></md-icon>
+        <span class="md-inline-list-icon-label">{{ item.name }}</span>
+        </md-button>
+        </md-list-item>
+        </md-list>
+        </md-bottom-sheet>
+
+  .card
+    .card-heading.bg-primary
+      .card-title Buttons
+    .card-body
+      p Normal
+      p
+        md-button Button
+        md-button.md-primary(md-no-ink='') Primary (MD-NoInk)
+        md-button.md-primary(ng-disabled='true') Disabled
+        md-button.md-warn Warn
+      p Raised
+      p
+        md-button.md-raised Button
+        md-button.md-raised.md-primary Primary
+        md-button.md-raised.md-primary(ng-disabled='true') Disabled
+        md-button.md-raised.md-warn Warn
+      p FAB
+      p
+        md-button.md-fab(aria-label='Eat cake')
+          em.fa.fa-birthday-cake.fa-lg
+        md-button.md-fab.md-primary(aria-label='Use Android')
+          em.fa.fa-android.fa-lg
+        md-button.md-fab(ng-disabled='true', aria-label='Comment')
+          em.fa.fa-comment.fa-lg
+        md-button.md-fab.md-primary.md-hue-2(aria-label='Profile')
+          em.icon-users.fa-lg
+      p Themed
+      p
+        md-button.md-primary.md-hue-1 Primary Hue 1
+        md-button.md-warn.md-raised.md-hue-2 Warn Hue 2
+        md-button.md-accent Accent
+        md-button.md-accent.md-raised.md-hue-1 Accent Hue 1
+
+  .card(ng-controller='MDInputCtrl')
+    .card-heading.bg-primary
+      .card-title Inputs
+    .card-body
+      .row
+        md-input-container.md-primary.col-sm-6
+          label Title
+          input(ng-model='user.title')
+        md-input-container.col-sm-6
+          label Email
+          input(ng-model='user.email', type='email')
+      form(name='userForm')
+        md-input-container(flex='')
+          label Company (Disabled)
+          input(ng-model='user.company', disabled='')
+        div(layout='', layout-sm='column')
+          md-input-container(flex='')
+            label First Name
+            input(ng-model='user.firstName', placeholder='Placeholder text')
+          md-input-container(flex='')
+            label Last Name
+            input(ng-model='theMax')
+        md-input-container(flex='')
+          label Address
+          input(ng-model='user.address')
+        div(layout='', layout-sm='column')
+          md-input-container(flex='')
+            label City
+            input(ng-model='user.city')
+          md-input-container(flex='')
+            label State
+            input(ng-model='user.state')
+          md-input-container(flex='')
+            label Postal Code
+            input(ng-model='user.postalCode')
+        md-input-container(flex='')
+          label Biography
+          textarea(ng-model='user.biography', columns='1', md-maxlength='150')
+      h5 Errors
+      form(name='projectForm')
+        md-input-container
+          label Description
+          input(md-maxlength='30', required='', name='description', ng-model='project.description')
+          div(ng-messages='projectForm.description.$error')
+            div(ng-message='required') This is required.
+            div(ng-message='md-maxlength') The name has to be less than 30 characters long.
+        md-input-container
+          label Client Name
+          input(required='', name='clientName', ng-model='project.clientName')
+          div(ng-messages='projectForm.clientName.$error')
+            div(ng-message='required') This is required.
+        md-input-container
+          label Hourly Rate (USD)
+          input(required='', type='number', step='any', name='rate', ng-model='project.rate', min='800', max='4999')
+          div(ng-messages='projectForm.rate.$error')
+            div(ng-message='required')
+              | You&apos;ve got to charge something! You can&apos;t just 
+              b give away
+              |  a Missile Defense System.
+            div(ng-message='min')
+              | You should charge at least $800 an hour. This job is a big deal... if you mess up, everyone dies!
+            div(ng-message='max')
+              | $5,000 an hour? That&apos;s a little ridiculous. I doubt event Bill Clinton could afford that.
+
+  .card
+    .card-heading.bg-primary
+      .card-title Checkbox and Radio
+    .card-body
+      .row
+        .col-md-6(ng-controller='MDCheckboxCtrl')
+          md-checkbox(ng-model='data.cb1', aria-label='Checkbox 1')
+            | Checkbox 1: {{ data.cb1 }}
+          md-checkbox(ng-disabled='true', aria-label='Disabled checkbox', ng-model='data.cb3')
+            | Checkbox: Disabled
+          md-checkbox.md-primary(md-no-ink='', aria-label='Checkbox No Ink', ng-model='data.cb5')
+            | Checkbox (md-primary): No Ink
+          md-checkbox.md-warn(ng-model='data.cb2', aria-label='Checkbox 2', ng-true-value="'yup'", ng-false-value="'nope'")
+            | Checkbox 2 (md-warn): {{ data.cb2 }}
+          md-checkbox(ng-disabled='true', aria-label='Disabled checked checkbox', ng-model='data.cb4', ng-init='data.cb4=true')
+            | Checkbox: Disabled, Checked
+        .col-md-6(ng-controller='MDRadioCtrl')
+          md-radio-group(ng-model='data.group2')
+            md-radio-button(ng-repeat='d in radioData', ng-value='d.value', ng-disabled=' d.isDisabled ')
+              | {{ d.label }}
+          p
+            | Selected Value: 
+            span {{ data.group2 }}
+          p
+            md-button(ng-click='addItem()', type='button') Add
+            md-button(ng-click='removeItem()', type='button') Remove
+
+  .card
+    .card-heading.bg-primary
+      .card-title Switch
+    .card-body(ng-controller='MDSwitchCtrl')
+      md-switch(ng-model='data.cb1', aria-label='Switch 1')
+        | Switch 1: {{ data.cb1 }}
+      md-switch.md-warn(ng-model='data.cb2', aria-label='Switch 2', ng-true-value="'yup'", ng-false-value="'nope'")
+        | Switch 2 (md-warn): {{ data.cb2 }}
+      md-switch(ng-disabled='true', aria-label='Disabled switch', ng-model='disabledModel')
+        | Switch (Disabled)
+      md-switch(ng-disabled='true', aria-label='Disabled active switch', ng-model='data.cb4')
+        | Switch (Disabled, Active)
+      md-switch.md-primary(md-no-ink='', aria-label='Switch No Ink')
+        | Switch (md-primary): No Ink
+      md-switch(ng-model='data.cb5', aria-label='Switch 5', ng-change='onChange(data.cb5)')
+        | Switch 5 message: {{ message }}
+
+  .card(ng-controller='MDDialogCtrl')
+    .card-heading.bg-primary
+      .card-title Dialog
+    .card-body
+      p
+        | Open a dialog over the app&apos;s content. Press escape or click outside to close the dialog and
+        | send focus back to the triggering button.
+      div
+        md-button.md-primary(ng-click='showAlert($event)')
+          | Alert Dialog
+        md-button.md-primary(ng-click='showConfirm($event)')
+          | Confirm Dialog
+        md-button.md-primary(ng-click='showAdvanced($event)')
+          | Custom Dialog
+      br
+      b(layout='row', layout-align='center center', layout-margin='')
+        | {{alert}}
+    // Dialog inline template for demo
+    script(type='text/ng-template', id='dialog1.tmpl.html').
+      <md-dialog aria-label="Mango (Fruit)">
+      <form>
+      <md-toolbar>
+      <div class="md-toolbar-tools">
+      <h2>Mango (Fruit)</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+      <md-icon md-svg-src="app/img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+      </div>
+      </md-toolbar>
+      <md-dialog-content>
+      <div>
+      <p>
+      The mango is a juicy stone fruit belonging to the genus Mangifera, consisting of numerous tropical fruiting trees, cultivated mostly for edible fruit. The majority of these species are found in nature as wild mangoes. They all belong to the flowering plant family Anacardiaceae. The mango is native to South and Southeast Asia, from where it has been distributed worldwide to become one of the most cultivated fruits in the tropics.
+      </p>
+      <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="app/img/mangues.jpg">
+      <p>
+      The highest concentration of Mangifera genus is in the western part of Malesia (Sumatra, Java and Borneo) and in Burma and India. While other Mangifera species (e.g. horse mango, M. foetida) are also grown on a more localized basis, Mangifera indica&mdash;the "common mango" or "Indian mango"&mdash;is the only mango tree commonly cultivated in many tropical and subtropical regions.
+      </p>
+      <p>
+      It originated in Indian subcontinent (present day India and Pakistan) and Burma. It is the national fruit of India, Pakistan, and the Philippines, and the national tree of Bangladesh. In several cultures, its fruit and leaves are ritually used as floral decorations at weddings, public celebrations, and religious ceremonies.
+      </p>
+      </div>
+      </md-dialog-content>
+      <div class="md-actions" layout="row">
+      <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
+      More on Wikipedia
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="answer('not useful')" class="md-primary">
+      Not Useful
+      </md-button>
+      <md-button ng-click="answer('useful')" class="md-primary">
+      Useful
+      </md-button>
+      </div>
+      </form>
+      </md-dialog>
+
+  .card(ng-controller='MDSliderCtrl')
+    .card-heading.bg-primary
+      .card-title Slider
+    .card-body
+      h5 RGB 
+        span(ng-attr-style='border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})') &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      .row
+        .col-sm-2.text-center
+          p.mt Red
+        .col-sm-8
+          md-slider#red-slider(min='0', max='255', ng-model='color.red', aria-label='red')
+        .col-sm-2
+          input.mt-sm.form-control.input-sm(type='number', ng-model='color.red', aria-label='red', aria-controls='red-slider')
+      .row
+        .col-sm-2.text-center
+          p.mt Green
+        .col-sm-8
+          md-slider#green-slider.md-accent(ng-model='color.green', min='0', max='255', aria-label='green')
+        .col-sm-2
+          input.mt-sm.form-control.input-sm(type='number', ng-model='color.green', aria-label='green', aria-controls='green-slider')
+      .row
+        .col-sm-2.text-center
+          p.mt Blue
+        .col-sm-8
+          md-slider#blue-slider.md-primary(ng-model='color.blue', min='0', max='255', aria-label='blue')
+        .col-sm-2
+          input.mt-sm.form-control.input-sm(type='number', ng-model='color.blue', aria-label='blue', aria-controls='blue-slider')
+    .card-body
+      h5 Rating: {{rating}}/5 - demo of theming classes
+      .row
+        .col-sm-2.text-center
+          p.mt md-default
+        .col-sm-8
+          md-slider(md-discrete='', ng-model='rating1', step='1', min='1', max='5', aria-label='rating')
+      .row
+        .col-sm-2.text-center
+          p.mt md-warn
+        .col-sm-8
+          md-slider.md-warn(md-discrete='', ng-model='rating2', step='1', min='1', max='5', aria-label='rating')
+      .row
+        .col-sm-2.text-center
+          p.mt md-primary
+        .col-sm-8
+          md-slider.md-primary(md-discrete='', ng-model='rating3', step='1', min='1', max='5', aria-label='rating')
+    .card-body
+      .row
+        .col-sm-6
+          h5 Disabled
+          md-slider(ng-model='disabled1', ng-disabled='true', aria-label='Disabled 1')
+          md-slider(ng-model='disabled2', ng-disabled='true', aria-label='Disabled 2')
+        .col-sm-6
+          h5 Disabled, Discrete
+          md-slider(ng-model='disabled1', ng-disabled='true', step='3', md-discrete='', min='0', max='10', aria-label='Disabled discrete 1')
+          md-slider(ng-model='disabled2', ng-disabled='true', step='10', md-discrete='', aria-label='Disabled discrete 2')
+
+  .card
+    .card-heading.bg-primary
+      .card-title Grid
+    .card-body
+      md-grid-list(md-row-height='1:1', md-gutter='8px', md-cols-gt-md='6', md-cols-sm='3', md-cols-md='4', md-row-height-gt-md='1:1', md-gutter-gt-md='16px', md-gutter-gt-sm='8px')
+        md-grid-tile.bg-red-100.md-whiteframe-z0(md-rowspan='2', md-colspan='2')
+          h5 1
+        md-grid-tile.bg-green-100.md-whiteframe-z0
+          h5 2
+        md-grid-tile.bg-blue-100.md-whiteframe-z0
+          h5 3
+        md-grid-tile.bg-cyan-100.md-whiteframe-z0(md-colspan='2')
+          h5 4
+        md-grid-tile.bg-yellow-100.md-whiteframe-z0(md-rowspan='2', md-colspan='2')
+          h5 5
+        md-grid-tile.bg-pink-100.md-whiteframe-z0
+          h5 6
+        md-grid-tile.bg-light-blue-100.md-whiteframe-z0
+          h5 7
+        md-grid-tile.bg-blue-400.md-whiteframe-z0
+          h5 8
+        md-grid-tile.bg-deep-purple-100.md-whiteframe-z0
+          h5 9
+        md-grid-tile.bg-purple-200.md-whiteframe-z0
+          h5 10
+        md-grid-tile.bg-yellow-100.md-whiteframe-z0
+          h5 11
+  
+  .card(ng-controller='MDProgressCtrl')
+    .card-heading.bg-primary
+      .card-title Progress Circular
+    .card-body
+      h5 Determinate
+      p
+        | For operations where the percentage of the operation completed can be determined, use a determinate indicator. They give users a quick sense of how long an operation will take.
+      div(layout='row', layout-sm='column', layout-align='space-around')
+        md-progress-circular(md-mode='determinate', value='{{determinateValue}}')
+      h5 Indeterminate
+      p
+        | For operations where the user is asked to wait a moment while something finishes up, and it&rsquo;s not necessary to expose what&apos;s happening behind the scenes and how long it will take, use an indeterminate indicator.
+      div(layout='row', layout-sm='column', layout-align='space-around')
+        md-progress-circular(md-mode='indeterminate')
+      h5 Theming
+      div(layout='row', layout-sm='column', layout-align='space-around')
+        md-progress-circular.md-hue-2(md-mode='indeterminate')
+        md-progress-circular.md-accent(md-mode='indeterminate')
+        md-progress-circular.md-accent.md-hue-1(md-mode='indeterminate')
+        md-progress-circular.md-warn.md-hue-3(md-mode='indeterminate')
+        md-progress-circular.md-warn(md-mode='indeterminate')
+  
+  .card(ng-controller='MDProgressCtrl')
+    .card-heading.bg-primary
+      .card-title Progress Linear
+    .card-body
+      md-progress-linear.mb(md-mode='indeterminate')
+      md-progress-linear.md-warn.mb(md-mode='buffer', value='{{determinateValue}}', md-buffer-value='{{determinateValue2}}')
+      md-progress-linear.md-accent.mb(md-mode='{{mode}}', value='{{determinateValue}}')
+  
+  .card(ng-controller='MDSelectCtrl as selectctrl')
+    .card-heading.bg-primary
+      .card-title Select
+    .card-body
+      h1.md-title Enter an address
+      div(layout='row')
+        md-input-container
+          label Street Name
+          input(type='text')
+        md-input-container
+          label City
+          input(type='text')
+        md-input-container
+          md-select(placeholder='State', ng-model='selectctrl.userState')
+            md-option(ng-repeat='state in selectctrl.states', value='{{state.abbrev}}') {{state.abbrev}}
+    .card-body
+      h1.md-title Pick your pizza below
+      div(layout='row')
+        md-select(ng-model='selectctrl.size', placeholder='Size')
+          md-option(ng-repeat='size in selectctrl.sizes', value='{{size}}') {{size}}
+        md-select(ng-model='selectctrl.topping', placeholder='Topping')
+          md-optgroup(label='Meats')
+            md-option(ng-value='topping.name', ng-repeat="topping in selectctrl.toppings | filter: {category: 'meat' }") {{topping.name}}
+          md-optgroup(label='Veggies')
+            md-option(ng-value='topping.name', ng-repeat="topping in selectctrl.toppings | filter: {category: 'veg' }") {{topping.name}}
+      p(ng-if='selectctrl.topping') You ordered a {{size.toLowerCase()}} pizza with {{selectctrl.topping.toLowerCase()}}.
+
+  h4 Sidenav
+  .card.sidenav-wrapper(ng-controller='MDSidenavCtrl')
+    section(layout='row', flex='')
+      md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')")
+        md-toolbar.md-theme-indigo
+          h1.md-toolbar-tools Sidenav Left
+        md-content.md-padding
+          md-button.md-primary(ng-click='closeLeft()', hide-gt-md='')
+            | Close Sidenav Left
+          p(hide-md='', show-gt-md='')
+            | This sidenav is locked open on your device. To go back to the default behavior,
+            | narrow your display.
+      md-content.md-padding(flex='')
+        div(layout='column', layout-fill='', layout-align='center center')
+          p
+            | The left sidenav will &apos;lock open&apos; on a medium (&gt;=960px wide) device.
+          div
+            md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='')
+              | Toggle left
+          div
+            md-button.md-primary(ng-click='toggleRight()')
+              | Toggle right
+      md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
+        md-toolbar.md-theme-light
+          h1.md-toolbar-tools.bg-warning Sidenav Right
+        md-content.md-padding
+          md-button(ng-click='closeRight()')
+            | Close Sidenav Right
+
+  .card(ng-controller='MDSubheaderCtrl')
+    .card-heading.bg-primary
+      .card-title Subheader
+    md-content(style='height: 300px;')
+      section
+        md-subheader.md-primary Unread Messages
+        md-list(layout-padding='')
+          md-list-item.md-3-line(ng-repeat='message in messages')
+            img.md-avatar(ng-src='{{message.face}}', alt='{{message.who}}')
+            .md-list-item-text
+              h3 {{message.what}}
+              h4 {{message.who}}
+              p
+                | {{message.notes}}
+      section
+        md-subheader.md-warn Late Messages
+        md-list(layout='column', layout-padding='')
+          md-list-item.md-3-line(ng-repeat='message in messages')
+            img.md-avatar(ng-src='{{message.face}}', alt='{{message.who}}')
+            .md-list-item-text
+              h3 {{message.what}}
+              h4 {{message.who}}
+              p
+                | {{message.notes}}
+      section
+        md-subheader Read Messages
+        md-list(layout='column', layout-padding='')
+          md-list-item.md-3-line(ng-repeat='message in messages')
+            img.md-avatar(ng-src='{{message.face}}', alt='{{message.who}}')
+            .md-list-item-text
+              h3 {{message.what}}
+              h4 {{message.who}}
+              p
+                | {{message.notes}}
+      section
+        md-subheader.md-accent Archived messages
+        md-list(layout='column', layout-padding='')
+          md-list-item.md-3-line(ng-repeat='message in messages')
+            img.md-avatar(ng-src='{{message.face}}', alt='{{message.who}}')
+            .md-list-item-text
+              h3 {{message.what}}
+              h4 {{message.who}}
+              p
+                | {{message.notes}}
+  .card
+    .card-heading.bg-primary
+      .card-title Tabs
+    md-content.md-padding
+      md-tabs(md-dynamic-height='', md-border-bottom='')
+        md-tab(label='one')
+          md-content.md-padding
+            h1.md-display-2 Tab One
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.
+        md-tab(label='two')
+          md-content.md-padding
+            h1.md-display-2 Tab Two
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.
+            p Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.
+            p Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.
+        md-tab(label='three')
+          md-content.md-padding
+            h1.md-display-2 Tab Three
+            p Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.
+
+  #toastcontainer.card(ng-controller='MDToastCtrl')
+    .card-heading.bg-primary
+      .card-title Toast
+    .card-body
+      p Toast can be dismissed with a swipe, a timer, or a button.
+      div(layout='row', layout-sm='column', layout-align='space-around')
+        div(style='width:50px')
+        md-button(ng-click='showCustomToast()')
+          | Show Custom
+        md-button(ng-click='showSimpleToast()')
+          | Show Simple
+        md-button.md-raised(ng-click='showActionToast()')
+          | Show With Action
+        div(style='width:50px')
+      div
+        br
+        b Toast Position: &quot;{{getToastPosition()}}&quot;
+        br
+        md-checkbox(ng-repeat='(name, isSelected) in toastPosition', ng-model='toastPosition[name]')
+          | {{name}}
+        md-button.md-primary.md-fab.md-fab-bottom-right
+          | FAB
+        md-button.md-accent.md-fab.md-fab-top-right
+          | FAB
+
+      script(type='text/ng-template', id='toast-template.html').
+        <md-toast>
+        <span flex>Custom toast!</span>
+        <md-button ng-click="closeToast()">
+        Close
+        </md-button>
+        </md-toast>
+
+  .card(ng-controller='MDTooltipCtrl')
+    .card-heading.bg-primary
+      .card-title Tooltip
+    md-toolbar.md-accent
+      h2.md-toolbar-tools
+        span(flex='') Awesome Md App
+        md-button.shadow-clear.md-fab.md-accent(aria-label='refresh')
+          md-tooltip
+            | Refresh
+          md-icon(md-svg-src='app/img/icons/ic_refresh_24px.svg', style='width: 24px; height: 24px;')
+    .card-body
+      p
+        | The tooltip is visible when the button is hovered, focused, or touched.
+      md-button.md-fab.md-primary(aria-label='Insert Drive')
+        em.fa.fa-birthday-cake.fa-lg
+        md-tooltip(md-visible='demo.showTooltip')
+          | Insert Drive
+      md-button.md-fab(aria-label='Photos')
+        em.fa.fa-android.fa-lg
+        md-tooltip
+          | Photos
+      br
+      br
+      br
+      p
+        | Additionally, the Tooltip&apos;s &grave;md-visible&grave; attribute can use data-binding to programmatically
+        | show/hide itself. Toggle the checkbox below...
+      md-checkbox(ng-model='demo.showTooltip')
+        | Insert Drive

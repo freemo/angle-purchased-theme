@@ -1,0 +1,509 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + MeteorJS + jQuery</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-11-13T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a>
+				<ul>
+					<li><a href="#structure_main_layout_structure">Main layout structure</a>
+					<li><a href="#structure_horizontal_layout">Horizontal layout</a>
+					<li><a href="#structure_pages_layout">Pages layout</a>
+				</ul>
+			</li>
+			<li><a href="#usage" title="Usage">Usage</a>
+				<ul>
+					<li><a href="#usage_styles">Styles</a>
+					<li><a href="#usage__nbsp">&nbsp;</a>
+					<li><a href="#usage_theme_selector">Theme selector</a>
+					<li><a href="#usage__nbsp">&nbsp;</a>
+					<li><a href="#usage_scripts">Scripts</a>
+					<li><a href="#usage_vendor">Vendor</a>
+					<li><a href="#usage_public_assets">Public assets</a>
+					<li><a href="#usage_translation">Translation</a>
+				</ul>
+			</li>
+			<li><a href="#routes" title="Routes">Routes</a>
+				<ul>
+					<li><a href="#routes_strongroutes_strong">Routes</a>
+					<li><a href="#routes_default_route">Default route</a>
+					<li><a href="#routes_different_layout">Different layout</a>
+				</ul>
+			</li>
+			<li><a href="#seed_project" title="Seed project">Seed project</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2015<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + MeteorJS + jQuery</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 04/21/2015</li>
+	<li>latest update: 11/13/2015</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	All usage reference for Meteor can be found here&nbsp;<a href="https://docs.meteor.com/">https://docs.meteor.com/</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<p>
+	<strong>Download MeteorJS</strong></p>
+<div>
+	Start downloading METEOR framework for your platform at&nbsp;<a href="https://www.meteor.com/install">https://www.meteor.com/install</a></div>
+<p>
+	<strong>Start the application</strong></p>
+<div>
+	Run the following command in the meteor project root folder</div>
+<pre class="prettyprint lang-plain linenums">
+meteor</pre>
+<div>
+	<p>
+		<strong>Open your browser</strong></p>
+	<p>
+		If eveything goes fine, your application should be ready at&nbsp;<a href="http://localhost:3000/">http://localhost:3000/</a></p>
+	<p>
+		&nbsp;</p>
+	<p>
+		<strong>General tips</strong></p>
+</div>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<p>
+	Folder organization</p>
+<pre class="prettyprint lang-plain linenums">
++---client
+|   +---routes
+|   +---scripts
+|   +---styles
+|   |   +---app
+|   |   +---bootstrap
+|   |   +---themes
+|   +---templates
+|   |   +---common
+|   |   +---views
+|   |       +---blog
+|   |       +---charts
+|   |       +---dashboard
+|   |       +---documentation
+|   |       +---ecommerce
+|   |       +---elements
+|   |       +---extras
+|   |       +---forms
+|   |       +---forum
+|   |       +---maps
+|   |       +---pages
+|   |       +---tables
+|   |       +---widgets
+|   +---vendor
++---localize
+|   +---i18n
++---public
+    +---documentation
+    +---fonts
+    +---img
+    +---server</pre>
+<h4 id="structure_main_layout_structure">Main layout structure</h4>
+<div>
+	&nbsp;</div>
+<div>
+	The main layout is defined in file <strong>client/templates/common/layout.html</strong></div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;template name=&quot;layout&quot;&gt;
+      &lt;div class=&quot;wrapper&quot;&gt;
+         &lt;!-- top navbar--&gt;
+         {{&gt; topnavbar }}
+         &lt;!-- sidebar--&gt;
+         {{&gt; sidebar }}
+         &lt;!-- offsidebar--&gt;
+         {{&gt; offsidebar}}
+         &lt;!-- Main section--&gt;
+         &lt;section&gt;
+            &lt;!-- Page content--&gt;
+            &lt;div class=&quot;content-wrapper&quot;&gt;
+               {{&gt; yield }}
+            &lt;/div&gt;
+         &lt;/section&gt;
+         &lt;!-- Page footer--&gt;
+         {{&gt; footer }}
+      &lt;/div&gt;
+      {{&gt; yield region=&quot;bodyChild&quot; }}
+&lt;/template&gt;</pre>
+</div>
+<p>
+	The&nbsp;<span style="line-height: 19px;"><strong>yield region=&quot;bodyChild&quot;</strong> is used to inject from any template a portion of markup directly outside the main wrapper. This is used for modals.</span></p>
+<h4 id="structure_horizontal_layout">Horizontal layout</h4>
+<p>
+	This layout is defined in file<strong> client/templates/common/layout.horizontal.html</strong></p>
+<p>
+	This layout can be enabled using the route configuration like follows</p>
+<pre class="prettyprint lang-js linenums">
+    this.route(&#39;dashboardh&#39;, function(){
+        this.layout(&#39;layouth&#39;);
+        this.render(&#39;dashboardh&#39;);
+    });</pre>
+<p>
+	&nbsp;</p>
+<h4 id="structure_pages_layout">Pages layout</h4>
+<p>
+	This a full page layout used mainly for login, register, lock and recover views and is defined in file <strong>client/templates/common/layout-pages.html</strong></p>
+<p>
+	This layout can be enabled using the route configuration like follows</p>
+<pre class="prettyprint lang-js linenums">
+    this.route(&#39;login&#39;, function(){
+        this.render(&#39;login&#39;);
+        this.layout(&#39;layoutPages&#39;);
+    });</pre>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>See below for more information about routes</strong></p>
+</section>
+<section id="usage">
+	<div class="page-header"><h3>Usage</h3><hr class="notop"></div>
+<h4 id="usage_styles">Styles</h4>
+<p>
+	All styles uses LESS as a preprocessor and all files can be found under client/styles folder</p>
+<p>
+	To use less @import the meteor-less package requires to name all imported file in the form *.import.less</p>
+<p>
+	The main two files that imports the entire application are&nbsp;</p>
+<pre class="prettyprint lang-plain linenums">
+01_bootstrap.less
+02_app.less</pre>
+<p>
+	The prefix number is used to force meteor to compile and load always Bootstrap first and then the app styles so is possible to override any default rule.</p>
+<p>
+	Themes</p>
+<p>
+	Themes can be easly added directly into the file&nbsp;02_app.less at the bottom in order to overrride default colors</p>
+<p>
+	Available options</p>
+<div>
+	<pre class="prettyprint lang-css linenums">
+@import &quot;themes/theme-a.import.less&quot;
+@import &quot;themes/theme-b.import.less&quot;
+@import &quot;themes/theme-c.import.less&quot;
+@import &quot;themes/theme-d.import.less&quot;
+@import &quot;themes/theme-e.import.less&quot;
+@import &quot;themes/theme-f.import.less&quot;
+@import &quot;themes/theme-g.import.less&quot;
+@import &quot;themes/theme-h.import.less&quot;</pre>
+</div>
+<p>
+	<strong>The first theme A is the default style.</strong></p>
+<h4 id="usage__nbsp">&nbsp;</h4>
+<h4 id="usage_theme_selector">Theme selector</h4>
+<div>
+	The themes selector used in the right sidebar (offsidebar) uses a custom plugin. This plugins looks for an attribute to receive the path to a css stylesheet to be injected into the head section of the page.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	In the demo, we link to the files under the <strong>/public/themes</strong> folder which contains the predefined theme colors. Then from html we used the following attribute to create an element that when is clicked injects the css in the given path</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;label data-load-css=&quot;themes/theme-a.css&quot;&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	The example shows a label but any clickable element can be used instead</div>
+<div>
+	&nbsp;</div>
+<h4 id="usage__nbsp">&nbsp;</h4>
+<h4 id="usage_scripts">Scripts</h4>
+<p>
+	Scripts are divided into Templatescripts and Globla scripts</p>
+<p>
+	<strong>Global scripts</strong> are located under folder <strong>client/scripts/modules </strong>and all of them contains functions that can be used accross the entire application. Usually most of them are function that must be used as a jQuery callback. For example:</p>
+<pre class="prettyprint lang-js linenums">
+$(&#39;[data-notify]&#39;).each(notifyAlert);</pre>
+<p>
+	The function&nbsp;notifyAlert will initialize the notify plugin on each element with attribute data-notify</p>
+<p>
+	<strong>Template scripts </strong>are used to load a javascript everytime a view is rendered. All this file can be found under the client/templates folder and they are named with the same name used for the view that affects.</p>
+<p>
+	This script uses the rendered event provided by meteor <strong>Templates </strong>object. For example, the Notification view, has its markup in file notification.html and its respective scripts in file notification.js, both under folder <strong>client/templates/views/elements</strong></p>
+<pre class="prettyprint lang-js linenums">
+Template.notifications.rendered = function() {
+
+    // Notifiy
+    $(&#39;[data-notify]&#39;).each(notifyAlert);
+
+    // POPOVER
+    $(&#39;[data-toggle=&quot;popover&quot;]&#39;).popover({
+        trigger: &quot;focus&quot;
+    });
+
+    // TOOLTIP
+    $(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip({
+      container: &#39;body&#39;
+    });
+
+}</pre>
+<p>
+	&nbsp;</p>
+<div class="alert">
+	Previous versions of this package used a custom function (App.ready) triggered when the main template were rendering but has been removed because it is not effective in all cases.</div>
+<p>
+	&nbsp;</p>
+<h4 id="usage_vendor">Vendor</h4>
+<p>
+	Meteor has its &nbsp;own script injection system. Because of that you don&#39;t have add your own script tags. All scripts in each folder are automatically added by Meteor into the app.</p>
+<p class="prettyprint lang-html linenums">
+	All vendor folder were included manually under client/vendor folders.</p>
+<p>
+	The following packages and vendor assets are loaded directly from the Meteor system&nbsp;</p>
+<div>
+	<div>
+		<pre class="prettyprint lang-plain linenums">
+less
+iron:router
+zimme:iron-router-active
+fortawesome:fontawesome
+okgrow:iron-router-autoscroll
+tap:i18n
+jquery
+twbs:bootstrap@3.3.5
+momentjs:moment
+russ:weather-icons
+dbarrett:dropzonejs
+mizzao:jquery-ui</pre>
+	</div>
+</div>
+<h4 id="usage_public_assets">Public assets</h4>
+<p>
+	All public assets like fonts, images, etc should be placed under the public folder. Any file under this folder is served like if it was under the root folder so for example, to serve an image you don&#39;t need to add public to the paths, just used the form&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;img src=&quot;img/bg1.jpg&quot; alt=&quot;&quot; class=&quot;img-thumbnail img-responsive&quot; /&gt;</pre>
+<h4 id="usage_translation">Translation</h4>
+<p>
+	Translation system uses the package&nbsp;tap:i18n</p>
+<p>
+	This package is configured using a file in the root folder of the project with the following information</p>
+<pre class="prettyprint lang-plain linenums">
+{
+    &quot;helper_name&quot;: &quot;_&quot;,
+    &quot;supported_languages&quot;: null,
+    &quot;i18n_files_route&quot;: &quot;/localize/i18n/&quot;,
+    &quot;cdn_path&quot;: null
+}</pre>
+<div>
+	&nbsp;</div>
+<div>
+	The files used for translation are placed in folder<strong> localize/i18n</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	To include a translated text in the markup you need to reference the json path for the string using the &quot;<strong>helper_name</strong>&quot; indicated in the config file (in this case the underscore) and a <strong>Blaze template</strong> expression. For example</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;small&gt;{{_&quot;dashboard.WELCOME&quot;}}&lt;/small&gt;</pre>
+<div>
+	This correspons to a json file configuration like follows</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-js linenums">
+{
+  &quot;dashboard&quot;: {
+    &quot;WELCOME&quot;: &quot;Welcome to Angle !&quot;
+  },
+....
+}</pre>
+</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="routes">
+	<div class="page-header"><h3>Routes</h3><hr class="notop"></div>
+<h4 id="routes_strongroutes_strong"><strong>Routes</strong></h4>
+<div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Routes are defined in the following script and uses the <strong>Iron Router</strong> package.</div>
+	<div>
+		Due to the location of the file all routes here works for the client side.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>/client/routes/routes.js</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Dahsboard routes example</strong></div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-js linenums">
+// Dashboard
+Router.map(function(){
+    this.route(&#39;dashboardv1&#39;, function(){
+        this.render(&#39;dashboardv1&#39;);
+    });
+    this.route(&#39;dashboardv2&#39;, function(){
+        this.render(&#39;dashboardv2&#39;);
+    });
+    this.route(&#39;dashboardv3&#39;, function(){
+        this.render(&#39;dashboardv3&#39;);
+    });
+});</pre>
+</div>
+<h4 id="routes_default_route">Default route</h4>
+<div>
+	&nbsp;</div>
+<div>
+	A default route can be defined with the following script</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-js linenums">
+Router.route(&#39;/&#39;, function () {
+    Router.go(&#39;dashboardv1&#39;);
+});</pre>
+</div>
+<h4 id="routes_different_layout">Different layout</h4>
+<p>	To use a different template layout for a view just setup the layout property when defining the route</p>
+<p>	This example renders a view using the Horizontal layout.</p>
+<pre class="prettyprint lang-js linenums">
+Router.map(function(){
+    this.route(&#39;dashboardh&#39;, function(){
+<strong>        this.layout(&#39;layouth&#39;);</strong>
+        this.render(&#39;dashboardh&#39;);
+    });
+});</pre>
+<p>	&nbsp;</p>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed project</h3><hr class="notop"></div>
+<div>
+	The Meteor Seed Project is an application skeleton for a typical Meteor web app.</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can use it to quickly bootstrap your Meteor webapp projects. It has all necessary resources/files to help you started new project.</div>
+<div>
+	&nbsp;</div>
+<div>
+	As your project grow, you will need to add new features. Look at the full-features version to select the components you want to use and install them into the seed project.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Since the Seed Project is another Meteor application, you can run it exactly in the same way as the full-features version using command <strong>meteor</strong></div>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>

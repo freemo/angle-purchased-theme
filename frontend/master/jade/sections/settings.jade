@@ -1,0 +1,24 @@
+// START SETTINGS
+.settings
+  .settings-inner
+    .settings-ctrl
+      em.fa.fa-cogs
+    .settings-content
+      p Themes
+      .setting-colors
+        .setting-color.bg-info.checked(data-load-css="css/theme-a.css")
+          em.fa.fa-check
+        .setting-color.bg-success(data-load-css="css/theme-b.css")
+          em.fa.fa-check
+        .setting-color.bg-purple(data-load-css="css/theme-c.css")
+          em.fa.fa-check
+        .setting-color.bg-primary(data-load-css="css/theme-d.css")
+          em.fa.fa-check
+      p Layout
+      .clearfix
+        p.pull-left RTL
+        .pull-right
+          label.switch(for="rtlswitch")
+            input(type='checkbox',id="rtlswitch")
+            span
+// END SETTINGS

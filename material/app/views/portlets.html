@@ -1,0 +1,50 @@
+<div class="btn-group pull-right">
+   <button class="btn btn-default btn-sm" type="button" reset-key="portletState">Reset Porlets</button>
+</div>
+<h3>Portlets
+   <small>Drag and collapse panels. Refresh and see how their state is automatically saved</small>
+</h3>
+<!-- IMPORTANT: Make sure to clear browser storage if this structure is changed-->
+<div class="portlets-wrapper" ng-controller="DraggablePanelController as sort">
+   <div class="row" id="draggable-area">
+      <div class="col-lg-4 portlet-connect" id="portlet-1" ui-sortable="sort.sortablePortletOptions" ng-model="sort.panelList1">
+         <!-- START panel-->
+         <div class="panel {{'panel-' + panel.type}}" ng-repeat="panel in sort.panelList1 track by $index" id="{{panel.id}}">
+            <div class="panel-heading portlet-handler">{{panel.heading}}</div>
+            <div class="panel-wrapper" uib-collapse="{{panel.id}}">
+               <div class="panel-body">
+                  <p>{{panel.content}}</p>
+               </div>
+               <div class="panel-footer">{{ panel.footer }}</div>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+      <div class="col-lg-4 portlet-connect" id="portlet-2" ui-sortable="sort.sortablePortletOptions" ng-model="sort.panelList2">
+         <!-- START panel-->
+         <div class="panel {{'panel-' + panel.type}}" ng-repeat="panel in sort.panelList2 track by $index" id="{{panel.id}}">
+            <div class="panel-heading portlet-handler">{{panel.heading}}</div>
+            <div class="panel-wrapper" uib-collapse="{{panel.id}}">
+               <div class="panel-body">
+                  <p>{{panel.content}}</p>
+               </div>
+               <div class="panel-footer">{{ panel.footer }}</div>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+      <div class="col-lg-4 portlet-connect" id="portlet-3" ui-sortable="sort.sortablePortletOptions" ng-model="sort.panelList3">
+         <!-- START panel-->
+         <div class="panel {{'panel-' + panel.type}}" ng-repeat="panel in sort.panelList3 track by $index" id="{{panel.id}}">
+            <div class="panel-heading portlet-handler">{{panel.heading}}</div>
+            <div class="panel-wrapper" uib-collapse="{{panel.id}}">
+               <div class="panel-body">
+                  <p>{{panel.content}}</p>
+               </div>
+               <div class="panel-footer">{{ panel.footer }}</div>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+   </div>
+</div>

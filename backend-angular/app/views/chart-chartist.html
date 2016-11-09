@@ -1,0 +1,49 @@
+<h3>Chartist
+   <small>SIMPLE RESPONSIVE CHARTS</small>
+</h3>
+<div class="container-fluid" ng-controller="ChartistController as chart">
+   <div class="row">
+      <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-heading">Bar bipolar</div>
+            <div class="panel-body">
+               <div class="ct-chart" chartist="" chartist-data="chart.barBipolarData" chartist-chart-type="Bar" chartist-chart-options="chart.barBipolarOptions"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-heading">Bar Horizontal</div>
+            <div class="panel-body">
+               <div class="ct-chart" chartist="" chartist-data="chart.barHorizontalData" chartist-chart-type="Bar" chartist-chart-options="chart.barHorizontalOptions"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-heading">Line</div>
+            <div class="panel-body">
+               <div class="ct-chart" chartist="" chartist-data="chart.lineData" chartist-chart-type="Line" chartist-chart-options="chart.lineOptions"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">Smil Animations</div>
+            <div class="panel-body">
+               <div class="ct-chart" chartist="" chartist-chart-type="Line" chartist-data="chart.smilData" chartist-chart-options="chart.smilOptions" chartist-events="chart.smilEvents"></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">SVG Path Animations</div>
+            <div class="panel-body">
+               <div class="ct-chart" chartist="" chartist-chart-type="Line" chartist-data="chart.pathData" chartist-chart-options="chart.pathOptions" chartist-events="chart.pathEvents"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

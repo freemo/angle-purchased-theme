@@ -1,0 +1,31 @@
+.d-table-fixed
+  .d-cell.wd-md.code-files
+    .d-table
+      .d-row
+        .d-cell-wrapper
+          .d-cell-inner
+            span(ng-if='coder.doing_async') ...loading...
+            abn-tree(tree-data='coder.filetree_data', 
+                     tree-control='coder.filetree', 
+                     on-select='coder.handle_filetree(branch)', 
+                     expand-level='2', 
+                     initial-selection='Granny Smith',
+                     icon-leaf="",
+                     icon-expand="fa fa-fw fa-angle-right mr-sm",
+                     icon-collapse="fa fa-fw fa-angle-down mr-sm")
+      .p-sm
+        select.form-control(ng-options='theme for theme in coder.editorThemes', ng-model='coder.editorOpts.theme', ng-change='coder.loadTheme(editorOpts.theme)')
+
+  .d-cell
+    .d-table
+      .d-row
+        .d-cell-wrapper
+          .d-cell-inner
+            .code-editor.fh
+              .code-toolbar.btn-toolbar(role='toolbar')
+                .btn-group.p.pull-right
+                  button.btn.btn-default.btn-sm(type='button', aria-label='New', ng-click="coder.new_filetree()") New
+                  button.btn.btn-default.btn-sm(type='button', aria-label='Open') Open
+                .btn-group.p.pull-left
+                  button.btn.btn-default.btn-sm(type='button', aria-label='Save') Save
+              ui-codemirror(ui-codemirror-opts='coder.editorOpts', ng-model="coder.code")

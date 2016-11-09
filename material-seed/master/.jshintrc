@@ -1,0 +1,33 @@
+{
+  "browser": true,
+  "node": true,
+  "esnext": true,
+  "bitwise": true,
+  "camelcase": true,
+  "curly": false,
+  "eqeqeq": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "jquery": true,
+  "globals": {
+    "angular": true,
+    "screenfull": true,
+    "alert": true,
+    "loadGoogleMaps": true,
+    "google": true,
+    "Skycons": true,
+    "Flatdoc": true,
+    "confirm": true,
+    "Rickshaw": true,
+    "Morris": true,
+    "Chart": true,
+    "Chartist": true
+  }
+}

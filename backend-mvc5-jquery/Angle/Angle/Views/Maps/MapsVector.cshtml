@@ -1,0 +1,17 @@
+@{
+    ViewBag.Title = "Vector Maps";
+}
+<h3>Vector Maps
+   <br/>
+   <small>Resolution independent maps</small>
+</h3>
+<div data-vector-map="" data-height="700" data-map-name="world_mill_en"></div>
+
+
+@section Styles {
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jvectormap")
+    @Scripts.Render("~/bundles/demoVectormap")
+}

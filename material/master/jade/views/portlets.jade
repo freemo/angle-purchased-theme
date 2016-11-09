@@ -1,0 +1,35 @@
+.btn-group.pull-right
+  button(type='button', reset-key="portletState").btn.btn-default.btn-sm Reset Porlets
+h3 Portlets
+  small Drag and collapse panels. Refresh and see how their state is automatically saved
+
+// IMPORTANT: Make sure to clear browser storage if this structure is changed
+.portlets-wrapper(ng-controller="DraggablePanelController as sort")
+    .row#draggable-area
+        #portlet-1.col-lg-4.portlet-connect(ui-sortable="sort.sortablePortletOptions", ng-model="sort.panelList1")
+            // START panel
+            .panel(ng-repeat="panel in sort.panelList1 track by $index", class="{{'panel-' + panel.type}}", id="{{panel.id}}")
+                .panel-heading.portlet-handler {{panel.heading}}
+                .panel-wrapper(uib-collapse="{{panel.id}}")
+                    .panel-body
+                        p {{panel.content}}
+                    .panel-footer {{ panel.footer }}
+            // END panel
+        #portlet-2.col-lg-4.portlet-connect(ui-sortable="sort.sortablePortletOptions", ng-model="sort.panelList2")
+            // START panel
+            .panel(ng-repeat="panel in sort.panelList2 track by $index", class="{{'panel-' + panel.type}}", id="{{panel.id}}")
+                .panel-heading.portlet-handler {{panel.heading}}
+                .panel-wrapper(uib-collapse="{{panel.id}}")
+                    .panel-body
+                        p {{panel.content}}
+                    .panel-footer {{ panel.footer }}
+            // END panel
+        #portlet-3.col-lg-4.portlet-connect(ui-sortable="sort.sortablePortletOptions", ng-model="sort.panelList3")
+            // START panel
+            .panel(ng-repeat="panel in sort.panelList3 track by $index", class="{{'panel-' + panel.type}}", id="{{panel.id}}")
+                .panel-heading.portlet-handler {{panel.heading}}
+                .panel-wrapper(uib-collapse="{{panel.id}}")
+                    .panel-body
+                        p {{panel.content}}
+                    .panel-footer {{ panel.footer }}
+            // END panel

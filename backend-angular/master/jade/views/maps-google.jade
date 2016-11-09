@@ -1,0 +1,51 @@
+h3 Google Maps
+  small This directive allows you to add Google Maps Javascript API elements.
+
+.container-fluid(ng-controller="GMapController as gmap")
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading Classic Map
+        .panel-body
+          .gmap(ui-map='gmap.myMap1', ui-options='gmap.mapOptions1')
+
+    .col-md-6
+      .panel.panel-default
+        .panel-heading Custom zoom
+        .panel-body
+          .gmap(ui-map='gmap.myMap2', ui-options='gmap.mapOptions2')
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading Different Map Type
+        .panel-body
+          .gmap(ui-map='gmap.myMap3', ui-options='gmap.mapOptions3')
+
+    .col-md-6
+      .panel.panel-default
+        .panel-heading Multiple Markers
+        .panel-body
+          .gmap(ui-map='gmap.myMap4', ui-options='gmap.mapOptions4')
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading Styled Maps
+        .panel-body
+          .gmap(ui-map='gmap.myMap5', ui-options='gmap.mapOptions5')
+
+  .text-center
+    h4 Open map in a modal
+    // Modal Controller
+    div(ng-controller='ModalGmapController as gmapmodal')
+      // Button trigger modal 
+      button.btn.btn-primary(ng-click='gmapmodal.open()') Launch Modal
+
+      // Modal inline template
+      script(type='text/ng-template', id='/myModalContent.html')
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true', ng-click='cancel()') ×
+          h4#myMapModalLabel.modal-title Google Map Modal
+        .modal-body
+          .gmap(ui-map='myMapModal', ui-options='mapOptionsModal')
+        .modal-footer
+          button.btn.btn-primary(ng-click='ok()') OK

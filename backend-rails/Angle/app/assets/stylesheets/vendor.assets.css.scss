@@ -1,0 +1,55 @@
+/**
+ * This file is used to override vendors assets path outside the application
+ * Redefine background url with image-url(), this function is provided by sass-rails.
+ */
+
+/* Chosen */
+
+.chosen-container-single .chosen-single abbr {
+  background: image-url('chosen_v1.2.0/chosen-sprite.png') -42px 1px no-repeat;
+}
+.chosen-container-single .chosen-single div b {
+  background: image-url('chosen_v1.2.0/chosen-sprite.png') no-repeat 0px 2px;
+}
+.chosen-container-single .chosen-search input[type="text"] {
+  background: white image-url('chosen_v1.2.0/chosen-sprite.png') no-repeat 100% -20px;
+  background: image-url('chosen_v1.2.0/chosen-sprite.png') no-repeat 100% -20px;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  background: image-url('chosen_v1.2.0/chosen-sprite.png') -42px 1px no-repeat;
+}
+.chosen-rtl .chosen-search input[type="text"] {
+  background: white image-url('chosen_v1.2.0/chosen-sprite.png') no-repeat -30px -20px;
+  background: image-url('chosen_v1.2.0/chosen-sprite.png') no-repeat -30px -20px;
+}
+
+/* @group Retina compatibility */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: image-url('chosen_v1.2.0/chosen-sprite@2x.png') !important;
+  }
+}
+
+/* Datatables */
+
+table.dataTable thead .sorting {
+  background: image-url("datatable-bootstrap/images/sort_both.png") no-repeat center right;
+}
+table.dataTable thead .sorting_asc {
+  background: image-url("datatable-bootstrap/images/sort_asc.png") no-repeat center right;
+}
+table.dataTable thead .sorting_desc {
+  background: image-url("datatable-bootstrap/images/sort_desc.png") no-repeat center right;
+}
+table.dataTable thead .sorting_asc_disabled {
+  background: image-url("datatable-bootstrap/images/sort_asc_disabled.png") no-repeat center right;
+}
+table.dataTable thead .sorting_desc_disabled {
+  background: image-url("datatable-bootstrap/images/sort_desc_disabled.png") no-repeat center right;
+}

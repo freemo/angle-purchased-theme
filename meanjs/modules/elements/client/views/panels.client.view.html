@@ -1,0 +1,297 @@
+<h3>Panels
+   <small>Panels can contain almost any kind of element inside</small>
+</h3>
+<h4 class="page-header mt0">Panel Collapse</h4>
+<div class="container-fluid" ng-controller="PanelsCtrl as panel">
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-4">
+         <!-- START panel-->
+         <div class="panel panel-default" id="panelDemo1">
+            <div class="panel-heading" ng-class="{'panel-heading-collapsed':panelDemo1}">Collapsible Panel
+               <paneltool tool-collapse="tool-collapse"></paneltool>
+            </div>
+            <div class="panel-wrapper" uib-collapse="panelDemo1">
+               <div class="panel-body">
+                  <p>Panel can be collapsed clicking on the chevron up/down icon on the top right corner</p>
+               </div>
+               <div class="panel-footer">Panel Footer</div>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+      <div class="col-lg-4">
+         <!-- START panel-->
+         <div class="panel panel-default" id="panelDemo3">
+            <div class="panel-heading" ng-class="{'panel-heading-collapsed':panelDemo3}">Initially collapsed Panel with Dismiss
+               <paneltool tool-collapse="tool-collapse" tool-dismiss="tool-dismiss" ng-init="panelDemo3=true"></paneltool>
+            </div>
+            <!-- .panel-wrapper is the element to be collapsed-->
+            <div class="panel-wrapper" uib-collapse="panelDemo3">
+               <div class="panel-body">
+                  <p>Initially collapsed panel uses <code>paneltool(tool-collapse, tool-dismiss, ng-init="panelDemo3=true")</code>
+                  </p>
+               </div>
+               <div class="panel-footer">Panel Footer</div>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+      <div class="col-lg-4">
+         <!-- START panel-->
+         <div class="panel panel-default" id="panelDemo2">
+            <div class="panel-heading">Dismissable Panel
+               <paneltool tool-dismiss="tool-dismiss"></paneltool>
+            </div>
+            <div class="panel-body">
+               <p>Panel can be dismissed by clicking on the cross icon icon on the top right corner</p>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+   </div>
+   <!-- END row-->
+   <h4 class="page-header">Panel Refresh</h4>
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-4">
+         <!-- START panel-->
+         <div class="panel panel-default" id="panelDemoRefresh1">
+            <div class="panel-heading">Standard Spinner
+               <paneltool tool-refresh="standard"></paneltool>
+            </div>
+            <div class="panel-body">
+               <p>Click on the refresh icon to see how it triggers a refresh-event while it shows a spinner</p>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+      <div class="col-lg-4">
+         <!-- START panel-->
+         <div class="panel panel-default" id="panelDemoRefresh2">
+            <div class="panel-heading">Custom Spinner
+               <paneltool tool-refresh="traditional"></paneltool>
+            </div>
+            <div class="panel-body">
+               <p>Click on the refresh icon to see how it triggers a refresh-event while it shows a spinner</p>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+      <div class="col-lg-4">
+         <!-- START panel-->
+         <div class="panel panel-default" id="panelDemoRefresh3">
+            <div class="panel-heading">Another Spinner
+               <paneltool tool-refresh="line back-and-forth grow"></paneltool>
+            </div>
+            <div class="panel-body">
+               <p>See the list of allowed spinner at the Spinners page. A real use example is at the chart page.</p>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+   </div>
+   <!-- END row-->
+   <h4 class="page-header">Auto Generated panels</h4>
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-4" ng-repeat="pan in panels">
+         <!-- START panel-->
+         <div class="panel panel-default" id="{{pan.id}}">
+            <div class="panel-heading">{{pan.title}}
+               <paneltool tool-refresh="standard" tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+            </div>
+            <div class="panel-wrapper" uib-collapse="{{pan.id}}">
+               <div class="panel-body">
+                  <p>{{pan.body}}</p>
+               </div>
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+   </div>
+</div>
+<h4 class="page-header">Panel Styles</h4>
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-4">
+      <!-- START panel-->
+      <div class="panel panel-default" id="panelDemo7">
+         <div class="panel-heading">Default Panel</div>
+         <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+         </div>
+         <div class="panel-footer">Panel Footer</div>
+      </div>
+      <!-- END panel-->
+   </div>
+   <div class="col-lg-4">
+      <!-- START panel-->
+      <div class="panel panel-primary" id="panelDemo8">
+         <div class="panel-heading">Primary Panel</div>
+         <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+         </div>
+         <div class="panel-footer">Panel Footer</div>
+      </div>
+      <!-- END panel-->
+   </div>
+   <div class="col-lg-4">
+      <!-- START panel-->
+      <div class="panel panel-success" id="panelDemo9">
+         <div class="panel-heading">Success Panel</div>
+         <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+         </div>
+         <div class="panel-footer">Panel Footer</div>
+      </div>
+      <!-- END panel-->
+   </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-4">
+      <!-- START panel-->
+      <div class="panel panel-info" id="panelDemo10">
+         <div class="panel-heading">Info Panel</div>
+         <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+         </div>
+         <div class="panel-footer">Panel Footer</div>
+      </div>
+      <!-- END panel-->
+   </div>
+   <div class="col-lg-4">
+      <!-- START panel-->
+      <div class="panel panel-warning" id="panelDemo11">
+         <div class="panel-heading">Warning Panel</div>
+         <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+         </div>
+         <div class="panel-footer">Panel Footer</div>
+      </div>
+      <!-- END panel-->
+   </div>
+   <div class="col-lg-4">
+      <!-- START panel-->
+      <div class="panel panel-danger" id="panelDemo12">
+         <div class="panel-heading">Danger Panel</div>
+         <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+         </div>
+         <div class="panel-footer">Panel Footer</div>
+      </div>
+      <!-- END panel-->
+   </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-12">
+      <!-- START panel-->
+      <div class="panel panel-default" id="panelDemo13">
+         <div class="panel-heading">Collapsible Accordion Panel Group</div>
+         <div class="panel-body">
+            <div class="checkbox c-checkbox">
+               <label>
+                  <input type="checkbox" ng-model="oneAtATime" />
+                  <span class="fa fa-check"></span>Open only one at a time</label>
+            </div>
+            <uib-accordion close-others="oneAtATime">
+               <div uib-accordion-group="uib-accordion-group" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                  <uib-accordion-heading>Accordion Heading #1</uib-accordion-heading>
+                  <p>In vitae porttitor eros. Vivamus et urna magna. Mauris a velit id neque dignissim congue. Phasellus ut neque sem, ac vestibulum tellus. Integer eu diam neque, quis euismod turpis.</p>
+               </div>
+               <div uib-accordion-group="uib-accordion-group">
+                  <uib-accordion-heading>Accordion Heading #2</uib-accordion-heading>
+                  <p>In vitae porttitor eros. Vivamus et urna magna. Sed euismod massa quis diam viverra eu consectetur elit imperdiet. Aenean rhoncus, est vel vestibulum tristique, ante lectus elementum augue, eu dictum turpis dui ut ipsum.</p>
+               </div>
+               <div uib-accordion-group="uib-accordion-group">
+                  <uib-accordion-heading>Accordion Heading #3</uib-accordion-heading>
+                  <p>In vitae porttitor eros. Vivamus et urna magna. In consequat massa eget dui ultrices sit amet auctor libero molestie. Vestibulum nec viverra libero.</p>
+               </div>
+            </uib-accordion>
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-6">
+      <!-- START panel-->
+      <div class="panel panel-default" id="panelDemo14">
+         <div class="panel-heading">Basic Tabs</div>
+         <div class="panel-body">
+            <uib-tabset>
+               <uib-tab heading="Home">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nul qui officia deserunt mollit anim id est laborum.</uib-tab>
+               <uib-tab heading="Profile">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat , sunt in culpa qui officia deserunt mollit anim id est laborum.</uib-tab>
+               <uib-tab heading="Messages">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</uib-tab>
+               <uib-tab heading="Settings">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</uib-tab>
+            </uib-tabset>
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+   <div class="col-lg-6">
+      <!-- START panel-->
+      <div class="panel panel-default" id="panelDemo15">
+         <div class="panel-heading">Pill Tabs</div>
+         <div class="panel-body">
+            <uib-tabset type="pills">
+               <uib-tab heading="Home">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nul qui officia deserunt mollit anim id est laborum.</uib-tab>
+               <uib-tab heading="Profile">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat , sunt in culpa qui officia deserunt mollit anim id est laborum.</uib-tab>
+               <uib-tab heading="Messages">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</uib-tab>
+               <uib-tab heading="Settings">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</uib-tab>
+            </uib-tabset>
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-4">
+      <div class="well">
+         <h4>Normal Well</h4>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+      </div>
+   </div>
+   <div class="col-lg-4">
+      <div class="well well-lg">
+         <h4>Large Well</h4>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+      </div>
+   </div>
+   <div class="col-lg-4">
+      <div class="well well-sm">
+         <h4>Small Well</h4>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+      </div>
+   </div>
+</div>
+<!-- END row-->
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-12">
+      <div class="jumbotron">
+         <h1>Jumbotron</h1>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing.</p>
+         <p><a class="btn btn-primary btn-lg" role="button">Learn more</a>
+         </p>
+      </div>
+   </div>
+</div>
+<!-- END row-->

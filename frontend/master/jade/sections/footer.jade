@@ -1,0 +1,15 @@
+// START FOOTER
+footer#footer
+  .container
+    .row
+      .col-sm-6
+        ul.footer-nav
+          li: a.scrollto(href='#header') Home
+          li: a.scrollto(href='#features') Features
+          li: a.scrollto(href='#plans') Plans
+          li: a.scrollto(href='#download') Download
+      .col-sm-6
+        // COPYRIGHT
+        - var copy = "Angle &copy; " + (new Date().getFullYear());
+        p.copyright!= copy
+// END FOOTER

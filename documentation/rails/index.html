@@ -1,0 +1,496 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle - Bootstrap Admin App + Ruby on Rails</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-07-25T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#layout" title="Layout">Layout</a></li>
+			<li><a href="#assets" title="Assets">Assets</a></li>
+			<li><a href="#bower" title="Bower">Bower</a></li>
+			<li><a href="#heroku" title="Heroku">Heroku</a></li>
+			<li><a href="#seed_project" title="Seed Project">Seed Project</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2015<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle</h1>
+	<h2>Bootstrap Admin App + Ruby on Rails</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/16/2015</li>
+	<li>latest update: 07/25/2015</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	This document aims to explain the best way to work with the product and its components.</div>
+<div>
+	&nbsp;</div>
+<div>
+	It assumes a minimum knowledge of Ruby and Ruby on Rails framework.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>
+	<li>
+		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>
+		Explore the sources for ideas and sample code.</li>
+	<li>
+		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>
+		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>
+		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="getting_started_starting_the_app">Starting the app</h4>
+	<div>
+		This project it ready to run on a local machine.</div>
+	<div>
+		Once you have Ruby and&nbsp;Ruby on Rails installed:</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		1- Open a terminal &nbsp;and go to folder <strong>backend-rails/Angle</strong></div>
+	<div>
+		2- Run the command <strong>bundle install</strong> to install necessary gems</div>
+	<div>
+		3- Run <strong>rake bower:install</strong> to install bower dependencies</div>
+	<div>
+		4- Run the command <strong>rails server</strong></div>
+	<div>
+		5- A new server will start listening at <strong>http://localhost:3000</strong> to show your app.</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	Before starting to customize the template, here are the project files organization structure:</div>
+<div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-plain linenums">
++Angle
+|   +app
+|   |   +assets
+|   |   |   +api
+|   |   |   +documentation
+|   |   |   +i18n
+|   |   |   +images
+|   |   |   |   +angle
+|   |   |   +javascripts
+|   |   |   |   +angle
+|   |   |   |       +custom
+|   |   |   |       +modules
+|   |   |   |           +demo
+|   |   |   +stylesheets
+|   |   |       +angle
+|   |   |           +app
+|   |   |           +bootstrap
+|   |   |           +themes
+|   |   +controllers
+|   |   +helpers
+|   |   +mailers
+|   |   +models
+|   |   +views
+|   |       +charts
+|   |       +dashboard
+|   |       +documentation
+|   |       +elements
+|   |       +extras
+|   |       +forms
+|   |       +layouts
+|   |       |   +partials
+|   |       +maps
+|   |       +multilevel
+|   |       +pages
+|   |       +tables
+|   |       +widgets
+|   +bin
+|   +config
+|   +db
+|   +lib
+|   +log
+|   +public
+|   +test
+|   +tmp
+|   +vendor
+|       +assets
+|           +components
+|           +images
+|           |   +datatable-bootstrap
+|           +javascripts
+|           |   +datatable-bootstrap
+|           |   +sparklines
+|           +stylesheets
+|               +datatable-bootstrap
+</pre>
+</div>
+</section>
+<section id="layout">
+	<div class="page-header"><h3>Layout</h3><hr class="notop"></div>
+<p>
+	The theme uses two layouts. One for the app view and another for pages (externals to the app)</p>
+<h4 id="layout_angle_app_views_layouts_applicationhtmlerb">Angle/app/views/layouts/application.html.erb</h4>
+<p>
+	This is the main layout using this markup</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+   &lt;meta charset=&quot;utf-8&quot;&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+   &lt;meta name=&quot;description&quot; content=&quot;Bootstrap Admin App + Ruby on Rails&quot;&gt;
+   &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, jquery, bootstrap, dashboard, admin&quot;&gt;
+   &lt;title&gt;Angle - Bootstrap Admin Template&lt;/title&gt;
+   &lt;!-- =============== VENDOR STYLES ===============--&gt;
+   &lt;%= stylesheet_link_tag &#39;base&#39; %&gt;
+   &lt;!-- =============== VIEW VENDOR STYLES ===============--&gt;
+   &lt;%= stylesheet_link_tag params[:controller] %&gt;
+   &lt;!-- =============== APP STYLES ===============--&gt;
+   &lt;%= stylesheet_link_tag &#39;application&#39;, media: &#39;all&#39;, id: &quot;maincss&quot; %&gt;
+   &lt;%= csrf_meta_tags %&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;div class=&quot;wrapper&quot;&gt;
+      &lt;!-- top navbar--&gt;
+      &lt;header class=&quot;topnavbar-wrapper&quot;&gt;
+         &lt;%= render partial: &quot;layouts/partials/topnavbar&quot; %&gt;
+      &lt;/header&gt;
+      &lt;!-- sidebar--&gt;
+      &lt;aside class=&quot;aside&quot;&gt;
+         &lt;%= render partial: &quot;layouts/partials/sidebar&quot; %&gt;
+      &lt;/aside&gt;
+      &lt;!-- offsidebar--&gt;
+      &lt;aside class=&quot;offsidebar&quot;&gt;
+         &lt;%= render partial: &quot;layouts/partials/offsidebar&quot; %&gt;
+      &lt;/aside&gt;
+      &lt;!-- Main section--&gt;
+      &lt;section&gt;
+         &lt;!-- Page content--&gt;
+         &lt;div class=&quot;content-wrapper&quot;&gt;
+            &lt;%= yield %&gt;
+         &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;!-- Page footer--&gt;
+      &lt;footer&gt;
+         &lt;%= render partial: &quot;layouts/partials/footer&quot; %&gt;
+      &lt;/footer&gt;
+   &lt;/div&gt;
+   &lt;!-- =============== VENDOR SCRIPTS ===============--&gt;
+   &lt;%= javascript_include_tag &#39;base&#39; %&gt;
+   &lt;!-- =============== VIEW VENDOR SCRIPTS ===============--&gt;
+   &lt;%= javascript_include_tag params[:controller] %&gt;
+   &lt;!-- =============== APP SCRIPTS ===============--&gt;
+   &lt;%= javascript_include_tag &#39;application&#39; %&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+<h4 id="layout_angle_app_views_layouts_pageshtmlerb">Angle/app/views/layouts/pages.html.erb</h4>
+<p>
+	This is the page layout.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+   &lt;meta charset=&quot;utf-8&quot;&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+   &lt;meta name=&quot;description&quot; content=&quot;Bootstrap Admin App + Ruby on Rails&quot;&gt;
+   &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, jquery, bootstrap, dashboard, admin&quot;&gt;
+   &lt;title&gt;Angle - Bootstrap Admin Template&lt;/title&gt;
+   &lt;!-- =============== VENDOR STYLES ===============--&gt;
+   &lt;%= stylesheet_link_tag &#39;base&#39; %&gt;
+   &lt;!-- =============== VIEW VENDOR STYLES ===============--&gt;
+   &lt;%= stylesheet_link_tag params[:controller] %&gt;
+   &lt;!-- =============== APP STYLES ===============--&gt;
+   &lt;%= stylesheet_link_tag &#39;application&#39;, media: &#39;all&#39;, id: &quot;maincss&quot; %&gt;
+
+   &lt;%= csrf_meta_tags %&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;div class=&quot;wrapper&quot;&gt;
+      &lt;%= yield %&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;p-lg text-center&quot;&gt;
+      &lt;span&gt;&amp;copy;&lt;/span&gt;
+      &lt;span&gt;2015&lt;/span&gt;
+      &lt;span&gt;-&lt;/span&gt;
+      &lt;span&gt;Angle&lt;/span&gt;
+      &lt;br&gt;
+      &lt;span&gt;Bootstrap Admin Template&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;!-- =============== VENDOR SCRIPTS ===============--&gt;
+   &lt;%= javascript_include_tag &#39;base&#39; %&gt;
+   &lt;!-- =============== VIEW VENDOR SCRIPTS ===============--&gt;
+   &lt;%= javascript_include_tag params[:controller] %&gt;
+   &lt;!-- =============== APP SCRIPTS ===============--&gt;
+   &lt;%= javascript_include_tag &#39;application&#39; %&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="assets">
+	<div class="page-header"><h3>Assets</h3><hr class="notop"></div>
+<h4 id="assets_stylesheets_and_scripts">Stylesheets and Scripts</h4>
+<p>
+	Here is how we manage assets per controller inclusion.<br>
+	Following what is defined in the main layout file application.html.erb</p>
+<div>
+	This requires the file <strong>base.css.scss</strong> that contains vendor styles necessary accros all application</div>
+<pre class="prettyprint lang-html linenums">
+   &lt;%= stylesheet_link_tag &#39;base&#39; %&gt;</pre>
+<div>
+	This requires the file <strong>[controller_name].css.scss</strong> that contains vendor styles&nbsp;for such controller</div>
+<pre class="prettyprint lang-html linenums">
+   &lt;%= stylesheet_link_tag params[:controller] %&gt;</pre>
+<div>
+	This requires the file <strong>application.css.scss</strong> that contains the application styles</div>
+<pre class="prettyprint lang-html linenums">
+   &lt;%= stylesheet_link_tag &#39;application&#39;, media: &#39;all&#39;, id: &quot;maincss&quot; %&gt;</pre>
+<div>
+	This requires the file <strong>base.js</strong> that contains vendor scripts necessary accros all application</div>
+<pre class="prettyprint lang-html linenums">
+   &lt;%= javascript_include_tag &#39;base&#39; %&gt;</pre>
+<div>
+	This requires the file <strong>[controller_name].js</strong> that contains vendor scripts for such controller</div>
+<pre class="prettyprint lang-html linenums">
+   &lt;%= javascript_include_tag params[:controller] %&gt;</pre>
+<div>
+	This requires the file<strong> application.js</strong> that contains the application scripts</div>
+<pre class="prettyprint lang-html linenums">
+   &lt;%= javascript_include_tag &#39;application&#39; %&gt;</pre>
+<p>
+	&nbsp;</p>
+<h4 id="assets_sass">SASS</h4>
+<p>
+	This projects also implements a SASS version (scss) of the theme.</p>
+<p>
+	All files are located under the folder <strong>backend-rails/Angle/app/assets/stylesheets/angle/</strong></p>
+<p>
+	It will compile the app styles with Bootstrap integrated. Remember that the less you change bootstrap, the easier will be to update it later.</p>
+<h4 id="assets_one_line_about_coffee">One line about coffee</h4>
+<p>
+	We don&#39;t use coffee scripts but this application is ready to use so you can create <strong>.coffee</strong> assets and they will compiled automatically.</p>
+</section>
+<section id="bower">
+	<div class="page-header"><h3>Bower</h3><hr class="notop"></div>
+<p>
+	Angle for Rails includes the gem bower-rails that add support to manage dependencies via Bower.</p>
+<p>
+	All dependencies are listed in file <strong>bower.json</strong> in the root folder of the Rails application.</p>
+<p>
+	Refer to the gem documentation to learn more about the the rake tasks supported: <a href="https://github.com/rharriso/bower-rails#rake-tasks">https://github.com/rharriso/bower-rails#rake-tasks</a></p>
+</section>
+<section id="heroku">
+	<div class="page-header"><h3>Heroku</h3><hr class="notop"></div>
+<p>
+	To deploy the project to <strong>Heroku </strong>you need an account first. Go here a create one&nbsp;<a href="http://heroku.com">heroku.com</a></p>
+<p>
+	Heroku explains very well the necessary steps to deploy a Ruby application <a href="https://devcenter.heroku.com/articles/getting-started-with-rails4">here</a></p>
+<p>
+	In short,</p>
+<p>
+	1- Download and install the <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>&nbsp;for your platform</p>
+<p>
+	2- Open a terminal and go to folder <strong>backend-rails/Angle</strong></p>
+<p>
+	3- Edit the file <strong>Gemfile</strong> to enable postgresql like follows</p>
+<pre class="prettyprint lang-js linenums">
+# HEROKU doesn&#39;t support sqlite3. 
+# Comment this gem
+# gem &#39;sqlite3&#39;
+# and uncomment the following
+gem &#39;pg&#39;
+gem &#39;thin&#39;</pre>
+<div>
+	4- Install bundle packages</div>
+<pre class="prettyprint lang-plain linenums">
+bundle install</pre>
+<div>
+	5- Init a new git repository</div>
+<pre class="prettyprint lang-plain linenums">
+git init
+</pre>
+<div>
+	<div>
+		&nbsp;</div>
+	<div>
+		6- Log in to Heroku with your creadentials&nbsp;</div>
+	<pre class="prettyprint lang-plain linenums">
+heroku login</pre>
+	<div>
+		7- Create your Heroku application</div>
+	<pre class="prettyprint lang-plain linenums">
+heroku create myAppName</pre>
+	<div>
+		8- Add and commit source files with the following commands</div>
+	<div>
+		<pre class="prettyprint lang-plain linenums">
+git add .
+git commit -m &quot;Initialize repository&quot;</pre>
+	</div>
+	<div>
+		&nbsp;</div>
+</div>
+<div>
+	8- Push changes to Heroku</div>
+<pre class="prettyprint lang-plain linenums">
+git push heroku master</pre>
+<div>
+	<strong>Done</strong></div>
+<div>
+	If everything goes fine, you can run <strong>heroku open</strong> and the application will start in your favourite browser</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed Project</h3><hr class="notop"></div>
+<div>
+	This project is an application skeleton. You can use it to quickly bootstrap your Rails webapp projects and dev environment for these projects.&nbsp;</div>
+<div>
+	The seed app doesn&#39;t do much and has most of the feature removed so you can add theme as per your needs just following the demo app examples.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The angular seed project includes the following features</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Modernizr</div>
+<div>
+	- Icons (FontAwesome and SimpleLine)</div>
+<div>
+	- Translation</div>
+<div>
+	- Top navbar search form</div>
+<div>
+	- Themes</div>
+<div>
+	- One view with its own sidebar entry and controller/route</div>
+<div>
+	- Empty offsidebar (left sidebar)</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>

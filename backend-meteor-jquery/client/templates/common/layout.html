@@ -1,0 +1,20 @@
+<template name="layout">
+      <div class="wrapper">
+         <!-- top navbar-->
+         {{> topnavbar }}
+         <!-- sidebar-->
+         {{> sidebar }}
+         <!-- offsidebar-->
+         {{> offsidebar}}
+         <!-- Main section-->
+         <section>
+            <!-- Page content-->
+            <div class="content-wrapper">
+               {{> yield }}
+            </div>
+         </section>
+         <!-- Page footer-->
+         {{> footer }}
+      </div>
+      {{> yield region="bodyChild" }}
+</template>

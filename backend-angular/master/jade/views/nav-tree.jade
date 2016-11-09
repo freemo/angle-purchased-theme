@@ -1,0 +1,31 @@
+h3 Nav-Tree
+  small An AngularJS directive that creates a Tree based on a Bootstrap "nav" list.
+
+.container-fluid(ng-controller="AbnTestController as tree")
+  .alert.alert-info {{ tree.output }}
+  .row
+    .col-lg-3.col-sm-6.col-lg-push-3.col-sm-push-6
+      div.well.wd-wide
+        span(ng-if='tree.doing_async') ...loading...
+        abn-tree(tree-data='tree.my_data', tree-control='tree.my_tree', on-select='tree.my_tree_handler(branch)', expand-level='2', initial-selection='Granny Smith')
+    .col-lg-3.col-sm-6.col-lg-pull-3.col-sm-pull-6
+      button.btn.btn-block.btn-default.btn-sm(ng-click='tree.try_changing_the_tree_data()') Toggle Tree Data
+      button.btn.btn-block.btn-default.btn-sm(ng-click='tree.try_async_load()') Tree Data Asynchronously (Json)
+      hr
+      h5 Tree Control API:
+      br
+      .btn-group.btn-group-justified.mb
+        a.btn.btn-default.btn-sm.mb(ng-click='tree.my_tree.select_first_branch()') First Branch
+        a.btn.btn-default.btn-sm(ng-click='tree.try_adding_a_branch()') Add Branch
+      .btn-group.btn-group-justified.mb
+        a.btn.btn-default.btn-sm(ng-click='tree.my_tree.select_next_sibling()') Next Sibling
+        a.btn.btn-default.btn-sm(ng-click='tree.my_tree.select_prev_sibling()') Prev Sibling
+      .btn-group.btn-group-justified.mb
+        a.btn.btn-default.btn-sm(ng-click='tree.my_tree.select_next_branch()') Next Branch
+        a.btn.btn-default.btn-sm(ng-click='tree.my_tree.select_prev_branch()') Prev Branch
+      .btn-group.btn-group-justified.mb
+        a.btn.btn-default.btn-sm(ng-click='tree.my_tree.expand_branch()') Expand
+        a.btn.btn-default.btn-sm.mb(ng-click='tree.my_tree.select_parent_branch()') Parent
+      .btn-group.btn-group-justified.mb
+        a.btn.btn-default.btn-sm(ng-click='tree.my_tree.expand_all()') Expand All
+        a.btn.btn-default.btn-sm(ng-click='tree.my_tree.collapse_all()') Collapse All

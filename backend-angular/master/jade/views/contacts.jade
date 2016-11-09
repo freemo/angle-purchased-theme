@@ -1,0 +1,139 @@
+.pull-right
+    .btn-group(uib-dropdown='dropdown')
+        button.btn.btn-link(uib-dropdown-toggle=""): em.fa.fa-ellipsis-v.fa-lg
+        ul.dropdown-menu.dropdown-menu-right.animated.fadeInLeft(role='menu')
+            li: a(href='')
+                em.fa.fa-fw.fa-plus.mr
+                span New contact
+            li: a(href='')
+                em.fa.fa-fw.fa-mail-forward.mr
+                span Import contact
+            li: a(href='')
+                em.fa.fa-fw.fa-mail-reply.mr
+                span Export contacts
+
+h3 Contacts
+
+.row
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact1=!favContact1").pull-right.text-muted: em.fa(ng-class="favContact1 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/02.jpg", alt="Contact")
+                h4 Audrey Hunt
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Send message
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact2=!favContact2", ng-init="favContact2=true").pull-right.text-muted: em.fa(ng-class="favContact2 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/03.jpg", alt="Contact")
+                h4 Leonard Price
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Send message
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact3=!favContact3").pull-right.text-muted: em.fa(ng-class="favContact3 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/04.jpg", alt="Contact")
+                h4 Jamie Stephens
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Send message
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+
+.row
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact4=!favContact4").pull-right.text-muted: em.fa(ng-class="favContact4 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/05.jpg", alt="Contact")
+                h4 Tara Nelson
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Send message
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact5=!favContact5", ng-init="favContact5=true").pull-right.text-muted: em.fa(ng-class="favContact5 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/06.jpg", alt="Contact")
+                h4 Constance Cook
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary.mr-sm Send message
+                    a(href="").btn.btn-xs.btn-primary Call
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact6=!favContact6", ng-init="favContact6=true").pull-right.text-muted: em.fa(ng-class="favContact6 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/07.jpg", alt="Contact")
+                h4 Laura Palmr
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Send message
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+
+.row
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact7=!favContact7").pull-right.text-muted: em.fa(ng-class="favContact7 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/08.jpg", alt="Contact")
+                h4 Audrey Hunt
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Call
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact8=!favContact8").pull-right.text-muted: em.fa(ng-class="favContact8 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/09.jpg", alt="Contact")
+                h4 Leslie Mckinney
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Send message
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View
+    .col-md-4
+        .panel.panel-default
+            .panel-heading
+                a(href="", ng-click="favContact9=!favContact9").pull-right.text-muted: em.fa(ng-class="favContact9 ? 'fa-star text-warning' : 'fa-star-o'")
+            .panel-body.text-center
+                img.center-block.img-responsive.img-circle.thumb64(src="app/img/user/04.jpg", alt="Contact")
+                h4 Brian Mills
+                p Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!
+            .panel-footer.clearfix
+                .pull-left
+                    a(href="").btn.btn-xs.btn-primary Send message
+                .pull-right
+                    a(href="").btn.btn-xs.btn-default View

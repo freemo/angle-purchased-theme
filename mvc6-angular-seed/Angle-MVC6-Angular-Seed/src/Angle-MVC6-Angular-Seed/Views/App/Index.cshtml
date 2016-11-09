@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "App";
+}
+<!-- top navbar-->
+<header ng-include="'/Partials/TopNavbar'" class="topnavbar-wrapper"></header>
+<!-- sidebar-->
+<aside ng-include="'/Partials/Sidebar'" class="aside"></aside>
+<!-- offsidebar-->
+<aside ng-include="'/Partials/Offsidebar'" class="offsidebar hide"></aside>
+<!-- Main section-->
+<section ui-view="content">
+    <!-- Page content-->
+</section>
+<!-- Page footer-->
+<footer ng-include="'/Partials/Footer'"></footer>

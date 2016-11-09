@@ -1,0 +1,89 @@
+h3 
+  .pull-right.text-center
+    div(sparkline="", data-bar-color="#cfdbe2", data-height="20", data-bar-width="3", data-bar-spacing="2", values="1,0,4,9,5,7,8,9,5,7,8,4,7")
+  | Flot charts
+
+.container-fluid(ng-controller="FlotChartController as chart")
+  // START row
+  .row
+    .col-lg-6
+      #panelChart1.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss, tool-refresh="traditional")
+          .panel-title Area
+        .panel-wrapper(uib-collapse="panelChart1")
+          .panel-body
+            flot(dataset='chart.areaData', options='chart.areaOptions', height="300px")
+    .col-lg-6
+      #panelChart9.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss, tool-refresh="traditional")
+          .panel-title Area Spline
+        .panel-wrapper(uib-collapse="panelChart9")
+          .panel-body
+            flot(dataset='chart.splineData', options='chart.splineOptions', height="300px")
+  // END row
+
+  // START row
+  .row
+    .col-lg-6
+      #panelChart2.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss)
+          .panel-title Bar
+        .panel-wrapper(uib-collapse="panelChart2")
+          .panel-body
+            flot(dataset='chart.barData', options='chart.barOptions', height="300px")
+    .col-lg-6
+      #panelChart3.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss)
+          .panel-title Bar - Stacked
+        .panel-wrapper(uib-collapse="panelChart3")
+          .panel-body
+            .indicator.show
+              span.spinner
+            flot(dataset='chart.barStackeData', options='chart.barStackedOptions', height="300px")
+  // END row
+  // START row
+  .row
+    .col-lg-12
+      #panelChart4.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss)
+          .panel-title Real Time
+        .panel-wrapper(uib-collapse="panelChart4")
+          .panel-body
+            flot(dataset='chart.realTimeData', options='chart.realTimeOptions', height="300px")
+  // END row
+  // START row
+  .row
+    .col-lg-12
+      #panelChart4.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss)
+          .panel-title Line
+        .panel-wrapper(uib-collapse="panelChart4")
+          .panel-body
+            flot(dataset='chart.lineData', options='chart.lineOptions', height="300px")
+  // END row
+  // START row
+  .row
+    .col-md-6
+      #panelChart5.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss)
+          .panel-title Pie
+        .panel-wrapper(uib-collapse="panelChart5")
+          .panel-body
+            flot(dataset='chart.pieData', options='chart.pieOptions', height="300px")
+    .col-md-6
+      #panelChart6.panel.panel-default
+        .panel-heading
+          paneltool(tool-collapse, tool-dismiss)
+          .panel-title Donut 
+            small (loaded from json)
+        .panel-wrapper(uib-collapse="panelChart6")
+          .panel-body
+            flot(dataset='chart.donutData', options='chart.donutOptions', height="300px")
+  // END row

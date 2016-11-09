@@ -1,0 +1,217 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'followers.html'
+
+block content
+    h3 Followers
+
+    .row
+
+        // Aside panel
+        .col-lg-3.col-md-4
+            .panel.b.text-center
+                .panel-body
+                    p.h4.text-bold.mb0 This is you
+                .panel-body
+                    img.img-circle.thumb64(src="img/user/02.jpg")
+                    p.h4.text-bold.mb0 Todd Evans
+                    p Rome, Italy
+                    p Joined on Feb, 2015
+                .panel-body.bt
+                    .row
+                        .col-xs-4.br
+                            em.fa.fa-facebook.fa-fw.text-primary
+                            strong +700
+                        .col-xs-4.br
+                            em.fa.fa-twitter.fa-fw.text-info
+                            strong +300
+                        .col-xs-4
+                            em.fa.fa-heart.fa-fw.text-danger
+                            strong +150
+            .panel.b
+                .panel-heading
+                    h5 Who may interest you
+                .panel-body
+                    .media
+                        .media-left.media-middle
+                            a(href='#')
+                                img.media-object.img-circle.img-thumbnail.thumb48(src='img/user/04.jpg', alt='Contact')
+                        .media-body.pt-sm
+                            .pull-right: button(type="button").btn.btn-info.btn-sm Follow
+                            .text-bold Floyd Ortiz
+                                .text-sm.text-muted 125k followers
+                    .media
+                        .media-left.media-middle
+                            a(href='#')
+                                img.media-object.img-circle.img-thumbnail.thumb48(src='img/user/05.jpg', alt='Contact')
+                        .media-body.pt-sm
+                            .pull-right: button(type="button").btn.btn-info.btn-sm Follow
+                            .text-bold Luis Vasquez
+                                .text-sm.text-muted +30k followers
+                    .media
+                        .media-left.media-middle
+                            a(href='#')
+                                img.media-object.img-circle.img-thumbnail.thumb48(src='img/user/06.jpg', alt='Contact')
+                        .media-body.pt-sm
+                            .pull-right: button(type="button").btn.btn-info.btn-sm Follow
+                            .text-bold Duane Mckinney
+                                .text-sm.text-muted +100k followers
+
+                .panel-body
+                    a(href="").link-unstyled.text-muted Find more friends
+
+            small.text-muted Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        // end Aside panel
+
+        // Main panels
+        .col-lg-9.col-md-8
+            .row
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/01.jpg")
+                            p.h4.text-bold.mb0 Savannah Ramirez
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/03.jpg")
+                            p.h4.text-bold.mb0 Warren Watts
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/04.jpg")
+                            p.h4.text-bold.mb0 Charlie Price
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/05.jpg")
+                            p.h4.text-bold.mb0 Vickie Alvarez
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/06.jpg")
+                            p.h4.text-bold.mb0 Marjorie Miller
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/07.jpg")
+                            p.h4.text-bold.mb0 Tracy Reynolds
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/08.jpg")
+                            p.h4.text-bold.mb0 Lori Lewis
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+                .col-lg-4.col-md-6
+                    .panel.b.text-center
+                        .panel-body
+                            img.img-circle.thumb64(src="img/user/09.jpg")
+                            p.h4.text-bold.mb0 Judy Shelton
+                            p Rome, Italy
+                            button(type="button").btn.btn-success.btn-oval Follow
+                        .panel-body.bt
+                            .row
+                                .col-xs-4.br
+                                    em.fa.fa-facebook.fa-fw.text-primary
+                                    strong +700
+                                .col-xs-4.br
+                                    em.fa.fa-twitter.fa-fw.text-info
+                                    strong +300
+                                .col-xs-4
+                                    em.fa.fa-heart.fa-fw.text-danger
+                                    strong +150
+
+        // end Main panels

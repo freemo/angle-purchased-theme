@@ -1,0 +1,82 @@
+h3 Angular Carousel
+  
+.container-fluid(ng-controller="AngularCarouselController as caro")
+  div
+    h3 Buffered ngRepeat demo
+    .carousel-demo
+      .text-left index : 
+      input.form-control.input-sm.wd-sm.mb(type='number', ng-model='caro.carouselIndex')
+      ul.list-unstyled.carousel1(rn-carousel='', rn-carousel-controls='', rn-carousel-index='caro.carouselIndex', rn-carousel-buffered='')
+        li(ng-repeat='slide in caro.slides track by slide.id', ng-class="'id-' + slide.id")
+          .bgimage(ng-style="{'background-image': 'url(' + slide.img + ')'}")
+            | # {{ slide.id }}
+  
+  div
+    h3 buffered ngRepeat with auto-slide(pause on hover) and builtin indicators 
+    .carousel-demo
+      .text-left index: 
+      input.form-control.input-sm.wd-sm.mb(type='number', ng-model='caro.carouselIndex2')
+      ul.list-unstyled.carousel2(rn-carousel='', rn-carousel-index='caro.carouselIndex2', rn-carousel-auto-slide='', rn-carousel-pause-on-hover='', rn-carousel-buffered='')
+        li(ng-repeat='slide in caro.slides2 track by slide.id', ng-class="'id-' + slide.id")
+          .bgimage(ng-style="{'background-image': 'url(' + slide.img + ')'}")
+            | # {{ slide.id }}
+      div(rn-carousel-indicators='', ng-if='caro.slides2.length > 1', slides='caro.slides2', rn-carousel-index='caro.carouselIndex2')
+  br
+  div
+    h3 buffered ngRepeat and custom indicators 
+    .carousel-demo
+      ul.list-unstyled.carousel2(rn-carousel='', rn-carousel-index='caro.carouselIndex22', rn-carousel-auto-slide='', rn-carousel-buffered='')
+        li(ng-repeat='slide in caro.slides2 track by slide.id', ng-class="'id-' + slide.id")
+          .bgimage(ng-style="{'background-image': 'url(' + slide.img + ')'}")
+            | # {{ slide.id }}
+      .rn-carousel-indicator.custom-indicator
+        span(ng-repeat='slide in caro.slides2', ng-class='{active: $index==$parent.caro.carouselIndex22}', ng-click='$parent.caro.carouselIndex22 = $index') &starf;
+  br
+  div
+    h3 buffered ngRepeat with custom transition
+    .carousel-demo.carousel-demo-3d
+      ul.list-unstyled.carousel3(rn-carousel='', rn-carousel-index='caro.carouselIndex3', rn-carousel-transition='hexagon', rn-carousel-buffered='')
+        li(ng-repeat='slide in caro.slides3 track by slide.id')
+          .bgimage(ng-style="{'background-image': 'url(' + slide.img + ')'}")
+            | # {{ slide.id }}
+  br
+  div
+    h3 Custom templates without ng-repeat and auto-slide
+    .carousel-demo
+      ul.list-unstyled.carousel5(rn-carousel='', rn-carousel-index='3', rn-carousel-auto-slide='3')
+        li.bg-info Slide 1
+        li.bg-purple Slide 2
+        li.bg-primary Slide 3
+        li.bg-danger Slide 4
+        li.bg-warning Slide 5
+        li.bg-yellow Slide 6
+        li.bg-success Slide 7
+        li.bg-green Slide 8
+        li.bg-pink Slide 9
+  br
+  div
+    h3 Lockable carousel
+    .carousel-demo
+      .checkbox.c-checkbox
+        label
+          input(type='checkbox', ng-model='isLocked')
+          span.fa.fa-check
+          | Lock the carousel
+      ul.list-unstyled.carousel5(rn-carousel='', rn-carousel-locked='isLocked')
+        li(ng-repeat='slide in caro.slides3 track by slide.id')
+          .bgimage(ng-style="{'background-image': 'url(' + slide.img + ')'}") 
+            | # {{ slide.id }}
+  br
+  div
+    h3 Add/Remove items in the collection
+    .carousel-demo
+      .mb
+        button.btn.btn-default(ng-click="caro.addSlide('head')") Add at beginning
+        button.btn.btn-default(ng-click="caro.addSlide('tail')") Add at end
+      
+      ul.list-unstyled.carousel5(rn-carousel='', rn-carousel-index='caro.carouselIndex6', rn-carousel-deep-watch='', rn-carousel-buffered='')
+        li(ng-repeat='slide in caro.slides6 track by slide.id')
+          .bgimage(ng-style="{'background-image': 'url(' + slide.img + ')'}")
+            | # {{ slide.id }}
+      div(rn-carousel-indicators='', ng-if='caro.slides6.length > 1', slides='caro.slides6', rn-carousel-index='caro.carouselIndex6')
+

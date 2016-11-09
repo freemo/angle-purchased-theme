@@ -1,0 +1,37 @@
+/**
+ * Redefine font-face with font-url() , this function is provided by sass-rails.
+ */
+
+/* FontAwesome */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: font-url('fontawesome/fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: font-url('fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), font-url('fontawesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), font-url('fontawesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), font-url('fontawesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Simple-Line-Icons */
+
+@font-face {
+  font-family: 'Simple-Line-Icons';
+  src:font-url('simple-line-icons/fonts/Simple-Line-Icons.eot');
+  src:font-url('simple-line-icons/fonts/Simple-Line-Icons.eot?#iefix') format('embedded-opentype'),
+    font-url('simple-line-icons/fonts/Simple-Line-Icons.woff') format('woff'),
+    font-url('simple-line-icons/fonts/Simple-Line-Icons.ttf') format('truetype'),
+    font-url('simple-line-icons/fonts/Simple-Line-Icons.svg#Simple-Line-Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Weather Icons */
+
+@font-face {
+  font-family: 'weathericons';
+  src: font-url('weather-icons/font/weathericons-regular-webfont.eot');
+  src: font-url('weather-icons/font/weathericons-regular-webfont.eot?#iefix') format('embedded-opentype'), font-url('weather-icons/font/weathericons-regular-webfont.woff') format('woff'), font-url('weather-icons/font/weathericons-regular-webfont.ttf') format('truetype'), font-url('weather-icons/font/weathericons-regular-webfont.svg#weathericons-regular-webfontRg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

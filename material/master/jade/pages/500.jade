@@ -1,0 +1,25 @@
+.abs-center.wd-xl
+    // START panel
+    .text-center.mb-xl
+        .mb-lg
+            em.fa.fa-wrench.fa-5x.text-muted
+        .text-lg.mb-lg 500
+        p.lead.m0 Oh! Something went wrong :(
+
+        p Don't worry, we're now checking this.
+        p In the meantime, please try one of those links below or come back in a moment
+
+    ul.list-inline.text-center.text-sm.mb-xl
+        li: a.text-muted(href="", ui-sref="app.dashboard") Go to App
+        li.text-muted |
+        li: a.text-muted(href="", ui-sref="page.login") Login
+        li.text-muted |
+        li: a.text-muted(href="", ui-sref="page.register") Register
+
+    .p-lg.text-center
+        span &copy;
+        span(ng-bind="app.year")
+        span  -
+        span(ng-bind="app.name")
+        br
+        span(ng-bind="app.description")

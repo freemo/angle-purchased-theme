@@ -1,0 +1,324 @@
+mixin dropdown_button(type)
+  // START button group
+  .btn-group.mb-sm(uib-dropdown='dropdown')
+    button.btn.dropdown-toggle(type='button', ng-disabled='disabled', class="btn-"+type, uib-dropdown-toggle="")
+      = type
+      span.caret
+    ul.dropdown-menu(role='menu')
+      li
+        a(href='#') Action
+      li
+        a(href='#') Another action
+      li
+        a(href='#') Something else here
+      li.divider
+      li
+        a(href='#') Separated link
+  // END button group
+
+mixin dropdown_split(type)
+  // START button group
+  .btn-group(uib-dropdown='dropdown')
+    button.btn(type='button', class="btn-"+type) Action
+    button.btn.dropdown-toggle(type='button', class="btn-"+type, uib-dropdown-toggle="")
+      span.caret
+      span.sr-only= type
+    ul.dropdown-menu(role='menu')
+      li
+        a(href='#') Action
+      li
+        a(href='#') Another action
+      li
+        a(href='#') Something else here
+      li.divider
+      li
+        a(href='#') Separated link
+  // END button group
+
+h3 Buttons
+// START row
+.row
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button colors
+      .panel-body
+        button.mb-sm.btn.btn-default(type='button') Default
+        button.mb-sm.btn.btn-primary(type='button') Primary
+        button.mb-sm.btn.btn-success(type='button') Success
+        button.mb-sm.btn.btn-info(type='button') Info
+        button.mb-sm.btn.btn-warning(type='button') Warning
+        button.mb-sm.btn.btn-danger(type='button') Danger
+        button.mb-sm.btn.btn-inverse(type='button') Inverse
+        button.mb-sm.btn.btn-green(type='button') Green
+        button.mb-sm.btn.btn-purple(type='button') Purple
+        button.mb-sm.btn.btn-pink(type='button') Pink
+        br
+        br
+        a(href="#").btn.btn-link Button Link
+        button(type='button').btn.btn-default
+          strong button tag
+        | 
+        a(href="#").btn.btn-default
+          strong anchor tag
+    // END panel
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button Labeled
+      .panel-body
+        // Success button with label
+        button.btn.btn-labeled.btn-success(type='button')
+          span.btn-label
+            i.fa.fa-check
+          | Success
+        // Danger button with label
+        button.btn.btn-labeled.btn-danger(type='button')
+          span.btn-label
+            i.fa.fa-times
+          | Danger
+        // Info button with label
+        button.btn.btn-labeled.btn-info(type='button')
+          span.btn-label
+            i.fa.fa-exclamation
+          | Info
+        // Warning button with label
+        button.btn.btn-labeled.btn-warning(type='button')
+          span.btn-label
+            i.fa.fa-warning
+          | Warning
+        br
+        br
+        // Standard button with label
+        button.btn.btn-labeled.btn-default(type='button')
+          span.btn-label
+            i.fa.fa-arrow-left
+          | Left
+        // Standard button with label on the right side
+        button.btn.btn-labeled.btn-default(type='button')
+          | Right
+          span.btn-label.btn-label-right
+            i.fa.fa-arrow-right
+    // END panel
+// END row
+// START row
+.row
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button sizing
+      .panel-body
+        .row
+          .col-lg-6
+            p
+              button.btn.btn-primary.btn-lg(type='button') Large button
+              button.btn.btn-default.btn-lg(type='button') Large button
+            p
+              button.btn.btn-primary(type='button') Default button
+              button.btn.btn-default(type='button') Default button
+          .col-lg-6
+            p
+              button.btn.btn-primary.btn-sm(type='button') Small button
+              button.btn.btn-default.btn-sm(type='button') Small button
+            p
+              button.btn.btn-primary.btn-xs(type='button') Extra small button
+              button.btn.btn-default.btn-xs(type='button') Extra small button
+    // END panel
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button group
+      .panel-body
+        p
+        .btn-group
+          button.btn.btn-default(type='button') Left
+          button.btn.btn-default(type='button') Middle
+          button.btn.btn-default(type='button') Right
+        p
+        p
+        .btn-group
+          button.btn.btn-default(type='button') 1
+          button.btn.btn-default(type='button') 2
+          button.btn.btn-default(type='button') 3
+          button.btn.btn-default(type='button') 4
+        .btn-group
+          button.btn.btn-default(type='button') 5
+          button.btn.btn-default(type='button') 6
+          button.btn.btn-default(type='button') 7
+        .btn-group
+          button.btn.btn-default(type='button') 8
+    // END panel
+// END row
+// START panel
+.panel.panel-default
+  .panel-heading
+    h3.panel-title Outline Buttons
+  .panel-body
+    button.mb-sm.btn.btn-default.btn-outline(type='button') Default
+    button.mb-sm.btn.btn-primary.btn-outline(type='button') Primary
+    button.mb-sm.btn.btn-success.btn-outline(type='button') Success
+    button.mb-sm.btn.btn-info.btn-outline(type='button') Info
+    button.mb-sm.btn.btn-warning.btn-outline(type='button') Warning
+    button.mb-sm.btn.btn-danger.btn-outline(type='button') Danger
+    button.mb-sm.btn.btn-inverse.btn-outline(type='button') Inverse
+    button.mb-sm.btn.btn-green.btn-outline(type='button') Green
+    button.mb-sm.btn.btn-purple.btn-outline(type='button') Purple
+    button.mb-sm.btn.btn-pink.btn-outline(type='button') Pink
+    br
+    br
+    button.mb-sm.btn-lg.btn.btn-primary.btn-outline(type='button') Outline Large
+    button.mb-sm.btn-sm.btn.btn-primary.btn-outline(type='button') Outline Small
+    button.mb-sm.btn-xs.btn.btn-primary.btn-outline(type='button') Outline xSmall
+// END panel
+
+// START row
+.row
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button Pills
+      .panel-body
+        p Pill left
+        p
+          button.btn.btn-pill-left.btn-default(type='button') Default
+          button.btn.btn-pill-left.btn-primary(type='button') Primary
+          button.btn.btn-pill-left.btn-success(type='button') Success
+          button.btn.btn-pill-left.btn-info(type='button') Info
+          button.btn.btn-pill-left.btn-warning(type='button') Warning
+          button.btn.btn-pill-left.btn-danger(type='button') Danger
+          button.btn.btn-pill-left.btn-inverse(type='button') Inverse
+
+        p Pill right
+        p
+          button.btn.btn-pill-right.btn-default(type='button') Default
+          button.btn.btn-pill-right.btn-primary(type='button') Primary
+          button.btn.btn-pill-right.btn-success(type='button') Success
+          button.btn.btn-pill-right.btn-info(type='button') Info
+          button.btn.btn-pill-right.btn-warning(type='button') Warning
+          button.btn.btn-pill-right.btn-danger(type='button') Danger
+          button.btn.btn-pill-right.btn-inverse(type='button') Inverse
+
+    // END panel
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button Oval
+      .panel-body
+        button.btn.btn-oval.btn-default(type='button') Default
+        button.btn.btn-oval.btn-primary(type='button') Primary
+        button.btn.btn-oval.btn-success(type='button') Success
+        button.btn.btn-oval.btn-info(type='button') Info
+        button.btn.btn-oval.btn-warning(type='button') Warning
+        button.btn.btn-oval.btn-danger(type='button') Danger
+        button.btn.btn-oval.btn-inverse(type='button') Inverse
+    // END panel
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button Square
+      .panel-body
+        button.btn.btn-square.btn-default(type='button') Default
+        button.btn.btn-square.btn-primary(type='button') Primary
+        button.btn.btn-square.btn-success(type='button') Success
+        button.btn.btn-square.btn-info(type='button') Info
+        button.btn.btn-square.btn-warning(type='button') Warning
+        button.btn.btn-square.btn-danger(type='button') Danger
+        button.btn.btn-square.btn-inverse(type='button') Inverse
+    // END panel
+// END row
+
+// START row
+.row
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Button dropdown
+      .panel-body
+        +dropdown_button('default')
+        +dropdown_button('primary')
+        +dropdown_button('success')
+        +dropdown_button('info')
+        +dropdown_button('warning')
+        +dropdown_button('danger')
+        +dropdown_button('inverse')
+    // END panel
+
+  .col-md-6
+    // START panel
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title.ellipsis Split button dropdown
+      .panel-body
+        +dropdown_split('default')
+        +dropdown_split('primary')
+        +dropdown_split('success')
+        +dropdown_split('info')
+        +dropdown_split('warning')
+        +dropdown_split('danger')
+        +dropdown_split('inverse')
+    // END panel
+// END row
+
+// START panel
+.panel.panel-default
+  .panel-heading
+    h3.panel-title Button actions
+  .panel-body
+    // START row
+    .row(ng-controller='ButtonsCtrl as btn')
+      .col-lg-4
+        h4 Single toggle
+        pre {{btn.singleModel}}
+        button.btn.btn-primary(type='button', ng-model='btn.singleModel', uib-btn-checkbox='btn-checkbox', btn-checkbox-true='1', btn-checkbox-false='0')
+          | Single Toggle
+      .col-lg-4
+        h4 Checkbox
+        pre {{btn.checkModel}}
+        .btn-group
+          label.btn.btn-primary(ng-model='btn.checkModel.left', uib-btn-checkbox='btn-checkbox') Left
+          label.btn.btn-primary(ng-model='btn.checkModel.middle', uib-btn-checkbox='btn-checkbox') Middle
+          label.btn.btn-primary(ng-model='btn.checkModel.right', uib-btn-checkbox='btn-checkbox') Right
+      .col-lg-4
+        h4 Radio &amp; Uncheckable Radio
+        pre {{btn.radioModel || 'null'}}
+        .btn-group
+          label.btn.btn-primary(ng-model='btn.radioModel', uib-btn-radio="'Left'") Left
+          label.btn.btn-primary(ng-model='btn.radioModel', uib-btn-radio="'Middle'") Middle
+          label.btn.btn-primary(ng-model='btn.radioModel', uib-btn-radio="'Right'") Right
+        .btn-group
+          label.btn.btn-success(ng-model='btn.radioModel', uib-btn-radio="'Left'", uncheckable='uncheckable') Left
+          label.btn.btn-success(ng-model='btn.radioModel', uib-btn-radio="'Middle'", uncheckable='uncheckable') Middle
+          label.btn.btn-success(ng-model='btn.radioModel', uib-btn-radio="'Right'", uncheckable='uncheckable') Right
+
+
+// START panel
+.panel.panel-default
+  .panel-heading
+    h3.panel-title Pagination
+  .panel-body
+    // START row
+    .row(ng-controller='PaginationDemoCtrl as pag')
+      .col-lg-6
+        div
+          h4 Default
+          div(uib-pagination, total-items='pag.totalItems', ng-model='pag.currentPage', ng-change='pag.pageChanged()')
+          div(uib-pagination, direction-links='false', total-items='pag.totalItems', ng-model='pag.currentPage', num-pages='pag.smallnumPages')
+          pre The selected page no: {{pag.currentPage}}
+          button.btn.btn-info(ng-click='pag.setPage(3)') Set current page to: 3
+      .col-lg-6
+          h4 Pager
+          uib-pager(total-items='pag.totalItems', ng-model='pag.currentPage')
+          hr
+          h4 Limit the maximum visible buttons
+          .pagination-sm(uib-pagination, total-items='pag.bigTotalItems', ng-model='pag.bigCurrentPage', max-size='pag.maxSize', boundary-links='true')
+          .pagination-sm(uib-pagination, total-items='pag.bigTotalItems', ng-model='pag.bigCurrentPage', max-size='pag.maxSize', boundary-links='true', rotate='false', num-pages='pag.numPages')
+          pre Page: {{pag.bigCurrentPage}} / {{pag.numPages}}
+    // END row
+// END panel

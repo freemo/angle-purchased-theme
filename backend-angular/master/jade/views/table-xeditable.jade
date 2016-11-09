@@ -1,0 +1,106 @@
+h3 Table xEditable
+  small Edit in place for AngularJS
+
+.container-fluid(ng-controller="TablexEditableController as table")
+  // Editable row
+  h4.page-header Editable row
+
+  table.table.table-bordered.table-hover.bg-white
+    tr(style='font-weight: bold')
+      td(style='width:35%') Name
+      td(style='width:20%') Status
+      td(style='width:20%') Group
+      td(style='width:25%') Edit
+    tr(ng-repeat='user in table.users')
+      td
+        // editable username (text with validation)
+        span(editable-text='user.name', e-name='name', e-form='rowform', onbeforesave='table.checkName($data, user.id)', e-required='') {{ user.name || &apos;empty&apos; }}
+      td
+        // editable status (select-local)
+        span(editable-select='user.status', e-name='status', e-form='rowform', e-ng-options='s.value as s.text for s in table.statuses') {{ table.showStatus(user) }}        
+      td
+        // editable group (select-remote)
+        span(editable-select='user.group', e-name='group', onshow='table.loadGroups()', e-form='rowform', e-ng-options='g.id as g.text for g in table.groups') {{ table.showGroup(user) }}
+      td(style='white-space: nowrap')
+        // form
+        form.form-buttons.form-inline(editable-form='', name='rowform', onbeforesave='table.saveUser($data, user.id)', ng-show='rowform.$visible', shown='table.inserted == user')
+          button.btn.btn-sm.btn-info(type='submit', ng-disabled='rowform.$waiting', title="Save"): em.fa.fa-save
+          button.btn.btn-sm.btn-default(type='button', ng-disabled='rowform.$waiting', ng-click='rowform.$cancel()', title="Cancel"): em.fa.fa-times
+        .buttons(ng-show='!rowform.$visible')
+          button.btn.btn-sm.btn-info(ng-click='rowform.$show()', title="Edit"): em.fa.fa-pencil
+          button.btn.btn-sm.btn-danger(ng-click='table.removeUser($index)', title="Delete"): em.fa.fa-trash
+  button.btn.btn-default(ng-click='table.addUser()') Add row
+
+
+  // Editable column
+  h4.page-header Editable column
+  table.table.table-bordered.table-hover.bg-white
+    tr(style='font-weight: bold; white-space: nowrap')
+      // username header
+      td(style='width:40%')
+        | Name        
+        form(editable-form='', name='nameform', onaftersave="table.saveColumn('name')", ng-show='nameform.$visible')
+          button.btn.btn-info(type='submit', ng-disabled='nameform.$waiting') save
+          button.btn.btn-default(type='button', ng-disabled='nameform.$waiting', ng-click='nameform.$cancel()') cancel
+        button.btn.btn-link.btn-default(ng-show='!nameform.$visible', ng-click='nameform.$show()')
+          em.fa.fa-pencil.text-muted
+      // status header
+      td(style='width:30%')
+        | Status        
+        form(editable-form='', name='statusform', onaftersave="saveColumn('status')", ng-show='statusform.$visible')
+          button.btn.btn-info(type='submit', ng-disabled='statusform.$waiting') save
+          button.btn.btn-default(type='button', ng-disabled='statusform.$waiting', ng-click='statusform.$cancel()') cancel
+        button.btn.btn-link.btn-default(ng-show='!statusform.$visible', ng-click='statusform.$show()')
+          em.fa.fa-pencil.text-muted
+      // group header
+      td(style='width:30%')
+        | Group        
+        form(editable-form='', name='groupform', onaftersave="saveColumn('group')", ng-show='groupform.$visible')
+          button.btn.btn-info(type='submit', ng-disabled='groupform.$waiting') save
+          button.btn.btn-default(type='button', ng-disabled='groupform.$waiting', ng-click='groupform.$cancel()') cancel
+        button.btn.btn-link.btn-default(ng-show='!groupform.$visible', ng-click='groupform.$show()')
+          em.fa.fa-pencil.text-muted
+    tr(ng-repeat='user in table.users')
+      td
+        // editable username (text with validation)
+        span(editable-text='user.name', e-name='name', e-form='nameform', onbeforesave='table.checkName($data)') {{ user.name || &apos;empty&apos; }}
+      td
+        // editable status (select-local)
+        span(editable-select='user.status', e-name='status', e-form='statusform', e-ng-options='s.value as s.text for s in table.statuses') {{ table.showStatus(user) }}        
+      td
+        // editable group (select-remote)
+        span(editable-select='user.group', e-name='group', onshow='table.loadGroups()', e-form='groupform', e-ng-options='g.id as g.text for g in table.groups') {{ table.showGroup(user) }}
+
+
+    
+  // Editable table
+  h4.page-header Editable table
+  form(editable-form='', name='tableform', onaftersave='table.saveTable()', oncancel='table.cancel()')
+    // table
+    table.table.table-bordered.table-hover.bg-white
+      tr(style='font-weight: bold')
+        td(style='width:40%') Name
+        td(style='width:30%') Status
+        td(style='width:30%') Group
+        td(style='width:30%')
+          span(ng-show='tableform.$visible') Action
+      tr(ng-repeat='user in table.users | filter:table.filterUser')
+        td
+          // editable username (text with validation)
+          span(editable-text='user.name', e-form='tableform', onbeforesave='table.checkName($data, user.id)') {{ user.name || &apos;empty&apos; }}
+        td
+          // editable status (select-local)
+          span(editable-select='user.status', e-form='tableform', e-ng-options='s.value as s.text for s in table.statuses') {{ table.showStatus(user) }}
+        td
+          // editable group (select-remote)
+          span(editable-select='user.group', e-form='tableform', onshow='table.loadGroups()', e-ng-options='g.id as g.text for g in table.groups') {{ table.showGroup(user) }}
+        td
+          button.btn.btn-danger.pull-right(type='button', ng-show='tableform.$visible', ng-click='table.deleteUser(user.id)'): em.fa.fa-trash
+    // buttons
+    .btn-edit
+      button.btn.btn-default(type='button', ng-show='!tableform.$visible', ng-click='tableform.$show()') edit      
+    .btn-form(ng-show='tableform.$visible')
+      button.btn.btn-default.pull-right(type='button', ng-disabled='tableform.$waiting', ng-click='addUser()') add row
+      button.btn.btn-info(type='submit', ng-disabled='tableform.$waiting') save
+      button.btn.btn-default(type='button', ng-disabled='tableform.$waiting', ng-click='tableform.$cancel()') cancel
+

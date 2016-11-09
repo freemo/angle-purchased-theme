@@ -1,0 +1,33 @@
+h3 MailBox
+
+.table-grid.table-grid-desktop(ng-controller="MailboxController as mailbox")
+  .col.col-md
+    .pr
+      .clearfix.mb(ng-hide="$state.is('app.mailbox.compose')")
+        button.btn.btn-sm.btn-default.mb-toggle-button.pull-right(type="button", ng-click="mailbox.mailboxMenuCollapsed = !mailbox.mailboxMenuCollapsed", ng-init="mailbox.mailboxMenuCollapsed = true")
+          em.fa.fa-bars.fa-fw.fa-lg
+        a.btn.btn-purple.btn-sm.mb-compose-button(ui-sref='app.mailbox.compose') 
+          em.fa.fa-pencil
+          span Compose
+      // START mailbox list
+      .mb-boxes(uib-collapse="mailbox.mailboxMenuCollapsed")
+        .panel.panel-default
+          .panel-body
+            ul.nav.nav-pills.nav-stacked
+              li.p
+                small.text-muted MAILBOXES
+              li(ui-sref-active='active', ng-repeat="fold in mailbox.folders")
+                a(ui-sref="app.mailbox.folder({folder: fold.folder})")
+                  span.label.label-green.pull-right(ng-if="fold.alert") {{fold.alert}}
+                  em.fa.fa-fw.fa-lg(ng-class="fold.icon")
+                  span {{fold.name}}
+              li.p
+                small.text-muted Labels
+              li.p-h(ng-repeat="labl in mailbox.labels")
+                a.pv-sm(href='#') 
+                  span.circle(ng-class="'circle-' + labl.color")
+                  span {{labl.name}}
+
+      // END mailbox list
+  
+  .col(ui-view="")

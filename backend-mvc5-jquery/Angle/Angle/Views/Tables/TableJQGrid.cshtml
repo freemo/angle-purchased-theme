@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "TableJQGrid";
+}
+
+<h3>
+    jqGrid
+    <small>Grid plugin</small>
+</h3>
+<!-- JSON-->
+<div class="jqgrid-responsive mb-lg">
+    <table id="jqGridJSON"></table>
+    <div id="jqGridJSONPager"></div>
+</div>
+<!-- NESTED-->
+<div class="jqgrid-responsive mb-lg">
+    <table id="jqGridTree"></table>
+    <div id="jqGridTreePager"></div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/bundles/jqGridCss")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqGrid")
+    @Scripts.Render("~/bundles/demoJQGrid")
+}

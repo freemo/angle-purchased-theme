@@ -1,0 +1,106 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'help-center.html'
+
+block content
+    .unwrap
+        .bg-cover
+            .container.container-md.pv-lg
+                .text-center.mb-lg.pb-lg
+                    .h1.text-bold Help Center
+                    p User our Help Center to quickly find answers
+
+    .container.container-md
+        form.form(action="")
+            .input-group.input-group-lg
+                input.form-control.input-lg.radius-clear(type='text', name='term', placeholder='Search', style="width:70%")
+                select.form-control.input-lg(style="width:30%")
+                    option All Products
+                    option Templates
+                    option Servers
+                    option Billing
+                    option Buyers
+                    option Sellers
+                    option Plans
+                    option Accounts
+                span.input-group-btn
+                    button.btn.btn-info.btn-lg.b0.radius-clear(type='button'): strong Search
+
+        p.mv-lg.pv-lg.text-muted.text-center: small Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+
+        .row
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-primary
+                            em.fa.fa-5x.fa-television.mb-lg
+                            br
+                            span.h4 All Products
+                            br
+                            small.text-muted View all &rarr;
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-info
+                            em.fa.fa-5x.fa-object-group.mb-lg
+                            br
+                            span.h4 Templates
+                            br
+                            small.text-muted View all &rarr;
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-purple
+                            em.fa.fa-5x.fa-cubes.mb-lg
+                            br
+                            span.h4 Servers
+                            br
+                            small.text-muted View all &rarr;
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-warning
+                            em.fa.fa-5x.fa-diamond.mb-lg
+                            br
+                            span.h4 Buyers
+                            br
+                            small.text-muted View all &rarr;
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-danger
+                            em.fa.fa-5x.fa-building-o.mb-lg
+                            br
+                            span.h4 Sellers
+                            br
+                            small.text-muted View all &rarr;
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-success
+                            em.fa.fa-5x.fa-calendar-check-o.mb-lg
+                            br
+                            span.h4 Billing
+                            br
+                            small.text-muted View all &rarr;
+        .row
+            .col-md-2
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-dark
+                            em.fa.fa-5x.fa-recycle.mb-lg
+                            br
+                            span.h4 Plans
+                            br
+                            small.text-muted View all &rarr;
+            .col-md-4
+                .panel.b
+                    .panel-body.text-center
+                        a(href="#").link-unstyled.text-dark
+                            em.fa.fa-5x.fa-street-view.mb-lg
+                            br
+                            span.h4 Accounts
+                            br
+                            small.text-muted View all &rarr;

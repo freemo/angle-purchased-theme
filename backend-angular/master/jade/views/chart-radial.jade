@@ -1,0 +1,170 @@
+h3 Radial charts
+  small Canvas based &amp; No canvas Pure CSS radial progress bars solutions
+
+.container-fluid(ng-controller="PieChartsController as pchart")
+
+  h4.page-header.clearfix
+    .pull-left Knob
+    .pull-right
+      button.btn.btn-sm.btn-info(type="button", ng-click="pchart.randomize('knob')")
+        em.fa.fa-refresh
+  .row
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Default
+        .panel-body.text-center
+          knob(knob-data='pchart.knobLoaderData1', knob-options='pchart.knobLoaderOptions1', knob-max="100")
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Ready only
+        .panel-body.text-center
+          knob(knob-data='pchart.knobLoaderData2', knob-options='pchart.knobLoaderOptions2', knob-max="100")
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Offset and arc
+        .panel-body.text-center
+          knob(knob-data='pchart.knobLoaderData4', knob-options='pchart.knobLoaderOptions4', knob-max="100")
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Display previous
+        .panel-body.text-center
+          knob(knob-data='pchart.knobLoaderData3', knob-options='pchart.knobLoaderOptions3', knob-max="100")
+
+
+  h4.page-header.clearfix
+    .pull-left Easypie Charts
+    .pull-right
+      button.btn.btn-sm.btn-info(type="button", ng-click="pchart.randomize('easy')")
+        em.fa.fa-refresh
+  .row
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Default
+        .panel-body.text-center
+          .easypie-chart(easypiechart='', options='pchart.pieOptions1', percent='pchart.piePercent1')
+            span {{pchart.piePercent1}}
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Slim
+        .panel-body.text-center
+          .easypie-chart(easypiechart='', options='pchart.pieOptions2', percent='pchart.piePercent2')
+            span {{pchart.piePercent2}}
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Track color
+        .panel-body.text-center
+          .easypie-chart(easypiechart='', options='pchart.pieOptions3', percent='pchart.piePercent3')
+            span {{pchart.piePercent3}}
+    .col-md-3.col-sm-6
+      .panel
+        .panel-heading Scale color
+        .panel-body.text-center
+          .easypie-chart(easypiechart='', options='pchart.pieOptions4', percent='pchart.piePercent4')
+            span {{pchart.piePercent4}}
+
+h4.page-header Pure CSS
+  small radial progress bars solutions
+
+// START row
+.row
+  .col-lg-6
+    // START panel
+    .panel.panel-default
+      .panel-heading Radial Size
+      .panel-body.text-center
+        .row
+          .col-md-3
+            .radial-bar.radial-bar-85.radial-bar-lg(data-label="85%")
+            p: code .radial-bar.radial-bar-85.radial-bar-lg
+          .col-md-3
+            .radial-bar.radial-bar-45(data-label="45%")
+          .col-md-3
+            .radial-bar.radial-bar-60.radial-bar-sm(data-label="60%")
+          .col-md-3
+            .radial-bar.radial-bar-20.radial-bar-xs(data-label="20%")
+    // END panel
+    // START panel
+    .panel.panel-default
+      .panel-heading Radial with Images
+      .panel-body.text-center
+        .row
+          .col-md-3
+            .radial-bar.radial-bar-20.radial-bar.radial-bar-danger
+              img(src="app/img/user/03.jpg", alt="Image")
+          .col-md-3
+            .radial-bar.radial-bar-35.radial-bar-warning(data-label="35%")
+              img(src="app/img/user/01.jpg", alt="Image")
+          .col-md-3
+            .radial-bar.radial-bar-50.radial-bar-info(data-label="50%")
+              img(src="app/img/user/04.jpg", alt="Image")
+          .col-md-3
+            .radial-bar.radial-bar-100.radial-bar-success(data-label="100%")
+              img(src="app/img/user/05.jpg", alt="Image")
+    // END panel
+    // START panel
+    .panel.panel-default
+      .panel-heading Radial with Tooltips
+      .panel-body.text-center
+        .row
+          .col-md-3
+            br
+            .radial-bar.radial-bar-85(data-label="85%", data-toggle="tooltip", data-title="85%")
+          .col-md-3
+            br
+            .radial-bar.radial-bar-45(data-label="45%", data-toggle="tooltip", data-title="45%")
+          .col-md-3
+            br
+            .radial-bar.radial-bar-60(data-label="60%", data-toggle="tooltip", data-title="60%")
+          .col-md-3
+            br
+            .radial-bar.radial-bar-20(data-label="20%", data-toggle="tooltip", data-title="20%")
+    // END panel
+  .col-lg-6
+    // START panel
+    .panel.panel-default
+      .panel-heading Radial Variants
+      .panel-body.text-center
+        .row
+          .col-md-3
+            .radial-bar.radial-bar-20.radial-bar-lg.radial-bar-danger(data-label="20%")
+            p: code .radial-bar.radial-bar-20.radial-bar-lg.radial-bar-danger
+          .col-md-3
+            .radial-bar.radial-bar-35.radial-bar-lg.radial-bar-warning(data-label="35%")
+          .col-md-3
+            .radial-bar.radial-bar-50.radial-bar-lg.radial-bar-info(data-label="50%")
+          .col-md-3
+            .radial-bar.radial-bar-100.radial-bar-lg.radial-bar-success(data-label="100%")
+    // END panel
+    // START panel
+    .panel.panel-default
+      .panel-heading Radial applications
+      .panel-body.text-center
+        .radial-bar.radial-bar-85.radial-bar-lg(data-label="85%")
+        p Visitors
+      .panel-footer.text-center
+        .row
+          .col-md-4
+            .radial-bar.radial-bar-warning.radial-bar-35.radial-bar-sm(data-label="35%")
+            p: small Conversions
+          .col-md-4
+            .radial-bar.radial-bar-info.radial-bar-45.radial-bar-sm(data-label="45%")
+            p: small Recurrent
+          .col-md-4
+            .radial-bar.radial-bar-success.radial-bar-20.radial-bar-sm(data-label="20%")
+            p: small Uniques
+    // END panel
+// END row
+h4.page-header ClassyLoader
+  small canvas based jQuery loader plugin
+// START panel
+.panel.panel-default
+  .panel-body.text-center
+    .row
+      .col-md-3
+        canvas(classyloader="", data-trigger-in-view="true" data-percentage="100", data-speed="20", data-font-size="50px", data-diameter="80", data-line-color="#0094cb", data-remaining-line-color="rgba(200,200,200,0.4)", data-line-width="10")
+      .col-md-3
+        canvas(classyloader="", data-percentage="60", data-speed="8", data-font-size="20px", data-diameter="70", data-line-color="#7bbf62", data-remaining-line-color="#edf2f6", data-line-width="40", data-rounded-line="true", data-show-text="false")
+      .col-md-3
+        canvas(classyloader="", data-percentage="60", data-speed="40", data-line-color="#ff3366", data-remaining-line-color="#edf2f6", data-line-width="2")
+      .col-md-3
+        canvas(classyloader="", data-percentage="34", data-speed="20", data-font-size="20px", data-diameter="30", data-line-color="#f35839", data-remaining-line-color="#edf2f6", data-line-width="40")

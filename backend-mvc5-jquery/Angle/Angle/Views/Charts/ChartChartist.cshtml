@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "ChartChartist";
+}
+
+<h3>Chartist</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Bar bipolar</div>
+                <div class="panel-body">
+                    <div id="ct-bar1" class="ct-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Bar Horizontal</div>
+                <div class="panel-body">
+                    <div id="ct-bar2" class="ct-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Line</div>
+                <div class="panel-body">
+                    <div id="ct-line1" class="ct-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Smil Animations</div>
+                <div class="panel-body">
+                    <div id="ct-line2" class="ct-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">SVG Path Animations</div>
+                <div class="panel-body">
+                    <div id="ct-line3" class="ct-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/bundles/ChartistCss")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/Chartist")
+}

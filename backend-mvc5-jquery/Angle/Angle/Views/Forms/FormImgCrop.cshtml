@@ -1,0 +1,219 @@
+﻿@{
+    ViewBag.Title = "FormImgCrop";
+}
+
+<h3>
+    Image Cropper
+    <small>Simple image cropping plugin.</small>
+</h3>
+<div class="container-md">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="img-container mb-lg">
+                <img src="~/Content/Images/mb-sample.jpg" alt="Picture">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="docs-preview clearfix">
+                <div class="img-preview preview-lg"></div>
+                <div class="img-preview preview-md"></div>
+                <div class="img-preview preview-sm"></div>
+                <div class="img-preview preview-xs"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt">
+        <div class="col-lg-4 docs-buttons">
+            <div class="mb btn-group">
+                <button data-method="setDragMode" data-option="move" type="button" title="Move" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;move&quot;)" class="docs-tooltip">
+                        <span class="fa fa-arrows"></span>
+                    </span>
+                </button>
+                <button data-method="setDragMode" data-option="crop" type="button" title="Crop" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;crop&quot;)" class="docs-tooltip">
+                        <span class="fa fa-crop"></span>
+                    </span>
+                </button>
+                <button data-method="zoom" data-option="0.1" type="button" title="Zoom In" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, 0.1)" class="docs-tooltip">
+                        <span class="fa fa-plus-square"></span>
+                    </span>
+                </button>
+                <button data-method="zoom" data-option="-0.1" type="button" title="Zoom Out" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, -0.1)" class="docs-tooltip">
+                        <span class="fa fa-minus-square"></span>
+                    </span>
+                </button>
+                <button data-method="rotate" data-option="-45" type="button" title="Rotate Left" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, -45)" class="docs-tooltip">
+                        <span class="fa fa-arrow-left"></span>
+                    </span>
+                </button>
+                <button data-method="rotate" data-option="45" type="button" title="Rotate Right" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, 45)" class="docs-tooltip">
+                        <span class="fa fa-arrow-right"></span>
+                    </span>
+                </button>
+            </div>
+            <div class="mb btn-group">
+                <button data-method="crop" type="button" title="Crop" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;crop&quot;)" class="docs-tooltip">
+                        <span class="fa fa-check"></span>
+                    </span>
+                </button>
+                <button data-method="clear" type="button" title="Clear" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;clear&quot;)" class="docs-tooltip">
+                        <span class="fa fa-times"></span>
+                    </span>
+                </button>
+                <button data-method="disable" type="button" title="Disable" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;disable&quot;)" class="docs-tooltip">
+                        <span class="fa fa-lock"></span>
+                    </span>
+                </button>
+                <button data-method="enable" type="button" title="Enable" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;enable&quot;)" class="docs-tooltip">
+                        <span class="fa fa-unlock"></span>
+                    </span>
+                </button>
+                <button data-method="reset" type="button" title="Reset" class="btn btn-info">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;reset&quot;)" class="docs-tooltip">
+                        <span class="fa fa-refresh"></span>
+                    </span>
+                </button>
+                <label for="inputImage" title="Upload image file" class="btn btn-info btn-upload">
+                    <input id="inputImage" name="file" type="file" accept="image/*" class="sr-only">
+                    <span data-toggle="tooltip" title="Import image with Blob URLs" class="docs-tooltip">
+                        <span class="fa fa-upload"></span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-4 docs-toggles">
+            <div data-toggle="buttons" class="mb btn-group btn-group-justified btn-group-sm">
+                <label data-method="setAspectRatio" data-option="1.7777777777777777" title="Set Aspect Ratio" class="btn btn-info active">
+                    <input id="aspestRatio1" name="aspestRatio" value="1.7777777777777777" type="radio" class="sr-only">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 16 / 9)" class="docs-tooltip">16:9</span>
+                </label>
+                <label data-method="setAspectRatio" data-option="1.3333333333333333" title="Set Aspect Ratio" class="btn btn-info">
+                    <input id="aspestRatio2" name="aspestRatio" value="1.3333333333333333" type="radio" class="sr-only">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 4 / 3)" class="docs-tooltip">4:3</span>
+                </label>
+                <label data-method="setAspectRatio" data-option="1" title="Set Aspect Ratio" class="btn btn-info">
+                    <input id="aspestRatio3" name="aspestRatio" value="1" type="radio" class="sr-only">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 1 / 1)" class="docs-tooltip">1:1</span>
+                </label>
+                <label data-method="setAspectRatio" data-option="0.6666666666666666" title="Set Aspect Ratio" class="btn btn-info">
+                    <input id="aspestRatio4" name="aspestRatio" value="0.6666666666666666" type="radio" class="sr-only">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 2 / 3)" class="docs-tooltip">2:3</span>
+                </label>
+                <label data-method="setAspectRatio" data-option="NaN" title="Set Aspect Ratio" class="btn btn-info">
+                    <input id="aspestRatio5" name="aspestRatio" value="NaN" type="radio" class="sr-only">
+                    <span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, NaN)" class="docs-tooltip">Free</span>
+                </label>
+            </div>
+            <div class="mb dropdown dropup docs-options">
+                <button id="toggleOptions" type="button" data-toggle="dropdown" aria-expanded="true" class="btn btn-info btn-block dropdown-toggle">
+                    Toggle Options
+                    <span class="caret"></span>
+                </button>
+                <ul role="menu" aria-labelledby="toggleOptions" class="dropdown-menu p">
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="strict" checked="checked">strict
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="responsive" checked="checked">responsive
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="checkImageOrigin" checked="checked">checkImageOrigin
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="modal" checked="checked">modal
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="guides" checked="checked">guides
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="highlight" checked="checked">highlight
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="background" checked="checked">background
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="autoCrop" checked="checked">autoCrop
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="dragCrop" checked="checked">dragCrop
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="movable" checked="checked">movable
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="rotatable" checked="checked">rotatable
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="zoomable" checked="checked">zoomable
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="touchDragZoom" checked="checked">touchDragZoom
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="mouseWheelZoom" checked="checked">mouseWheelZoom
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="cropBoxMovable" checked="checked">cropBoxMovable
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="cropBoxResizable" checked="checked">cropBoxResizable
+                        </label>
+                    </li>
+                    <li role="presentation" class="pv-sm">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="option" value="doubleClickToggle" checked="checked">doubleClickToggle
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Styles {
+    @Styles.Render("~/bundles/CropperCss")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/Cropper")
+}

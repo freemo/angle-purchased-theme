@@ -1,0 +1,65 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+    <nav sidebar="" sidebar-anyclick-close="" ng-class="{'show-scrollbar': app.layout.asideScrollbar}" class="sidebar">
+        <!-- START sidebar nav-->
+        <ul class="nav">
+            <!-- START user info-->
+            <li class="has-user-block">
+                <div uib-collapse="userBlockVisible" ng-controller="UserBlockController">
+                     <div class="item user-block">
+                            <!-- User picture-->
+                            <div class="user-block-picture">
+                                 <div class="user-block-status">
+                                        <img ng-src="{{user.picture}}" alt="Avatar" class="img-thumbnail img-circle" />
+                                        <div class="circle circle-success circle-lg"></div>
+                                 </div>
+                            </div>
+                            <!-- Name and Job-->
+                            <div class="user-block-info">
+                                 <span class="user-block-name">{{ 'sidebar.WELCOME' | translate }} {{user.name}}</span>
+                                 <span class="user-block-role">{{user.job}}</span>
+                            </div>
+                     </div>
+                </div>
+            </li>
+             <!-- END user info-->
+
+
+            <li ui-sref-active-eq="active"
+                ng-repeat="item in menu.items | orderBy: 'position'"
+                data-ng-if="item.shouldRender(authentication.user);"
+                ng-switch="item.type"
+                ng-click="toggleCollapse($index, true, $event)">
+
+                <!-- Dropdown -->
+                <span ng-if="item.heading">{{(item.translate | translate) || item.title}}</span>
+                <a ng-switch-when="dropdown" title="{{item.title}}" ng-init="addCollapse($index, item)">
+                    <div ng-if="item.alert" ng-class="item.label || 'label label-success'" class="pull-right">{{item.alert}}</div>
+                    <em ng-hide="inSubmenu" class="{{item.iconClass}}"></em>
+                    <span>{{(item.translate | translate) || item.title}}</span>
+                </a>
+                <ul ng-switch-when="dropdown" class="nav sidebar-subnav collapse" uib-collapse="isCollapse($index)">
+                    <li class="sidebar-subnav-header">{{(item.translate | translate) || item.title}}</li>
+                    <li ng-repeat="subitem in item.items | orderBy: 'position'"
+                        data-ng-if="subitem.shouldRender(authentication.user);"
+                        ng-class="{'active' : $state.is(subitem.state)}">
+                        <a ui-sref="{{subitem.state}}" class="menu-child">
+                            <div ng-if="subitem.alert" ng-class="subitem.label || 'label label-success'" class="pull-right">{{subitem.alert}}</div>
+                            <em ng-hide="inSubmenu" class="{{subitem.iconClass}}"></em>
+                            <span>{{(subitem.translate | translate) || subitem.title}}</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Single Item -->
+                <a ng-switch-default ui-sref="{{item.state}}" title="{{item.title}}">
+                    <div ng-if="item.alert" ng-class="item.label || 'label label-success'" class="pull-right">{{item.alert}}</div>
+                    <em ng-hide="inSubmenu" class="{{item.iconClass}}"></em>
+                    <span>{{(item.translate | translate) || item.title}}</span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- END sidebar nav-->
+    </nav>
+</div>
+<!-- END Sidebar (left)-->

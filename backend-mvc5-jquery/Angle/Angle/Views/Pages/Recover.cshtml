@@ -1,0 +1,26 @@
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="block-center mt-xl wd-xl">
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+         <a href="#">
+            <img src="~/Content/Images/logo.png" alt="Image" class="block-center img-rounded" />
+         </a>
+      </div>
+      <div class="panel-body">
+         <p class="text-center pv">PASSWORD RESET</p>
+         <form role="form">
+            <p class="text-center">Fill with your mail to receive instructions on how to reset your password.</p>
+            <div class="form-group has-feedback">
+               <label for="resetInputEmail1" class="text-muted">Email address</label>
+               <input id="resetInputEmail1" type="email" placeholder="Enter email" autocomplete="off" class="form-control" />
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <button type="submit" class="btn btn-danger btn-block">Reset</button>
+         </form>
+      </div>
+   </div>
+   <!-- END panel-->
+</div>

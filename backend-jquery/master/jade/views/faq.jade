@@ -1,0 +1,183 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'faq.html'
+
+block content
+    .container.container-md
+        .row.mb-lg
+            .col-md-8
+                .h1.text-bold FAQs
+                p.text-muted Praesent id mauris urna, et tristique lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            .col-md-4
+                .panel: .panel-body.text-center
+                    p.mb-lg Sed semper diam vitae purus tristique at scelerisque massa ultricies.
+                    button(type="button").btn.btn-info Contact support
+
+        h4.mv-lg.pv-lg.text-dark Some presale Questions
+        .panel-group#accordion1
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion1", href="#acc1collapse1")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc1collapse1.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion1", href="#acc1collapse2")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc1collapse2.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion1", href="#acc1collapse3")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc1collapse3.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion1", href="#acc1collapse4")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc1collapse4.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion1", href="#acc1collapse5")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc1collapse5.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+
+        h4.mv-lg.pv-lg.text-dark Buyer Questions
+
+        .panel-group#accordion2
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion2", href="#acc2collapse1")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc2collapse1.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion2", href="#acc2collapse2")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc2collapse2.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion2", href="#acc2collapse3")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc2collapse3.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion2", href="#acc2collapse4")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc2collapse4.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+
+
+        h4.mv-lg.pv-lg.text-dark Seller Questions
+
+        .panel-group#accordion3
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion3", href="#acc3collapse1")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc3collapse1.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion3", href="#acc3collapse2")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc3collapse2.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion3", href="#acc3collapse3")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc3collapse3.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted
+            .panel.panel-default.b0
+                .panel-heading: h4.panel-title: a(data-toggle="collapse", data-parent="#accordion3", href="#acc3collapse4")
+                    small: em.fa.fa-plus.text-primary.mr
+                    span How can I change the color?
+                #acc3collapse4.panel-collapse.collapse
+                    .panel-body
+                        p Donec congue sagittis mi sit amet tincidunt. Quisque sollicitudin massa vel erat tincidunt blandit. Curabitur quis leo nulla. Phasellus faucibus placerat luctus. Integer fermentum molestie massa at congue. Quisque quis quam dictum diam volutpat adipiscing.
+                        p Proin ut urna enim.
+                        .pull-right
+                            small.text-muted.mr Was this information useful?
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-up.text-muted
+                            button(type="button").btn.btn-default.btn-xs: em.fa.fa-thumbs-down.text-muted

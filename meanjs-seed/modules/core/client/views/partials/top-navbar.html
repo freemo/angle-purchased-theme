@@ -1,0 +1,98 @@
+<!-- START Top Navbar-->
+<nav role="navigation" class="navbar topnavbar">
+   <!-- START navbar header-->
+   <div class="navbar-header">
+      <a href="#/" class="navbar-brand">
+         <div class="brand-logo">
+            <img src="img/brand/logo.png" alt="App Logo" class="img-responsive" />
+         </div>
+         <div class="brand-logo-collapsed">
+            <img src="img/brand/logo-single.png" alt="App Logo" class="img-responsive" />
+         </div>
+      </a>
+   </div>
+   <!-- END navbar header-->
+   <!-- START Nav wrapper-->
+   <div class="nav-wrapper">
+      <!-- START Left navbar-->
+      <ul class="nav navbar-nav">
+         <li>
+            <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+            <a trigger-resize="" ng-click="app.layout.isCollapsed = !app.layout.isCollapsed" class="hidden-xs">
+               <em class="fa fa-navicon"></em>
+            </a>
+            <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+            <a href="" ng-click="app.asideToggled = !app.asideToggled" class="visible-xs sidebar-toggle">
+               <em class="fa fa-navicon"></em>
+            </a>
+         </li>
+         <!-- START User avatar toggle
+         <li>
+            <a href="" ng-click="toggleUserBlock()">
+               <em class="icon-user"></em>
+            </a>
+         </li>
+         END User avatar toggle-->
+      </ul>
+      <!-- START Right Navbar-->
+      <ul class="nav navbar-nav navbar-right ml0">
+         <!-- Search icon-->
+         <li>
+            <a search-open="">
+               <em class="icon-magnifier"></em>
+            </a>
+         </li>
+         <!-- START Offsidebar button-->
+         <li>
+            <a href="" ng-click="app.offsidebarOpen = !app.offsidebarOpen">
+               <em class="icon-notebook"></em>
+            </a>
+         </li>
+         <!-- END Offsidebar menu-->
+      </ul>
+      <ul class="nav navbar-nav" data-ng-show="authentication.user">
+         <li class="dropdown" uib-dropdown>
+            <a href class="dropdown-toggle" uib-dropdown-toggle>
+               <span data-ng-bind="authentication.user.displayName"></span>
+               <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li>
+                  <a href="/#!/settings/profile">Edit Profile</a>
+               </li>
+               <li>
+                  <a href="/#!/settings/accounts">Manage Social Accounts</a>
+               </li>
+               <li data-ng-show="authentication.user.provider === 'local'">
+                  <a href="/#!/settings/password">Change Password</a>
+               </li>
+               <li class="divider"></li>
+               <li>
+                  <a href="/api/auth/signout" target="_self">Signout</a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right ml0 mr0" data-ng-hide="authentication.user">
+         <li ui-route="/page/signup" ui-sref-active="active">
+            <a ui-sref="page.authentication.signup">Sign Up</a>
+         </li>
+         <li class="divider-vertical"></li>
+         <li ui-route="/page/signin" ui-sref-active="active">
+            <a ui-sref="page.authentication.signin">Sign In</a>
+         </li>
+      </ul>
+      <!-- END Right Navbar-->
+   </div>
+   <!-- END Nav wrapper-->
+   <!-- START Search form-->
+   <form role="search" action="search.html" class="navbar-form">
+      <div class="form-group has-feedback">
+         <input type="text" placeholder="{{ 'topbar.search.PLACEHOLDER' | translate }}" class="form-control" />
+         <div search-dismiss="search-dismiss" class="fa fa-times form-control-feedback"></div>
+      </div>
+      <button type="submit" class="hidden btn btn-default">Submit</button>
+   </form>
+   <!-- END Search form-->
+</nav>
+<!-- END Top Navbar-->

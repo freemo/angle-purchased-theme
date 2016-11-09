@@ -1,0 +1,36 @@
+// Inline template with sidebar items markup and ng-directives
+script(type='text/ng-template', id="sidebar-renderer.html")
+  span(ng-if="item.heading") {{(item.translate | translate) || item.text}}
+  a(ng-if="!item.heading", ng-href="{{$state.href(item.sref, item.params)}}", title="{{item.text}}")
+    .pull-right(ng-if="item.alert", ng-class="item.label || 'label label-success'") {{item.alert}}
+    em(class="{{item.icon}}", ng-if="item.icon")
+    span {{(item.translate | translate) || item.text}}
+  ul(class="nav sidebar-subnav", ng-if="item.submenu", uib-collapse="isCollapse(pIndex)",  ng-init="addCollapse(pIndex, item)")
+    li.sidebar-subnav-header {{(item.translate | translate) || item.text}}
+    li(ng-repeat='item in item.submenu', ng-include="'sidebar-renderer.html'", ng-class="getMenuItemPropClasses(item)", ng-init="pIndex=(pIndex+'-'+$index); inSubmenu = true", ng-click="toggleCollapse(pIndex)")
+
+// START Sidebar (left)
+.aside-inner
+  nav.sidebar(sidebar="", sidebar-anyclick-close="", ng-class="{'show-scrollbar': app.layout.asideScrollbar}")
+    // START sidebar nav
+    ul.nav
+      // START user info
+      li.has-user-block
+        div(uib-collapse="userBlockVisible", ng-controller="UserBlockController")
+          .item.user-block
+            // User picture
+            .user-block-picture
+              .user-block-status
+                img.img-thumbnail.img-circle(ng-src="{{user.picture}}", alt="Avatar")
+                .circle.circle-success.circle-lg
+            // Name and Job
+            .user-block-info
+              span.user-block-name {{ 'sidebar.WELCOME' | translate }} {{user.name}}
+              span.user-block-role {{user.job}}
+      // END user info
+
+      // Iterates over all sidebar items
+      li(ng-class="getMenuItemPropClasses(item)", ng-repeat='item in menuItems', ng-init="pIndex = $index", ng-include="'sidebar-renderer.html'", ng-click="toggleCollapse(pIndex, true)")
+    // END sidebar nav
+
+// END Sidebar (left)

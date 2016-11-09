@@ -1,0 +1,17 @@
+h3 UI Grid
+
+.container-fluid(ng-controller="UIGridController as table")
+  h4.page-header.mt0 Basic
+  .table-uigrid(ui-grid='table.gridOptions')
+  h4.page-header.clearfix
+    .pull-left Filter and Footer
+    .pull-right
+      button#footerButton.btn.btn-xs.btn-success(ng-click='table.gridOptionsComplex.showGridFooter = !table.gridOptionsComplex.showGridFooter; $scope.gridApi.core.notifyDataChange(uiGridConstants.dataChange.OPTIONS);') Toggle Grid Footer
+      button.btn.btn-xs.btn-success(ng-click='table.gridOptionsComplex.showColumnFooter = !table.gridOptionsComplex.showColumnFooter; $scope.gridApi.core.notifyDataChange(uiGridConstants.dataChange.OPTIONS);') Toggle Column Footer
+  #uigrid-demo.table-uigrid(ui-grid='table.gridOptionsComplex')
+
+  h4.page-header Pagination
+  .table-uigrid(ui-grid='table.gridOptions1', ui-grid-pagination='')
+
+  h4.page-header Selection and column visibility
+  .table-uigrid(ui-grid='table.gridOptions2', ui-grid-selection)

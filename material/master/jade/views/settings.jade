@@ -1,0 +1,157 @@
+.container-md
+    .row
+        .col-md-3
+            .panel.b
+                .panel-heading.bg-gray-lighter.text-bold Personal Settings
+                .list-group(ng-init="settingActive = 1")
+                    a.list-group-item(href='', ng-click="settingActive=1", ng-class="{'active': (settingActive == 1)}") Profile
+                    a.list-group-item(href='', ng-click="settingActive=2", ng-class="{'active': (settingActive == 2)}") Account
+                    a.list-group-item(href='', ng-click="settingActive=3", ng-class="{'active': (settingActive == 3)}") Emails
+                    a.list-group-item(href='', ng-click="settingActive=4", ng-class="{'active': (settingActive == 4)}") Notifications
+                    a.list-group-item(href='', ng-click="settingActive=5", ng-class="{'active': (settingActive == 5)}") Applications
+        .col-md-9
+            div(ng-show="settingActive == 1")
+                .panel.b
+                    .panel-heading.bg-gray-lighter.text-bold Profile
+                    .panel-body
+                        form(action="")
+                            .form-group
+                                label Picture
+                                input.form-control(filestyle="", type='file', data-input="false", data-classbutton='btn btn-default', data-classinput="form-control inline", data-button-text="Upload new picture", data-icon-name="fa fa-upload mr")
+                            .form-group
+                                label Name
+                                input.form-control(type="text")
+                            .form-group
+                                label Bio
+                                textarea.form-control(rows="3")
+                            .form-group
+                                label URL
+                                input.form-control(type="text")
+                            .form-group
+                                label Company
+                                input.form-control(type="text")
+                            .form-group
+                                label Location
+                                input.form-control(type="text")
+
+                            button(type="button").btn.btn-info Update settings
+                            p: small.text-muted * Integer fermentum accumsan metus, id sagittis ipsum molestie vitae
+
+            div(ng-show="settingActive == 2")
+                .panel.b
+                    .panel-heading.bg-gray-lighter.text-bold Account
+                    .panel-body
+                        form(action="")
+                            .form-group
+                                label Current password
+                                input.form-control(type="password")
+                            .form-group
+                                label New password
+                                input.form-control(type="password")
+                            .form-group
+                                label Confirm new password
+                                input.form-control(type="password")
+
+                            button(type="button").btn.btn-info Update password
+                            p: small.text-muted * Integer fermentum accumsan metus, id sagittis ipsum molestie vitae
+                .panel.b
+                    .panel-heading.bg-danger.text-bold Delete account
+                    .panel-body.bt
+                        p You will be asked for confirmation before delete account.
+                        button(type="button").btn.btn-default: span.text-danger Delete account
+
+            div(ng-show="settingActive == 3")
+                .panel.b
+                    .panel-heading.bg-gray-lighter.text-bold Emails
+                    .panel-body
+                        p Etiam eros nibh, condimentum in auctor et, aliquam quis elit. Donec id libero eros. Ut fringilla, justo id fringilla pretium, nibh nunc suscipit mauris, et suscipit nulla nisl ac dolor. Nam egestas, leo eu gravida tincidunt, sem ipsum pellentesque quam, vel iaculis est quam et eros.
+                        p: strong Your email addresses
+                        p
+                            span.mr email@someaddress.com
+                            span.label.label-success primary
+                        p
+                            span.mr another.email@someaddress.com
+                            span.label.bg-gray private
+                    .panel-body.bt
+                        p: strong Add email address
+                        form(action="")
+                            .row
+                                .col-lg-6
+                                    .form-group
+                                        .input-group
+                                            input.form-control(type="email", placeholder="email@server.com")
+                                            span.input-group-btn
+                                                button.btn.btn-default(type='button') Add
+                                    .form-group
+                                        .checkbox
+                                            label
+                                                input(type='checkbox', value='')
+                                                | Keep my email address private
+                            button(type="button").btn.btn-info Update email
+                            p: small.text-muted * Integer fermentum accumsan metus, id sagittis ipsum molestie vitae
+
+            div(ng-show="settingActive == 4")
+                form(action="")
+                    .panel.b
+                        .panel-heading.bg-gray-lighter.text-bold Notifications
+                        .panel-body.bb
+                            .form-group
+                                .checkbox
+                                    label
+                                        input(type='checkbox', value='')
+                                        strong Disable email notifications
+                        .panel-body
+                                p: strong Interaction
+                                .form-group
+                                    .checkbox
+                                        label
+                                            input(type='checkbox', value='')
+                                            | Alert me when someone start to follow me
+                                .form-group
+                                    .checkbox
+                                        label
+                                            input(type='checkbox', value='')
+                                            | Alert me when someone star my work
+                                .form-group
+                                    .checkbox
+                                        label
+                                            input(type='checkbox', value='')
+                                            | Alert me when post a new comment
+                                p: strong Marketing
+                                .form-group
+                                    .checkbox
+                                        label
+                                            input(type='checkbox', value='')
+                                            | Send me news and interesting updates
+                                button(type="button").btn.btn-info Update notifications
+                                p: small.text-muted Mauris sodales accumsan erat, ut dapibus erat faucibus vitae.
+            div(ng-show="settingActive == 5")
+                .panel.b
+                    .panel-heading.bg-gray-lighter.text-bold Applications
+                    .panel-body
+                        p
+                            span You have granted access for 
+                            strong 3 applications 
+                            span to your account.
+                        ul.list-group
+                            li.list-group-item.clearfix
+                                .pull-left.mr
+                                    img.img-responsive.thumb48(src="app/img/dummy.png", alt="App")
+                                .pull-right
+                                    button(type="button").btn.btn-default: strong Revoke
+                                p.text-bold.mb0 Application #1
+                                small Ut turpis urna, tristique sed adipiscing nec, luctus quis leo.
+                            li.list-group-item.clearfix
+                                .pull-left.mr
+                                    img.img-responsive.thumb48(src="app/img/dummy.png", alt="App")
+                                .pull-right
+                                    button(type="button").btn.btn-default: strong Revoke
+                                p.text-bold.mb0 Application #2
+                                small Ut turpis urna, tristique sed adipiscing nec, luctus quis leo.
+                            li.list-group-item.clearfix
+                                .pull-left.mr
+                                    img.img-responsive.thumb48(src="app/img/dummy.png", alt="App")
+                                .pull-right
+                                    button(type="button").btn.btn-default: strong Revoke
+                                p.text-bold.mb0 Application #3
+                                small Ut turpis urna, tristique sed adipiscing nec, luctus quis leo.

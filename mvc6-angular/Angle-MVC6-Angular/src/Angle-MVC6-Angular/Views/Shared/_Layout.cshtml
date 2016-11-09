@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="angle">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{app.description}}">
+    <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+    <title data-ng-bind="pageTitle()">Angle - Angular Bootstrap Admin Template</title>
+
+    <environment names="Development">
+        <!-- =============== BOOTSTRAP STYLES ===============-->
+        <link href="~/css/bootstrap.css" rel="stylesheet" />
+        <!-- =============== APP STYLES ===============-->
+        <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" />
+        <!-- =============== THEME STYLES ===============-->
+        <link rel="stylesheet" ng-href="{{app.layout.theme}}" data-ng-if="app.layout.theme">
+    </environment>
+
+    <environment names="Staging,Production">
+        <!-- =============== BOOTSTRAP STYLES ===============-->
+        <link href="~/css/bootstrap.css" rel="stylesheet" />
+        <!-- =============== APP STYLES ===============-->
+        <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" />
+        <!-- =============== THEME STYLES ===============-->
+        <link rel="stylesheet" ng-href="{{app.layout.theme}}" data-ng-if="app.layout.theme">
+    </environment>
+
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+
+</head>
+
+<body data-ng-class="{ 'layout-fixed' : app.layout.isFixed, 'aside-collapsed' : app.layout.isCollapsed, 'layout-boxed' : app.layout.isBoxed, 'layout-fs': app.useFullLayout, 'hidden-footer': app.hiddenFooter, 'layout-h': app.layout.horizontal, 'aside-float': app.layout.isFloat, 'offsidebar-open': app.offsidebarOpen, 'aside-toggled': app.asideToggled, 'aside-collapsed-text': app.layout.isCollapsedText}">
+
+    <!-- Preloader -->
+    <div data-preloader></div>
+    <!-- App Content -->
+    <div data-ui-view="main" data-autoscroll="false" class="wrapper">@RenderBody()</div>
+
+    <environment names="Development">
+        <!-- =============== BASE SCRIPTS ===============-->
+        <script src="~/lib/modernizr/modernizr.custom.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/lib/angular-route/angular-route.js"></script>
+        <script src="~/lib/angular-cookies/angular-cookies.js"></script>
+        <script src="~/lib/angular-animate/angular-animate.js"></script>
+        <script src="~/lib/angular-touch/angular-touch.js"></script>
+        <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="~/lib/ngstorage/ngStorage.js"></script>
+        <script src="~/lib/angular-ui-utils/index.js"></script>
+        <script src="~/lib/angular-ui-mask/dist/mask.js"></script>
+        <script src="~/lib/angular-ui-event/dist/event.js"></script>
+        <script src="~/lib/angular-ui-validate/dist/validate.js"></script>
+        <script src="~/lib/angular-ui-indeterminate/dist/indeterminate.js"></script>
+        <script src="~/lib/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
+        <script src="~/lib/angular-ui-scroll/dist/ui-scroll.js"></script>
+        <script src="~/lib/angular-ui-uploader/dist/uploader.js"></script>
+        <script src="~/lib/angular-sanitize/angular-sanitize.js"></script>
+        <script src="~/lib/angular-resource/angular-resource.js"></script>
+        <script src="~/lib/angular-translate/angular-translate.js"></script>
+        <script src="~/lib/angular-translate-loader-url/angular-translate-loader-url.js"></script>
+        <script src="~/lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+        <script src="~/lib/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+        <script src="~/lib/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="~/lib/oclazyload/dist/ocLazyLoad.js"></script>
+        <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="~/lib/angular-loading-bar/build/loading-bar.js"></script>
+        <script src="~/lib/angular-dynamic-locale/dist/tmhDynamicLocale.js"></script>
+        <script src="~/lib/jquery.browser/dist/jquery.browser.js"></script>
+        <script src="~/lib/matchMedia/matchMedia.js"></script>
+
+        <!-- =============== APP ===============-->
+
+        <!-- App module -->
+        <script src="~/master/js/app.module.js"></script>
+        <!-- Modules declaration -->
+        <script src="~/master/js/modules/bootstrapui/bootstrapui.module.js"></script>
+        <script src="~/master/js/modules/charts/charts.module.js"></script>
+        <script src="~/master/js/modules/colors/colors.module.js"></script>
+        <script src="~/master/js/modules/core/core.module.js"></script>
+        <script src="~/master/js/modules/dashboard/dashboard.module.js"></script>
+        <script src="~/master/js/modules/elements/elements.module.js"></script>
+        <script src="~/master/js/modules/extras/extras.module.js"></script>
+        <script src="~/master/js/modules/flatdoc/flatdoc.module.js"></script>
+        <script src="~/master/js/modules/forms/forms.module.js"></script>
+        <script src="~/master/js/modules/icons/icons.module.js"></script>
+        <script src="~/master/js/modules/lazyload/lazyload.module.js"></script>
+        <script src="~/master/js/modules/loadingbar/loadingbar.module.js"></script>
+        <script src="~/master/js/modules/locale/locale.module.js"></script>
+        <script src="~/master/js/modules/mailbox/mailbox.module.js"></script>
+        <script src="~/master/js/modules/maps/maps.module.js"></script>
+        <script src="~/master/js/modules/navsearch/navsearch.module.js"></script>
+        <script src="~/master/js/modules/notify/notify.module.js"></script>
+        <script src="~/master/js/modules/pages/pages.module.js"></script>
+        <script src="~/master/js/modules/panels/panels.module.js"></script>
+        <script src="~/master/js/modules/preloader/preloader.module.js"></script>
+        <script src="~/master/js/modules/routes/routes.module.js"></script>
+        <script src="~/master/js/modules/settings/settings.module.js"></script>
+        <script src="~/master/js/modules/sidebar/sidebar.module.js"></script>
+        <script src="~/master/js/modules/tables/tables.module.js"></script>
+        <script src="~/master/js/modules/translate/translate.module.js"></script>
+        <script src="~/master/js/modules/utils/utils.module.js"></script>
+        <script src="~/master/js/custom/custom.module.js"></script>
+        <!-- Blocks declaration -->
+        <script src="~/master/js/modules/bootstrapui/alerts.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/bootstrapui.config.js"></script>
+        <script src="~/master/js/modules/bootstrapui/buttons.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/carousel.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/datepicker.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/modals.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/pagination.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/popover.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/progress.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/rating.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/timepicker.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/tooltip.controller.js"></script>
+        <script src="~/master/js/modules/bootstrapui/typeahead.controller.js"></script>
+        <script src="~/master/js/modules/charts/chartist.controller.js"></script>
+        <script src="~/master/js/modules/charts/chartjs.controller.js"></script>
+        <script src="~/master/js/modules/charts/chartjs.directive.js"></script>
+        <script src="~/master/js/modules/charts/classyloader.directive.js"></script>
+        <script src="~/master/js/modules/charts/flot-data.service.js"></script>
+        <script src="~/master/js/modules/charts/flot.controller.js"></script>
+        <script src="~/master/js/modules/charts/flot.directive.js"></script>
+        <script src="~/master/js/modules/charts/morris.controller.js"></script>
+        <script src="~/master/js/modules/charts/morris.directive.js"></script>
+        <script src="~/master/js/modules/charts/piecharts.controller.js"></script>
+        <script src="~/master/js/modules/charts/rickshaw.controller.js"></script>
+        <script src="~/master/js/modules/charts/sparklines.directive.js"></script>
+        <script src="~/master/js/modules/colors/colors.contant.js"></script>
+        <script src="~/master/js/modules/colors/colors.service.js"></script>
+        <script src="~/master/js/modules/core/core.config.js"></script>
+        <script src="~/master/js/modules/core/core.constants.js"></script>
+        <script src="~/master/js/modules/core/core.run.js"></script>
+        <script src="~/master/js/modules/dashboard/dashboard.controller.js"></script>
+        <script src="~/master/js/modules/dashboard/dashboard.v2.controller.js"></script>
+        <script src="~/master/js/modules/dashboard/dashboard.v3.controller.js"></script>
+        <script src="~/master/js/modules/elements/carousel.controller.js"></script>
+        <script src="~/master/js/modules/elements/dialog.controller.js"></script>
+        <script src="~/master/js/modules/elements/infinite-scroll.controller.js"></script>
+        <script src="~/master/js/modules/elements/masonry-deck.controller.js"></script>
+        <script src="~/master/js/modules/elements/navtree.controller.js"></script>
+        <script src="~/master/js/modules/elements/nestable.controller.js"></script>
+        <script src="~/master/js/modules/elements/scroll.directive.js"></script>
+        <script src="~/master/js/modules/elements/sortable.controller.js"></script>
+        <script src="~/master/js/modules/elements/sweetalert.controller.js"></script>
+        <script src="~/master/js/modules/elements/toaster.controller.js"></script>
+        <script src="~/master/js/modules/elements/tour.controller.js"></script>
+        <script src="~/master/js/modules/extras/article.controller.js"></script>
+        <script src="~/master/js/modules/extras/calendar.controller.js"></script>
+        <script src="~/master/js/modules/extras/code-editor-loadtree.service.js"></script>
+        <script src="~/master/js/modules/extras/code-editor.controller.js"></script>
+        <script src="~/master/js/modules/extras/todo.controller.js"></script>
+        <script src="~/master/js/modules/extras/word-cloud.controller.js"></script>
+        <script src="~/master/js/modules/flatdoc/flatdoc.directive.js"></script>
+        <script src="~/master/js/modules/forms/color-picker.controller.js"></script>
+        <script src="~/master/js/modules/forms/filestyle.directive.js"></script>
+        <script src="~/master/js/modules/forms/form-imgcrop.controller.js"></script>
+        <script src="~/master/js/modules/forms/form-validation.controller.js"></script>
+        <script src="~/master/js/modules/forms/form-wizard.directive.js"></script>
+        <script src="~/master/js/modules/forms/form-xeditable.controller.js"></script>
+        <script src="~/master/js/modules/forms/forms.controller.js"></script>
+        <script src="~/master/js/modules/forms/masked.directive.js"></script>
+        <script src="~/master/js/modules/forms/props.filter.js"></script>
+        <script src="~/master/js/modules/forms/tags-input.directive.js"></script>
+        <script src="~/master/js/modules/forms/uiselect.controller.js"></script>
+        <script src="~/master/js/modules/forms/upload.controller.js"></script>
+        <script src="~/master/js/modules/icons/icons-skycons.directive.js"></script>
+        <script src="~/master/js/modules/lazyload/lazyload.config.js"></script>
+        <script src="~/master/js/modules/lazyload/lazyload.constants.js"></script>
+        <script src="~/master/js/modules/loadingbar/loadingbar.config.js"></script>
+        <script src="~/master/js/modules/loadingbar/loadingbar.run.js"></script>
+        <script src="~/master/js/modules/locale/locale.config.js"></script>
+        <script src="~/master/js/modules/locale/locale.controller.js"></script>
+        <script src="~/master/js/modules/mailbox/mailbox.controller.js"></script>
+        <script src="~/master/js/modules/mailbox/mailfolder.controller.js"></script>
+        <script src="~/master/js/modules/mailbox/mails.service.js"></script>
+        <script src="~/master/js/modules/mailbox/mailview.controller.js"></script>
+        <script src="~/master/js/modules/maps/maps-google-modal.controller.js"></script>
+        <script src="~/master/js/modules/maps/maps-google.controller.js"></script>
+        <script src="~/master/js/modules/maps/vector-map.directive.js"></script>
+        <script src="~/master/js/modules/maps/vector-map.service.js"></script>
+        <script src="~/master/js/modules/maps/vector-maps.controller.js"></script>
+        <script src="~/master/js/modules/navsearch/navsearch.directive.js"></script>
+        <script src="~/master/js/modules/navsearch/navsearch.service.js"></script>
+        <script src="~/master/js/modules/notify/notify.controller.js"></script>
+        <script src="~/master/js/modules/notify/notify.directive.js"></script>
+        <script src="~/master/js/modules/notify/notify.service.js"></script>
+        <script src="~/master/js/modules/pages/access-login.controller.js"></script>
+        <script src="~/master/js/modules/pages/access-register.controller.js"></script>
+        <script src="~/master/js/modules/panels/panel-collapse.directive.js"></script>
+        <script src="~/master/js/modules/panels/panel-dismiss.directive.js"></script>
+        <script src="~/master/js/modules/panels/panel-refresh.directive.js"></script>
+        <script src="~/master/js/modules/panels/panel-tools.directive.js"></script>
+        <script src="~/master/js/modules/panels/panels.controller.js"></script>
+        <script src="~/master/js/modules/panels/portlet.controller.js"></script>
+        <script src="~/master/js/modules/preloader/preloader.directive.js"></script>
+        <script src="~/master/js/modules/routes/route-helpers.provider.js"></script>
+        <script src="~/master/js/modules/routes/routes.config.js"></script>
+        <script src="~/master/js/modules/settings/settings.run.js"></script>
+        <script src="~/master/js/modules/sidebar/sidebar.controller.js"></script>
+        <script src="~/master/js/modules/sidebar/sidebar.directive.js"></script>
+        <script src="~/master/js/modules/sidebar/sidebar.service.js"></script>
+        <script src="~/master/js/modules/sidebar/sidebar.userblock.controller.js"></script>
+        <script src="~/master/js/modules/tables/angular-grid.controller.js"></script>
+        <script src="~/master/js/modules/tables/datatable.controller.js"></script>
+        <script src="~/master/js/modules/tables/ngtable-data.service.js"></script>
+        <script src="~/master/js/modules/tables/ngtable.controller.js"></script>
+        <script src="~/master/js/modules/tables/table-xeditable.controller.js"></script>
+        <script src="~/master/js/modules/tables/uigrid.controller.js"></script>
+        <script src="~/master/js/modules/translate/translate.config.js"></script>
+        <script src="~/master/js/modules/translate/translate.run.js"></script>
+        <script src="~/master/js/modules/utils/animate-enabled.directive.js"></script>
+        <script src="~/master/js/modules/utils/browser.service.js"></script>
+        <script src="~/master/js/modules/utils/clear-storage.directive.js"></script>
+        <script src="~/master/js/modules/utils/fullscreen.directive.js"></script>
+        <script src="~/master/js/modules/utils/load-css.directive.js"></script>
+        <script src="~/master/js/modules/utils/now.directive.js"></script>
+        <script src="~/master/js/modules/utils/table-checkall.directive.js"></script>
+        <script src="~/master/js/modules/utils/trigger-resize.directive.js"></script>
+        <script src="~/master/js/modules/utils/utils.service.js"></script>
+        <script src="~/master/js/custom/custom.controller.js"></script>
+
+    </environment>
+
+    <environment names="Staging,Production">
+
+        <!-- =============== BASE SCRIPTS ===============-->
+
+        <script src="~/lib/modernizr/modernizr.custom.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/angular/angular.min.js"></script>
+        <script src="~/lib/angular-route/angular-route.min.js"></script>
+        <script src="~/lib/angular-cookies/angular-cookies.min.js"></script>
+        <script src="~/lib/angular-animate/angular-animate.min.js"></script>
+        <script src="~/lib/angular-touch/angular-touch.min.js"></script>
+        <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="~/lib/ngstorage/ngStorage.min.js"></script>
+        <script src="~/lib/angular-ui-utils/index.js"></script>
+        <script src="~/lib/angular-ui-mask/dist/mask.min.js"></script>
+        <script src="~/lib/angular-ui-event/dist/event.min.js"></script>
+        <script src="~/lib/angular-ui-validate/dist/validate.min.js"></script>
+        <script src="~/lib/angular-ui-indeterminate/dist/indeterminate.min.js"></script>
+        <script src="~/lib/angular-ui-scrollpoint/dist/scrollpoint.min.js"></script>
+        <script src="~/lib/angular-ui-scroll/dist/ui-scroll.min.js"></script>
+        <script src="~/lib/angular-ui-uploader/dist/uploader.min.js"></script>
+        <script src="~/lib/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="~/lib/angular-resource/angular-resource.min.js"></script>
+        <script src="~/lib/angular-translate/angular-translate.min.js"></script>
+        <script src="~/lib/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
+        <script src="~/lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+        <script src="~/lib/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
+        <script src="~/lib/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
+        <script src="~/lib/oclazyload/dist/ocLazyLoad.min.js"></script>
+        <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="~/lib/angular-loading-bar/build/loading-bar.min.js"></script>
+        <script src="~/lib/angular-dynamic-locale/dist/tmhDynamicLocale.min.js"></script>
+        <script src="~/lib/jquery.browser/dist/jquery.browser.min.js"></script>
+        <script src="~/lib/matchMedia/matchMedia.js"></script>
+
+        <!-- =============== APP ===============-->
+
+        <script src="~/js/app.js"></script>
+
+    </environment>
+
+</body>
+
+</html>

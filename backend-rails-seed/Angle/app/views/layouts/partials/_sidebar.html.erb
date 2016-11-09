@@ -1,0 +1,19 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+   <nav class="sidebar">
+      <!-- START sidebar nav-->
+      <ul class="nav">
+         <li class="nav-heading">
+            <span>Main Navigation</span>
+         </li>
+         <li class="<%= 'active' if controller?('singleview') && action?('index') %>">
+            <a href="/singleview" title="Single View">
+               <em class="icon-speedometer"></em>
+               <span>Single View</span>
+            </a>
+         </li>
+      </ul>
+      <!-- END sidebar nav-->
+   </nav>
+</div>
+<!-- END Sidebar (left)-->

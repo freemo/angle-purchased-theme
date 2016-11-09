@@ -1,0 +1,49 @@
+
+// START Mails
+.panel.panel-default
+  .panel-body
+      
+    form(role='form-horizontal', method='post')
+      .input-group.form-group
+        span.input-group-addon.text-sm To:
+        input.form-control(type='text')
+      .input-group.form-group(ng-show="mailbox.mail.cc")
+        span.input-group-addon.text-sm CC:
+        input.form-control(type='text')
+      .input-group.form-group(ng-show="mailbox.mail.bcc")
+        span.input-group-addon.text-sm BCC:
+        input.form-control(type='text')
+      .input-group.form-group
+        span.input-group-addon.text-sm Subject:
+        input.form-control(type='text')
+      .mb-editor
+        // START action buttons
+        .btn-group.btn-group-sm.mb.pull-right
+          button.btn.btn-default.btn-sm(type="button", ng-class="{'active':mailbox.mail.cc}", ng-click='mailbox.mail.cc = !mailbox.mail.cc', href='#') CC
+          button.btn.btn-default.btn-sm(type="button", ng-class="{'active':mailbox.mail.bcc}", ng-click='mailbox.mail.bcc = !mailbox.mail.bcc', href='#') BCC
+        // END action buttons  
+        script(type='text/ng-template', id="ng-wig/views/ng-wig.html")
+          .ng-wig
+            .btn-group.btn-group-sm
+              button.btn.btn-sm.btn-default(type='button', title='Header', ng-click="execCommand('formatblock', '<h1>')")
+                em.fa.fa-header
+              button.btn.btn-sm.btn-default(type='button', title='Paragraph', ng-click="execCommand('formatblock', '<p>')")
+                em.fa.fa-paragraph
+              button.btn.btn-sm.btn-default(type='button', title='Unordered List', ng-click="execCommand('insertunorderedlist')")
+                em.fa.fa-list-ul
+              button.btn.btn-sm.btn-default(type='button', title='Ordered List', ng-click="execCommand('insertorderedlist')")
+                em.fa.fa-list-ol
+              button.btn.btn-sm.btn-default(type='button', title='Bold', ng-click="execCommand('bold')")
+                em.fa.fa-bold
+              button.btn.btn-sm.btn-default(type='button', title='Italic', ng-click="execCommand('italic')")
+                em.fa.fa-italic
+              button.btn.btn-sm.btn-default(type='button', title='link', ng-click="execCommand('createlink')")
+                em.fa.fa-link
+              button.btn.btn-sm.btn-default(type='button', title="Edit Html" ng-class="{ 'nw-button--active': editMode }", ng-click='toggleEditMode()')
+                em.fa.fa-pencil
+            .nw-editor
+              textarea.nw-editor__src(ng-show="editMode", ng-model="content") 
+              iframe.nw-editor__res(scrolling="{{ autoexpand ? 'no' : 'yes' }}", frameBorder="0", ng-hide="editMode", ng-model="content", ng-wig-editable='')
+        textarea(ng-wig="content") 
+        br
+        button(type="button").btn.btn-primary.btn-sm.mb Send

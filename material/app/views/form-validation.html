@@ -1,0 +1,494 @@
+<h3>Form Validation
+   <small>Native AngularJS input validation</small>
+</h3>
+<!-- START row-->
+<div class="container-fluid" ng-controller="FormValidationController as form">
+   <div class="row">
+      <div class="col-md-12">
+         <form class="form-validate form-horizontal" name="form.formValidate" ng-submit="form.submitForm()" novalidate="">
+            <!-- START panel-->
+            <div class="panel panel-default">
+               <div class="panel-body">
+                  <fieldset class="b0">
+                     <legend>Basics</legend>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Required Text</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="sometext" required="" ng-model="sometext" />
+                           <span class="text-danger" ng-show="form.validateInput('sometext', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">required</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="email" placeholder="mail@example.com" name="email" required="" ng-model="email" />
+                           <span class="text-danger" ng-show="form.validateInput('email', 'required')">This field is required</span>
+                           <span class="text-danger" ng-show="form.validateInput('email', 'email')">This field must be a valid email address</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">type='email'</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Checkbox &amp; Radio</label>
+                        <div class="col-sm-6">
+                           <div class="checkbox c-checkbox needsclick">
+                              <label class="needsclick">
+                                 <input class="needsclick" type="checkbox" required="" name="checkbox" ng-model="checkbox" />
+                                 <span class="fa fa-check"></span>Option one</label>
+                           </div>
+                           <span class="text-danger" ng-show="form.validateInput('checkbox', 'required')">This field is required</span>
+                           <div class="radio c-radio">
+                              <label>
+                                 <input type="radio" required="" name="radio" value="option1" ng-model="radio" />
+                                 <span class="fa fa-circle"></span>Option one</label>
+                           </div>
+                           <div class="radio c-radio">
+                              <label>
+                                 <input type="radio" required="" name="radio" value="option2" ng-model="radio" />
+                                 <span class="fa fa-circle"></span>Option two checked</label>
+                           </div>
+                           <span class="text-danger" ng-show="form.validateInput('radio', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4"></div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Select</label>
+                        <div class="col-sm-6">
+                           <select class="form-control" name="select" required="" ng-model="select">
+                              <option value="">Nothing</option>
+                              <option value="1">Option 1</option>
+                              <option value="2">Option 2</option>
+                              <option value="3">Option 3</option>
+                              <option value="4">Option 4</option>
+                           </select>
+                           <span class="text-danger" ng-show="form.validateInput('select', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">type='number'</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Number</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="number" name="number" required="" ng-model="number" />
+                           <span class="text-danger" ng-show="form.validateInput('number', 'number')">This field must be a valid number</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">type='number'</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Digits</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="digits" required="" ng-pattern="/^[0-9]+$/" ng-model="digits" />
+                           <span class="text-danger" ng-show="form.validateInput('digits', 'pattern')">This field must contain only digits</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ng-pattern="/^[0-9]+$/"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Alphanum</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="alphanum" required="" ng-pattern="/^[a-zA-Z]+$/" ng-model="alphanum" />
+                           <span class="text-danger" ng-show="form.validateInput('alphanum', 'pattern')">This field must contain only letters</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ng-pattern="/^[a-zA-Z]+$/"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="bb0">
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Url</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="url" name="url" required="" ng-model="url" placeholder="protocol://" />
+                           <span class="text-danger" ng-show="form.validateInput('url', 'url')">This field must be a valid url</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">type='url'</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="b0">
+                     <legend>Lengths</legend>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Min</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="min" required="" ng-model="minvalue" ui-validate="'$value &gt;= 6'" />
+                           <span class="text-danger" ng-show="form.validateInput('min', 'min')">This field requires minimum value</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ui-validate="'$value &gt;= 6'"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Max</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="max" required="" ng-model="maxvalue" ui-validate="'$value &lt;= 6'" />
+                           <span class="text-danger" ng-show="form.validateInput('max', 'max')">This field requires maximum value</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ui-validate="'$value &lt;= 6'"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Minlength</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="minlength" required="" ng-model="minlen" ng-minlength="6" />
+                           <span class="text-danger" ng-show="form.validateInput('minlength', 'minlength')">This field requires a min length</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ng-minlength="6"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Maxlength</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="maxlength" required="" ng-model="maxlen" ng-maxlength="10" />
+                           <span class="text-danger" ng-show="form.validateInput('maxlength', 'maxlength')">This field requires a max length</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ng-maxlength="10"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Min words</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="minwords" required="" ui-validate="'form.words($value) &gt;= 6'" ng-model="minwords" />
+                           <span class="text-danger" ng-show="form.validateInput('minwords', 'validator')">This field requires a minimum amount of words</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ui-validate="'words($value) &gt;= 6'"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="bb0">
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Max words</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="maxwords" required="" ui-validate="'words($value) &lt;= 6'" ng-model="maxwords" />
+                           <span class="text-danger" ng-show="form.validateInput('maxwords', 'validator')">This field requires a maximum amount of words</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ui-validate="'words($value) &lt;= 6'"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="b0">
+                     <legend>Range</legend>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Length range</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="length" required="" ng-model="minmaxlen" ng-minlength="6" ng-maxlength="10" />
+                           <span class="text-danger" ng-show="form.validateInput('length', 'minlength')">This field requires a min length of 6</span>
+                           <span class="text-danger" ng-show="form.validateInput('length', 'maxlength')">This field requires a max length of 10</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ng-minlength="6", ng-maxlength="10"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="bb0">
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Range of words</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" name="rangewords" required="" ui-validate="'words($value) &gt;= 6 &amp;&amp; words($value) &lt;= 10'" ng-model="rangewords" />
+                           <span class="text-danger" ng-show="form.validateInput('rangewords', 'validator')">This field requires a range of words</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ui-validate="'words($value) &gt;= 6 &amp;&amp; words($value) &lt;= 10'"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="b0">
+                     <legend>Comparison</legend>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Equal to</label>
+                        <div class="col-sm-6">
+                           <div class="row">
+                              <div class="col-xs-6">
+                                 <input class="form-control" id="id-source" type="password" ng-model="match1" />
+                              </div>
+                              <div class="col-xs-6">
+                                 <input class="form-control" type="password" name="confirm_match" required="" ng-model="match2" ui-validate="'$value==match1'" ui-validate-watch="'validator.match1'" />
+                              </div>
+                           </div>
+                           <p class="text-danger" ng-show="form.validateInput('confirm_match', 'validator')">Input does Not match</p>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ui-validate="'$value==match1'"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Email BlackList</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="email" placeholder="example: 'some@mail.com'" name="email_bl" required="" ui-validate="{blacklist : 'form.notBlackListed($value)' }" ng-model="email_bl" />
+                           <p class="text-danger" ng-show="form.validateInput('email_bl', 'blacklist')">Email found in black list</p>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">ui-validate="{blacklist}"</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="b0">
+                     <legend>Advanced</legend>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group" ng-controller="TimepickerDemoCtrl">
+                        <label class="col-sm-2 control-label">Chosen</label>
+                        <div class="col-sm-6">
+                           <div class="input-group mb">
+                              <span class="input-group-addon">@</span>
+                              <!-- this uses fixed width to avoid expand outside the group container-->
+                              <select class="chosen-select input-md" chosen="" required="" name="chosen" ng-model="inputg1" width="'300px'">
+                                 <option value=""></option>
+                                 <option value="1">Nulla facilisi. Quisque in sapien et neque sodales facilisis. Proin a porta turpis.</option>
+                                 <option value="2">New York Giants</option>
+                                 <option value="3">Philadelphia Eagles</option>
+                                 <option value="4">Washington Redskins</option>
+                              </select>
+                           </div>
+                           <span class="text-danger" ng-show="form.validateInput('chosen', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4"></div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group" ng-controller="TimepickerDemoCtrl">
+                        <label class="col-sm-2 control-label">Chosen multiple</label>
+                        <div class="col-sm-6">
+                           <select class="chosen-select form-control" chosen="" required="" name="chosenmultiple" multiple="multiple" ng-model="chosenmultiple">
+                              <option value="">
+                                 <option>Dallas Cowboys</option>
+                                 <option>New York Giants</option>
+                                 <option>Philadelphia Eagles</option>
+                                 <option>Washington Redskins</option>
+                                 <option>Chicago Bears</option>
+                                 <option>Detroit Lions</option>
+                                 <option>Green Bay Packers</option>
+                                 <option>Minnesota Vikings</option>
+                                 <option>Atlanta Falcons</option>
+                                 <option>Carolina Panthers</option>
+                                 <option>New Orleans Saints</option>
+                                 <option>Tampa Bay Buccaneers</option>
+                                 <option>Arizona Cardinals</option>
+                                 <option>St. Louis Rams</option>
+                                 <option>San Francisco 49ers</option>
+                                 <option>Seattle Seahawks</option>
+                                 <option>Buffalo Bills</option>
+                                 <option>Miami Dolphins</option>
+                                 <option>New England Patriots</option>
+                                 <option>New York Jets</option>
+                                 <option>Baltimore Ravens</option>
+                                 <option>Cincinnati Bengals</option>
+                                 <option>Cleveland Browns</option>
+                                 <option>Pittsburgh Steelers</option>
+                                 <option>Houston Texans</option>
+                                 <option>Indianapolis Colts</option>
+                                 <option>Jacksonville Jaguars</option>
+                                 <option>Tennessee Titans</option>
+                                 <option>Denver Broncos</option>
+                                 <option>Kansas City Chiefs</option>
+                                 <option>Oakland Raiders</option>
+                                 <option>San Diego Chargers</option>
+                              </option>
+                           </select>
+                           <span class="text-danger" ng-show="form.validateInput('chosenmultiple', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4"></div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group" ng-controller="uiSelectController as uisel">
+                        <label class="col-sm-2 control-label">uiSelect</label>
+                        <div class="col-sm-6">
+                           <div class="input-group">
+                              <ui-select ng-model="uisel.address.selected" name="uiselect" ng-required="true" theme="bootstrap" ng-disabled="uisel.disabled" reset-search-input="false">
+                                 <ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+                                 <ui-select-choices repeat="address in uisel.addresses | filter: $select.search track by $index" refresh="uisel.refreshAddresses($select.search)" refresh-delay="0">
+                                    <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+                                 </ui-select-choices>
+                              </ui-select>
+                              <span class="input-group-btn">
+                                 <button class="btn btn-default" type="button" ng-click="uisel.address.selected = undefined">
+                                    <small>
+                                       <em class="fa fa-trash text-muted icon-lg"></em>
+                                    </small>
+                                 </button>
+                              </span>
+                           </div>
+                           <span class="text-danger" ng-show="form.validateInput('uiselect', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">Value: {{uisel.address.selected.formatted_address}}</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group" ng-controller="DatepickerDemoCtrl as dpick">
+                        <label class="col-sm-2 control-label">Datepicker</label>
+                        <div class="col-sm-6">
+                           <p class="input-group">
+                              <input class="form-control" type="text" name="date" required="" uib-datepicker-popup="{{dpick.format}}" ng-model="dpick.date" is-open="dpick.opened" min-date="dpick.minDate" max-date="'2019-12-22'" uib-datepicker-options="dpick.dateOptions"
+                              date-disabled="dpick.disabled(date, mode)" close-text="Close" />
+                              <span class="input-group-btn">
+                                 <button class="btn btn-default" type="button" ng-click="dpick.open($event)">
+                                    <em class="fa fa-calendar"></em>
+                                 </button>
+                              </span>
+                           </p>
+                           <span class="text-danger" ng-show="form.validateInput('date', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">Value: {{dpick.date}}</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group" ng-controller="TimepickerDemoCtrl as tpick">
+                        <label class="col-sm-2 control-label">Timepicker</label>
+                        <div class="col-sm-6">
+                           <div uib-timepicker="uib-timepicker" name="timepickr" required="" ng-model="tpick.mytime" ng-change="tpick.changed()" hour-step="tpick.hstep" minute-step="tpick.mstep" show-meridian="tpick.ismeridian"></div>
+                           <span class="text-danger" ng-show="form.validateInput('timepickr', 'required')">This field is invalid</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <small class="text-muted">Time is: {{tpick.mytime | date:'shortTime' }}</small>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Tags input</label>
+                        <div class="col-sm-6">
+                           <input class="form-control" type="text" required="" name="tagsinput" tagsinput="tagsinput" ng-model="tagsinput" />
+                           <span class="text-danger" ng-show="form.validateInput('tagsinput', 'required')">This field is required</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <span class="help-block">Values: {{tagsinput}}</span>
+                        </div>
+                     </div>
+                  </fieldset>
+               </div>
+               <div class="panel-footer text-center">
+                  <button class="btn btn-info" type="submit">Run validation</button>
+               </div>
+            </div>
+            <!-- END panel-->
+         </form>
+      </div>
+   </div>
+   <!-- END row-->
+   <!-- START row-->
+   <div class="row">
+      <div class="col-lg-6">
+         <form class="form-validate" name="registerForm" novalidate="">
+            <!-- START panel-->
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <div class="panel-title">Form Register</div>
+               </div>
+               <div class="panel-body">
+                  <div class="form-group">
+                     <label class="control-label">Email Address *</label>
+                     <input class="form-control" type="email" placeholder="mail@example.com" name="email" required="" ng-model="register.email" />
+                     <span class="text-danger" ng-show="registerForm.email.$dirty &amp;&amp; registerForm.email.$error.required">This field is required</span>
+                     <span class="text-danger" ng-show="registerForm.email.$dirty &amp;&amp; registerForm.email.$error.email">This field must be a valid email address</span>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label">Password *</label>
+                     <input class="form-control" id="id-password" type="password" name="password1" ng-model="register.password1" ng-pattern="/^[a-zA-Z0-9]{6,10}$/" />
+                     <span class="text-danger" ng-show="registerForm.password1.$dirty &amp;&amp; registerForm.password1.$error.pattern">Input should match 'a-zA-Z0-9' and 6-10 length</span>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label">Confirm Password *</label>
+                     <input class="form-control" type="password" name="confirm_match" required="" ng-model="register.password2" ui-validate="'$value==register.password1'" ui-validate-watch="'register.password1'" />
+                     <span class="text-danger" ng-show="registerForm.confirm_match.$dirty &amp;&amp; registerForm.confirm_match.$error.validator">Password does Not match</span>
+                  </div>
+                  <div class="required">* Required fields</div>
+               </div>
+               <div class="panel-footer">
+                  <div class="clearfix">
+                     <div class="pull-left">
+                        <div class="checkbox c-checkbox">
+                           <label>
+                              <input type="checkbox" name="agreements" required="" ng-model="register.agreements" />
+                              <span class="fa fa-check"></span>I agree with the <a href="#">terms</a>
+                           </label>
+                        </div>
+                        <span class="text-danger" ng-show="registerForm.agreements.$dirty &amp;&amp; registerForm.agreements.$error.required">Please read and agree the terms</span>
+                     </div>
+                     <div class="pull-right">
+                        <button class="btn btn-primary" type="submit">Register</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- END panel-->
+         </form>
+      </div>
+      <div class="col-lg-6">
+         <form class="form-validate" name="loginForm" novalidate="">
+            <!-- START panel-->
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <div class="panel-title">Form Login</div>
+               </div>
+               <div class="panel-body">
+                  <div class="form-group">
+                     <label class="control-label">Email Address *</label>
+                     <input class="form-control" type="email" placeholder="mail@example.com" name="email" required="" ng-model="login.email" />
+                     <span class="text-danger" ng-show="loginForm.email.$dirty &amp;&amp; loginForm.email.$error.required">This field is required</span>
+                     <span class="text-danger" ng-show="loginForm.email.$dirty &amp;&amp; loginForm.email.$error.email">This field must be a valid email address</span>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label">Password *</label>
+                     <input class="form-control" type="password" name="password" required="" ng-model="login.password" />
+                     <span class="text-danger" ng-show="loginForm.password.$dirty &amp;&amp; loginForm.password.$error.required">This field is required</span>
+                  </div>
+                  <div class="required">* Required fields</div>
+               </div>
+               <div class="panel-footer">
+                  <button class="btn btn-primary" type="submit" ng-disabled="loginForm.$invalid">Login</button>
+               </div>
+            </div>
+            <!-- END panel-->
+         </form>
+      </div>
+   </div>
+   <!-- END row-->
+</div>

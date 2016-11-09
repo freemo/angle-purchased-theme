@@ -1,0 +1,30 @@
+/* ========================================================================
+   Component: datepicker.less
+ ========================================================================== */
+
+.ui-datepicker {
+  display: inline-block;
+  max-width: 100%;
+  overflow: auto;
+  background-color: #fff;
+  table {
+    width: 100%;
+  }
+  button {
+    border: 0;
+    border-radius: 0;
+    .box-shadow(0 0 0 #000) !important;
+
+    &.active {
+      background-color: @brand-purple !important;
+      > span {
+        color: #fff !important;
+      }
+    }
+
+    .text-info {
+      color: @brand-purple;
+      border-bottom: 1px solid;
+    }
+  }
+}

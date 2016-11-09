@@ -1,0 +1,76 @@
+/* ========================================================================
+   Component: Settings
+ ========================================================================== */
+ 
+ .settings {
+  @wd: 215px;
+  position: fixed;
+  top: 120px;
+  right: 0;
+  left: auto;
+  width: @wd;
+  background-color: #fff;
+  .backface-visibility(hidden);
+  border: 1px solid @gray;
+  margin-right: -@wd;
+  z-index: 9999;
+  .transition(margin .3s cubic-bezier(1, 0, 0, 1));
+  &.show {
+    margin-right: 0;
+  }
+ }
+
+.settings-inner {
+  position: relative;
+  .settings-ctrl {
+    @sz: 50px;
+    position: absolute;
+    top: -1px;
+    left: -@sz;
+    width: @sz;
+    height: @sz;
+    background-color: #fff;
+    border: 1px solid @gray;
+    border-right: 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px 0 0 3px;
+    > em {
+      line-height: @sz - 1;
+      font-size: 20px;
+      color: @gray-dark;
+    }
+  }
+}
+
+.settings-content {
+  padding: 10px;
+}
+
+.setting-colors {
+  margin-bottom: 20px;
+  .clearfix;
+  .setting-color {
+    @sz: 40px;
+    float: left;
+    width: @sz;
+    height: @sz;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+    &:last-child {
+      margin-right: 0;
+    }
+    > em {
+      display: none;
+      line-height: @sz - 1;
+      color: #fff;
+      color: rgba(255,255,255,.75);
+    }
+    &.checked {
+      > em {
+        display: block;
+      }
+    }
+  }
+}

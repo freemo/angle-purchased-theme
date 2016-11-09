@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "FormWizard";
+}
+
+<h3>Form Wizard</h3>
+<div class="panel panel-default">
+    <div class="panel-heading">Basic Form (jquery.validate)</div>
+    <div class="panel-body">
+        <form id="example-form" action="#">
+            <div>
+                <h4>
+                    Account
+                    <br>
+                    <small>Nam egestas, leo eu gravida tincidunt</small>
+                </h4>
+                <fieldset>
+                    <label for="userName">User name *</label>
+                    <input id="userName" name="userName" type="text" class="form-control required">
+                    <label for="password">Password *</label>
+                    <input id="password" name="password" type="text" class="form-control required">
+                    <label for="confirm">Confirm Password *</label>
+                    <input id="confirm" name="confirm" type="text" class="form-control required">
+                    <p>(*) Mandatory</p>
+                </fieldset>
+                <h4>
+                    Profile
+                    <br>
+                    <small>Nam egestas, leo eu gravida tincidunt</small>
+                </h4>
+                <fieldset>
+                    <label for="name">First name *</label>
+                    <input id="name" name="name" type="text" class="form-control required">
+                    <label for="surname">Last name *</label>
+                    <input id="surname" name="surname" type="text" class="form-control required">
+                    <label for="email">Email *</label>
+                    <input id="email" name="email" type="text" class="form-control required email">
+                    <label for="address">Address</label>
+                    <input id="address" name="address" type="text" class="form-control">
+                    <p>(*) Mandatory</p>
+                </fieldset>
+                <h4>
+                    Hints
+                    <br>
+                    <small>Nam egestas, leo eu gravida tincidunt</small>
+                </h4>
+                <fieldset>
+                    <p class="lead text-center">Almost there!</p>
+                </fieldset>
+                <h4>
+                    Finish
+                    <br>
+                    <small>Nam egestas, leo eu gravida tincidunt</small>
+                </h4>
+                <fieldset>
+                    <p class="lead">One last check</p>
+                    <div class="checkbox c-checkbox">
+                        <label>
+                            <input type="checkbox" required="required" name="terms">
+                            <span class="fa fa-check"></span>I agree with the Terms and Conditions.
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Basic Vertical Example</div>
+    <div class="panel-body">
+        <div id="example-vertical">
+            <h4>Keyboard</h4>
+            <section>
+                <p>Try the keyboard navigation by clicking arrow left or right!</p>
+            </section>
+            <h4>Effects</h4>
+            <section>
+                <p>Wonderful transition effects.</p>
+            </section>
+            <h4>Pager</h4>
+            <section>
+                <p>The next and previous buttons help you to navigate through your content.</p>
+            </section>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryValidate")
+    @Scripts.Render("~/bundles/jquerySteps")
+    @Scripts.Render("~/bundles/demoWizard")
+}

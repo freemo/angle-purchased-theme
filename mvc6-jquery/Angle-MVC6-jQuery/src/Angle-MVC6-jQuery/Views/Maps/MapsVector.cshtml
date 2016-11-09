@@ -1,0 +1,33 @@
+@{
+    ViewBag.Title = "Vector Maps";
+}
+<h3>Vector Maps
+   <br/>
+   <small>Resolution independent maps</small>
+</h3>
+<div data-vector-map="" data-height="700" data-map-name="world_mill_en"></div>
+
+
+@section Styles {
+    <environment names="Development">
+        <link href="~/lib/ika.jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    </environment>
+    <environment names="Staging,Production">
+        <link href="~/lib/ika.jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    </environment>
+}
+
+@section Scripts {
+
+    <environment names="Development">
+        <script src="~/lib/ika.jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="~/lib/ika.jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="~/lib/ika.jvectormap/jquery-jvectormap-us-mill-en.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/ika.jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="~/lib/ika.jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="~/lib/ika.jvectormap/jquery-jvectormap-us-mill-en.js"></script>
+    </environment>
+
+}

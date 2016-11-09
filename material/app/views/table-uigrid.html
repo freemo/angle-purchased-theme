@@ -1,0 +1,17 @@
+<h3>UI Grid</h3>
+<div class="container-fluid" ng-controller="UIGridController as table">
+   <h4 class="page-header mt0">Basic</h4>
+   <div class="table-uigrid" ui-grid="table.gridOptions"></div>
+   <h4 class="page-header clearfix">
+      <div class="pull-left">Filter and Footer</div>
+      <div class="pull-right">
+         <button class="btn btn-xs btn-success" id="footerButton" ng-click="table.gridOptionsComplex.showGridFooter = !table.gridOptionsComplex.showGridFooter; $scope.gridApi.core.notifyDataChange(uiGridConstants.dataChange.OPTIONS);">Toggle Grid Footer</button>
+         <button class="btn btn-xs btn-success" ng-click="table.gridOptionsComplex.showColumnFooter = !table.gridOptionsComplex.showColumnFooter; $scope.gridApi.core.notifyDataChange(uiGridConstants.dataChange.OPTIONS);">Toggle Column Footer</button>
+      </div>
+   </h4>
+   <div class="table-uigrid" id="uigrid-demo" ui-grid="table.gridOptionsComplex"></div>
+   <h4 class="page-header">Pagination</h4>
+   <div class="table-uigrid" ui-grid="table.gridOptions1" ui-grid-pagination=""></div>
+   <h4 class="page-header">Selection and column visibility</h4>
+   <div class="table-uigrid" ui-grid="table.gridOptions2" ui-grid-selection="ui-grid-selection"></div>
+</div>

@@ -1,0 +1,135 @@
+<h3>uiSelect
+   <div class="pull-right">
+      <button class="btn btn-default btn-xs" ng-click="uisel.enable()">Enable</button>
+      <button class="btn btn-default btn-xs" ng-click="uisel.disable()">Disable</button>
+      <button class="btn btn-default btn-xs" ng-click="uisel.clear()">Clear</button>
+   </div>
+   <small>AngularJS-native version of Select2 and Selectize.</small>
+</h3>
+<div class="container-fluid">
+   <div class="form-horizontal">
+      <div class="form-group">
+         <div class="col-md-3 col-sm-4">
+            <p class="m0">Address</p>
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <ui-select ng-model="uisel.address.selected" theme="bootstrap" ng-disabled="uisel.disabled" reset-search-input="false">
+               <ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+               <ui-select-choices repeat="address in uisel.addresses | filter: $select.search track by $index" refresh="uisel.refreshAddresses($select.search)" refresh-delay="0">
+                  <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+               </ui-select-choices>
+            </ui-select>
+         </div>
+         <div class="col-md-5 col-xs-12">
+            <div class="text-sm text-muted mt-sm">Selected: {{uisel.address.selected.formatted_address}}</div>
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-md-3 col-sm-4">
+            <p class="m0">Persons</p>
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <ui-select ng-model="uisel.person.selected" theme="bootstrap" ng-disabled="uisel.disabled">
+               <ui-select-match placeholder="Select or search a name/age...">{{$select.selected.name}}</ui-select-match>
+               <ui-select-choices repeat="person in uisel.people | propsFilter: {name: $select.search, age: $select.search}">
+                  <div ng-bind-html="person.name | highlight: $select.search"></div>
+                  <small>email: {{person.email}} age:
+                     <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                  </small>
+               </ui-select-choices>
+            </ui-select>
+         </div>
+         <div class="col-md-5 col-xs-12">
+            <div class="text-sm text-muted mt-sm">Selected: {{uisel.person.selected}}</div>
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-md-3 col-sm-4">
+            <p class="m0">Countries</p>
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <ui-select class="text-left" ng-model="uisel.country.selected" theme="bootstrap" ng-disabled="uisel.disabled">
+               <ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>
+               <ui-select-choices repeat="country in uisel.countries | filter: $select.search">
+                  <span ng-bind-html="country.name | highlight: $select.search"></span>
+                  <small ng-bind-html="country.code | highlight: $select.search"></small>
+               </ui-select-choices>
+            </ui-select>
+         </div>
+         <div class="col-md-5 col-xs-12">
+            <div class="text-sm text-muted mt-sm">Selected: {{uisel.country.selected}}</div>
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-md-3 col-sm-4">
+            <p class="m0">Array of strings</p>
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <ui-select multiple="" ng-model="uisel.multipleDemo.colors" theme="bootstrap" ng-disabled="uisel.disabled">
+               <ui-select-match placeholder="Select colors...">{{$item}}</ui-select-match>
+               <ui-select-choices repeat="color in uisel.availableColors | filter:$select.search">{{color}}</ui-select-choices>
+            </ui-select>
+         </div>
+         <div class="col-md-5 col-xs-12">
+            <div class="text-sm text-muted mt-sm">Selected: {{uisel.multipleDemo.colors}}</div>
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-md-3 col-sm-4">
+            <p class="m0">Array of objects</p>
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <ui-select multiple="" ng-model="uisel.multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="uisel.disabled">
+               <ui-select-match placeholder="Select uisel.person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+               <ui-select-choices repeat="person in uisel.people | propsFilter: {name: $select.search, age: $select.search}">
+                  <div ng-bind-html="person.name | highlight: $select.search"></div>
+                  <small>email: {{person.email}} age:
+                     <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                  </small>
+               </ui-select-choices>
+            </ui-select>
+         </div>
+         <div class="col-md-5">
+            <div class="text-sm text-muted mt-sm">Selected: {{uisel.multipleDemo.selectedPeople}}</div>
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-md-3 col-sm-4">
+            <p class="m0">Array of objects with single property binding</p>
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <ui-select multiple="" ng-model="uisel.multipleDemo.selectedPeopleSimple" theme="bootstrap" ng-disabled="uisel.disabled">
+               <ui-select-match placeholder="Select uisel.person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+               <ui-select-choices repeat="person.email as person in uisel.people | propsFilter: {name: $select.search, age: $select.search}">
+                  <div ng-bind-html="person.name | highlight: $select.search"></div>
+                  <small>email: {{person.email}} age:
+                     <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                  </small>
+               </ui-select-choices>
+            </ui-select>
+         </div>
+         <div class="col-md-5 col-xs-12">
+            <div class="text-sm text-muted mt-sm">Selected: {{uisel.multipleDemo.selectedPeopleSimple}}</div>
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-md-3 col-sm-4">
+            <p class="m0">Array of objects (with groupBy)</p>
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <ui-select multiple="" ng-model="uisel.multipleDemo.selectedPeopleWithGroupBy" theme="bootstrap" ng-disabled="uisel.disabled">
+               <ui-select-match placeholder="Select uisel.person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+               <ui-select-choices group-by="uisel.someGroupFn" repeat="person in uisel.people | propsFilter: {name: $select.search, age: $select.search}">
+                  <div ng-bind-html="person.name | highlight: $select.search"></div>
+                  <small>email: {{person.email}} age:
+                     <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                  </small>
+               </ui-select-choices>
+            </ui-select>
+         </div>
+         <div class="col-md-5 col-xs-12">
+            <div class="text-sm text-muted mt-sm">Selected: {{uisel.multipleDemo.selectedPeopleWithGroupBy}}</div>
+         </div>
+      </div>
+   </div>
+</div>

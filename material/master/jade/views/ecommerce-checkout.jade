@@ -1,0 +1,353 @@
+.row
+    .col-md-3
+        .panel.b
+            .panel-heading.bb
+                h4.panel-title Order Summnary
+            .panel-body.bt
+                h4.b0 Order #65487
+            table.table: tbody
+                tr
+                    td Subtotal
+                    td
+                        .text-right.text-bold $400
+                tr
+                    td Estimated Tax
+                    td
+                        .text-right.text-bold $1.44
+                tr
+                    td Shiping
+                    td
+                        .text-right.text-bold $5
+            .panel-body
+                .clearfix
+                    .pull-right.text-right
+                        .text-bold $406.44
+                        .text-sm USD
+                    .pull-left.text-bold.text-dark ORDER TOTAL
+
+            .panel-body
+                p
+                    button.btn.btn-primary.btn-block(type="button") EXPRESS CHECKOUT
+                small.text-muted * To use this method you must be registered first
+    .col-md-9
+        .container-md
+            // Checkout Process
+            form(action='', method='post', novalidate)
+                uib-accordion(close-others="true")
+                    // Checkout Method
+                    div(uib-accordion-group, is-open="chk.step1", ng-init="chk.step1 = true", panel-class="b")
+                        uib-accordion-heading 1. Checkout Method
+                        #collapse01
+                            .row
+                                .col-md-6
+                                    p: strong REGISTER AND SAVE TIME!
+                                    p.mb0 Fast and simple check out
+                                    p Quick access to order history
+                                    .mv-lg
+                                        button.btn.btn-primary(type='button', ng-click="chk.step2 = true") Register
+                                    hr
+                                    button.btn.btn-default(type='button', ng-click="chk.step2 = true") Checkout as Guest
+                                .col-md-6
+                                    .form-group
+                                        p Already a Member?
+                                    .form-group
+                                        input.form-control(type='text', name='login-name', required='', placeholder='Email Address')
+                                    .form-group
+                                        input.form-control(type='text', name='login-password', required='', placeholder='Password')
+                                    p
+                                        a(href='#') Forgot password?
+                                    button.btn.btn-primary(type='button') Login
+                    // Billing Information
+                    div(uib-accordion-group, is-open="chk.step2", panel-class="b")
+                        uib-accordion-heading 2. Billing Information
+                        #collapse02
+                            .row
+                                .col-lg-6
+                                    .form-group
+                                        label First Name*
+                                        input.form-control(type='text', name='checkout-name', required='')
+                                    .form-group
+                                        label Company
+                                        input.form-control(type='text', name='checkout-company')
+
+                                .col-lg-6
+                                    .form-group
+                                        label Last Name*
+                                        input.form-control(type='text', name='checkout-lastname', required='')
+                                    .form-group
+                                        label Email Address*
+                                        input.form-control(type='text', name='checkout-email', required='')
+                            .row
+                                .col-lg-12
+                                    .form-group
+                                        label Address
+                                        input.form-control(type='text', name='checkout-address', required='')
+                            .row
+                                .col-lg-6
+                                    .form-group
+                                        label City*
+                                        input.form-control(type='text', name='checkout-city', required='')
+                                    .form-group
+                                        label Zip/Postal Code*
+                                        input.form-control(type='text', name='checkout-zip', required='')
+                                    .form-group
+                                        label Telephone*
+                                        input.form-control(type='text', name='checkout-telephone', required='')
+                                .col-lg-6
+                                    .form-group
+                                        label State/Province*
+                                        input.form-control(type='text', name='checkout-state', required='')
+                                    .form-group
+                                        label Country*
+                                        input.form-control(type='text', name='checkout-country', required='')
+                                    .form-group
+                                        label Fax
+                                        input.form-control(type='text', name='checkout-fax')
+                            .mv
+                                .radio.c-radio
+                                    label
+                                        input#chk-guest(type='radio', name='checkout-ship-to', value='address')
+                                        span.fa.fa-check
+                                        | Ship to this address
+                                .radio.c-radio
+                                    label
+                                        input#chk-guest(type='radio', name='checkout-ship-to', value='other')
+                                        span.fa.fa-check
+                                        | Ship to different address
+                            .pt.clearfix
+                                p.pull-right.text-sm: i Fields marked with (*) are required
+                                .pull-left
+                                    button.btn.btn-primary(type='button', ng-click="chk.step3 = true") Continue
+                    // Shipping Information
+                    div(uib-accordion-group, is-open="chk.step3", panel-class="b")
+                        uib-accordion-heading 3. Shipping Information
+                        #collapse03
+                            .row
+                                .col-lg-6
+                                    .form-group
+                                        label First Name*
+                                        input.form-control(type='text', name='checkout-ship-name', required='')
+                                    .form-group
+                                        label Company
+                                        input.form-control(type='text', name='checkout-ship-company')
+
+                                .col-lg-6
+                                    .form-group
+                                        label Last Name*
+                                        input.form-control(type='text', name='checkout-ship-lastname', required='')
+                                    .form-group
+                                        label Email Address*
+                                        input.form-control(type='text', name='checkout-ship-email', required='')
+                            .row
+                                .col-lg-12
+                                    .form-group
+                                        label Address
+                                        input.form-control(type='text', name='checkout-ship-address', required='')
+                            .row
+                                .col-lg-6
+                                    .form-group
+                                        label City*
+                                        input.form-control(type='text', name='checkout-ship-city', required='')
+                                    .form-group
+                                        label Zip/Postal Code*
+                                        input.form-control(type='text', name='checkout-ship-zip', required='')
+                                    .form-group
+                                        label Telephone*
+                                        input.form-control(type='text', name='checkout-ship-telephone', required='')
+                                .col-lg-6
+                                    .form-group
+                                        label State/Province*
+                                        input.form-control(type='text', name='checkout-ship-state', required='')
+                                    .form-group
+                                        label Country*
+                                        input.form-control(type='text', name='checkout-ship-country', required='')
+                                    .form-group
+                                        label Fax
+                                        input.form-control(type='text', name='checkout-ship-fax')
+                            .mv
+                                .checkbox.c-checkbox
+                                    label
+                                        input#chk-guest(type='checkbox', name='checkout-use-bill-address')
+                                        span.fa.fa-check
+                                        | Use Billing Address
+                            .pt.clearfix
+                                p.pull-right.text-sm: i Fields marked with (*) are required
+                                .pull-left
+                                    button.btn.btn-primary(type='button', ng-click="chk.step4 = true") Continue
+
+                    // Shipping Method
+                    div(uib-accordion-group, is-open="chk.step4", panel-class="b")
+                        uib-accordion-heading 4. Shipping Method
+                        #collapse04
+                            table.table
+                                thead.bg-gray-lighter
+                                    tr
+                                        th.wd-xxs: em.fa.fa-check.text-muted.ml-sm
+                                        th Method
+                                        th Deliver Time
+                                        th Cost
+                                tbody
+                                    tr
+                                        td
+                                            .radio.c-radio
+                                                label
+                                                    input#chk-guest(type='radio', name='checkout-ship' value="free")
+                                                    span.fa.fa-check
+                                        td: strong Free Shipping
+                                        td 10 to 15 days
+                                        td: strong.h4.text-green Free
+                                    tr
+                                        td
+                                            .radio.c-radio
+                                                label
+                                                    input#chk-guest(type='radio', name='checkout-ship' value="std")
+                                                    span.fa.fa-check
+                                        td: strong Standard post
+                                        td 4 to 7 days
+                                        td: strong.h4 $9.95
+                                    tr
+                                        td
+                                            .radio.c-radio
+                                                label
+                                                    input#chk-guest(type='radio', name='checkout-ship' value="next")
+                                                    span.fa.fa-check
+                                        td: strong Next day
+                                        td tomorrow
+                                        td: strong.h4 $19
+
+                            .pt.clearfix
+                                .pull-left
+                                    button.btn.btn-primary(type='button', ng-click="chk.step5 = true") Continue
+
+                    // Payment Information
+                    div(uib-accordion-group, is-open="chk.step5", panel-class="b")
+                        uib-accordion-heading 5. Payment Information
+                        #collapse05
+                            .row
+                                .col-lg-6
+                                    .form-group
+                                        .radio.c-radio
+                                            label
+                                                input.form-control#chk-guest(type='radio', name='checkout-pay', value='paypal', checked)
+                                                span.fa.fa-check
+                                                |  Paypal
+                                    .form-group
+                                        .radio.c-radio
+                                            label
+                                                input.form-control#chk-guest(type='radio', name='checkout-pay', value='check')
+                                                span.fa.fa-check
+                                                |  Check / Money order
+                                    .form-group
+                                        .radio.c-radio
+                                            label
+                                                input.form-control#chk-guest(type='radio', name='checkout-pay', value='creditcard')
+                                                span.fa.fa-check
+                                                |  Credit Card (saved)
+                                    .form-group
+                                        label Name on Card*
+                                        input.form-control(type='text', name='checkout-cc-name', required='')
+                                    .form-group
+                                        label Credit Card Type*
+                                        select.form-control(name='checkout-cc-type', required='')
+                                            option(value='') - Please Select -
+                                            option(value='amex') American Express
+                                            option(value='visa') Visa
+                                            option(value='master') Mastercard
+                                    .form-group
+                                        label Credit Card Number*
+                                        input.form-control(type='text', name='checkout-cc-number', required='')
+                                    .row
+                                        .col-lg-5
+                                            .form-group
+                                                label Credit Expiration month*
+                                                select.form-control(name='checkout-cc-exp-month', required='')
+                                                    option(value='') Month
+                                                    option(value='1') January
+                                                    option(value='2') February
+                                                    option(value='3') March
+                                                    option(value='4') April
+                                                    option(value='5') May
+                                                    option(value='6') June
+                                                    option(value='7') Jule
+                                                    option(value='8') August
+                                                    option(value='9') September
+                                                    option(value='10') October
+                                                    option(value='11') November
+                                                    option(value='12') December
+                                        .col-lg-5
+                                            .form-group
+                                                label Credit Expiration year*
+                                                select.form-control(name='checkout-cc-exp-year', required='')
+                                                    option(value='') Year
+                                                    option(value='2016') 2016
+                                                    option(value='2017') 2017
+                                                    option(value='2018') 2018
+                                                    option(value='2019') 2019
+                                                    option(value='2020') 2020
+                                                    option(value='2021') 2021
+                                                    option(value='2022') 2022
+                                                    option(value='2023') 2023
+                                        .col-lg-2
+                                            .form-group
+                                                    label CNV*
+                                                    input.form-control(type='text', name='checkout-cc-verification', required='')
+                        .pt.clearfix
+                            p.pull-right.text-sm: i Fields marked with (*) are required
+                            .pull-left
+                                button.btn.btn-primary(type='button', ng-click="chk.step6 = true") Continue
+
+                    // Order Review
+                    div(uib-accordion-group, is-open="chk.step6", panel-class="b")
+                        uib-accordion-heading 6. Order Review
+                        #collapse06
+                            .table-responsive
+                                table.table
+                                    colgroup
+                                        col.order-pic(span='1')
+                                        col.order-item-name(span='1')
+                                        col.order-qty(span='1')
+                                        col.order-price(span='1')
+                                        col.order-tax(span='1')
+                                        col.order-total(span='1')
+                                    thead.bg-gray-lighter
+                                        tr
+                                            th Product
+                                            th Product Title
+                                            th.wd-xs Qty
+                                            th Unit Price
+                                            th Tax
+                                            th Total
+                                    tfoot
+                                        tr
+                                            td(colspan='5') Subtotal
+                                            td $1540.00
+                                        tr
+                                            td(colspan='5') Shipping &amp; Handling (Free)
+                                            td $0.00
+                                        tr
+                                            td(colspan='5') Tax
+                                            td $49.00
+                                        tr.order-subtotal
+                                            td(colspan='5') Subtotal
+                                            td $1340.00
+                                    tbody
+                                        tr
+                                            td.order-pic.thumb64
+                                                img(src='app/img/dummy.png')
+                                            td.order-item-name Lorem Ipsum dolor
+                                            td.order-qty
+                                                input.form-control(type='text', name='checkout-qty', value='1')
+                                            td.order-price $825.00
+                                            td.order-tax $16.00
+                                            td.order-total $841.00
+                                        tr
+                                            td.order-pic
+                                                img(src='app/img/dummy.png')
+                                            td.order-item-name Lorem Ipsum dolor
+                                            td.order-qty
+                                                input.form-control(type='text', name='checkout-qty', value='1')
+                                            td.order-price $825.00
+                                            td.order-tax $16.00
+                                            td.order-total $841.00
+                            .mt-lg
+                                button.btn.btn-info(type='button', ng-click="chk.step1 = true") Submit Order

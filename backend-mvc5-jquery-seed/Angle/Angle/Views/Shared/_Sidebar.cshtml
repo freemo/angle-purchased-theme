@@ -1,0 +1,27 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+    <nav class="sidebar">
+        <!-- START sidebar nav-->
+        <ul class="nav">
+            <!-- END user info-->
+            <!-- Iterates over all sidebar items-->
+            <li class="nav-heading">
+                <span>Main Navigation</span>
+            </li>
+            <li class="@Html.isActive(controller: "SingleView")">
+                <a href="@Url.Action("Index", "SingleView")" title="SingleView">
+                    <em class="icon-speedometer"></em>
+                    <span>SingleView</span>
+                </a>
+            </li>
+            <li class="@Html.isActive(controller: "Movies")">
+                <a href="@Url.Action("Index", "Movies")" title="Movie App">
+                    <em class="icon-trophy"></em>
+                    <span >Movie App</span>
+                </a>
+            </li>
+        </ul>
+        <!-- END sidebar nav-->
+    </nav>
+</div>
+<!-- END Sidebar (left)-->

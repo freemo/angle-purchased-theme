@@ -1,0 +1,120 @@
+<!-- START action buttons-->
+<div class="button-toolbar clearfix mb">
+   <div class="btn-group">
+      <button type="button" class="btn btn-default btn-sm">
+         <em class="fa fa-mail-reply text-gray-dark"></em>
+      </button>
+      <button type="button" class="btn btn-default btn-sm">
+         <em class="fa fa-mail-reply-all text-gray-dark"></em>
+      </button>
+      <button type="button" class="btn btn-default btn-sm">
+         <em class="fa fa-mail-forward text-gray-dark"></em>
+      </button>
+   </div>
+   <div dropdown="dropdown" class="btn-group">
+      <button dropdown-toggle="" class="btn btn-default btn-sm">
+         <span style="width: 70px;" class="dropdown-label">
+            <em class="fa fa-folder-open"></em>
+         </span>
+         <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+         <li>
+            <a href="#">
+               <em class="fa fa-inbox fa-fw"></em>Meetings
+               <span class="label label-danger pull-right">6</span>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <em class="fa fa-file-text-o fa-fw"></em>CSS
+               <span class="label label-info pull-right inbox-notification">10</span>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <em class="fa fa-envelope-o fa-fw"></em>Pending</a>
+         </li>
+         <li>
+            <a href="#">
+               <em class="fa fa-certificate fa-fw"></em>Angular</a>
+         </li>
+      </ul>
+   </div>
+   <div dropdown="dropdown" class="btn-group">
+      <button dropdown-toggle="" class="btn btn-default btn-sm">
+         <span class="dropdown-label">More</span>
+         <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+         <li><a href="#">Mark as Read</a>
+         </li>
+         <li><a href="#">Mark as Unread</a>
+         </li>
+         <li><a href="#">Filter Messages like these</a>
+         </li>
+         <li><a href="#">Mute</a>
+         </li>
+      </ul>
+   </div>
+   <div class="btn-group pull-right">
+      <button type="button" class="btn btn-sm btn-default">
+         <em class="fa fa-archive"></em>
+      </button>
+      <button type="button" class="btn btn-default btn-sm">
+         <em class="fa fa-exclamation text-gray-dark"></em>
+      </button>
+      <button type="button" class="btn btn-default btn-sm">
+         <em class="fa fa-times text-gray-dark"></em>
+      </button>
+   </div>
+</div>
+<!-- END action buttons-->
+<div ng-controller="MailViewController as mailview" class="panel panel-default">
+   <div class="panel-body">
+      <table class="table mb-mails mb-view">
+         <tbody>
+            <tr>
+               <td>
+                  <div class="clearfix">
+                     <div class="mb-mail-date">{{mailview.mail.date}}</div>
+                     <img ng-src="{{mailview.mail.from.avatar}}" alt="Mail Avatar" class="mb-mail-avatar" />
+                     <div class="pull-left">
+                        <span>From:</span>
+                        <span class="mb-mail-from">{{mailview.mail.from.name}} &lt;{{mailview.mail.from.email}}&gt;</span>
+                        <p class="mb-mail-to-list">To: <a href="#" title="mailto: {{to.email}}" ng-repeat="to in mailview.mail.to">{{to.name}}</a>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="mb-mail-preview mt-lg">
+                     <h4>{{mailview.mail.subject}}</h4>
+                     <div ng-bind-html="mailview.mail.content"></div>
+                  </div>
+                  <div class="mb-attachment">
+                     <p ng-if="mailview.mail.attach.length">
+                        <span>
+                           <em class="fa fa-paperclip fa-fw"></em>{{mailview.mail.attach.length}} attachments —</span><a href="#" class="mr br pr"> Download all attachments</a><a href="#">View all images</a>
+                     </p>
+                     <ul class="list-inline">
+                        <li ng-repeat="att in mailview.mail.attach">
+                           <a href="{{att.url}}">
+                              <img ng-src="{{att.url}}" class="thumb64 img-responsive img-thumbnail" />
+                           </a>
+                           <p>{{att.name}}</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="media-box">
+                     <a href="#" class="pull-left">
+                        <img alt="" ng-src="{{user.picture}}" class="media-box-object img-rounded thumb32" />
+                     </a>
+                     <div class="media-box-body">
+                        <textarea placeholder="Reply here..." class="form-control"></textarea>
+                     </div>
+                  </div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>

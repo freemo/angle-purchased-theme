@@ -1,0 +1,382 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle Material - Bootstrap Admin App + AngularJS Material</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-02-13T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle-material">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#build" title="Build">Build</a></li>
+			<li><a href="#ngmaterial" title="ngMaterial">ngMaterial</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle Material</h1>
+	<h2>Bootstrap Admin App + AngularJS Material</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 07/22/2015</li>
+	<li>latest update: 02/13/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	<div>
+		<strong>AngularJS Material </strong>version is based on the <strong>AngularJS Full and Seed Projects.</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		This document describes the basic about this version and particular changes made to style and feature the product using the <strong>Google Material Design</strong> approach.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Said that, you will find relevant information by reading the AngularJS documentation to understand the most important parts of the product related to AngularJS features.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+</div>
+<div>
+	<strong>All the best and enjoy coding.</strong></div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_tips">Tips</h4>
+<ul>	<li>		Do not start from scratch, use an existing asset and modify it to learn how it works.</li>
+	<li>		Explore the sources for ideas and sample code.</li>
+	<li>		Use Firebug or Chrome Developer Tools to find bugs on your website. Using one of those tools will help you to save time analyzing the site and finding elements structure, like classes, id or tags</li>
+	<li>		Quick tip: open your site with Chrome, press F12 and go to console tab, reload your page and if something goes wrong you will see your page errors in red text.</li>
+	<li>		In case of error messages, someone might have seen it too, so you can try a Google search for a quick fix.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="getting_started_starting_the_app">Starting the app</h4>
+	<div>
+		Since this is AngularJS based application you need a server (Apache, IIS, xampp, etc) to serve the html files and perform http request to load all views.</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-info">
+		<strong>Important! </strong>Opening the index.html with a double click (i.e. using file:// protocol) will show you only a blank page because there&rsquo;s no server that response to the requests made for each view in order to display the app interface.</div>
+</div>
+<p>	<strong>Integrated server (BrowserSync)</strong></p>
+<div>
+	&nbsp;</div>
+<div>
+	See section Build to install node and bower dependecies and then run gulp task to automatically serve the app</div>
+<div>
+	&nbsp;</div>
+<p>	<strong>Alternative server setup (requires nodejs)</strong></p>
+<div>
+	This is simple solution for a basic server setup using <strong>nodejs</strong> that might help you. If don&#39;t have installed nodejs take a look at the <strong>Build </strong>section to learn about it</div>
+<div>
+	&nbsp;</div>
+<ul>	<li>		Install the http-server &nbsp;(-g installs globally)
+		<ul>			<li>				<strong>&nbsp; npm install http-server -g</strong>&nbsp;&nbsp;</li>
+		</ul>
+	</li>
+	<li>		Once it is installed move to the root folder of the theme (where index.html is located) and run
+		<ul>			<li>				<strong>&nbsp; http-server . -a 127.0.0.1 -p 8080</strong></li>
+		</ul>
+	</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	If everything goes fine you can now access to the app at <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<div>
+	The structure of the project is the same described for <strong>AngularJS </strong>project in the proper documentation. Here we list the relevant changes for you to find the changed parts related to Material Design features.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>HTML/JADE</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	All views displaying custom material components are named like follows</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+material.cards.jade
+material.colors.jade
+material.forms.jade
+material.inputs.jade
+material.lists.jade
+material.ngmaterial.jade
+material.whiteframe.jade
+material.widgets.jade</pre>
+</div>
+<p>	<strong>LESS/SCSS</strong></p>
+<p>	Component styles for Material design are listed under folder less/material or scss/material</p>
+<pre class="prettyprint lang-plain linenums">
+material/cards.less/.scss
+material/colors.less/.scss
+material/md-forms.less/.scss
+material/md-inputs.less/.scss
+material/md-list.less/.scss
+material/ngmaterial.less/.scss
+material/welcome.less/.scss</pre>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>JavaScript</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	Since this version is based on the new modular organization of the product, all relate Material stuff is located in the new module &#39;app.material&#39;</div>
+<div>
+	Using the following files</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+js/modules/material.config.js
+js/modules/material.controller.js
+js/modules/material.module.js
+js/modules/material.run.js
+js/modules/material.widgets.controller.js</pre>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="build">
+	<div class="page-header"><h3>Build</h3><hr class="notop"></div>
+<div>
+	<strong>Important</strong>! You only need to follow this instructions in case you want to work with JADE, LESS and concatenate all JS modules.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Node.js</strong> is a platform built on Chrome&rsquo;s JavaScript runtime for easily building fast, scalable network applications.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Gulp is</strong> a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for JADE and LESS, and concatenates the JS files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Bower </strong>is a dependency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you&rsquo;re looking for. Bower keeps track of these packages in a manifest file, bower.json.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The package includes under the master/ folder the file gulpfile.js, package.json and bower.json to install the required components to compile the source files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Installing tools</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	The following steps are intended to be an orientation guide, if you are not experienced with this you will need to learn more about it from Google :)</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		To install node and npm, go to http://nodejs.org/</li>
+	<li>
+		Run npm install -g bower to install bower to manage dependencies</li>
+	<li>
+		Download and install GIT for your platform http://git-scm.com/downloads</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Once you have all tools installed</strong></div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Open a terminal, go the package master/ folder, then run the command npm install. This command will install gulp and all project dependencies.</li>
+	<li>
+		Then, to install vendor dependencies, run bower install</li>
+	<li>
+		Finally run gulp to start the task manager</li>
+</ul>
+<div>
+	If everything goes fine, you should see the messages in the terminal telling you that most the task are done ok. The task will watch for files to compile them automatically all files when change.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-info">
+	You can also run <strong>npm start</strong> inside master folder to automatically install npm packages, bower dependencies and finally gulp, all with just one command.</div>
+<div>
+	&nbsp;</div>
+<h4 id="build_main_gulp_tasks">Main Gulp tasks</h4>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	This command will run the default task without minify assets</div>
+<pre class="prettyprint lang-plain linenums">
+$ gulp</pre>
+<div>
+	This task will generate the assest wihout mininfy and with sourcemaps</div>
+<pre class="prettyprint lang-plain linenums">
+$ gulp sourcemaps</pre>
+<div>
+	This taks will start the app with a server in your favourite browser</div>
+<pre class="prettyprint lang-plain linenums">
+$ gulp serve</pre>
+<div>
+	This taks will start the app with a server in your favourite browser</div>
+<pre class="prettyprint lang-plain linenums">
+$ gulp serve-prod</pre>
+<div>
+	This taks will generate the asset minified</div>
+<pre class="prettyprint lang-plain linenums">
+$ gulp build</pre>
+<div>
+	You can also mix task build and sourcemaps to get minified version with sourcemaps</div>
+<pre class="prettyprint lang-plain linenums">
+$ gulp build sourcemaps</pre>
+<div>
+	&nbsp;</div>
+<h4 id="build_angularjs_template_cache">AngularJS Template Cache</h4>
+<div>
+	&nbsp;</div>
+<div>
+	To enable this feature, run gulp with the following command</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-plain linenums">
+$ gulp --usecache</pre>
+<div>
+	Note: This flag is recommended to be combined with build task so you can generate the best optimized version for production enviroment.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="ngmaterial">
+	<div class="page-header"><h3>ngMaterial</h3><hr class="notop"></div>
+<h4 id="ngmaterial_angular_material">Angular Material</h4>
+<div>
+	&nbsp;</div>
+<div>
+	This project includes a framework built by Googgle called Angular Material.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	The Angular Material project is an implementation of Material Design in Angular.js that provides a set of reusable, well-tested, and accessible UI components based on the Material Design system.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Similar to the Polymer project&#39;s Paper elements collection, Angular Material is supported internally at Google by the Angular.js, Material Design UX and other product teams.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Learn more about this project and its features at&nbsp;<a href="https://material.angularjs.org/latest/#/">https://material.angularjs.org/latest/#/</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	Another useful reference for Material Concepts is at <a href="http://www.google.com/design/spec/material-design/introduction.html">Google Material Design website</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<h4 id="credits_a_href"http_vendor_creditshtml"vendor_assets_a"><a href="http://vendor-credits.html">Vendor Assets</a></h4>
+</section>
+
+	</div>
+</body>
+</html>

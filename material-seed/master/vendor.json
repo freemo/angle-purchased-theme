@@ -1,0 +1,14 @@
+[
+  "bower_components/weather-icons/css/weather-icons.min.css",
+  "bower_components/weather-icons/css/weather-icons-wind.min.css",
+  "bower_components/weather-icons/font/*",
+  "bower_components/modernizr/modernizr.custom.js",
+  "bower_components/fontawesome/css/font-awesome.min.css",
+  "bower_components/fontawesome/fonts/*",
+  "bower_components/simple-line-icons/css/simple-line-icons.css",
+  "bower_components/simple-line-icons/fonts/*",
+  "bower_components/angular-ui-map/ui-map.js",
+  "bower_components/load-google-maps/load-google-maps.js",
+  "bower_components/angular-material/angular-material.js",
+  "bower_components/angular-material/angular-material.css"
+]

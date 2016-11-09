@@ -1,0 +1,17 @@
+<template name="layouth">
+      <div class="wrapper">
+         <!-- top navbar-->
+         {{> topnavbarh }}
+         <!-- offsidebar-->
+         {{> offsidebar}}
+         <!-- Main section-->
+         <section>
+            <!-- Page content-->
+            <div class="content-wrapper">
+               {{> yield }}
+            </div>
+         </section>
+         <!-- Page footer-->
+         {{> footer }}
+      </div>
+</template>

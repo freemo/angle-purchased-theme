@@ -1,0 +1,31 @@
+<h3>Nav-Tree
+   <small>An AngularJS directive that creates a Tree based on a Bootstrap "nav" list.</small>
+</h3>
+<div ng-controller="AbnTestController as tree" class="container-fluid">
+   <div class="alert alert-info">{{ tree.output }}</div>
+   <div class="row">
+      <div class="col-lg-3 col-sm-6 col-lg-push-3 col-sm-push-6">
+         <div class="well wd-wide">
+            <span ng-if="tree.doing_async">...loading...</span>
+            <abn-tree tree-data="tree.my_data" tree-control="tree.my_tree" on-select="tree.my_tree_handler(branch)" expand-level="2" initial-selection="Granny Smith"></abn-tree>
+         </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-lg-pull-3 col-sm-pull-6">
+         <button ng-click="tree.try_changing_the_tree_data()" class="btn btn-block btn-default btn-sm">Toggle Tree Data</button>
+         <button ng-click="tree.try_async_load()" class="btn btn-block btn-default btn-sm">Tree Data Asynchronously (Json)</button>
+         <hr/>
+         <h5>Tree Control API:</h5>
+         <br/>
+         <div class="btn-group btn-group-justified mb"><a ng-click="tree.my_tree.select_first_branch()" class="btn btn-default btn-sm mb">First Branch</a><a ng-click="tree.try_adding_a_branch()" class="btn btn-default btn-sm">Add Branch</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a ng-click="tree.my_tree.select_next_sibling()" class="btn btn-default btn-sm">Next Sibling</a><a ng-click="tree.my_tree.select_prev_sibling()" class="btn btn-default btn-sm">Prev Sibling</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a ng-click="tree.my_tree.select_next_branch()" class="btn btn-default btn-sm">Next Branch</a><a ng-click="tree.my_tree.select_prev_branch()" class="btn btn-default btn-sm">Prev Branch</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a ng-click="tree.my_tree.expand_branch()" class="btn btn-default btn-sm">Expand</a><a ng-click="tree.my_tree.select_parent_branch()" class="btn btn-default btn-sm mb">Parent</a>
+         </div>
+         <div class="btn-group btn-group-justified mb"><a ng-click="tree.my_tree.expand_all()" class="btn btn-default btn-sm">Expand All</a><a ng-click="tree.my_tree.collapse_all()" class="btn btn-default btn-sm">Collapse All</a>
+         </div>
+      </div>
+   </div>
+</div>

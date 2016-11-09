@@ -1,0 +1,90 @@
+h3 Interaction
+  small Advanced bootstrap components for user interaction
+
+
+.row
+  .col-lg-6
+    h3.page-header.mt0 Carousel
+    div(ng-controller='CarouselDemoCtrl as caro')
+      div
+        div(uib-carousel, active="active", interval='caro.myInterval', no-wrap="false")
+          div(uib-slide, ng-repeat="slide in caro.slides track by $index", index="$index")
+            img.img-responsive(ng-src='{{slide.image}}', style='margin: auto;', alt="")
+            .carousel-caption
+              h4 Slide {{$index}}
+              p {{slide.text}}
+      .row.pv
+        .col-lg-6
+          p Interval, in milliseconds:
+          input.form-control(type='number', ng-model='caro.myInterval')
+        .col-lg-6
+          p Add a slide with a random image
+          button.btn.btn-info(type='button', ng-click='caro.addSlide()') Add Slide
+
+  .col-lg-6
+    h3.page-header.mt0 Typeahead
+
+    script(type="text/ng-template", id="customTemplate.html")
+      a
+        img(ng-src='http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}', width='16', alt="")
+        span(bind-html-unsafe='match.label | typeaheadHighlight:query')
+
+    .typeahead-ctrl(ng-controller='TypeaheadCtrl as tahead')
+      h5 Static arrays
+      .well.well-sm Model: {{tahead.selected | json}}
+      input.form-control(type='text', ng-model='tahead.selected', uib-typeahead='state for state in tahead.states | filter:$viewValue | limitTo:8')
+      h5 Asynchronous results
+      .well.well-sm Model: {{tahead.asyncSelected | json}}
+      input.form-control(type='text', ng-model='tahead.asyncSelected', placeholder='Locations loaded via $http', uib-typeahead='address for address in tahead.getLocation($viewValue)', uib-typeahead-loading='loadingLocations')
+      i.glyphicon.glyphicon-refresh(ng-show='loadingLocations')
+      h5 Custom templates for results
+      .well.well-sm Model: {{tahead.customSelected | json}}
+      input.form-control(type='text', ng-model='tahead.customSelected', placeholder='Custom template', uib-typeahead='state as state.name for state in tahead.statesWithFlags | filter:{name:$viewValue}', uib-typeahead-template-url='customTemplate.html')
+
+.row
+  .col-lg-6
+    h3.page-header Calendar
+    div(ng-controller='DatepickerDemoCtrl as dp')
+      .well.well-sm
+        p.m0 Selected date is:
+         em {{dp.dt | date:'fullDate' }}
+      .row
+        .col-md-6
+          h5 Inline
+          .ui-datepicker.well.well-sm(uib-datepicker, datepicker-options='options', ng-model='dp.dt')
+        .col-md-6
+          h5 Popup
+          .row
+            .col-md-12
+              p.input-group
+                input.form-control(type='text', uib-datepicker-popup='{{dp.format}}', ng-model='dp.dt', is-open='dp.opened', min-date='dp.minDate', max-date="'2015-06-22'", datepicker-options='dp.dateOptions', date-disabled='dp.disabled(date, mode)', ng-required='true', close-text='Close')
+                span.input-group-btn
+                  button.btn.btn-default(type='button', ng-click='dp.open($event)')
+                    em.fa.fa-calendar
+          .row
+            .col-md-12
+              label Format:
+              select.form-control(ng-model='dp.format', ng-options='f for f in dp.formats')
+                option
+          hr
+          button.btn.btn-sm.btn-info(type='button', ng-click='dp.today()') Today
+          button.btn.btn-sm.btn-default(type='button', ng-click="dp.dt = '2009-08-24'") 2009-08-24
+          button.btn.btn-sm.btn-danger(type='button', ng-click='dp.clear()') Clear
+          button.btn.btn-sm.btn-default(type='button', ng-click='dp.toggleMin()', uib-tooltip='After today restriction') Min date
+  .col-lg-6
+    h3.page-header Time picker
+    div(ng-controller='TimepickerDemoCtrl as tp')
+      div(uib-timepicker, ng-model='tp.mytime', ng-change='tp.changed()', hour-step='tp.hstep', minute-step='tp.mstep', show-meridian='tp.ismeridian')
+      pre.alert.alert-info.
+        Time is: {{tp.mytime | date:'shortTime' }}
+      .row
+        .col-xs-6
+          | Hours step is:
+          select.form-control(ng-model='tp.hstep', ng-options='opt for opt in tp.options.hstep')
+        .col-xs-6
+          | Minutes step is:
+          select.form-control(ng-model='tp.mstep', ng-options='opt for opt in tp.options.mstep')
+      hr
+      button.btn.btn-info(ng-click='tp.toggleMode()') 12H / 24H
+      button.btn.btn-default(ng-click='tp.update()') Set to 14:00
+      button.btn.btn-danger(ng-click='tp.clear()') Clear

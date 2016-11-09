@@ -1,0 +1,6 @@
+{
+  "directory": "public/lib",
+    "resolvers": [
+        "bower-npm-resolver"
+    ]
+}

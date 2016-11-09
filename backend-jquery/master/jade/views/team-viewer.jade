@@ -1,0 +1,250 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'team-viewer.html'
+
+block content
+    .pull-right
+        em.fa.fa-warning.fa-lg.text-warning
+
+    h3 Team viewer
+
+    .row
+        .col-lg-4.col-md-6
+            // Team Panel
+            .panel.panel-default
+                .panel-heading
+                    .pull-right
+                        .label.label-success free
+                    .panel-title Team #1
+                .panel-body.bt
+                    a.inline(href="#", data-toggle="tooltip", data-title="Team leader"): img.img-circle.thumb48(src="img/user/03.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/04.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="project member")
+                .panel-body.bb.text-center
+                    div(data-toggle="tooltip", data-title="Progress of asigned tasks")
+                        .progress.progress-xs.m0: .progress-bar.progress-bar-info(style="width:50%") 50%
+                .panel-body.bb
+                    .row.text-center
+                        .col-xs-4
+                            p.text-bold BUDGET
+                            .sparkline.inline.mr(data-sparkline="", values="60,40", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#ff902b"]')
+                        .col-xs-4
+                            p.text-bold TASKS
+                            .h3.m0 26
+                        .col-xs-4
+                            p.text-bold AVAILABITY
+                            .sparkline.inline.mr(data-sparkline="", values="70,30", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#ff902b"]')
+                .panel-body
+                    ul.list-inline.m0
+                        li: .badge.bg-gray angularjs
+                        li: .badge.bg-gray jquery
+                        li: .badge.bg-gray gulp
+                        li: .badge.bg-gray git
+                        li: .badge.p-sm.bg-gray ios
+                .panel-footer.text-center
+                    a(href="#").btn.btn-default.btn-oval Manage Team
+            // end Team Panel
+        .col-lg-4.col-md-6
+            // Team Panel
+            .panel.panel-default
+                .panel-heading
+                    .pull-right
+                        .label.bg-gray asigned
+                    .panel-title Team #2
+                .panel-body.bt
+                    a.inline(href="#", data-toggle="tooltip", data-title="Team leader"): img.img-circle.thumb48(src="img/user/03.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/04.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/09.jpg", alt="project member")
+                .panel-body.bb.text-center
+                    div(data-toggle="tooltip", data-title="Progress of asigned tasks")
+                        .progress.progress-xs.m0: .progress-bar.progress-bar-info(style="width:90%") 90%
+                .panel-body.bb
+                    .row.text-center
+                        .col-xs-4
+                            p.text-bold BUDGET
+                            .sparkline.inline.mr(data-sparkline="", values="10,90", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#f05050"]')
+                        .col-xs-4
+                            p.text-bold TASKS
+                            .h3.m0 145
+                        .col-xs-4
+                            p.text-bold AVAILABITY
+                            .sparkline.inline.mr(data-sparkline="", values="40,60", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#27c24c"]')
+                .panel-body
+                    ul.list-inline.m0
+                        li: .badge.bg-gray angularjs
+                        li: .badge.bg-gray jquery
+                        li: .badge.bg-gray gulp
+                        li: .badge.bg-gray git
+                        li: .badge.p-sm.bg-gray ios
+                .panel-footer.text-center
+                    a(href="#").btn.btn-default.btn-oval Manage Team
+            // end Team Panel
+        .col-lg-4.col-md-6
+            // Team Panel
+            .panel.panel-default
+                .panel-heading
+                    .pull-right
+                        .label.label-success free
+                    .panel-title Team #3
+                .panel-body.bt
+                    a.inline(href="#", data-toggle="tooltip", data-title="Team leader"): img.img-circle.thumb48(src="img/user/03.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/04.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="project member")
+                .panel-body.bb.text-center
+                    div(data-toggle="tooltip", data-title="Progress of asigned tasks")
+                        .progress.progress-xs.m0: .progress-bar.progress-bar-info(style="width:50%") 50%
+                .panel-body.bb
+                    .row.text-center
+                        .col-xs-4
+                            p.text-bold BUDGET
+                            .sparkline.inline.mr(data-sparkline="", values="60,40", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#ff902b"]')
+                        .col-xs-4
+                            p.text-bold TASKS
+                            .h3.m0 98
+                        .col-xs-4
+                            p.text-bold AVAILABITY
+                            .sparkline.inline.mr(data-sparkline="", values="40,60", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#27c24c"]')
+                .panel-body
+                    ul.list-inline.m0
+                        li: .badge.bg-gray angularjs
+                        li: .badge.bg-gray jquery
+                        li: .badge.bg-gray gulp
+                        li: .badge.bg-gray git
+                        li: .badge.p-sm.bg-gray ios
+                .panel-footer.text-center
+                    a(href="#").btn.btn-default.btn-oval Manage Team
+            // end Team Panel
+
+        .col-lg-4.col-md-6
+            // Team Panel
+            .panel.panel-default
+                .panel-heading
+                    .pull-right
+                        .label.bg-gray asigned
+                    .panel-title Team #4
+                .panel-body.bt
+                    a.inline(href="#", data-toggle="tooltip", data-title="Team leader"): img.img-circle.thumb48(src="img/user/03.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/04.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/08.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/09.jpg", alt="project member")
+                .panel-body.bb.text-center
+                    div(data-toggle="tooltip", data-title="Progress of asigned tasks")
+                        .progress.progress-xs.m0: .progress-bar.progress-bar-info(style="width:25%") 25%
+                .panel-body.bb
+                    .row.text-center
+                        .col-xs-4
+                            p.text-bold BUDGET
+                            .sparkline.inline.mr(data-sparkline="", values="60,40", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#ff902b"]')
+                        .col-xs-4
+                            p.text-bold TASKS
+                            .h3.m0 145
+                        .col-xs-4
+                            p.text-bold AVAILABITY
+                            .sparkline.inline.mr(data-sparkline="", values="40,60", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#27c24c"]')
+                .panel-body
+                    ul.list-inline.m0
+                        li: .badge.bg-gray angularjs
+                        li: .badge.bg-gray jquery
+                        li: .badge.bg-gray gulp
+                        li: .badge.bg-gray git
+                        li: .badge.p-sm.bg-gray ios
+                .panel-footer.text-center
+                    a(href="#").btn.btn-default.btn-oval Manage Team
+            // end Team Panel
+        .col-lg-4.col-md-6
+            // Team Panel
+            .panel.panel-default
+                .panel-heading
+                    .pull-right
+                        .label.bg-gray asigned
+                    .panel-title Team #5
+                .panel-body.bt
+                    a.inline(href="#", data-toggle="tooltip", data-title="Team leader"): img.img-circle.thumb48(src="img/user/03.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/04.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/08.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/09.jpg", alt="project member")
+                .panel-body.bb.text-center
+                    div(data-toggle="tooltip", data-title="Progress of asigned tasks")
+                        .progress.progress-xs.m0: .progress-bar.progress-bar-info(style="width:50%") 50%
+                .panel-body.bb
+                    .row.text-center
+                        .col-xs-4
+                            p.text-bold BUDGET
+                            .sparkline.inline.mr(data-sparkline="", values="60,40", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#ff902b"]')
+                        .col-xs-4
+                            p.text-bold TASKS
+                            .h3.m0 500
+                        .col-xs-4
+                            p.text-bold AVAILABITY
+                            .sparkline.inline.mr(data-sparkline="", values="40,60", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#27c24c"]')
+                .panel-body
+                    ul.list-inline.m0
+                        li: .badge.bg-gray angularjs
+                        li: .badge.bg-gray jquery
+                        li: .badge.bg-gray gulp
+                        li: .badge.bg-gray git
+                        li: .badge.p-sm.bg-gray ios
+                .panel-footer.text-center
+                    a(href="#").btn.btn-default.btn-oval Manage Team
+            // end Team Panel
+        .col-lg-4.col-md-6
+            // Team Panel
+            .panel.panel-default
+                .panel-heading
+                    .pull-right
+                        .label.label-success free
+                    .panel-title Team #6
+                .panel-body.bt
+                    a.inline(href="#", data-toggle="tooltip", data-title="Team leader"): img.img-circle.thumb48(src="img/user/03.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/04.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/08.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/09.jpg", alt="project member")
+                .panel-body.bb.text-center
+                    div(data-toggle="tooltip", data-title="Progress of asigned tasks")
+                        .progress.progress-xs.m0: .progress-bar.progress-bar-info(style="width:50%") 50%
+                .panel-body.bb
+                    .row.text-center
+                        .col-xs-4
+                            p.text-bold BUDGET
+                            .sparkline.inline.mr(data-sparkline="", values="5,95", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#f05050"]')
+                        .col-xs-4
+                            p.text-bold TASKS
+                            .h3.m0 145
+                        .col-xs-4
+                            p.text-bold AVAILABITY
+                            .sparkline.inline.mr(data-sparkline="", values="70,30", data-type='pie', data-height="24", data-slice-colors='["#edf1f2", "#ff902b"]')
+                .panel-body
+                    ul.list-inline.m0
+                        li: .badge.bg-gray angularjs
+                        li: .badge.bg-gray jquery
+                        li: .badge.bg-gray gulp
+                        li: .badge.bg-gray git
+                        li: .badge.p-sm.bg-gray ios
+                .panel-footer.text-center
+                    a(href="#").btn.btn-default.btn-oval Manage Team
+            // end Team Panel
+
+block vendor_js
+  // SPARKLINE
+  script(src='../vendor/sparkline/index.js')

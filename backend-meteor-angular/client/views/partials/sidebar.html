@@ -1,0 +1,68 @@
+<!-- Inline template with sidebar items markup and ng-directives-->
+<script type="text/ng-template" id="sidebar-renderer.html">
+  <span ng-if="item.heading">{{(item.translate | translate) || item.text}}</span>
+  <a ng-switch-when="#"
+     ng-if="!item.heading" 
+     href=""
+     title="{{item.text}}">
+     <div ng-if="item.alert" ng-class="item.label || 'label label-success'" class="pull-right">{{item.alert}}</div>
+     <em ng-if="item.icon" class="{{item.icon}}"></em>
+     <span>{{(item.translate | translate) || item.text}}</span>
+  </a>
+  <ul ng-switch-when="#" ng-if="item.submenu" uib-collapse="isCollapse(pIndex)" ng-init="addCollapse(pIndex, item)" class="nav sidebar-subnav">
+     <li class="sidebar-subnav-header">{{(item.translate | translate) || item.text}}</li>
+     <li ng-repeat="item in item.submenu" 
+         ng-include="'sidebar-renderer.html'" 
+         ng-class="getMenuItemPropClasses(item)" 
+         ng-init="pIndex=(pIndex+'-'+$index); inSubmenu = true" 
+         ng-click="toggleCollapse(pIndex)"
+         ng-switch="item.sref"
+         ></li>
+  </ul>
+  <a ng-switch-default
+     ng-if="!item.heading" 
+     ui-sref="{{item.sref}}" 
+     title="{{item.text}}">
+     <div ng-if="item.alert" class="label label-success pull-right">{{item.alert}}</div>
+     <em ng-if="item.icon" class="{{item.icon}}"></em>
+     <span>{{(item.translate | translate) || item.text}}</span>
+  </a>
+</script>
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+   <nav sidebar="" sidebar-anyclick-close="" ng-class="{'show-scrollbar': app.layout.asideScrollbar}" class="sidebar">
+      <!-- START sidebar nav-->
+      <ul class="nav">
+         <!-- START user info-->
+         <li class="has-user-block">
+            <div uib-collapse="userBlockVisible" ng-controller="UserBlockController">
+               <div class="item user-block">
+                  <!-- User picture-->
+                  <div class="user-block-picture">
+                     <div class="user-block-status">
+                        <img ng-src="{{user.picture}}" alt="Avatar" class="img-thumbnail img-circle" />
+                        <div class="circle circle-success circle-lg"></div>
+                     </div>
+                  </div>
+                  <!-- Name and Job-->
+                  <div class="user-block-info">
+                     <span class="user-block-name">{{ 'sidebar.WELCOME' | translate }} {{user.name}}</span>
+                     <span class="user-block-role">{{user.job}}</span>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <!-- END user info-->
+         <!-- Iterates over all sidebar items-->
+         <li ng-class="getMenuItemPropClasses(item)" 
+             ng-repeat="item in menuItems" 
+             ng-init="pIndex = $index"
+             ng-include="'sidebar-renderer.html'"
+             ng-click="toggleCollapse(pIndex, true)"
+             ng-switch="item.sref"
+             ></li>
+      </ul>
+      <!-- END sidebar nav-->
+   </nav>
+</div>
+<!-- END Sidebar (left)-->

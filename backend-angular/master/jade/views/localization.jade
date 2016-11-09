@@ -1,0 +1,20 @@
+h3 Localization demo
+  small Dynamically change localization settings for AngularJS
+
+.row(ng-controller="LocalizationController")
+  .col-lg-4
+    p
+      | Pick a locale
+      select.form-control(ng-model='model.selectedLocale', ng-options='key as value for (key, value) in availableLocales', ng-change='changeLocale(model.selectedLocale)')
+    dl.dl-horizontal
+      dt Selected locale id:
+      dd {{model.selectedLocale}}
+      dt  Current locale id:
+      dd {{$locale.id}}
+      dt A big number:
+      dd {{1234567890 | number}}
+      dt The Epoch was on:
+      dd {{0 | date}}
+      dt One million: 
+      dd {{1000000 | currency}}
+

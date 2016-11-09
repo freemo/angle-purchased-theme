@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Sortable";
+}
+
+<h3>
+    Sortable
+    <small>Lightweight jQuery plugin to create sortable lists and grids using native HTML5 drag and drop API.</small>
+</h3>
+<ul class="list-group sortable">
+    <li class="list-group-item">
+        <em class="fa fa-reorder fa-fw text-muted mr-lg"></em>Donald Hoffman
+    </li>
+    <li class="list-group-item">
+        <em class="fa fa-reorder fa-fw text-muted mr-lg"></em>Wallace Barrett
+    </li>
+    <li class="list-group-item">
+        <em class="fa fa-reorder fa-fw text-muted mr-lg"></em>Marsha Hicks
+    </li>
+    <li class="list-group-item">
+        <em class="fa fa-reorder fa-fw text-muted mr-lg"></em>Roland Brown
+    </li>
+</ul>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/sortable")
+    @Scripts.Render("~/bundles/demoSortable")
+}

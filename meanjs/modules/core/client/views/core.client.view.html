@@ -1,0 +1,13 @@
+<!-- top navbar-->
+<header ng-include="'/modules/core/client/views/partials/top-navbar.html'" ng-controller="HeaderController" class="topnavbar-wrapper"></header>
+<!-- sidebar-->
+<aside ng-include="'/modules/core/client/views/partials/sidebar.html'" ng-controller="SidebarController" class="aside"></aside>
+<!-- offsidebar-->
+<aside ng-include="'/modules/core/client/views/partials/offsidebar.html'" class="offsidebar"></aside>
+<!-- Main section-->
+<section>
+   <!-- Page content-->
+   <div data-ui-view autoscroll="false" ng-class="app.viewAnimation" class="content-wrapper"></div>
+</section>
+<!-- Page footer-->
+<footer ng-include="'/modules/core/client/views/partials/footer.html'"></footer>

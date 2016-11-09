@@ -1,0 +1,261 @@
+<h3>Radial charts
+   <small>Canvas based &amp; No canvas Pure CSS radial progress bars solutions</small>
+</h3>
+<div class="container-fluid" ng-controller="PieChartsController as pchart">
+   <h4 class="page-header clearfix">
+      <div class="pull-left">Knob</div>
+      <div class="pull-right">
+         <button class="btn btn-sm btn-info" type="button" ng-click="pchart.randomize('knob')">
+            <em class="fa fa-refresh"></em>
+         </button>
+      </div>
+   </h4>
+   <div class="row">
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Default</div>
+            <div class="panel-body text-center">
+               <knob knob-data="pchart.knobLoaderData1" knob-options="pchart.knobLoaderOptions1" knob-max="100"></knob>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Ready only</div>
+            <div class="panel-body text-center">
+               <knob knob-data="pchart.knobLoaderData2" knob-options="pchart.knobLoaderOptions2" knob-max="100"></knob>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Offset and arc</div>
+            <div class="panel-body text-center">
+               <knob knob-data="pchart.knobLoaderData4" knob-options="pchart.knobLoaderOptions4" knob-max="100"></knob>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Display previous</div>
+            <div class="panel-body text-center">
+               <knob knob-data="pchart.knobLoaderData3" knob-options="pchart.knobLoaderOptions3" knob-max="100"></knob>
+            </div>
+         </div>
+      </div>
+   </div>
+   <h4 class="page-header clearfix">
+      <div class="pull-left">Easypie Charts</div>
+      <div class="pull-right">
+         <button class="btn btn-sm btn-info" type="button" ng-click="pchart.randomize('easy')">
+            <em class="fa fa-refresh"></em>
+         </button>
+      </div>
+   </h4>
+   <div class="row">
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Default</div>
+            <div class="panel-body text-center">
+               <div class="easypie-chart" easypiechart="" options="pchart.pieOptions1" percent="pchart.piePercent1">
+                  <span>{{pchart.piePercent1}}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Slim</div>
+            <div class="panel-body text-center">
+               <div class="easypie-chart" easypiechart="" options="pchart.pieOptions2" percent="pchart.piePercent2">
+                  <span>{{pchart.piePercent2}}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Track color</div>
+            <div class="panel-body text-center">
+               <div class="easypie-chart" easypiechart="" options="pchart.pieOptions3" percent="pchart.piePercent3">
+                  <span>{{pchart.piePercent3}}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+         <div class="panel">
+            <div class="panel-heading">Scale color</div>
+            <div class="panel-body text-center">
+               <div class="easypie-chart" easypiechart="" options="pchart.pieOptions4" percent="pchart.piePercent4">
+                  <span>{{pchart.piePercent4}}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<h4 class="page-header">Pure CSS
+   <small>radial progress bars solutions</small>
+</h4>
+<!-- START row-->
+<div class="row">
+   <div class="col-lg-6">
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Radial Size</div>
+         <div class="panel-body text-center">
+            <div class="row">
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-85 radial-bar-lg" data-label="85%"></div>
+                  <p><code>.radial-bar.radial-bar-85.radial-bar-lg</code>
+                  </p>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-45" data-label="45%"></div>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-60 radial-bar-sm" data-label="60%"></div>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-20 radial-bar-xs" data-label="20%"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END panel-->
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Radial with Images</div>
+         <div class="panel-body text-center">
+            <div class="row">
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-20 radial-bar radial-bar-danger">
+                     <img src="app/img/user/03.jpg" alt="Image" />
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-35 radial-bar-warning" data-label="35%">
+                     <img src="app/img/user/01.jpg" alt="Image" />
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-50 radial-bar-info" data-label="50%">
+                     <img src="app/img/user/04.jpg" alt="Image" />
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-100 radial-bar-success" data-label="100%">
+                     <img src="app/img/user/05.jpg" alt="Image" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END panel-->
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Radial with Tooltips</div>
+         <div class="panel-body text-center">
+            <div class="row">
+               <div class="col-md-3">
+                  <br/>
+                  <div class="radial-bar radial-bar-85" data-label="85%" data-toggle="tooltip" data-title="85%"></div>
+               </div>
+               <div class="col-md-3">
+                  <br/>
+                  <div class="radial-bar radial-bar-45" data-label="45%" data-toggle="tooltip" data-title="45%"></div>
+               </div>
+               <div class="col-md-3">
+                  <br/>
+                  <div class="radial-bar radial-bar-60" data-label="60%" data-toggle="tooltip" data-title="60%"></div>
+               </div>
+               <div class="col-md-3">
+                  <br/>
+                  <div class="radial-bar radial-bar-20" data-label="20%" data-toggle="tooltip" data-title="20%"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+   <div class="col-lg-6">
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Radial Variants</div>
+         <div class="panel-body text-center">
+            <div class="row">
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-20 radial-bar-lg radial-bar-danger" data-label="20%"></div>
+                  <p><code>.radial-bar.radial-bar-20.radial-bar-lg.radial-bar-danger</code>
+                  </p>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-35 radial-bar-lg radial-bar-warning" data-label="35%"></div>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-50 radial-bar-lg radial-bar-info" data-label="50%"></div>
+               </div>
+               <div class="col-md-3">
+                  <div class="radial-bar radial-bar-100 radial-bar-lg radial-bar-success" data-label="100%"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END panel-->
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading">Radial applications</div>
+         <div class="panel-body text-center">
+            <div class="radial-bar radial-bar-85 radial-bar-lg" data-label="85%"></div>
+            <p>Visitors</p>
+         </div>
+         <div class="panel-footer text-center">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="radial-bar radial-bar-warning radial-bar-35 radial-bar-sm" data-label="35%"></div>
+                  <p>
+                     <small>Conversions</small>
+                  </p>
+               </div>
+               <div class="col-md-4">
+                  <div class="radial-bar radial-bar-info radial-bar-45 radial-bar-sm" data-label="45%"></div>
+                  <p>
+                     <small>Recurrent</small>
+                  </p>
+               </div>
+               <div class="col-md-4">
+                  <div class="radial-bar radial-bar-success radial-bar-20 radial-bar-sm" data-label="20%"></div>
+                  <p>
+                     <small>Uniques</small>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+</div>
+<!-- END row-->
+<h4 class="page-header">ClassyLoader
+   <small>canvas based jQuery loader plugin</small>
+</h4>
+<!-- START panel-->
+<div class="panel panel-default">
+   <div class="panel-body text-center">
+      <div class="row">
+         <div class="col-md-3">
+            <canvas classyloader="" data-trigger-in-view="true" data-percentage="100" data-speed="20" data-font-size="50px" data-diameter="80" data-line-color="#0094cb" data-remaining-line-color="rgba(200,200,200,0.4)" data-line-width="10"></canvas>
+         </div>
+         <div class="col-md-3">
+            <canvas classyloader="" data-percentage="60" data-speed="8" data-font-size="20px" data-diameter="70" data-line-color="#7bbf62" data-remaining-line-color="#edf2f6" data-line-width="40" data-rounded-line="true" data-show-text="false"></canvas>
+         </div>
+         <div class="col-md-3">
+            <canvas classyloader="" data-percentage="60" data-speed="40" data-line-color="#ff3366" data-remaining-line-color="#edf2f6" data-line-width="2"></canvas>
+         </div>
+         <div class="col-md-3">
+            <canvas classyloader="" data-percentage="34" data-speed="20" data-font-size="20px" data-diameter="30" data-line-color="#f35839" data-remaining-line-color="#edf2f6" data-line-width="40"></canvas>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,240 @@
+<div class="container-md">
+   <div class="row">
+      <div class="col-md-3">
+         <div class="panel b">
+            <div class="panel-heading bg-gray-lighter text-bold">Personal Settings</div>
+            <div class="list-group"><a href="#tabSetting1" data-toggle="tab" class="list-group-item">Profile</a><a href="#tabSetting2" data-toggle="tab" class="list-group-item">Account</a><a href="#tabSetting3" data-toggle="tab" class="list-group-item">Emails</a><a href="#tabSetting4"
+               data-toggle="tab" class="list-group-item">Notifications</a><a href="#tabSetting5" data-toggle="tab" class="list-group-item">Applications</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-9">
+         <div class="tab-content p0 b0">
+            <div id="tabSetting1" class="tab-pane active">
+               <div class="panel b">
+                  <div class="panel-heading bg-gray-lighter text-bold">Profile</div>
+                  <div class="panel-body">
+                     <form action="">
+                        <div class="form-group">
+                           <label>Picture</label>
+                           <input type="file" data-input="false" data-classbutton="btn btn-default" data-classinput="form-control inline" data-buttontext="Upload new picture" data-iconname="fa fa-upload mr" class="form-control filestyle"
+                           />
+                        </div>
+                        <div class="form-group">
+                           <label>Name</label>
+                           <input type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                           <label>Bio</label>
+                           <textarea rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                           <label>URL</label>
+                           <input type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                           <label>Company</label>
+                           <input type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                           <label>Location</label>
+                           <input type="text" class="form-control" />
+                        </div>
+                        <button type="button" class="btn btn-info">Update settings</button>
+                        <p>
+                           <small class="text-muted">* Integer fermentum accumsan metus, id sagittis ipsum molestie vitae</small>
+                        </p>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div id="tabSetting2" class="tab-pane">
+               <div class="panel b">
+                  <div class="panel-heading bg-gray-lighter text-bold">Account</div>
+                  <div class="panel-body">
+                     <form action="">
+                        <div class="form-group">
+                           <label>Current password</label>
+                           <input type="password" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                           <label>New password</label>
+                           <input type="password" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                           <label>Confirm new password</label>
+                           <input type="password" class="form-control" />
+                        </div>
+                        <button type="button" class="btn btn-info">Update password</button>
+                        <p>
+                           <small class="text-muted">* Integer fermentum accumsan metus, id sagittis ipsum molestie vitae</small>
+                        </p>
+                     </form>
+                  </div>
+               </div>
+               <div class="panel b">
+                  <div class="panel-heading bg-danger text-bold">Delete account</div>
+                  <div class="panel-body bt">
+                     <p>You will be asked for confirmation before delete account.</p>
+                     <button type="button" class="btn btn-default">
+                        <span class="text-danger">Delete account</span>
+                     </button>
+                  </div>
+               </div>
+            </div>
+            <div id="tabSetting3" class="tab-pane">
+               <div class="panel b">
+                  <div class="panel-heading bg-gray-lighter text-bold">Emails</div>
+                  <div class="panel-body">
+                     <p>Etiam eros nibh, condimentum in auctor et, aliquam quis elit. Donec id libero eros. Ut fringilla, justo id fringilla pretium, nibh nunc suscipit mauris, et suscipit nulla nisl ac dolor. Nam egestas, leo eu gravida tincidunt, sem ipsum
+                        pellentesque quam, vel iaculis est quam et eros.</p>
+                     <p>
+                        <strong>Your email addresses</strong>
+                     </p>
+                     <p>
+                        <span class="mr">email@someaddress.com</span>
+                        <span class="label label-success">primary</span>
+                     </p>
+                     <p>
+                        <span class="mr">another.email@someaddress.com</span>
+                        <span class="label bg-gray">private</span>
+                     </p>
+                  </div>
+                  <div class="panel-body bt">
+                     <p>
+                        <strong>Add email address</strong>
+                     </p>
+                     <form action="">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="form-group">
+                                 <div class="input-group">
+                                    <input type="email" placeholder="email@server.com" class="form-control" />
+                                    <span class="input-group-btn">
+                                       <button type="button" class="btn btn-default">Add</button>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <div class="checkbox">
+                                    <label>
+                                       <input type="checkbox" value="" />Keep my email address private</label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <button type="button" class="btn btn-info">Update email</button>
+                        <p>
+                           <small class="text-muted">* Integer fermentum accumsan metus, id sagittis ipsum molestie vitae</small>
+                        </p>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div id="tabSetting4" class="tab-pane">
+               <form action="">
+                  <div class="panel b">
+                     <div class="panel-heading bg-gray-lighter text-bold">Notifications</div>
+                     <div class="panel-body bb">
+                        <div class="form-group">
+                           <div class="checkbox">
+                              <label>
+                                 <input type="checkbox" value="" />
+                                 <strong>Disable email notifications</strong>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="panel-body">
+                        <p>
+                           <strong>Interaction</strong>
+                        </p>
+                        <div class="form-group">
+                           <div class="checkbox">
+                              <label>
+                                 <input type="checkbox" value="" />Alert me when someone start to follow me</label>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="checkbox">
+                              <label>
+                                 <input type="checkbox" value="" />Alert me when someone star my work</label>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="checkbox">
+                              <label>
+                                 <input type="checkbox" value="" />Alert me when post a new comment</label>
+                           </div>
+                        </div>
+                        <p>
+                           <strong>Marketing</strong>
+                        </p>
+                        <div class="form-group">
+                           <div class="checkbox">
+                              <label>
+                                 <input type="checkbox" value="" />Send me news and interesting updates</label>
+                           </div>
+                        </div>
+                        <button type="button" class="btn btn-info">Update notifications</button>
+                        <p>
+                           <small class="text-muted">Mauris sodales accumsan erat, ut dapibus erat faucibus vitae.</small>
+                        </p>
+                     </div>
+                  </div>
+               </form>
+            </div>
+            <div id="tabSetting5" class="tab-pane">
+               <div class="panel b">
+                  <div class="panel-heading bg-gray-lighter text-bold">Applications</div>
+                  <div class="panel-body">
+                     <p>
+                        <span>You have granted access for</span>
+                        <strong>3 applications</strong>
+                        <span>to your account.</span>
+                     </p>
+                     <ul class="list-group">
+                        <li class="list-group-item clearfix">
+                           <div class="pull-left mr">
+                              <img src="<%= image_path('angle/dummy.png') %>" alt="App" class="img-responsive thumb48" />
+                           </div>
+                           <div class="pull-right">
+                              <button type="button" class="btn btn-default">
+                                 <strong>Revoke</strong>
+                              </button>
+                           </div>
+                           <p class="text-bold mb0">Application #1</p>
+                           <small>Ut turpis urna, tristique sed adipiscing nec, luctus quis leo.</small>
+                        </li>
+                        <li class="list-group-item clearfix">
+                           <div class="pull-left mr">
+                              <img src="<%= image_path('angle/dummy.png') %>" alt="App" class="img-responsive thumb48" />
+                           </div>
+                           <div class="pull-right">
+                              <button type="button" class="btn btn-default">
+                                 <strong>Revoke</strong>
+                              </button>
+                           </div>
+                           <p class="text-bold mb0">Application #2</p>
+                           <small>Ut turpis urna, tristique sed adipiscing nec, luctus quis leo.</small>
+                        </li>
+                        <li class="list-group-item clearfix">
+                           <div class="pull-left mr">
+                              <img src="<%= image_path('angle/dummy.png') %>" alt="App" class="img-responsive thumb48" />
+                           </div>
+                           <div class="pull-right">
+                              <button type="button" class="btn btn-default">
+                                 <strong>Revoke</strong>
+                              </button>
+                           </div>
+                           <p class="text-bold mb0">Application #3</p>
+                           <small>Ut turpis urna, tristique sed adipiscing nec, luctus quis leo.</small>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

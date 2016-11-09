@@ -1,0 +1,120 @@
+/* ========================================================================
+   Component: uigrid
+ ========================================================================== */
+
+.table-uigrid {
+
+  &.ui-grid {
+    border-top-width: 3px;
+    
+    &,
+    .ui-grid-header,
+    .ui-grid-footer-panel,
+    .ui-grid-cell,
+    input[type="text"].ui-grid-filter-input{
+      border-color: $gray;
+    }
+
+    .ui-grid-filter-input {
+      padding: 2px 4px;
+    }
+
+    .ui-grid-row:nth-child(even) .ui-grid-cell {
+      background-color: $gray-lighter;
+      border-bottom: 1px solid $gray-light;
+      border-top: 1px solid $gray-light;
+    }
+
+    .ui-grid-header-cell:not(:last-child) .ui-grid-vertical-bar{
+      background-color: $gray;
+    }
+
+
+    .ui-grid-top-panel,
+    .ui-grid-footer-panel{
+      background-color: #fff;
+      background-image: none;
+    }
+
+    .ui-grid-cell,
+    .ui-grid-row{
+      min-height: 36px;
+    }
+
+    .ui-grid-cell-contents{
+      padding: 8px 15px;
+    }
+
+    .ui-grid-column-menu-button{
+      top: 5px;
+    }
+    .ui-grid-viewport {
+      overflow-x: hidden !important;
+    }
+
+    // pagination
+
+    .ui-grid-pager-panel {
+      padding-top: 8px;
+      padding-bottom: 5px;
+    }
+    .ui-grid-pager-control button {
+      background-color: #fff;
+      border: 1px solid $gray-lighter;
+    }
+    .ui-grid-pager-control input,
+    .ui-grid-pager-row-count-picker select {
+      color: $input-color;
+      background-color: $input-bg;
+      background-image: none;
+      border: 1px solid $input-border;
+      border-radius: $input-border-radius;
+      padding: 2px;
+    }
+
+    // Selection
+    .ui-grid-row.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
+      background-color: $gray;
+    }
+
+    .ui-grid-cell.ui-grid-row-header-cell {
+      background-color: $gray-lighter;
+    }
+
+    // Menu button
+    .ui-grid-menu-button {
+      height: 37px;
+      padding: 0 3px;
+      border-top:0;
+      border-right:0;
+      border-bottom:0;
+      border-left: 1px solid #d4d4d4;
+
+      .ui-grid-icon-container { margin: 7px 0 0 3px; }
+    }
+
+    .ui-grid-selection-row-header-buttons {
+      margin:0 -9px;
+    }
+
+    // Style menu selector dropdown
+    .ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid {
+        overflow: auto;
+    }
+    .ui-grid-menu .ui-grid-menu-inner {
+        background: #fff;
+    }
+    .ui-grid-menu .ui-grid-menu-inner ul li button {
+        &:hover, &:focus {
+            background-color: $gray-lighter;
+            box-shadow: 0 0 0 #000;
+        }
+    }
+
+  }
+}
+
+#uigrid-demo {
+  width: 100%;
+  min-height: 380px;
+}

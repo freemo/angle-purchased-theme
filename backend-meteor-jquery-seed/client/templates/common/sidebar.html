@@ -1,0 +1,39 @@
+<template name="sidebar">
+      <aside class="aside">
+         <!-- START Sidebar (left)-->
+         <div class="aside-inner">
+            <nav class="sidebar">
+               <!-- START sidebar nav-->
+               <ul class="nav">
+                  <!-- Iterates over all sidebar items-->
+                  <li class="nav-heading ">
+                     <span>{{_"sidebar.heading.HEADER"}}</span>
+                  </li>
+                  <li class="{{isActiveRoute regex='singleview'}}">
+                     <a href="{{ pathFor 'singleview' }}" title="Single View">
+                        <em class="fa fa-file-o"></em>
+                        <span>{{_ "sidebar.nav.SINGLEVIEW" }}</span>
+                     </a>
+                  </li>
+                  <li class="{{isActivePath regex='submenu'}}">
+                     <a href="#menuid" title="Menu" data-toggle="collapse">
+                        <em class="icon-folder"></em>
+                        <span>{{_"sidebar.nav.menu.MENU"}}</span>
+                     </a>
+                     <ul id="menuid" class="nav sidebar-subnav collapse {{isActivePath regex='submenu' className='in'}}">
+                        <li class="sidebar-subnav-header">Menu</li>
+                        <li class="{{isActiveRoute regex='submenu'}}">
+                           <a href="{{ pathFor 'submenu' }}" title="Sub Menu">
+                              <em></em>
+                              <span>{{_"sidebar.nav.menu.SUBMENU"}}</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+               <!-- END sidebar nav-->
+            </nav>
+         </div>
+         <!-- END Sidebar (left)-->
+      </aside>
+</template>

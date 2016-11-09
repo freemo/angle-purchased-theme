@@ -1,0 +1,31 @@
+h3 Chart JS
+
+.container-fluid(ng-controller='ChartJSController as chart')
+  .row.mb-lg
+    .col-lg-6
+      h4 Line Chart 
+      div
+        canvas(linechart='', options='chart.lineOptions', data='chart.lineData', height='120', responsive='true')
+    .col-lg-6
+      h4 Bar Chart
+      div
+        canvas(barchart='', options='chart.barOptions', data='chart.barData', height='120', responsive='true')
+  .row.mb-lg
+    .col-lg-6
+      h4 Polar Area Chart
+      div
+        canvas(polarchart='', options='chart.polarOptions', data='chart.polarData', height='180', responsive='true')
+    .col-lg-6
+      h4 Radar Chart
+      div
+        canvas(radarchart='', options='chart.radarOptions', data='chart.radarData', height='180', responsive='true')
+  .row.mb-lg
+    .col-lg-6
+      h4 Pie Chart
+      div
+        canvas(doughnutchart='', options='chart.pieOptions', data='chart.pieData', height='80', responsive='true')
+    .col-lg-6
+      h4 Doughnut Chart
+      div
+        canvas(doughnutchart='', options='chart.doughnutOptions', data='chart.doughnutData', height='80', responsive='true')
+

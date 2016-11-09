@@ -1,0 +1,30 @@
+﻿/**
+    Override Angle default styles
+    Brings clarity by adding independent styles required for MVC projects
+*/
+
+
+/* Override colorpicker paths */
+.colorpicker-saturation {
+  background-image: url("Images/bootstrap-colorpicker/saturation.png");
+}
+
+.colorpicker-hue {
+  background-image: url("Images/bootstrap-colorpicker/hue.png");
+}
+
+.colorpicker-alpha {
+  background-image: url("Images/bootstrap-colorpicker/alpha.png");
+}
+
+.colorpicker-color {
+  background-image: url("Images/bootstrap-colorpicker/alpha.png");
+}
+
+.colorpicker.colorpicker-horizontal .colorpicker-hue {
+  background-image: url("Images/bootstrap-colorpicker/hue-horizontal.png");
+}
+
+.colorpicker.colorpicker-horizontal .colorpicker-alpha {
+  background-image: url("Images/bootstrap-colorpicker/alpha-horizontal.png");
+}

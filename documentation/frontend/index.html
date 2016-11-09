@@ -1,0 +1,388 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Angle Frontend - Frontend site for Angle admin template</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="@themicon">
+	<meta name="copyright" content="@themicon">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-02-13T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#656565;}
+		::-moz-selection{background:#FCFCFD;color:#31BCE7;}
+		::selection{background:#FCFCFD;color:#31BCE7;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#31BCE7;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -ms-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 31BCE7%, from(#F5F7FA), to(#31BCE7));
+			  background-image: -webkit-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: -o-linear-gradient(top, #31BCE7, #31BCE7);
+			  background-image: linear-gradient(top, #31BCE7, #31BCE7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31BCE7', endColorstr='#31BCE7', GradientType=0);
+			  border-color: #31BCE7 #31BCE7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #31BCE7 #31BCE7 #bfbfbf;
+		  background-color: #31BCE7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F5F7FA;color:#3A3F51;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #E1E2E3;-moz-text-shadow:1px 1px 0px #E1E2E3;text-shadow:1px 1px 0px #E1E2E3;}
+		#documenter_sidebar ul{border-top:1px solid #E1E2E3;}
+		#documenter_sidebar ul a{border-top:1px solid #E1E2E3;border-bottom:1px solid #E1E2E3;color:#3A3F51;}
+		#documenter_sidebar ul a:hover{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_sidebar ul a.current{background:#FCFCFD;color:#31BCE7;border-top:1px solid #FCFCFD;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-angle-frontend">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#themes" title="Themes">Themes</a></li>
+			<li><a href="#build" title="Build">Build</a>
+				<ul>
+					<li><a href="#build_main_gulp_tasks">Main Gulp tasks</a>
+				</ul>
+			</li>
+			<li><a href="#animation" title="Animation">Animation</a></li>
+			<li><a href="#video" title="Video">Video</a></li>
+			<li><a href="#background" title="Background">Background</a></li>
+			<li><a href="#shots" title="Shots">Shots</a></li>
+			<li><a href="#retina" title="Retina">Retina</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright @themicon 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Angle Frontend</h1>
+	<h2>Frontend site for Angle admin template</h2>
+	<div id="documenter_buttons">
+		<a href="https://wrapbootstrap.com/user/themicon" class="btn btn-primary btn-large">Support</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/01/2015</li>
+	<li>latest update: 02/13/2016</li>
+	<li>by: @themicon</li>
+	<li><a href=""></a></li>
+	
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<p>
+	File are organized using the following structure</p>
+<pre class="prettyprint lang-plain linenums">
++-- site/
+|   +-- css/
+|   +-- img/
+|   +-- js/
+|   +-- vendor/
+|   +-- video/
+|   +-- index.html
++-- master/
+    +-- jade/
+    |   +-- sections/
+    +-- js/
+    |   +-- scripts.js
+    +-- less/
+    |   +-- bootstrap/
+    |   +-- components/
+    |   +-- themes/
+    +-- gulpfile.js
+    +-- package.json
+    +-- vendor.json
+    +-- bower.json</pre>
+<div>
+	&nbsp;</div>
+</section>
+<section id="themes">
+	<div class="page-header"><h3>Themes</h3><hr class="notop"></div>
+<p>
+	To use any color included just include in your index.html the theme-*.css file after the main stylesheet&nbsp;styles.css</p>
+<pre class="prettyprint lang-html linenums">
+   &lt;!-- SITE CSS--&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;css/theme-a.css&quot;&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	To add your own colors, you can edit any theme file and replace the color hex code for any other of your choice.</div>
+</section>
+<section id="build">
+	<div class="page-header"><h3>Build</h3><hr class="notop"></div>
+<div>
+	<strong>Important</strong>! You only need to follow this instructions in case you want to work with JADE, LESS and concatenate all JS modules.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Node</strong>.js is a platform built on Chrome&rsquo;s JavaScript runtime for easily building fast, scalable network applications.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Gulp </strong>is a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for JADE and LESS, and concatenates the JS files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Bower </strong>is a dependency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you&rsquo;re looking for. Bower keeps track of these packages in a manifest file, bower.json.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The package includes under the master/ folder the file gulpfile.js, package.json and bower.json to install the required components to compile the source files.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Installing tools</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	The following steps are intended to be an orientation guide, if you are not experienced with this you will need to learn more about it from Google :)</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		To install node and npm, go to http://nodejs.org/</li>
+	<li>
+		Run npm install -g bower to install bower to manage dependencies</li>
+	<li>
+		Download and install GIT for your platform http://git-scm.com/downloads</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Once you have all tools installed</strong></div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		Open a terminal, go the package master/ folder, then run the command npm install. This command will install gulp and all project dependencies.</li>
+	<li>
+		Then, to install vendor dependencies, run bower install</li>
+	<li>
+		Finally run gulp to start the task manager</li>
+</ul>
+<div>
+	If everything goes fine, you should see the messages in the terminal telling you that most the task are done ok. The task will watch for files to compile them automatically all files when change.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="build_main_gulp_tasks">Main Gulp tasks</h4>
+	<div>
+		This command will run the default task without minify assets</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp</pre>
+	<div>
+		This task will generate the assest wihout mininfy and with sourcemaps</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp sourcemaps</pre>
+	<div>
+		<div>
+			This taks will start the app with a server in your favourite browser (using BrowserSync)</div>
+		<pre class="prettyprint lang-plain linenums">
+$ gulp serve</pre>
+		<div>
+			This taks will start the app with a server in your favourite browser in production mode&nbsp;(using BrowserSync)</div>
+		<pre class="prettyprint lang-plain linenums">
+$ gulp serve-prod</pre>
+	</div>
+	<div>
+		This taks will generate the asset minified</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp build</pre>
+	<div>
+		You can also mix task build and sourcemaps to get minified version with sourcemaps</div>
+	<pre class="prettyprint lang-plain linenums">
+$ gulp build sourcemaps</pre>
+	<div>
+		&nbsp;</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="animation">
+	<div class="page-header"><h3>Animation</h3><hr class="notop"></div>
+<p>	Animations uses a plugin called <a href="http://mynameismatthieu.com/WOW/">WOW</a> &nbsp;that reveals animations when scrolling. It also work togheter with the full set of animation by Dan Eden called <a href="http://daneden.github.io/animate.css/">animate.css</a></p>
+<p>	To use simply add the following classes and change the animation name to use different effects</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div data-wow-offset=&quot;120&quot; data-wow-duration=&quot;1.3s&quot; class=&quot;wow fadeIn animated&quot;&gt;
+...
+&lt;/div&gt;</pre>
+<p>	&nbsp;</p>
+<p>	<strong>Advanced Options</strong></p>
+<div>
+	data-wow-duration: Change the animation duration</div>
+<div>
+	data-wow-delay: Delay before the animation starts</div>
+<div>
+	data-wow-offset: Distance to start the animation (related to the browser bottom)</div>
+<div>
+	data-wow-iteration: Number of times the animation is repeated</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="video">
+	<div class="page-header"><h3>Video</h3><hr class="notop"></div>
+<p>	By default the uses fullscreen video background. The video files are located under the folder video.</p>
+<p>	The name of the files is video.* but if you need to use something different you can change it the video configuration in the file scripts.js</p>
+<div>
+	<pre class="prettyprint lang-js linenums">
+...
+    if (matchMedia(&#39;(min-width: 640px)&#39;).matches) {
+
+      var videobackground = new $.backgroundVideo($(&#39;body&#39;), {
+        &#39;align&#39;:    &#39;centerXY&#39;,
+        &#39;width&#39;:    1280,
+        &#39;height&#39;:   720,
+        &#39;path&#39;:     &#39;video/&#39;,
+        &#39;filename&#39;: &#39;video&#39;,
+        &#39;types&#39;:    [&#39;mp4&#39;, &#39;webm&#39;]
+      });
+    }</pre>
+	<p>		&nbsp;</p>
+</div>
+<div>
+	<strong>Mobile devices</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	Videos also runs on devices with a resolution above 640px in order to provide performance. You can also change this in file scripts.js like shows the aboove example.</div>
+<div>
+	&nbsp;</div>
+<div>
+	For low devices, the video is replaced by a static background image via css media queries.</div>
+</section>
+<section id="background">
+	<div class="page-header"><h3>Background</h3><hr class="notop"></div>
+<p>	The site uses background images for the following sections</p>
+<pre class="prettyprint lang-html linenums">
+&lt;header id=&quot;header&quot; class=&quot;header&quot;&gt;...</pre>
+<p>	Background is <strong>site/img/bg-fallback-header.jpg</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;section id=&quot;feedbacks&quot; class=&quot;feedbacks&quot;&gt;</pre>
+<p>	Background is <strong>site/img/bg-fallback-feedback.jpg</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;section id=&quot;download&quot; class=&quot;download&quot;&gt;</pre>
+<p>	Background is <strong>site/img/bg-fallback-download.jpg</strong></p>
+<p>	&nbsp;</p>
+<p>	All uses the name fallback because they replace the video background. If you remove the background from the css you will get in all place the same video animation shown in the header.</p>
+<p>	<strong>Using only static background</strong></p>
+<p>	You can remove the video background Javascript and enable the background images in all resolutions in order to use only static background images for your site.<br>
+	To enable background edit in the file styles.css the elements shown above (.header, .feedbacks and .download)</p>
+</section>
+<section id="shots">
+	<div class="page-header"><h3>Shots</h3><hr class="notop"></div>
+<p>	The shots sections uses the Nivo Lightbox and Owl Caroulse plugins.<br>
+	Owl Carousel allow to slide items using a touch like scroll movement and Nivo Lightbox provide a zooming for images just clicking them.</p>
+<p>	Shots uses the following markup to link images</p>
+<pre class="prettyprint lang-html linenums">
+            &lt;div id=&quot;appshots&quot; class=&quot;owl-carousel owl-theme&quot;&gt;
+               &lt;div class=&quot;shot&quot;&gt;
+                  &lt;a href=&quot;img/shots/01.jpg&quot; data-lightbox-gallery=&quot;appshots&quot;&gt;
+                     &lt;img src=&quot;img/shots/01.jpg&quot; alt=&quot;App Shot&quot; data-no-retina&gt;
+                  &lt;/a&gt;
+               &lt;/div&gt;
+               &lt;div class=&quot;shot&quot;&gt;
+                  &lt;a href=&quot;img/shots/03.jpg&quot; data-lightbox-gallery=&quot;appshots&quot;&gt;
+                     &lt;img src=&quot;img/shots/03.jpg&quot; alt=&quot;App Shot&quot; data-no-retina&gt;
+                  &lt;/a&gt;
+               &lt;/div&gt;
+             ....</pre>
+<div>
+	&nbsp;</div>
+<div>
+	To add your own shots just replace the files or add the new ones in folder <strong>site/img/shots/*.jpg</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	As you see in markup, you can use different images path for the carousel and the lightbox. This is usefule if you want o display different images, for example a small pic for carousel and another bigger for the lightbox.</div>
+</section>
+<section id="retina">
+	<div class="page-header"><h3>Retina</h3><hr class="notop"></div>
+<p>	The site is ready for hires devices using the plugin called retina.js</p>
+<p>	This plugin will look for high resolutions devices and will change the url of the images adding an <strong>@2x</strong> at the end and before the extension so you can display better images resolutions on such devices.</p>
+<p>	For example, for the logo there&#39;s included a file called&nbsp;logo.png and another&nbsp;&#108;&#111;&#103;&#111;&#64;&#50;&#120;&#46;&#112;&#110;&#103; for hires devices</p>
+<p>	<strong>Disabling plugin</strong></p>
+<p>	To disable the plugin on certains images you can use attribute <strong>data-no-retina</strong>. This is usefull for images that won&#39;t change accross different devices</p>
+<p>	Example</p>
+<pre class="prettyprint lang-html linenums">
+&lt;img src=&quot;img/path.png&quot; <strong>data-no-retina</strong> &gt;</pre>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<p>	<strong>Plugins</strong></p>
+<p>	<a href="http://jquery.com">jQuery</a><br>
+	<a href="http://getbootstrap.com">Bootstrap</a><br>
+	<a href="http://mynameismatthieu.com/WOW/">WOW</a><br>
+	<a href="http://daneden.github.io/animate.css/">Animate.css</a><br>
+	<a href="http://victorcoulon.fr">jQuery Background video</a><br>
+	<a href="http://fortawesome.github.io/Font-Awesome/icons/">FontAwesome</a><br>
+	<a href="https://github.com/aFarkas/html5shiv">Html5Shiv</a><br>
+	<a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing</a><br>
+	<a href="http://flesler.blogspot.com">jQuery.scrollTo</a><br>
+	<a href="http://github.com/davist11/jQuery-One-Page-Nav">jQuery One Page Nav Plugin</a><br>
+	<a href="http://github.com/paulirish/matchMedia.js">matchMedia</a><br>
+	<a href="http://www.modernizr.com">modernizr</a><br>
+	<a href="http://dev7studios.com/nivo-lightbox">Nivo Lightbox</a><br>
+	<a href="http://ricostacruz.com/nprogress">nProgress</a><br>
+	<a href="http://www.owlcarousel.owlgraphic.com/">owlCarousel</a><br>
+	<a href="https://github.com/scottjehl/Respond">respond.js</a><br>
+	<a href="https://github.com/imulus/retinajs">retinajs<br>
+	L</a><a href="https://github.com/julien-maurel/jQuery-Storage-API">ocalStorage</a></p>
+<p>	&nbsp;</p>
+<p>	<strong>Assets</strong></p>
+<p>	Images from <a href="https://unsplash.com/">https://unsplash.com/</a></p>
+<p>	Mockups from <a href="https://365webresources.com/collection-apple-ipad-mockup-templates-ipad-air-included/">365webresource</a>&nbsp;and <a href="http://www.cssauthor.com/iphone-6-mockup-design-templates/">cssauthor</a></p>
+<p>	Video background from <a href="http://www.beachfrontbroll.com/">beachfrontbroll</a></p>
+<p>	&nbsp;</p>
+</section>
+
+	</div>
+</body>
+</html>

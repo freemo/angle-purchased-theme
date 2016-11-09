@@ -1,0 +1,221 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'project-details.html'
+
+block content
+    h3 Project #1 Management
+        small In lacinia tellus vitae nisl consectetur pellentesque.
+
+    .row
+
+        .col-lg-8
+            // Main panel
+            .panel.b
+                .panel-heading
+                    .pull-right.mt
+                        .label.label-info started
+                    h4.mv
+                        span Project #1
+                .panel-body.bb.bt
+                    a.inline(href="#", data-toggle="tooltip", data-title="Team leader"): img.img-circle.thumb48(src="img/user/03.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/02.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/04.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/05.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/06.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/07.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/08.jpg", alt="project member")
+                    a.inline(href="#"): img.img-circle.thumb24(src="img/user/09.jpg", alt="project member")
+                    .pull-right.mt
+                        button(type="button").btn.btn-default Add Member
+                .panel-body
+                    h4 Description
+                    p Nam eget risus tellus. Vestibulum pretium mollis ligula, at ultrices quam egestas et. Sed mattis tincidunt ligula, ac porttitor lectus porttitor condimentum. Ut et ligula ante, nec mollis lacus. Aliquam erat volutpat. Aliquam auctor diam ut urna lacinia faucibus. Proin est sapien, convallis non hendrerit nec, laoreet ut ipsum. Aenean vehicula, nulla vel pharetra accumsan, elit risus pretium arcu, nec ultrices urna ligula vel nunc. Cras porttitor orci eget nibh pharetra mollis.
+                    p Maecenas at porta purus. Ut eu aliquam orci. Praesent in libero at neque gravida venenatis auctor nec arcu.
+                    p.text-right
+                        button.btn.btn-default(type="button") View all documents
+
+                .panel-body
+                    p
+                        small.pull-left Activity over time
+                        .sparkline.text-center(data-sparkline="",data-type='line', data-height='100', data-width='100%', data-line-width='3', data-line-color="#23b7e5", data-chart-range-min="0",data-spot-color='#888', data-min-spot-color="#23b7e5", data-max-spot-color="#23b7e5", data-fill-color="#e5f2fa", data-highlight-line-color='#fff', data-spot-radius='5', values="2,4,5,6,10,7,8,5,7,7,11,8,6,9,11,9,13,14,12,16", data-resize="true")
+                .panel-body
+                    .row.text-center
+                        .col-xs-4
+                            .inline
+                                .sparkline(data-sparkline="", values="20,80", data-type='pie', data-height="60", data-slice-colors='["#edf1f2", "#23b7e5"]')
+                            p.mt-lg Issues
+                        .col-xs-4
+                            .inline
+                                .sparkline(data-sparkline="", values="60,40", data-type='pie', data-height="60", data-slice-colors='["#edf1f2", "#27c24c"]')
+                            p.mt-lg Commits
+                        .col-xs-4
+                            .inline
+                                .sparkline(data-sparkline="", values="90,10", data-type='pie', data-height="60", data-slice-colors='["#edf1f2", "#ff902b"]')
+                            p.mt-lg Files
+            // End Main panel
+
+            // Team messages
+            .panel.b
+                .panel-heading
+                    .pull-right.label.label-danger 5
+                    .pull-right.label.label-success 12
+                    .panel-title Team messages
+
+                // START list group
+                .list-group(data-height="180", data-scrollable="")
+                    // START list group item
+                    a.list-group-item(href='#')
+                        .media-box
+                            .pull-left
+                                img.media-box-object.img-circle.thumb32(src="img/user/02.jpg", alt="Image")
+                            .media-box-body.clearfix
+                                small.pull-right 2h
+                                strong.media-box-heading.text-primary
+                                    span.circle.circle-success.circle-lg.text-left
+                                    | Catherine Ellis
+                                p.mb-sm: small Cras sit amet nibh libero, in gravida nulla. Nulla...
+                    // END list group item
+                    // START list group item
+                    a.list-group-item(href='#')
+                        .media-box
+                            .pull-left
+                                img.media-box-object.img-circle.thumb32(src="img/user/03.jpg", alt="Image")
+                            .media-box-body.clearfix
+                                small.pull-right 3h
+                                strong.media-box-heading.text-primary
+                                    span.circle.circle-success.circle-lg.text-left
+                                    | Jessica Silva
+                                p.mb-sm: small Cras sit amet nibh libero, in gravida nulla. Nulla facilisi.
+                    // END list group item
+                    // START list group item
+                    a.list-group-item(href='#')
+                        .media-box
+                            .pull-left
+                                img.media-box-object.img-circle.thumb32(src="img/user/09.jpg", alt="Image")
+                            .media-box-body.clearfix
+                                small.pull-right 4h
+                                strong.media-box-heading.text-primary
+                                    span.circle.circle-danger.circle-lg.text-left
+                                    | Jessie Wells
+                                p.mb-sm: small Cras sit amet nibh libero, in gravida nulla. Nulla...
+                    // END list group item
+                    // START list group item
+                    a.list-group-item(href='#')
+                        .media-box
+                            .pull-left
+                                img.media-box-object.img-circle.thumb32(src="img/user/12.jpg", alt="Image")
+                            .media-box-body.clearfix
+                                small.pull-right 1d
+                                strong.media-box-heading.text-primary
+                                    span.circle.circle-danger.circle-lg.text-left
+                                    | Rosa Burke
+                                p.mb-sm: small Cras sit amet nibh libero, in gravida nulla. Nulla...
+                    // END list group item
+                    // START list group item
+                    a.list-group-item(href='#')
+                        .media-box
+                            .pull-left
+                                img.media-box-object.img-circle.thumb32(src="img/user/10.jpg", alt="Image")
+                            .media-box-body.clearfix
+                                small.pull-right 2d
+                                strong.media-box-heading.text-primary
+                                    span.circle.circle-danger.circle-lg.text-left
+                                    | Michelle Lane
+                                p.mb-sm: small Mauris eleifend, libero nec cursus lacinia...
+                    // END list group item
+                // END list group
+                // START panel footer
+                .panel-footer.clearfix
+                    .input-group
+                        input.form-control.input-sm(type='text', placeholder='Type message ..')
+                        span.input-group-btn
+                            button.btn.btn-default.btn-sm(type='button')
+                                i.fa.fa-paperclip
+                // END panel-footer
+            // End Team messages
+
+        .col-lg-4
+            // Aside panel
+            .panel.b
+                .panel-body.bb
+                    .clearfix
+                        .pull-left
+                            button(type="button").btn.btn-default.btn-oval
+                                em.fa.fa-play.fa-fw.text-muted
+                                span Start
+                            button(type="button").btn.btn-default.btn-oval
+                                em.fa.fa-pause.fa-fw.text-muted
+                                span Pause
+                        .pull-right
+                            button(type="button").btn.btn-danger.btn-oval Cancel
+                .panel-body.bb
+                    .table-grid.table-grid-align-middle.mv
+                        .col: .progress.progress-xs.m0: .progress-bar.progress-bar-info(style="width: 48%") 48%
+                        .col.wd-xxs.text-right: .text-bold.text-muted 48%
+                .panel-body
+                    ul.list-inline.mv
+                        li: .badge.p-sm.bg-warning priority
+                        li: .badge.p-sm.bg-gray angularjs
+                        li: .badge.p-sm.bg-gray jquery
+                        li: .badge.p-sm.bg-gray gulp
+                        li: .badge.p-sm.bg-gray git
+                        li: .badge.p-sm.bg-gray ios
+                table.table.bb: tbody
+                    tr
+                        td: strong Start date
+                        td 02/01/2016
+                    tr
+                        td: strong Estimated Hours
+                        td 122hs
+                    tr
+                        td: strong Time Consumed
+                        td 62hs
+                    tr
+                        td: strong Commits
+                        td 140
+                    tr
+                        td: strong Issues
+                        td 39
+                    tr
+                        td: strong Files
+                        td 87
+                    tr
+                        td: strong Members
+                        td
+                            p Tara Sanders
+                            p Alan Smith
+                            p Priscilla Peters
+                            p Madison Willis
+                            p Lesa Marshall
+                            p Kylie Freeman
+                    tr
+                        td: strong Recent files
+                        td
+                            .list-group(data-height="120", data-scrollable="")
+                                table.table.table-bordered.bg-transparent: tbody
+                                    tr
+                                        td: em.fa.fa-lg.fa-file-code-o
+                                        td: a(href="#").text-muted database.controller.js
+                                    tr
+                                        td: em.fa.fa-lg.fa-file-image-o
+                                        td: a(href="#").text-muted baground-lg.png
+                                    tr
+                                        td: em.fa.fa-lg.fa-file-code-o
+                                        td: a(href="#").text-muted picture.controller.js
+                                    tr
+                                        td: em.fa.fa-lg.fa-file-word-o
+                                        td: a(href="#").text-muted applicat-diagrams.docx
+                                    tr
+                                        td: em.fa.fa-lg.fa-file-code-o
+                                        td: a(href="#").text-muted database.controller.js
+                                    tr
+                                        td: em.fa.fa-lg.fa-file-code-o
+                                        td: a(href="#").text-muted database.controller.js
+                p.text-right
+                    a(href="#").btn.btn-link Open repository
+            // end Aside panel
+
+block vendor_js
+  // SPARKLINE
+  script(src='../vendor/sparkline/index.js')

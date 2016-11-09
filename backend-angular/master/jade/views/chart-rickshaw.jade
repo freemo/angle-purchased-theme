@@ -1,0 +1,16 @@
+h3 Rickshaw
+
+.container-fluid(ng-controller='ChartRickshawController as chart')
+  .panel.panel-default
+    .panel-heading Rickshaw graph 
+    .panel-body
+      rickshaw(rickshaw-options='chart.options2', rickshaw-series='chart.series2')
+  .panel.panel-default
+    .panel-heading Rickshaw graph - Palettes
+    .panel-body
+      rickshaw(rickshaw-options='chart.options0', rickshaw-features='chart.features0', rickshaw-series='chart.series0')
+      form.form-inline.mt-lg
+        select.form-control(ng-model='chart.renderer0', ng-options='renderer.name for renderer in chart.renderers', ng-change='chart.rendererChanged(0)')
+        select.form-control(ng-model='chart.palette0', ng-options='palette for palette in chart.palettes', ng-change='chart.paletteChanged(0)')
+        button.btn.btn-primary(ng-click='chart.changeSeriesData(0)') Change series data
+

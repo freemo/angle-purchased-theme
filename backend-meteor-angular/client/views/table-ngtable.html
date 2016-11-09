@@ -1,0 +1,86 @@
+<h3>ngTables
+   <small>Tables in the AngularJS way</small>
+</h3>
+<div ng-controller="NGTableCtrl as table" class="container-fluid">
+   <!-- Row Select Example-->
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <button ng-click="table.tableParams3.data[1].$selected = true" class="pull-right btn-sm btn btn-default">Select 2nd Row</button>
+         <div class="panel-title">Select Rows</div>
+      </div>
+      <table ng-table="table.tableParams3" class="table ng-table-rowselected">
+         <tr ng-repeat="user in $data" ng-click="user.$selected = !user.$selected; changeSelection(user)" ng-class="{'active': user.$selected}">
+            <td data-title="'Name'">{{user.name}}</td>
+            <td data-title="'Age'">{{user.age}}</td>
+         </tr>
+      </table>
+      <div class="panel-body">
+         <strong>Selected users:</strong>{{ table.data | filter:{"$selected": true} }}</div>
+   </div>
+   <!-- Export CSV Example-->
+   <div class="panel panel-default">
+      <div class="panel-heading"><a ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv" class="pull-right btn btn-sm btn-info">Export to CSV</a>
+         <div class="panel-title">Table Export</div>
+      </div>
+      <div class="table-responsive">
+         <table ng-table="table.tableParams4" export-csv="csv" class="table table-bordered table-striped">
+            <tbody>
+               <tr ng-repeat="user in $data">
+                  <td data-title="'Name'">{{user.name}}</td>
+                  <td data-title="'Age'">{{user.age}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <!-- Sorting example-->
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <button ng-click="table.tableParams.sorting({})" class="pull-right btn btn-primary btn-sm">Clear sorting</button>
+         <div class="panel-title">Sorting</div>
+      </div>
+      <table ng-table="table.tableParams" class="table table-bordered table-striped">
+         <tbody>
+            <tr ng-repeat="user in $data">
+               <td data-title="'Name'" sortable="'name'">{{user.name}}</td>
+               <td data-title="'Age'" sortable="'age'">{{user.age}}</td>
+               <td data-title="'Money'" sortable="'money'">
+                  <span ng-class="{ 'plus': user.money &gt;= 0,'minus': user.money &lt; 0 }">{{user.money}}</span>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <!-- Filters Example-->
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <div class="panel-title">Filters</div>
+      </div>
+      <table ng-table="table.tableParams2" show-filter="true" class="table table-bordered table-striped">
+         <tbody>
+            <tr ng-repeat="user in $data">
+               <td data-title="'Name'" filter="{ 'name': 'text' }">{{user.name}}</td>
+               <td data-title="'Age'" filter="{ 'age': 'text' }">{{user.age}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <!-- Ajax Example-->
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <button ng-click="table.tableParams5.reload()" class="pull-right btn btn-purple btn-sm">Reload</button>
+         <div class="panel-title">Ajax</div>
+      </div>
+      <table ng-table="table.tableParams5" class="table">
+         <tbody>
+            <tr ng-repeat="user in $data">
+               <td data-title="'Name'">{{user.name}}</td>
+               <td data-title="'Age'">{{user.age}}</td>
+               <td data-title="'Money'">
+                  <span ng-class="{ 'plus': user.money &gt;= 0,'minus': user.money &lt; 0 }">{{user.money}}</span>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
